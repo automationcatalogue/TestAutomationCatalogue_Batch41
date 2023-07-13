@@ -5,7 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
+
 
 import java.sql.Driver;
 import java.time.Duration;
@@ -19,6 +19,9 @@ public class TC04_OrangeHRM_EditEmployee {
         driver.manage().window().maximize();
         System.out.println("Chrome Browser window is maximized");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+
 
         driver.get("https://testcataloguea-trials79.orangehrmlive.com");
         System.out.println("OrangeHRM website is launched");
@@ -35,7 +38,12 @@ public class TC04_OrangeHRM_EditEmployee {
 
         //title verification
         String title = driver.getTitle();
-        System.out.println("Title of the page is:" + title);
+        String ExpectedTitle = "Employee Management";
+        if(title.equalsIgnoreCase(ExpectedTitle)){
+            System.out.println("Login is Successful");
+        }else{
+            System.out.println("Login is Unsuccessful");
+        }
 
         driver.findElement(By.xpath("//span[text()='Employee Management']")).click();
         System.out.println("Employee Management is selected");
@@ -43,7 +51,7 @@ public class TC04_OrangeHRM_EditEmployee {
         driver.findElement(By.xpath("//tr[contains(@ng-repeat,'employee.empNumber')][1]/td[2]")).click();
         System.out.println("Click on First Employee Data");
 
-        driver.findElement(By.xpath("//ui-view[@name='customTopRibbon']/div/div[1]/top-level-menu-item[2]/div")).click();
+        driver.findElement(By.xpath("//a[contains(@ui-sref,'l_details')]")).click();
         System.out.println("Clicked on Personal Details tab");
 
         driver.findElement(By.xpath("//input[@id='lastName']")).clear();
@@ -52,52 +60,51 @@ public class TC04_OrangeHRM_EditEmployee {
         driver.findElement(By.xpath("//input[@id='lastName']")).sendKeys("Naidu");
         System.out.println("Updated the last name");
 
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
         driver.findElement(By.xpath("(//i[contains(@class,'material-icons action')])[1]")).click();
         System.out.println("Date picker icon is clicked");
 
+        String date = "23-January-1990";
+        String date_Array[]=date.split("-");
+        String day=date_Array[0];
+        String month=date_Array[1];
+        String year=date_Array[2];
+
         //month selector
-        WebElement element_month = driver.findElement(By.xpath("(//div[@class='picker__calendar-container'])[1]/div/div[1]"));
-        element_month.click();
-
-        //String date = "23-January-1990";
-
+        driver.findElement(By.xpath("//div[contains(@class,'--month')]")).click();
         //Thread.sleep(5000);
-        List<WebElement> list_month = driver.findElements(By.xpath("(//div[@class='picker__calendar-container'])[1]/div/div[1]/ul/li/span"));
-        for (WebElement month:list_month)
+        List<WebElement> list_month = driver.findElements(By.xpath("//div[contains(@class,'--month')]//li/span"));
+        for (WebElement mon:list_month)
         {
-            String ActualMonth = month.getText();
-            if (ActualMonth.equalsIgnoreCase("January")){
-                month.click();
-                System.out.println("selected January");
+            String ActualMonth = mon.getText();
+            if (ActualMonth.equalsIgnoreCase(month)){
+                mon.click();
+                System.out.println("selected"+month);
                 break;
             }
         }
 
         //year selector
-        driver.findElement(By.xpath("(//div[@class='picker__calendar-container'])[1]/div/div[2]")).click();
+        driver.findElement(By.xpath("//div[contains(@class,'select--year')]")).click();
         //Thread.sleep(10000);
-
-        List<WebElement> list_years = driver.findElements(By.xpath("(//div[@class='picker__calendar-container'])[1]/div/div[2]/ul/li/span"));
-        for( WebElement year:list_years )
+        List<WebElement> list_years = driver.findElements(By.xpath("//div[contains(@class,'select--year')]//li/span"));
+        for( WebElement year_1:list_years )
         {
-            String ActualYear =year.getText();
-            if(ActualYear.equalsIgnoreCase("1990")){
-                year.click();
-                System.out.println("Selected the year as 1990");
+            String ActualYear =year_1.getText();
+            if(ActualYear.equalsIgnoreCase(year)){
+                year_1.click();
+                System.out.println("Selected the year as "+year);
                 break;
             }
         }
 
         //date selector
         //Thread.sleep(2000);
-        List<WebElement> list_date = driver.findElements(By.xpath("(//div[@class='picker__calendar-container'])[1]/table/tbody/tr/td"));
-        for(WebElement date:list_date)
-        {   String ActualDate = date.getText();
-            if(ActualDate.equalsIgnoreCase("23")){
-                date.click();
-                System.out.println("date is selected");
+        List<WebElement> list_date = driver.findElements(By.xpath("(//table[@class='picker__table'])[1]//td"));
+        for(WebElement dt:list_date)
+        {   String ActualDate = dt.getText();
+            if(ActualDate.equalsIgnoreCase(day)){
+                dt.click();
+                System.out.println("date is selected as"+day);
                 break;
             }
         }
@@ -119,13 +126,13 @@ public class TC04_OrangeHRM_EditEmployee {
         System.out.println("Radio Button for NO is selected");
 
         driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
-        System.out.println("Clicked on second save button");
+        System.out.println("Clicked on Hygiene save button");
 
-        Boolean flag_1 = wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//html/body"),"Successfully Updated"));
-        if(flag_1){
-            System.out.println("Successfully Updated");
+        Boolean hygiene_isSuccessful = wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//html/body"),"Successfully Updated"));
+        if(hygiene_isSuccessful){
+            System.out.println("Hygiene is Successfully Updated");
         }else {
-            System.out.println("Not Successful");
+            System.out.println("Hygiene is not Successful Updated");
         }
 
         for(int i=1;i<=3;++i){
@@ -152,17 +159,19 @@ public class TC04_OrangeHRM_EditEmployee {
         System.out.println("clicked on Kosher and Vegetarian check boxes");
 
         driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
-        System.out.println("Clicked on second save button");
+        System.out.println("Clicked on Dietary Requirements save button");
 
-        Boolean flag_2 = wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//html/body"),"Successfully Updated"));
+        Boolean Dietary_isSuccessful = wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//html/body"),"Successfully Updated"));
 
-        if(flag_2){
-            System.out.println("Succesfully Updated");
+        if(Dietary_isSuccessful){
+            System.out.println("Dietary Requirements are successfully Updated");
         }else {
-            System.out.println("Not Successful");
+            System.out.println("Dietary Requirements are not successfully Updated");
         }
 
         //Logout
+        driver.findElement(By.xpath("//li[@id='navbar-logout']")).click();
+        System.out.println("Clicked on Log out Button");
 
         driver.quit();
         System.out.println("browser is closed");
