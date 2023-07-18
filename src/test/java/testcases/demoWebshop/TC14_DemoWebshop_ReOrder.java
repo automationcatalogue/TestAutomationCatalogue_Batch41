@@ -3,16 +3,19 @@ package testcases.demoWebshop;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import utilities.CommonUtils;
 
 import java.time.Duration;
 
 public class TC14_DemoWebshop_ReOrder {
+    @Test
+    @Parameters({"browserName"})
+    public static void ReOrder(@Optional("chrome")String browserName) throws Exception {
 
-    public static void main(String args[]) throws Exception {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        WebDriver driver = CommonUtils.browserLaunch(browserName);
 
         driver.get("https://demowebshop.tricentis.com/");
         System.out.println("Demo website is loaded");
@@ -22,7 +25,6 @@ public class TC14_DemoWebshop_ReOrder {
 
         driver.findElement(By.xpath("//input[@id='Email']")).sendKeys("aarosagarch@gmail.com");
         System.out.println("Email ID is entered");
-
 
         driver.findElement(By.xpath("//input[@id='Password']")).sendKeys("Admin@123");
         System.out.println("Password is entered");
@@ -66,7 +68,19 @@ public class TC14_DemoWebshop_ReOrder {
         driver.findElement(By.xpath("//input[@onclick='ConfirmOrder.save()']")).click();
         System.out.println("Confirm button is clicked under Confirm Order");
 
-        driver.quit();
+        String Ordernumber = driver.findElement(By.xpath("//ul[@class='details']/li[1]")).getText();
+        System.out.println(Ordernumber);
+
+        if(Ordernumber.equalsIgnoreCase(Ordernumber)){
+            System.out.println("order number is printed");
+        }else{
+            System.out.println("order number is not printed");
+        }
+
+        driver.findElement(By.xpath("//a[@href='/logout']")).click();
+        System.out.println("log out is clicked");
+
+        driver.close();
 
     }
 }
