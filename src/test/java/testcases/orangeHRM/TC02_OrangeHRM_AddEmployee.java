@@ -1,28 +1,26 @@
 package testcases.orangeHRM;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import utilities.CommonUtils;
 
-
-import java.time.Duration;
-import java.util.List;
-
+@Test
+@Parameters({"browserName"})
 public class TC02_OrangeHRM_AddEmployee {
-    public static void main(String[] args) throws Exception{
-        WebDriver driver = new ChromeDriver();
-        System.out.println("Chrome Browser is launched");
+    public static void addEmployee(@Optional("chrome") String browserName) throws Exception {
 
-        driver.manage().window().maximize();
-        System.out.println("Chrome Browser window is maximized");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
+        WebDriver driver = CommonUtils.browserLaunch("Chrome");
 
         driver.get("https://testcataloguea-trials79.orangehrmlive.com");
         System.out.println("OrangeHRM website is launched");
 
         String title = driver.getTitle();
-        System.out.println("Title of the page is:"+title);
+        System.out.println("Title of the page is:" + title);
 
         driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys("Admin");
         System.out.println("Admin is entered as a UserName");
@@ -97,13 +95,12 @@ public class TC02_OrangeHRM_AddEmployee {
         driver.findElement(By.xpath("//input[contains(@id,'employee_name_quick_filter')]")).click();
         System.out.println("Searched with Employee first and last name");
 
-       String elementText = driver.findElement(By.xpath("//div[@class='emp-name'][text()='Shawn  Desman']")).getText();
-       System.out.println("Element Text is :"+elementText);
+        String elementText = driver.findElement(By.xpath("//div[@class='emp-name'][text()='Shawn  Desman']")).getText();
+        System.out.println("Element Text is :" + elementText);
 
-
-       if(elementText.equalsIgnoreCase("Shawn Desman")){
+        if (elementText.equalsIgnoreCase("Shawn Desman")) {
             System.out.println("Search result is correct");
-        }else{
+        } else {
             System.out.println("Search result is incorrect");
         }
 
@@ -111,11 +108,6 @@ public class TC02_OrangeHRM_AddEmployee {
         System.out.println("log out is clicked");
 
         driver.close();
-
-
-
-
-
 
     }
 }
