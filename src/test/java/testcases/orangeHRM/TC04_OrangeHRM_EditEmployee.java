@@ -5,6 +5,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import utilities.CommonUtils;
 
 
 import java.sql.Driver;
@@ -12,14 +16,12 @@ import java.time.Duration;
 import java.util.List;
 public class TC04_OrangeHRM_EditEmployee {
 
-    public static void main(String args[]) throws Exception{
-        WebDriver driver = new ChromeDriver();
-        System.out.println("Chrome Browser is launched");
+   @Test
+   @Parameters({"browserName"})
+    public void EditEmployee(@Optional("chrome") String browserName) throws Exception{
+       WebDriver driver =CommonUtils.browserLaunch(browserName);
 
-        driver.manage().window().maximize();
-        System.out.println("Chrome Browser window is maximized");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+       JavascriptExecutor js = (JavascriptExecutor)driver;
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
 
 
