@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pages.OrangHRM_AddUserPage;
+import pages.OrangeHRM_HomePage;
 import seleniumPrograms.sagarTeachings.JavaScriptExecutorDemo;
 import seleniumPrograms.sagarTeachings.KeysDemo;
 import utilities.CommonUtils;
@@ -45,7 +47,7 @@ public class TC03_OrangeHRM_AddUser {
         }
 
         //Click on HR Administration link
-        driver.findElement(By.xpath("(//span[text()='HR Administration'])[1]")).click();
+        driver.findElement(OrangeHRM_HomePage.link_HRAdministration).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//crud-panel[contains(@listdata='systemUsersCtrl.listData.systemUsers']//table//tbody/tr[1]//span[text()])[1]")));
         //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//crud-panel[contains(@listdata,'systemUsers')]//table//tbody/tr[1]//span[text()])[1]")));
@@ -54,7 +56,7 @@ public class TC03_OrangeHRM_AddUser {
         driver.findElement(By.xpath("//i[@class='material-icons'][text()='add']")).click();
 
         //Enter Employee Name as Charlie Carter
-        driver.findElement(By.xpath("//input[@id='selectedEmployee_value']")).sendKeys("Charlie Car");
+        driver.findElement(OrangHRM_AddUserPage.txtbx_EmployeeName).sendKeys("Charlie Car");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='selectedEmployee_dropdown']//div[@class='title-section']")));
         driver.findElement(By.xpath("//div[@id='selectedEmployee_dropdown']//div[@class='title-section']")).click();
 
@@ -85,7 +87,7 @@ public class TC03_OrangeHRM_AddUser {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         //Verify the Employee Name as Charlie Carter
-        String Employee_Name=driver.findElement(By.xpath("//div[@id='sidebar-profile-picture']/a")).getText();
+        String Employee_Name=driver.findElement(OrangeHRM_HomePage.lbl_ProfileName).getText();
         String expected_name="Charlie Carter";
         if(Employee_Name.equalsIgnoreCase(expected_name)){
             System.out.println("UserName is matched and verified");

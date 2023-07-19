@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pages.DemoWebshop_HomePage;
+import pages.DemoWebshop_LoginPage;
 import utilities.CommonUtils;
 
 import java.time.Duration;
@@ -24,10 +26,10 @@ public class TC12_DemoWebShop_CreateAddress {
         driver.get("https://demowebshop.tricentis.com/");
         System.out.println("DemoWebShop Website is launched");
 
-        driver.findElement(By.xpath("//a[text()='Log in']")).click();
+        driver.findElement(DemoWebshop_HomePage.link_Login).click();
         System.out.println("clicked on login button");
 
-        driver.findElement(By.cssSelector("#Email")).sendKeys("aarosagarch@gmail.com");
+        driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys("aarosagarch@gmail.com");
         System.out.println("Email ID is entered");
 
         driver.findElement(By.cssSelector(".password")).sendKeys("Admin@123");
