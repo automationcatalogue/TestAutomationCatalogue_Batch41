@@ -4,18 +4,20 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import seleniumPrograms.sagarTeachings.JavaScriptExecutorDemo;
 import seleniumPrograms.sagarTeachings.KeysDemo;
+import utilities.CommonUtils;
 
 import java.time.Duration;
 
 public class TC03_OrangeHRM_AddUser {
-
-    public static void main(String args[]) throws Exception{
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+    @Test
+    @Parameters({"browserName"})
+    public void login(@Optional("chrome") String browserName) throws Exception{
+        WebDriver driver= CommonUtils.browserLaunch(browserName);
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         String userName="CharlieABCG";
