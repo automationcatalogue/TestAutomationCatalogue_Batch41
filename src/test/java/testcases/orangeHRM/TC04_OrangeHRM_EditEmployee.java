@@ -8,10 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.OrangeHRM_EditEmployeePage;
-import pages.OrangeHRM_EmployeeManagementPage;
-import pages.OrangeHRM_HomePage;
-import pages.OrangeHRM_LoginPage;
+import pages.*;
 import utilities.CommonUtils;
 
 
@@ -176,7 +173,7 @@ public class TC04_OrangeHRM_EditEmployee {
         }
 
         //Logout
-        driver.findElement(OrangeHRM_EditEmployeePage.btn_LogOut).click();
+        driver.findElement(OrangeHRM_LogoutPage.btn_logout).click();
         System.out.println("Clicked on Log out Button");
 
         driver.quit();

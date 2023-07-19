@@ -20,5 +20,4 @@ public class OrangeHRM_EditEmployeePage {
     public static By checkBox_Kosher = By.xpath("//div[@sf-array='form']/div[4]/label");
     public static By checkBox_Vegetarian = By.xpath("//div[@sf-array='form']/div[5]/label");
     public static By btn_ThirdSave = By.xpath("(//button[@type='submit'])[2]");
-    public static By btn_LogOut = By.xpath("//li[@id='navbar-logout']");
 }
