@@ -15,10 +15,15 @@ import java.time.Duration;
 import java.util.List;
 
 public class TC12_DemoWebShop_CreateAddress {
-    @Test
-    @Parameters({"browserName"})
-    public static void createAddress(@Optional("chrome") String browserName) throws Exception{
-        WebDriver driver= CommonUtils.browserLaunch(browserName);
+
+    public static void main(String[] args) throws Exception{
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+        driver.manage().window().maximize();
+        System.out.println("Chrome browser window maximized");
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         driver.get("https://demowebshop.tricentis.com/");
