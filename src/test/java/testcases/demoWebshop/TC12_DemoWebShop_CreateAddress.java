@@ -6,19 +6,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import utilities.CommonUtils;
 
 import java.time.Duration;
 import java.util.List;
 
 public class TC12_DemoWebShop_CreateAddress {
-    public static void main(String[] args) throws Exception {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-        driver.manage().window().maximize();
-        System.out.println("Chrome browser window maximized");
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+    @Test
+    @Parameters({"browserName"})
+    public void login(@Optional("chrome") String browserName) throws Exception {
+        WebDriver driver = CommonUtils.browserLaunch(browserName);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         driver.get("https://demowebshop.tricentis.com/");
