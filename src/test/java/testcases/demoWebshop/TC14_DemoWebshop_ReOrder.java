@@ -2,6 +2,7 @@ package testcases.demoWebshop;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -24,13 +25,13 @@ public class TC14_DemoWebshop_ReOrder {
         driver.findElement(DemoWebshop_HomePage.link_Login).click();
         System.out.println("Login link is clicked");
 
-        driver.findElement(DemoWebshop_LoginPage.txtbx_userName).sendKeys("aarosagarch@gmail.com");
+        driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys("aarosagarch@gmail.com");
         System.out.println("Email ID is entered");
 
         driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys("Admin@123");
         System.out.println("Password is entered");
 
-        driver.findElement(DemoWebshop_LoginPage.btn_Login).click();
+        driver.findElement(DemoWebshop_LoginPage.btn_login).click();
         System.out.println("Login Button is clicked");
 
         driver.findElement(DemoWebShop_OrdersPage.link_Email).click();
@@ -39,7 +40,7 @@ public class TC14_DemoWebshop_ReOrder {
         driver.findElement(DemoWebShop_OrdersPage.link_Orders).click();
         System.out.println("Order link is clicked");
 
-        driver.findElement(DemoWebShop_OrdersPage.btn_Orderdetails).click();
+        driver.findElement(DemoWebShop_OrdersPage.btn_OrderDetails).click();
         System.out.println("Order details button is clicked");
 
         driver.findElement(DemoWebshop_OrderInformationPage.btn_Reorder).click();
@@ -69,16 +70,15 @@ public class TC14_DemoWebshop_ReOrder {
         driver.findElement(DemoWebshop_CheckoutPage.btn_ConfirmOrder).click();
         System.out.println("Confirm button is clicked under Confirm Order");
 
-        String Ordernumber = driver.findElement(DemoWebshop_CheckoutPage.txt_OrderNumber).getText();
-        System.out.println(Ordernumber);
+        WebElement element_OrderNumber = driver.findElement(DemoWebshop_CheckoutPage.txt_OrderNumber);
 
-        if(Ordernumber.equalsIgnoreCase(Ordernumber)){
-            System.out.println("order number is printed");
+        if(element_OrderNumber.isDisplayed()){
+            String ordernumber = element_OrderNumber.getText();
+            System.out.println("order number is generated "+ordernumber);
         }else{
-            System.out.println("order number is not printed");
+            System.out.println("OrderNumber is not generated");
         }
-
-        driver.findElement(DemoWebshop_LogoutPage.btn_Logout).click();
+        driver.findElement(DemoWebshop_HomePage.btn_Logout).click();
         System.out.println("log out is clicked");
 
         driver.close();

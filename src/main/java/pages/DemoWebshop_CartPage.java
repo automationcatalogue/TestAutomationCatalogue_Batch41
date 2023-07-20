@@ -7,4 +7,7 @@ import javax.management.BadAttributeValueExpException;
 public class DemoWebshop_CartPage {
     public static By txtbx_Address = By.xpath("(//a[text()='Addresses'])[1]");
     public static By Link_Address = By.xpath("//div[contains(@class,'st-page')]/div[2]/div[1]/div/div[1]");
+
+    public static By checkbox_Iagree = By.xpath("");
+    public static By btn_Checkout = By.xpath("");
 }

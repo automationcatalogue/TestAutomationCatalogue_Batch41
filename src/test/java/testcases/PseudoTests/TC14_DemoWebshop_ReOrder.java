@@ -2,6 +2,7 @@ package testcases.PseudoTests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -65,7 +66,20 @@ public class TC14_DemoWebshop_ReOrder {
         driver.findElement(By.xpath("//input[@onclick='ConfirmOrder.save()']")).click();
         System.out.println("Confirm button is clicked under Confirm Order");
 
-        driver.quit();
+        WebElement element_OrderNumber = driver.findElement(By.xpath("//ul[@class='details']/li[1]"));
+
+        if(element_OrderNumber.isDisplayed()){
+            String ordernumber = element_OrderNumber.getText();
+            System.out.println("order number is generated "+ordernumber);
+        }else{
+            System.out.println("OrderNumber is not generated");
+        }
+
+        driver.findElement(By.xpath("//a[@href='/logout']")).click();
+        System.out.println("log out is clicked");
+
+        driver.close();
+
 
     }
 }
