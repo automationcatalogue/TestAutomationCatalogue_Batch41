@@ -9,8 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.DemoWebshop_HomePage;
-import pages.DemoWebshop_LoginPage;
+import pages.*;
 import utilities.CommonUtils;
 
 import java.time.Duration;
@@ -32,63 +31,63 @@ public class TC12_DemoWebShop_CreateAddress {
         driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys("aarosagarch@gmail.com");
         System.out.println("Email ID is entered");
 
-        driver.findElement(By.cssSelector(".password")).sendKeys("Admin@123");
+        driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys("Admin@123");
         System.out.println("Password is entered");
 
-        driver.findElement(By.xpath("//input[contains(@class,'login-button')]")).click();
+        driver.findElement(DemoWebshop_LoginPage.btn_login).click();
         System.out.println("Clicked on login button");
 
-        driver.findElement(By.xpath("(//a[@href='/customer/info'])[1]")).click();
+        driver.findElement(DemoWebshop_HomePage.link_mailID).click();
         System.out.println("clicked on the email.id");
 
-        driver.findElement(By.xpath("(//a[text()='Addresses'])[1]")).click();
+        driver.findElement(DemoWebshop_HomePage.link_Address).click();
         System.out.println("clicked on adresses ");
 
-        driver.findElement(By.xpath("//input[@value='Add new']")).click();
+        driver.findElement(DemoWebshop_AddressesPage.btn_AddNew).click();
         System.out.println("Clicked on the Add New Button");
 
-        driver.findElement(By.cssSelector("#Address_FirstName")).sendKeys("Rama");
+        driver.findElement(DemoWebshop_AddressesPage.txtbx_FirstName).sendKeys("Rama");
         System.out.println("Entered Random First Name");
 
-        driver.findElement(By.cssSelector("#Address_LastName")).sendKeys("Krishna");
+        driver.findElement(DemoWebshop_AddressesPage.txtbx_LastName).sendKeys("Krishna");
         System.out.println("Entered Random last name");
 
-        driver.findElement(By.cssSelector("#Address_Email")).sendKeys("ram@gmail.com");
+        driver.findElement(DemoWebshop_AddressesPage.link_mailID).sendKeys("ram@gmail.com");
         System.out.println("Entered Random Email");
 
-        driver.findElement(By.cssSelector("#Address_Company")).sendKeys("Amazon");
+        driver.findElement(DemoWebshop_AddressesPage.txtbx_companyName).sendKeys("Amazon");
         System.out.println("Entered Random company name");
 
-        WebElement element_Country = driver.findElement(By.xpath("//select[@id='Address_CountryId']"));
+        WebElement element_Country = driver.findElement(DemoWebshop_AddressesPage.dropdown_Country);
         Select select_Country = new Select(element_Country);
         select_Country.selectByVisibleText("India");
         System.out.println("India is selected from the Country drop-down");
 
-        driver.findElement(By.cssSelector("#Address_City")).sendKeys("Hyderabad");
+        driver.findElement(DemoWebshop_AddressesPage.txtbx_City).sendKeys("Hyderabad");
         System.out.println("Entered Random city");
 
-        driver.findElement(By.cssSelector("#Address_Address1")).sendKeys("Uppal");
+        driver.findElement(DemoWebshop_AddressesPage.txtbx_Address1).sendKeys("Uppal");
         System.out.println("Entered Random Address1");
 
-        driver.findElement(By.cssSelector("#Address_Address2")).sendKeys("Ramanthapur");
+        driver.findElement(DemoWebshop_AddressesPage.txtbx_Address2).sendKeys("Ramanthapur");
         System.out.println("Entered Random Address2");
 
-        driver.findElement(By.cssSelector("#Address_ZipPostalCode")).sendKeys("500013");
+        driver.findElement(DemoWebshop_AddressesPage.txtbx_Zipcode).sendKeys("500013");
         System.out.println("Entered Random Zip code");
 
-        driver.findElement(By.cssSelector("#Address_PhoneNumber")).sendKeys("8688881838");
+        driver.findElement(DemoWebshop_AddressesPage.txtbx_Phonenumber).sendKeys("8688881838");
         System.out.println("Entered Random Phone number");
 
-        driver.findElement(By.cssSelector("#Address_FaxNumber")).sendKeys("12354");
+        driver.findElement(DemoWebshop_AddressesPage.txtbx_Faxnumber).sendKeys("12354");
         System.out.println("Entered Fax Number");
 
-        driver.findElement(By.xpath("//input[@value='Save']")).click();
+        driver.findElement(DemoWebshop_AddressesPage.btn_Save).click();
         System.out.println("Clicked on Save Button");
 
-        driver.findElement(By.xpath("(//a[text()='Addresses'])[1]")).click();
+        driver.findElement(DemoWebshop_CartPage.txtbx_Address).click();
         System.out.println("Clicked on Address link");
 
-        List<WebElement> address_list = driver.findElements(By.xpath("//div[contains(@class,'st-page')]/div[2]/div[1]/div/div[1]"));
+        List<WebElement> address_list = driver.findElements(DemoWebshop_CartPage.Link_Address);
 
         boolean isAddressFound = false;
         for(WebElement name:address_list){
@@ -105,7 +104,7 @@ public class TC12_DemoWebShop_CreateAddress {
             System.out.println("Address Creation is not successful");
         }
 
-        driver.findElement(By.xpath("//a[text()='Log out']")).click();
+        driver.findElement(DemoWebshop_HomePage.btn_Logout).click();
         System.out.println("Clicked on Log out Button");
 
         Thread.sleep(6000);
