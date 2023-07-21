@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pages.DemoWebShop_OrdersPage;
+import pages.DemoWebshop_HomePage;
+import pages.DemoWebshop_LoginPage;
 import utilities.CommonUtils;
 
 import java.util.HashMap;
@@ -24,15 +27,15 @@ public class TC15_DemoWebShop_TotalOrders {
         WebDriver driver = CommonUtils.browserLaunch("chrome");
 
         driver.get("https://demowebshop.tricentis.com/");
-        driver.findElement(By.xpath("//a[text()='Log in']")).click();
-        driver.findElement(By.xpath("//input[@id='Email']")).sendKeys("aarosagarch@gmail.com");
-        driver.findElement(By.xpath("//input[@id='Password']")).sendKeys("Admin@123");
-        driver.findElement(By.xpath("//input[@value='Log in']")).click();
-        driver.findElement(By.xpath("(//a[@class='account'])[1]")).click();
-        driver.findElement(By.xpath("//a[text()='Orders' and @class='inactive']")).click();
-        List<WebElement> OrderNumbers = driver.findElements(By.xpath("//div[@class='section order-item']/div/strong"));
+        driver.findElement(DemoWebshop_LoginPage.link_Login).click();
+        driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys("aarosagarch@gmail.com");
+        driver.findElement(DemoWebshop_LoginPage.txtbx_Passwod).sendKeys("Admin@123");
+        driver.findElement(DemoWebshop_LoginPage.btn_Login).click();
+        driver.findElement(DemoWebshop_HomePage.link_Email).click();
+        driver.findElement(DemoWebShop_OrdersPage.link_Orders).click();
+        List<WebElement> OrderNumbers = driver.findElements(DemoWebShop_OrdersPage.listOfAllOrders);
         System.out.println("Total number of orders is :" + OrderNumbers.size());
-        List<WebElement> OrderTotal = driver.findElements(By.xpath("//li[contains(text(),'Order Total')]"));
+        List<WebElement> OrderTotal = driver.findElements(DemoWebShop_OrdersPage.listOfAllOrderTotal);
         String temp = "", temp1 = "", temp2 = "";
         float TotalValue = 0.0f;
         Float OrderValue = null;
@@ -49,14 +52,14 @@ public class TC15_DemoWebShop_TotalOrders {
         System.out.println("The total value of all orders placed is : " + TotalValue);
 
         HashMap<String, Double> map_DayWiseOrders = new HashMap<String, Double>();
-        List<WebElement> elements_allOrders = driver.findElements(By.xpath("//div[@class='page account-page order-list-page']//ul/li[2]"));
+        List<WebElement> elements_allOrders = driver.findElements(DemoWebShop_OrdersPage.listOfOrdersDayWise);
         //List<WebElement> elements_allOrders=listOfOrdersForDayWise;
         for (WebElement element_Order : elements_allOrders) {
             String orderDate = element_Order.getText();
             orderDate = orderDate.split(":")[1].trim();
             orderDate = orderDate.split(" ")[0];
 
-            String orderValue = element_Order.findElement(By.xpath("./../li[3]")).getText();
+            String orderValue = element_Order.findElement(DemoWebShop_OrdersPage.orderValue).getText();
             orderValue = orderValue.split(":")[1].trim();
             Double dOrderValue = Double.parseDouble(orderValue);
 
