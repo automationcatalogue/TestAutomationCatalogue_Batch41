@@ -27,9 +27,9 @@ public class TC15_DemoWebShop_TotalOrders {
         WebDriver driver = CommonUtils.browserLaunch("chrome");
 
         driver.get("https://demowebshop.tricentis.com/");
-        driver.findElement(DemoWebshop_LoginPage.link_Login).click();
+        driver.findElement(DemoWebshop_HomePage.link_Login).click();
         driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys("aarosagarch@gmail.com");
-        driver.findElement(DemoWebshop_LoginPage.txtbx_Passwod).sendKeys("Admin@123");
+        driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys("Admin@123");
         driver.findElement(DemoWebshop_LoginPage.btn_Login).click();
         driver.findElement(DemoWebshop_HomePage.link_Email).click();
         driver.findElement(DemoWebShop_OrdersPage.link_Orders).click();
