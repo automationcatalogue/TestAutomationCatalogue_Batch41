@@ -12,4 +12,15 @@ public class DemoWebshop_CartPage {
     public static By txtbx_Address = By.xpath("(//a[text()='Addresses'])[1]");
     public static By Link_Address = By.xpath("//div[contains(@class,'st-page')]/div[2]/div[1]/div/div[1]");
 
+    public static By txt_BeforeDiscountTotal = By.xpath("//span[@class='product-price order-total']/strong");
+    public static By txtbx_Coupon = By.xpath("(//div[@class='coupon-code']//input)[1]");
+    public static By txt_EnterCoupon = By.xpath("//input[@name='discountcouponcode']");
+    public static By btn_ApplyCoupon = By.xpath("//input[@name='applydiscountcouponcode']");
+    public static By getTxt_MessagePrinted = By.xpath("//div[@class='message']");
+    public static By txt_DiscountAmount = By.xpath("//span[contains(text(),'Discount')]/..//following-sibling::td/span/span");
+    public static By txt_AfterDiscountTotal = By.xpath("//span[@class='product-price order-total']/strong");
+    public static By checkbox_Iagree = By.xpath("//input[@id='termsofservice']");
+    public static By btn_Checkout = By.xpath("//button[@value='checkout']");
+
+
 }
