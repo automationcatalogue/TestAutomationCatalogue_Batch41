@@ -1,8 +1,13 @@
 package testcases.demoWebshop;
 
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -11,6 +16,7 @@ import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
 import utilities.CommonUtils;
 
+import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +24,35 @@ import java.util.Set;
 
 
 public class TC15_DemoWebShop_TotalOrders {
+
+
+    static FileInputStream fis;
+    static XSSFWorkbook wbk;
+    static XSSFSheet sh;
+    static XSSFRow row;
+    static XSSFCell cell_userName;
+    static String userName;
+    static XSSFCell cell_password;
+    static String password;
+
+    @BeforeClass
+    public void prerequisite_setup() throws Exception {
+        String projectPath = System.getProperty("user.dir");
+        fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+        wbk = new XSSFWorkbook(fis);
+        sh = wbk.getSheet("DemoWebShop_TotalOrders");
+        row = sh.getRow(1);
+
+        cell_userName = row.getCell(3);
+        userName = cell_userName.getStringCellValue();
+        System.out.println("UserName from excel sheet is :" + userName);
+
+        cell_password = row.getCell(4);
+        password = cell_password.getStringCellValue();
+        System.out.println("Password from excel sheet is:" + password);
+
+    }
+
 
     @Test
     @Parameters({"browserName"})
@@ -28,8 +63,8 @@ public class TC15_DemoWebShop_TotalOrders {
 
         driver.get("https://demowebshop.tricentis.com/");
         driver.findElement(DemoWebshop_HomePage.link_Login).click();
-        driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys("aarosagarch@gmail.com");
-        driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys("Admin@123");
+        driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys(userName);
+        driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys(password);
         driver.findElement(DemoWebshop_LoginPage.btn_Login).click();
         driver.findElement(DemoWebshop_HomePage.link_Email).click();
         driver.findElement(DemoWebShop_OrdersPage.link_Orders).click();
