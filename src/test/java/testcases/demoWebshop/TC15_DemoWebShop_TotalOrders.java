@@ -7,16 +7,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.DemoWebShop_OrdersPage;
 import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
 import utilities.CommonUtils;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,9 +33,19 @@ public class TC15_DemoWebShop_TotalOrders {
     static XSSFCell cell_password;
     static String password;
 
+    static XSSFCell cell_TotalNumberOfOrders;
+
+    static XSSFCell cell_SumOfAllOrders;
+    static String TotalNumberOfOrders;
+
+    static  String SumOfAllOrders;
+
+    static FileOutputStream fos;
+    static String projectPath;
+
     @BeforeClass
     public void prerequisite_setup() throws Exception {
-        String projectPath = System.getProperty("user.dir");
+        projectPath = System.getProperty("user.dir");
         fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         wbk = new XSSFWorkbook(fis);
         sh = wbk.getSheet("DemoWebShop_TotalOrders");
@@ -69,6 +77,7 @@ public class TC15_DemoWebShop_TotalOrders {
         driver.findElement(DemoWebshop_HomePage.link_Email).click();
         driver.findElement(DemoWebShop_OrdersPage.link_Orders).click();
         List<WebElement> OrderNumbers = driver.findElements(DemoWebShop_OrdersPage.listOfAllOrders);
+        TotalNumberOfOrders = String.valueOf((int) OrderNumbers.size());
         System.out.println("Total number of orders is :" + OrderNumbers.size());
         List<WebElement> OrderTotal = driver.findElements(DemoWebShop_OrdersPage.listOfAllOrderTotal);
         String temp = "", temp1 = "", temp2 = "";
@@ -82,6 +91,9 @@ public class TC15_DemoWebShop_TotalOrders {
             temp = str1[1];
             OrderValue = Float.valueOf(temp);
             TotalValue = TotalValue + OrderValue;
+
+            SumOfAllOrders = String.valueOf(TotalValue);
+
 
         }
         System.out.println("The total value of all orders placed is : " + TotalValue);
@@ -111,7 +123,35 @@ public class TC15_DemoWebShop_TotalOrders {
         for (Map.Entry<String, Double> eachEntry_Daywise : allEntries_Daywise) {
             System.out.println("Order Date is :" + eachEntry_Daywise.getKey() + " Sum of all Orders :" + eachEntry_Daywise.getValue());
         }
+       driver.close();
+    }
 
+    @AfterClass
+    public void tearDown() throws Exception {
+
+        cell_TotalNumberOfOrders = row.getCell(5);
+        cell_SumOfAllOrders = row.getCell(6);
+
+        if(cell_TotalNumberOfOrders==null){
+            cell_TotalNumberOfOrders=row.createCell(5);
+        }
+        cell_TotalNumberOfOrders.setCellValue(TotalNumberOfOrders);
+        fos = new FileOutputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+        wbk.write(fos);
+        System.out.println(TotalNumberOfOrders+" is written back to the Excel file");
+
+        if(cell_SumOfAllOrders==null)
+        {
+            cell_SumOfAllOrders=row.createCell(6);
+        }
+        cell_SumOfAllOrders.setCellValue(SumOfAllOrders);
+        fos = new FileOutputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+        wbk.write(fos);
+        System.out.println(SumOfAllOrders+" is written back to the Excel file");
+        fos.close();
+        System.out.println("ExcelFile Writing is closed");
+        fis.close();
+        System.out.println("ExcelFile reading is closed");
     }
 
 }
