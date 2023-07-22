@@ -14,6 +14,7 @@ import utilities.CommonUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.time.Duration;
 
 public class TC14_DemoWebshop_ReOrder {
@@ -26,10 +27,14 @@ public class TC14_DemoWebshop_ReOrder {
     static String userName;
     static XSSFCell cell_password;
     static String password;
+    static XSSFCell cell_OrderNumber;
+    static String orderNumber;
+    static FileOutputStream fos;
+    static String projectPath;
 
     @BeforeClass
     public void prerequisite_setup() throws Exception {
-        String projectPath = System.getProperty("user.dir");
+        projectPath = System.getProperty("user.dir");
         fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         wbk = new XSSFWorkbook(fis);
         sh = wbk.getSheet("DemoWebshop_ReOrder");
@@ -42,6 +47,7 @@ public class TC14_DemoWebshop_ReOrder {
         cell_password = row.getCell(4);
         password = cell_password.getStringCellValue();
         System.out.println("Password from excel sheet is:" + password);
+
 
     }
 
@@ -104,8 +110,8 @@ public class TC14_DemoWebshop_ReOrder {
 
         WebElement element_OrderNumber = driver.findElement(DemoWebshop_CheckoutPage.txt_OrderNumber);
         if (element_OrderNumber.isDisplayed()) {
-            String ordernumber = element_OrderNumber.getText();
-            System.out.println("order number is generated " + ordernumber);
+            orderNumber = element_OrderNumber.getText();
+            System.out.println("order number is generated " + orderNumber);
         } else {
             System.out.println("OrderNumber is not generated");
         }
@@ -119,6 +125,18 @@ public class TC14_DemoWebshop_ReOrder {
 
     @AfterClass
     public void tearDown() throws Exception {
+
+        cell_OrderNumber = row.getCell(5);
+        if(cell_OrderNumber==null){
+            cell_OrderNumber=row.createCell(5);
+        }
+        cell_OrderNumber.setCellValue(orderNumber);
+        fos = new FileOutputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+        wbk.write(fos);
+        System.out.println(orderNumber+" is written back to the Excel file");
+
+        fos.close();
+        System.out.println("ExcelFile Writing is closed");
         fis.close();
         System.out.println("ExcelFile reading is closed");
     }
