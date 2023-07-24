@@ -1,19 +1,59 @@
 package testcases.demoWebshop;
 
 import javaPrograms.assignments.Assignment_16.D;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.*;
 import utilities.CommonUtils;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.time.Duration;
 
 public class TC18_DemoWebshop_ApplyDiscount {
+        static FileInputStream fis;
+        static XSSFWorkbook wbk;
+        static XSSFSheet sh;
+        static XSSFRow row;
+        static XSSFCell cell_userName;
+        static String userName;
+        static XSSFCell cell_password;
+        static String password;
+        static XSSFCell cell_ApplyCoupon;
+        static String ApplyCoupon;
+        static XSSFCell cell_OrderNumber;
+        static String orderNumber;
+        static FileOutputStream fos;
+        static String projectPath;
+
+        @BeforeClass
+        public void prerequisite_setup() throws Exception {
+                projectPath = System.getProperty("user.dir");
+                fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+                wbk = new XSSFWorkbook(fis);
+                sh = wbk.getSheet("DemoWebshop_ApplyDiscount");
+                row = sh.getRow(1);
+
+                cell_userName = row.getCell(3);
+                userName = cell_userName.getStringCellValue();
+                System.out.println("UserName from excel sheet is :" + userName);
+
+                cell_password = row.getCell(4);
+                password = cell_password.getStringCellValue();
+                System.out.println("Password from excel sheet is:" + password);
+
+                cell_ApplyCoupon =row.getCell(5);
+                ApplyCoupon = cell_ApplyCoupon.getStringCellValue();
+                System.out.println("ApplyCoupon from excel sheet is:" + ApplyCoupon);
+
+        }
 
     @Test
     @Parameters({"browserName"})
@@ -28,10 +68,10 @@ public class TC18_DemoWebshop_ApplyDiscount {
             driver.findElement(DemoWebshop_HomePage.link_Login).click();
             System.out.println("Login link is clicked");
 
-            driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys("aarosagarch@gmail.com");
+            driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys(userName);
             System.out.println("Email ID is entered");
 
-            driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys("Admin@123");
+            driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys(password);
             System.out.println("Password is entered");
 
             driver.findElement(DemoWebshop_LoginPage.btn_Login).click();
@@ -53,7 +93,7 @@ public class TC18_DemoWebshop_ApplyDiscount {
             driver.findElement(DemoWebshop_CartPage.txtbx_Coupon).click();
             System.out.println("coupon test box is clicked");
 
-            driver.findElement(DemoWebshop_CartPage.txt_EnterCoupon).sendKeys("AutomationDiscount2");
+            driver.findElement(DemoWebshop_CartPage.txt_EnterCoupon).sendKeys(ApplyCoupon);
             System.out.println("coupon code is Entered");
 
             driver.findElement(DemoWebshop_CartPage.btn_ApplyCoupon).click();
@@ -107,8 +147,8 @@ public class TC18_DemoWebshop_ApplyDiscount {
 
             WebElement element_OrderNumber = driver.findElement(DemoWebshop_CheckoutPage.txt_OrderNumber);
             if(element_OrderNumber.isDisplayed()){
-                String ordernumber = element_OrderNumber.getText();
-                System.out.println("order number is generated "+ordernumber);
+                    orderNumber = element_OrderNumber.getText();
+                System.out.println("order number is generated "+orderNumber);
             }else{
                 System.out.println("OrderNumber is not generated");
             }
@@ -119,5 +159,24 @@ public class TC18_DemoWebshop_ApplyDiscount {
             driver.close();
 
         }
+
+        @AfterClass
+        public void tearDown() throws Exception {
+
+                cell_OrderNumber = row.getCell(6);
+                if(cell_OrderNumber==null){
+                        cell_OrderNumber=row.createCell(6);
+                }
+                cell_OrderNumber.setCellValue(orderNumber);
+                fos = new FileOutputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+                wbk.write(fos);
+                System.out.println(orderNumber+" is written back to the Excel file");
+
+                fos.close();
+                System.out.println("ExcelFile Writing is closed");
+                fis.close();
+                System.out.println("ExcelFile reading is closed");
+        }
 }
+
 
