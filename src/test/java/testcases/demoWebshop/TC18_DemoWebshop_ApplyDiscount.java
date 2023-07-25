@@ -35,6 +35,8 @@ public class TC18_DemoWebshop_ApplyDiscount {
 
         @BeforeClass
         public void prerequisite_setup() throws Exception {
+                System.out.println("Pre Requisites Setup");
+                System.out.println("Apply discount testcase");
                 projectPath = System.getProperty("user.dir");
                 fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
                 wbk = new XSSFWorkbook(fis);
