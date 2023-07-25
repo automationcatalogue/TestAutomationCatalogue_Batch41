@@ -20,8 +20,7 @@ public class TC03_OrangeHRM_AddUser {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         String userName="CharlieABCG";
 
-        //Open the Orange HRM Application https://automation41-trials79.orangehrmlive.com
-        driver.get("https://testcataloguea-trials79.orangehrmlive.com/auth/login");
+        driver.get("https://seleniumautom-trials710.orangehrmlive.com");
 
         //Enter the UserName as "Admin"
         driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys("Admin");

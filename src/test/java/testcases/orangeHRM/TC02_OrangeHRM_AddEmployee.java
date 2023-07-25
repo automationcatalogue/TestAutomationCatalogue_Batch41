@@ -17,7 +17,7 @@ public class TC02_OrangeHRM_AddEmployee {
 
         WebDriver driver = CommonUtils.browserLaunch("Chrome");
 
-        driver.get("https://testcataloguea-trials79.orangehrmlive.com");
+        driver.get("https://seleniumautom-trials710.orangehrmlive.com");
         System.out.println("OrangeHRM website is launched");
 
         String title = driver.getTitle();
