@@ -1,10 +1,15 @@
 package testcases.orangeHRM;
 
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -12,11 +17,50 @@ import pages.*;
 import utilities.CommonUtils;
 
 
+import java.io.FileInputStream;
 import java.sql.Driver;
 import java.time.Duration;
 import java.util.List;
 public class TC04_OrangeHRM_EditEmployee {
+    String projectPath;
+    FileInputStream fis;
+    XSSFWorkbook wbk;
+    XSSFSheet ws;
+    XSSFRow row;
+    XSSFCell userName_cell;String userName;
+    XSSFCell passWord_cell;String passWord;
+    XSSFCell lastName_Cell;String lastName;
+    XSSFCell DateOfBirth_Cell;String DateOfBirth;
+    XSSFCell nationality_Cell;String nationality;
+    XSSFCell allergies_Cell;String allergies;
+    XSSFCell dietaryRequire1_Cell;String dietaryRequire1;
+    XSSFCell dietaryRequire2_Cell;String dietaryRequire2;
+    @BeforeClass
+    public void prerequisite_Setup() throws Exception{
+        projectPath = System.getProperty("user dir");
+        fis = new FileInputStream(projectPath+"src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+        wbk = new XSSFWorkbook(fis);
+        ws = wbk.getSheet("OrangeHRM_EditEmployee");
+        row = ws.getRow(1);
+        userName_cell = row.getCell(3);
+        userName=userName_cell.getStringCellValue();
+        passWord_cell = row.getCell(4);
+        passWord = passWord_cell.getStringCellValue();
+        lastName_Cell = row.getCell(5);
+        lastName = lastName_Cell.getStringCellValue();
+        DateOfBirth_Cell = row.getCell(6);
+        DateOfBirth = DateOfBirth_Cell.getStringCellValue();
+        nationality_Cell = row.getCell(7);
+        nationality = nationality_Cell.getStringCellValue();
+        allergies_Cell = row.getCell(8);
+        allergies = allergies_Cell.getStringCellValue();
+        dietaryRequire1_Cell = row.getCell(9);
+        dietaryRequire1 = dietaryRequire1_Cell.getStringCellValue();
+        dietaryRequire2_Cell = row.getCell(10);
+        dietaryRequire2 = dietaryRequire2_Cell.getStringCellValue();
 
+
+    }
    @Test
    @Parameters({"browserName"})
     public void EditEmployee(@Optional("chrome") String browserName) throws Exception{
@@ -25,15 +69,14 @@ public class TC04_OrangeHRM_EditEmployee {
        JavascriptExecutor js = (JavascriptExecutor)driver;
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
 
-
         driver.get("https://testcataloguea-trials79.orangehrmlive.com");
         System.out.println("OrangeHRM website is launched");
 
 
-        driver.findElement(OrangeHRM_LoginPage.txtbx_userName).sendKeys("Admin");
+        driver.findElement(OrangeHRM_LoginPage.txtbx_userName).sendKeys(userName);
         System.out.println("Admin is entered as a UserName");
 
-        driver.findElement(OrangeHRM_LoginPage.txtbx_Password).sendKeys("Admin@123");
+        driver.findElement(OrangeHRM_LoginPage.txtbx_Password).sendKeys(passWord);
         System.out.println("Admin@123 is entered a Password");
 
         driver.findElement(OrangeHRM_LoginPage.btn_Login).click();
@@ -60,13 +103,13 @@ public class TC04_OrangeHRM_EditEmployee {
         driver.findElement(OrangeHRM_EditEmployeePage.txtBox_LastName).clear();
         System.out.println("Cleared the last name");
 
-        driver.findElement(OrangeHRM_EditEmployeePage.txtBox_LastName).sendKeys("Naidu");
+        driver.findElement(OrangeHRM_EditEmployeePage.txtBox_LastName).sendKeys(lastName);
         System.out.println("Updated the last name");
 
         driver.findElement(OrangeHRM_EditEmployeePage.link_DateOfBirthIcon).click();
         System.out.println("Date picker icon is clicked");
 
-        String date = "23-January-1990";
+        String date = DateOfBirth;
         String date_Array[]=date.split("-");
         String day=date_Array[0];
         String month=date_Array[1];
@@ -112,9 +155,13 @@ public class TC04_OrangeHRM_EditEmployee {
             }
         }
         driver.findElement(OrangeHRM_EditEmployeePage.dropDown_Nationality).click();
-        driver.findElement(OrangeHRM_EditEmployeePage.txt_IndiaDropDown).click();
-        System.out.println("Nationality selected as Indian");
 
+        if(nationality=="India") {
+            driver.findElement(OrangeHRM_EditEmployeePage.txt_IndiaDropDown).click();
+            System.out.println("Nationality selected as Indian");
+        }else {
+            System.out.println("Nationality is not Found");
+        }
         driver.findElement(OrangeHRM_EditEmployeePage.btn_FirstSave).click();
         System.out.println("Clicked on first save button");
 
@@ -125,9 +172,12 @@ public class TC04_OrangeHRM_EditEmployee {
             System.out.println("Not Successful");
         }
 
-        driver.findElement(OrangeHRM_EditEmployeePage.radioBtn_NoAllergies).click();
-        System.out.println("Radio Button for NO is selected");
-
+        if(allergies=="No") {
+            driver.findElement(OrangeHRM_EditEmployeePage.radioBtn_NoAllergies).click();
+            System.out.println("Radio Button for NO is selected");
+        }else {
+            System.out.println("Allergies radio Button is not clicked");
+        }
         driver.findElement(OrangeHRM_EditEmployeePage.btn_SecondSave).click();
         System.out.println("Clicked on Hygiene save button");
 
@@ -138,26 +188,55 @@ public class TC04_OrangeHRM_EditEmployee {
             System.out.println("Hygiene is not Successful Updated");
         }
 
-        for(int i=1;i<=3;++i){
-            try{
-                Thread.sleep(1000);
-                driver.findElement(OrangeHRM_EditEmployeePage.checkBox_Kosher).click();
-                System.out.println("Dietary Requirements check-box Koshler is clicked");
-                break;
-            }catch(StaleElementReferenceException se){
-                System.out.println("Stale Element Reference Exception is occurred for "+i+" time");
+        if(dietaryRequire1=="Koshler") {
+            for (int i = 1; i <= 3; ++i) {
+                try {
+                    Thread.sleep(1000);
+                    driver.findElement(OrangeHRM_EditEmployeePage.checkBox_Kosher).click();
+                    System.out.println("Dietary Requirements check-box Koshler is clicked");
+                    break;
+                } catch (StaleElementReferenceException se) {
+                    System.out.println("Stale Element Reference Exception is occurred for " + i + " time");
+                }
             }
+        } else if (dietaryRequire1=="Vegetarian") {
+            for (int i = 1; i <= 3; ++i) {
+                try {
+                    driver.findElement(OrangeHRM_EditEmployeePage.checkBox_Vegetarian).click();
+                    System.out.println("Dietary Requirements check-box Vegeterian is clicked");
+                    break;
+                } catch (StaleElementReferenceException se) {
+                    System.out.println("Stale Element Reference Exception is occurred for " + i + " time");
+                }
+            }
+        }else {
+            System.out.println("Dietary Requirements (1) are not available ");
         }
 
-        for(int i=1;i<=3;++i){
-            try{
-                driver.findElement(OrangeHRM_EditEmployeePage.checkBox_Vegetarian).click();
-                System.out.println("Dietary Requirements check-box Vegeterian is clicked");
-                break;
-            }catch(StaleElementReferenceException se){
-                System.out.println("Stale Element Reference Exception is occurred for "+i+" time");
-            }
-        }
+       if(dietaryRequire2=="Koshler") {
+           for (int i = 1; i <= 3; ++i) {
+               try {
+                   Thread.sleep(1000);
+                   driver.findElement(OrangeHRM_EditEmployeePage.checkBox_Kosher).click();
+                   System.out.println("Dietary Requirements check-box Koshler is clicked");
+                   break;
+               } catch (StaleElementReferenceException se) {
+                   System.out.println("Stale Element Reference Exception is occurred for " + i + " time");
+               }
+           }
+       } else if (dietaryRequire2=="Vegetarian") {
+           for (int i = 1; i <= 3; ++i) {
+               try {
+                   driver.findElement(OrangeHRM_EditEmployeePage.checkBox_Vegetarian).click();
+                   System.out.println("Dietary Requirements check-box Vegeterian is clicked");
+                   break;
+               } catch (StaleElementReferenceException se) {
+                   System.out.println("Stale Element Reference Exception is occurred for " + i + " time");
+               }
+           }
+       }else {
+           System.out.println("Dietary Requirements (2) are not available ");
+       }
 
         System.out.println("clicked on Kosher and Vegetarian check boxes");
 
