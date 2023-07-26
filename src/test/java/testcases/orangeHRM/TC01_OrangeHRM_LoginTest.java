@@ -51,7 +51,7 @@ public class TC01_OrangeHRM_LoginTest {
 
         WebDriver driver = CommonUtils.browserLaunch(browserName);
 
-        driver.get("https://testcataloguea-trials79.orangehrmlive.com");
+        driver.get("https://seleniumautom-trials710.orangehrmlive.com");
         driver.findElement(OrangeHRM_LoginPage.txtbx_userName).sendKeys(userName);
         driver.findElement(OrangeHRM_LoginPage.txtbx_Password).sendKeys(password);
         driver.findElement(OrangeHRM_LoginPage.btn_Login).click();

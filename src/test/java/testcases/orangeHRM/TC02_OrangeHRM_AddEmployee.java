@@ -67,7 +67,11 @@ public class TC02_OrangeHRM_AddEmployee {
 
         WebDriver driver = CommonUtils.browserLaunch("Chrome");
 
-        driver.get("https://seleniumautom-trials710.orangehrmlive.com/");
+        Automation_Ramya
+        driver.get("https://seleniumautom-trials710.orangehrmlive.com");
+
+        driver.get("https://seleniumautom-trials710.orangehrmlive.com");
+        master
         System.out.println("OrangeHRM website is launched");
 
         String title = driver.getTitle();

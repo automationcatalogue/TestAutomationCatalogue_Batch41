@@ -69,7 +69,7 @@ public class TC04_OrangeHRM_EditEmployee {
        JavascriptExecutor js = (JavascriptExecutor)driver;
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
 
-        driver.get("https://testcataloguea-trials79.orangehrmlive.com");
+        driver.get("https://seleniumautom-trials710.orangehrmlive.com");
         System.out.println("OrangeHRM website is launched");
 
 
