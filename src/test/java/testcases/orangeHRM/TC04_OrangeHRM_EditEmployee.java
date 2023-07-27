@@ -37,8 +37,8 @@ public class TC04_OrangeHRM_EditEmployee {
     XSSFCell dietaryRequire2_Cell;String dietaryRequire2;
     @BeforeClass
     public void prerequisite_Setup() throws Exception{
-        projectPath = System.getProperty("user dir");
-        fis = new FileInputStream(projectPath+"src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+        projectPath=System.getProperty("user.dir");
+        fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         wbk = new XSSFWorkbook(fis);
         ws = wbk.getSheet("OrangeHRM_EditEmployee");
         row = ws.getRow(1);
