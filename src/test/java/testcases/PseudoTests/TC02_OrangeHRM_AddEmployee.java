@@ -15,8 +15,7 @@ public class TC02_OrangeHRM_AddEmployee {
         System.out.println("Chrome Browser window is maximized");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-
-        driver.get("https://testcataloguea-trials79.orangehrmlive.com");
+        driver.get("https://seleniumautom-trials710.orangehrmlive.com");
         System.out.println("OrangeHRM website is launched");
 
         String title = driver.getTitle();
