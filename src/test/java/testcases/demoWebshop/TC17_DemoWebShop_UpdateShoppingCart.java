@@ -104,12 +104,12 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
           System.out.println("Update Quantity is not successful for Book Item!!!");
       }
 
-      String text_JewelPrice = driver.findElement(By.xpath("//table[@class='cart']/tbody/tr[2]/td[4]/span[2]")).getText();
-      String text_updatedQutyJew = driver.findElement(By.xpath("//table[@class='cart']/tbody/tr[2]//input[contains(@name,'itemquantity')]")).getAttribute("value");
+      String text_JewelPrice = driver.findElement(DemoWebshop_CartPage.txt_PriceSecondItem).getText();
+      String text_updatedQutyJew = driver.findElement(DemoWebshop_CartPage.txtbx_SecondItemQty).getAttribute("value");
       if(actual_updateQty.equalsIgnoreCase(text_updatedQutyJew)){
 
           System.out.println("Update Quantity is successful for Jewel Item!!!");
-          String text_JewelTotalPrice = driver.findElement(By.xpath("(//table[@class='cart']/tbody/tr)[2]/td[6]/span[2]")).getText();
+          String text_JewelTotalPrice = driver.findElement(DemoWebshop_CartPage.txt_SecondItemTotal).getText();
 
           double JewelPrice = Double.parseDouble(text_JewelPrice);
           double updateQty = Double.parseDouble(text_updatedQuty);
@@ -126,14 +126,14 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
           System.out.println("Update Quantity is not successful for Jewel Item!!!");
       }
 
-      String text_BookTotalPrice = driver.findElement(By.xpath("(//table[@class='cart']/tbody/tr)[1]/td[6]/span[2]")).getText();
+      String text_BookTotalPrice = driver.findElement(DemoWebshop_CartPage.txt_FirstItemTotal).getText();
       double dou_BookTotalPrice = Double.parseDouble(text_BookTotalPrice);
-      String text_JewelTotalPrice = driver.findElement(By.xpath("(//table[@class='cart']/tbody/tr)[2]/td[6]/span[2]")).getText();
+      String text_JewelTotalPrice = driver.findElement(DemoWebshop_CartPage.txt_SecondItemTotal).getText();
       double dou_JewelTotalPrice = Double.parseDouble(text_JewelTotalPrice);
 
 
       double grandTotal=dou_BookTotalPrice+dou_JewelTotalPrice;
-      String actualTotal=driver.findElement(By.xpath("//table[@class='cart-total']//tr[4]/td[2]/span/span")).getText();
+      String actualTotal=driver.findElement(DemoWebshop_CartPage.txt_ActualGrandTotal).getText();
       double TOTAL=Double.parseDouble(actualTotal);
 
       if(grandTotal==TOTAL){
@@ -142,38 +142,33 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
           System.out.println("Cart total is not accurate");
       }
 
-      driver.findElement(By.xpath("//input[@id='termsofservice']")).click();
+      driver.findElement(DemoWebshop_CartPage.checkbox_Iagree).click();
       System.out.println("Check-box is clicked");
 
-      driver.findElement(By.xpath("//button[@value='checkout']")).click();
+      driver.findElement(DemoWebshop_CartPage.btn_Checkout).click();
       System.out.println("Checkout button is clicked");
 
-      driver.findElement(By.xpath("//input[@onclick='Billing.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_BillingContinue).click();
       System.out.println("Continue button is clicked under Billing Address");
 
-      driver.findElement(By.xpath("//input[@onclick='Shipping.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_ShippingAddress).click();
       System.out.println("Continue button is clicked under Shipping Address");
 
-      driver.findElement(By.xpath("//input[@onclick='ShippingMethod.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_ShippingMethod).click();
       System.out.println("Continue button is clicked under Shipping Method");
 
-      driver.findElement(By.xpath("//input[@onclick='PaymentMethod.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_PaymentMethod).click();
       System.out.println("Continue button is clicked under Payment Method");
 
-      driver.findElement(By.xpath("//input[@onclick='PaymentInfo.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_PaymentInformation).click();
       System.out.println("Continue button is clicked under Payment Information");
 
-      driver.findElement(By.xpath("//input[@onclick='ConfirmOrder.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_ConfirmOrder).click();
       System.out.println("Confirm button is clicked under Confirm Order");
 
-      String Ordernumber = driver.findElement(By.xpath("//ul[@class='details']/li[1]")).getText();
-      System.out.println(Ordernumber);
+      String Ordernumber = driver.findElement(DemoWebshop_CheckoutPage.txt_OrderNumber).getText();
+      System.out.println("Order Number:"+Ordernumber);
 
-      if(Ordernumber.equalsIgnoreCase(Ordernumber)){
-          System.out.println("order number is printed");
-      }else{
-          System.out.println("order number is not printed");
-      }
 
       driver.findElement(By.xpath("//a[@href='/logout']")).click();
       System.out.println("log out is clicked");

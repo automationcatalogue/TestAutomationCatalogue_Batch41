@@ -117,7 +117,7 @@ public class TC04_OrangeHRM_EditEmployee {
 
         //month selector
         driver.findElement(OrangeHRM_EditEmployeePage.monthDropDown_DateOfBirth).click();
-        //Thread.sleep(5000);
+        Thread.sleep(5000);
         List<WebElement> list_month = driver.findElements(OrangeHRM_EditEmployeePage.monthsList_DateOfBirth);
         for (WebElement mon:list_month)
         {
