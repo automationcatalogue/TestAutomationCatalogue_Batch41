@@ -170,7 +170,7 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
       System.out.println("Order Number:"+Ordernumber);
 
 
-      driver.findElement(By.xpath("//a[@href='/logout']")).click();
+      driver.findElement(DemoWebshop_HomePage.btn_Logout).click();
       System.out.println("log out is clicked");
 
       driver.quit();
