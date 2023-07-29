@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import pages.*;
+import utilities.BaseClass;
 import utilities.CommonUtils;
 
 import java.io.FileInputStream;
@@ -47,6 +48,8 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
   @Parameters({"browserName"})
     public void Update_ShoppingCart(@Optional("chrome")String browserName){
        WebDriver driver = CommonUtils.browserLaunch("Chrome");
+       BaseClass ob = new BaseClass(driver);
+
        driver.manage().window().maximize();
        JavascriptExecutor js = (JavascriptExecutor) driver;
        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -56,16 +59,9 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
       driver.findElement(DemoWebshop_HomePage.link_Login).click();
       System.out.println("Clicked on the login link");
 
-      driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys(userName);
-      System.out.println("Entered Email id");
+      DemoWebshop_LoginPage.login(userName,passWord);
 
-      driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys(passWord);
-      System.out.println("Password is Entered");
-
-      driver.findElement(DemoWebshop_LoginPage.btn_Login).click();
-      System.out.println("Clicked on the Login button");
-
-      driver.findElement(DemoWebshop_HomePage.link_HeaderBooks).click();
+      /*driver.findElement(DemoWebshop_HomePage.link_HeaderBooks).click();
       System.out.println("Clicked on Books link");
 
       driver.findElement(DemoWebshop_BooksPage.link_FirstItem).click();
@@ -222,7 +218,7 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
         fos.close();
         System.out.println("Excel File Writing is closed");
         fis.close();
-        System.out.println("Excel File reading is closed");
+        System.out.println("Excel File reading is closed");*/
     }
 }
 
