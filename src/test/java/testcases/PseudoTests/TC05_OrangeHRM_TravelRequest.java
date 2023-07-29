@@ -19,7 +19,7 @@ public class TC05_OrangeHRM_TravelRequest{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        driver.get("https://testcataloguea-trials79.orangehrmlive.com");
+        driver.get("https://seleniumautom-trials710.orangehrmlive.com");
         System.out.println("OrangeHRM website is launched");
 
         driver.findElement(By.cssSelector("#txtUsername")).sendKeys("Admin");
