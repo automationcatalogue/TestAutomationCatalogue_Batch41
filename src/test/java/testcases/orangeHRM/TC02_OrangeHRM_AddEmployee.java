@@ -16,6 +16,7 @@ import pages.OrangeHRM_AddEmployeePage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
 import pages.OrangeHRM_LogoutPage;
+import utilities.BaseClass;
 import utilities.CommonUtils;
 
 
@@ -66,6 +67,7 @@ public class TC02_OrangeHRM_AddEmployee {
     public void addEmployee(@Optional("chrome") String browserName) throws Exception {
 
         WebDriver driver = CommonUtils.browserLaunch("Chrome");
+        BaseClass ob = new BaseClass(driver);
 
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
         System.out.println("OrangeHRM website is launched");
@@ -73,10 +75,7 @@ public class TC02_OrangeHRM_AddEmployee {
         String title = driver.getTitle();
         System.out.println("Title of the page is:" + title);
 
-        driver.findElement(OrangeHRM_LoginPage.txtbx_userName).sendKeys(userName);
-        driver.findElement(OrangeHRM_LoginPage.txtbx_Password).sendKeys(pswd);
-        driver.findElement(OrangeHRM_LoginPage.btn_Login).click();
-        System.out.println("Logged in as Admin");
+        OrangeHRM_LoginPage.login(userName, pswd);
 
         driver.findElement(OrangeHRM_HomePage.link_EmployeeManagement).click();
         System.out.println("Employee Management is selected");

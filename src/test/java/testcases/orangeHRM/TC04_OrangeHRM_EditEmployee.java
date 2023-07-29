@@ -14,6 +14,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.*;
+import utilities.BaseClass;
 import utilities.CommonUtils;
 
 
@@ -37,7 +38,7 @@ public class TC04_OrangeHRM_EditEmployee {
     XSSFCell dietaryRequire2_Cell;String dietaryRequire2;
     @BeforeClass
     public void prerequisite_Setup() throws Exception{
-        projectPath=System.getProperty("user.dir");
+        projectPath = System.getProperty("user.dir");
         fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         wbk = new XSSFWorkbook(fis);
         ws = wbk.getSheet("OrangeHRM_EditEmployee");
@@ -65,6 +66,7 @@ public class TC04_OrangeHRM_EditEmployee {
    @Parameters({"browserName"})
     public void EditEmployee(@Optional("chrome") String browserName) throws Exception{
        WebDriver driver =CommonUtils.browserLaunch(browserName);
+       BaseClass ob = new BaseClass(driver);
 
        JavascriptExecutor js = (JavascriptExecutor)driver;
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
@@ -117,43 +119,14 @@ public class TC04_OrangeHRM_EditEmployee {
 
         //month selector
         driver.findElement(OrangeHRM_EditEmployeePage.monthDropDown_DateOfBirth).click();
-        Thread.sleep(5000);
-        List<WebElement> list_month = driver.findElements(OrangeHRM_EditEmployeePage.monthsList_DateOfBirth);
-        for (WebElement mon:list_month)
-        {
-            String ActualMonth = mon.getText();
-            if (ActualMonth.equalsIgnoreCase(month)){
-                mon.click();
-                System.out.println("selected"+month);
-                break;
-            }
-        }
+        CommonUtils.selectDropdownValue(OrangeHRM_EditEmployeePage.monthsList_DateOfBirth, month);
 
         //year selector
         driver.findElement(OrangeHRM_EditEmployeePage.yearDropDown_DateOfBirth).click();
-        //Thread.sleep(10000);
-        List<WebElement> list_years = driver.findElements(OrangeHRM_EditEmployeePage.yearsList_DateOfBirth);
-        for( WebElement year_1:list_years )
-        {
-            String ActualYear =year_1.getText();
-            if(ActualYear.equalsIgnoreCase(year)){
-                year_1.click();
-                System.out.println("Selected the year as "+year);
-                break;
-            }
-        }
+        CommonUtils.selectDropdownValue(OrangeHRM_EditEmployeePage.yearsList_DateOfBirth, year);
 
         //date selector
-        //Thread.sleep(2000);
-        List<WebElement> list_date = driver.findElements(OrangeHRM_EditEmployeePage.datesList_DateOfBirth);
-        for(WebElement dt:list_date)
-        {   String ActualDate = dt.getText();
-            if(ActualDate.equalsIgnoreCase(day)){
-                dt.click();
-                System.out.println("date is selected as"+day);
-                break;
-            }
-        }
+        CommonUtils.selectDropdownValue(OrangeHRM_EditEmployeePage.datesList_DateOfBirth, day);
         driver.findElement(OrangeHRM_EditEmployeePage.dropDown_Nationality).click();
 
         if(nationality=="India") {
