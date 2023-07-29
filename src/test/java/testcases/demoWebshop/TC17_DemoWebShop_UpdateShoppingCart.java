@@ -1,18 +1,49 @@
 package testcases.demoWebshop;
 
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.*;
 import utilities.CommonUtils;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.time.Duration;
 
 public class TC17_DemoWebShop_UpdateShoppingCart {
-  @Test
+    String projectPath;
+    FileInputStream fis;
+    FileOutputStream fos;
+    XSSFWorkbook wbk;
+    XSSFSheet ws;
+    XSSFRow row;
+    XSSFCell userName_cell; String userName;
+    XSSFCell passWord_cell; String passWord;
+    XSSFCell length_cell; String jewel_Length;
+    XSSFCell updateQty_cell; String update_Qty;
+    XSSFCell orderNumber_cell; String orderNumber;
+ @BeforeClass
+ public void prerequisite_Setup() throws Exception {
+     projectPath = System.getProperty("user.dir");
+     fis = new FileInputStream(projectPath + "\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+     wbk = new XSSFWorkbook(fis);
+     ws = wbk.getSheet("DemoWebshop_UpdateShoppingCart");
+     row = ws.getRow(1);
+     userName_cell = row.getCell(3);
+     userName = userName_cell.getStringCellValue();
+     passWord_cell = row.getCell(4);
+     passWord = passWord_cell.getStringCellValue();
+     length_cell = row.getCell(5);
+     jewel_Length = length_cell.getStringCellValue();
+     updateQty_cell = row.getCell(6);
+     update_Qty = updateQty_cell.getStringCellValue();
+ }
+     @Test
   @Parameters({"browserName"})
     public void Update_ShoppingCart(@Optional("chrome")String browserName){
        WebDriver driver = CommonUtils.browserLaunch("Chrome");
@@ -25,10 +56,10 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
       driver.findElement(DemoWebshop_HomePage.link_Login).click();
       System.out.println("Clicked on the login link");
 
-      driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys("aarosagarch@gmail.com");
+      driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys(userName);
       System.out.println("Entered Email id");
 
-      driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys("Admin@123");
+      driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys(passWord);
       System.out.println("Password is Entered");
 
       driver.findElement(DemoWebshop_LoginPage.btn_Login).click();
@@ -49,7 +80,7 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
       driver.findElement(DemoWebshop_JewelsPage.link_FirstItem).click();
       System.out.println("Clicked on first item in jewellery ");
 
-      driver.findElement(DemoWebshop_JewelsPage.txtbx_LngthInsideFrstItm).sendKeys("10");
+      driver.findElement(DemoWebshop_JewelsPage.txtbx_LngthInsideFrstItm).sendKeys(jewel_Length);
 
       driver.findElement(DemoWebshop_JewelsPage.btn_AddCartInsideFrstItm).click();
       System.out.println("Clicked on Add to Cart Button in Jewellery");
@@ -57,7 +88,7 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
       driver.findElement(DemoWebshop_HomePage.link_ShoppingCart).click();
       System.out.println("Clicked on Shopping Cart Link");
 
-      String actual_updateQty="2";
+      String actual_updateQty=update_Qty;
 
       WebElement total1 = driver.findElement(DemoWebshop_CartPage.txt_FirstItemTotal);
       String total_1 = total1.getText();
@@ -166,8 +197,8 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
       driver.findElement(DemoWebshop_CheckoutPage.btn_ConfirmOrder).click();
       System.out.println("Confirm button is clicked under Confirm Order");
 
-      String Ordernumber = driver.findElement(DemoWebshop_CheckoutPage.txt_OrderNumber).getText();
-      System.out.println("Order Number:"+Ordernumber);
+      orderNumber = driver.findElement(DemoWebshop_CheckoutPage.txt_OrderNumber).getText();
+      System.out.println("Order Number:"+orderNumber);
 
 
       driver.findElement(DemoWebshop_HomePage.btn_Logout).click();
@@ -176,4 +207,22 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
       driver.quit();
       System.out.println("Browser is closed");
   }
+    @AfterClass
+    public void tearDown() throws Exception {
+
+        orderNumber_cell = row.getCell(7);
+        if(orderNumber_cell==null){
+            orderNumber_cell=row.createCell(7);
+        }
+        orderNumber_cell.setCellValue(orderNumber);
+        fos = new FileOutputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+        wbk.write(fos);
+        System.out.println(orderNumber+" is written back to the Excel file");
+
+        fos.close();
+        System.out.println("Excel File Writing is closed");
+        fis.close();
+        System.out.println("Excel File reading is closed");
+    }
 }
+
