@@ -45,7 +45,7 @@ public class TC12_DemoWebShop_CreateAddress {
         System.out.println("clicked on the email.id");
 
         driver.findElement(By.xpath("(//a[text()='Addresses'])[1]")).click();
-        System.out.println("clicked on adresses ");
+        System.out.println("clicked on addresses ");
 
         driver.findElement(By.xpath("//input[@value='Add new']")).click();
         System.out.println("Clicked on the Add New Button");

@@ -24,6 +24,7 @@ import java.util.List;
 import static org.testng.reporters.jq.BasePanel.C;
 
 public class TC12_DemoWebShop_CreateAddress {
+    String ProjectPath;
     static FileInputStream fis;
     static XSSFWorkbook wbk;
     static XSSFSheet sh;
@@ -56,7 +57,8 @@ public class TC12_DemoWebShop_CreateAddress {
 
     @BeforeClass
     public void prerequisite_setup() throws Exception{
-         fis = new FileInputStream("C:\\Users\\INSPIRON\\IdeaProjects.xlsx");
+        ProjectPath = System.getProperty("user.dir");
+         fis = new FileInputStream(ProjectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
          wbk = new XSSFWorkbook(fis);
          sh = wbk.getSheet("DemoWebShop Create Address");
          row = sh.getRow(1);
