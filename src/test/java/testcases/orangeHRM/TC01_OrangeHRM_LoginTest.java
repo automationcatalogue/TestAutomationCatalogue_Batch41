@@ -11,7 +11,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
+import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
+import utilities.BaseClass;
 import utilities.CommonUtils;
 
 import java.io.FileInputStream;
@@ -50,13 +52,12 @@ public class TC01_OrangeHRM_LoginTest {
     public static void login(@Optional("chrome") String browserName) throws Exception{
 
         WebDriver driver = CommonUtils.browserLaunch(browserName);
+        BaseClass ob = new BaseClass(driver);
 
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
-        driver.findElement(OrangeHRM_LoginPage.txtbx_userName).sendKeys(userName);
-        driver.findElement(OrangeHRM_LoginPage.txtbx_Password).sendKeys(password);
-        driver.findElement(OrangeHRM_LoginPage.btn_Login).click();
-
+        OrangeHRM_LoginPage.login(userName, password);
         Thread.sleep(6000);
+        OrangeHRM_HomePage.verifyTitle();
 
         driver.quit();
     }

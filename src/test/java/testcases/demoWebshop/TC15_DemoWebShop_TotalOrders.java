@@ -11,6 +11,7 @@ import org.testng.annotations.*;
 import pages.DemoWebShop_OrdersPage;
 import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
+import utilities.BaseClass;
 import utilities.CommonUtils;
 
 import java.io.FileInputStream;
@@ -68,12 +69,12 @@ public class TC15_DemoWebShop_TotalOrders {
         public void TotalOrder(@Optional("chrome") String browserName) throws Exception{
 
         WebDriver driver = CommonUtils.browserLaunch("chrome");
+        BaseClass ob = new BaseClass(driver);
 
         driver.get("https://demowebshop.tricentis.com/");
         driver.findElement(DemoWebshop_HomePage.link_Login).click();
-        driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys(userName);
-        driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys(password);
-        driver.findElement(DemoWebshop_LoginPage.btn_Login).click();
+        DemoWebshop_LoginPage.login(userName,password);
+
         driver.findElement(DemoWebshop_HomePage.link_Email).click();
         driver.findElement(DemoWebShop_OrdersPage.link_Orders).click();
         List<WebElement> OrderNumbers = driver.findElements(DemoWebShop_OrdersPage.listOfAllOrders);

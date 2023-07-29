@@ -141,37 +141,12 @@ public class TC05_OrangeHRM_TravelRequest {
         driver.findElement(OrangeHRM_TravelExpensePage.Calender_travelFrom).click();
         driver.findElement(OrangeHRM_TravelExpensePage.dropdwn_monthFrom).click();
 
-        List<WebElement> fromMonth_list = driver.findElements(OrangeHRM_TravelExpensePage.list_monthsFrom);
-        for (WebElement fromMonthOption : fromMonth_list) {
-            String actualFrom_month = fromMonthOption.getText();
-            if (actualFrom_month.equalsIgnoreCase(from_month)) {
-                fromMonthOption.click();
-                System.out.println("Month is selected from the FROM drop-down");
-                break;
-            }
-        }
+        CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_monthsFrom,from_month);
 
         driver.findElement(OrangeHRM_TravelExpensePage.dropdwn_yearFrom).click();
-        List<WebElement> fromYear_list = driver.findElements(OrangeHRM_TravelExpensePage.list_yearsFrom);
+        CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_yearsFrom,from_year);
 
-        for (WebElement fromYear_option : fromYear_list) {
-            String fromActual_year = fromYear_option.getText();
-            if (fromActual_year.equalsIgnoreCase(from_year)) {
-                fromYear_option.click();
-                System.out.println("Year is selected from the FROM Drop-down");
-                break;
-            }
-        }
-
-        List<WebElement> fromDay_list = driver.findElements(OrangeHRM_TravelExpensePage.list_daysFrom);
-        for (WebElement fromDay_option : fromDay_list) {
-            String fromActual_day = fromDay_option.getText();
-            if (fromActual_day.equalsIgnoreCase(from_day)) {
-                fromDay_option.click();
-                System.out.println("Day is selected ");
-                break;
-            }
-        }
+        CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_daysFrom, from_day);
 
         String toDate = "10-June-2022";
         String toCalendar[] = toDate.split("-");

@@ -9,6 +9,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.OrangHRM_AddUserPage;
 import pages.OrangeHRM_HomePage;
+import pages.OrangeHRM_LoginPage;
 import seleniumPrograms.sagarTeachings.JavaScriptExecutorDemo;
 import seleniumPrograms.sagarTeachings.KeysDemo;
 import utilities.CommonUtils;
@@ -27,23 +28,9 @@ public class TC03_OrangeHRM_AddUser {
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
 
         //Enter the UserName as "Admin"
-        driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys("Admin");
-        System.out.println("UserName is Entered");
+        OrangeHRM_LoginPage.login("Admin","Admin@123");
 
-        //Enter the Password as "Admin@123"
-        driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys("Admin@123");
-
-        //Click on Login button
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
-
-        //Verify the title of a page --> Whether Login is successful or not
-        String Orange_title=driver.getTitle();
-        String expected_title="Employee Management";
-        if(Orange_title.equalsIgnoreCase(expected_title)){
-              System.out.println("Title is verified");
-        }else {
-          System.out.println("Title is not verified");
-        }
+        OrangeHRM_HomePage.verifyTitle();
 
         //Click on HR Administration link
         driver.findElement(OrangeHRM_HomePage.link_HRAdministration).click();
