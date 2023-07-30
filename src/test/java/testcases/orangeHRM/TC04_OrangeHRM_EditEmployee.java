@@ -74,15 +74,7 @@ public class TC04_OrangeHRM_EditEmployee {
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
         System.out.println("OrangeHRM website is launched");
 
-
-        driver.findElement(OrangeHRM_LoginPage.txtbx_userName).sendKeys(userName);
-        System.out.println("Admin is entered as a UserName");
-
-        driver.findElement(OrangeHRM_LoginPage.txtbx_Password).sendKeys(passWord);
-        System.out.println("Admin@123 is entered a Password");
-
-        driver.findElement(OrangeHRM_LoginPage.btn_Login).click();
-        System.out.println("Login button is clicked");
+        OrangeHRM_LoginPage.login(userName,passWord);
 
         //title verification
         String title = driver.getTitle();

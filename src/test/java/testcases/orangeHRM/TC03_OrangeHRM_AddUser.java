@@ -1,5 +1,6 @@
 package testcases.orangeHRM;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +13,9 @@ import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
 import seleniumPrograms.sagarTeachings.JavaScriptExecutorDemo;
 import seleniumPrograms.sagarTeachings.KeysDemo;
+import utilities.BaseClass;
 import utilities.CommonUtils;
+import utilities.RandomGenerator;
 
 import java.time.Duration;
 
@@ -21,9 +24,13 @@ public class TC03_OrangeHRM_AddUser {
     @Parameters({"browserName"})
     public void login(@Optional("chrome") String browserName) throws Exception{
         WebDriver driver= CommonUtils.browserLaunch(browserName);
+        BaseClass ob = new BaseClass(driver);
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        String userName="CharlieABCG";
+
+
+        String userName = RandomGenerator.getRandomData("userName");
+        System.out.println("Randomly generated username is :"+userName);
 
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
 
@@ -35,7 +42,7 @@ public class TC03_OrangeHRM_AddUser {
         //Click on HR Administration link
         driver.findElement(OrangeHRM_HomePage.link_HRAdministration).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//crud-panel[contains(@listdata='systemUsersCtrl.listData.systemUsers']//table//tbody/tr[1]//span[text()])[1]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='systemUserDiv']//table//tbody/tr[1]/td[2]//span[text()]")));
         //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//crud-panel[contains(@listdata,'systemUsers')]//table//tbody/tr[1]//span[text()])[1]")));
 
         //Click on + (Add User) Icon
