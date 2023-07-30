@@ -1,80 +1,120 @@
 package testcases.orangeHRM;
 
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.OrangHRM_AddUserPage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
+import pages.OrangeHRM_LogoutPage;
 import seleniumPrograms.sagarTeachings.JavaScriptExecutorDemo;
 import seleniumPrograms.sagarTeachings.KeysDemo;
+import utilities.BaseClass;
 import utilities.CommonUtils;
 
+import java.io.FileInputStream;
 import java.time.Duration;
 
 public class TC03_OrangeHRM_AddUser {
+
+
+    String Projectpath;
+    FileInputStream  fis;
+    XSSFWorkbook wbk;
+    XSSFSheet  ws;
+    XSSFRow row;
+    XSSFCell username_cell; String userName;
+    XSSFCell password_cell; String password;
+    XSSFCell empName_cell; String empName;
+    XSSFCell username_AddUser; String addUser;
+
+    @BeforeClass
+    public void prerequisites() throws Exception
+    {
+        Projectpath=System.getProperty("user.dir");
+         fis=new FileInputStream(Projectpath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+        wbk=new XSSFWorkbook(fis) ;
+      ws= wbk.getSheet("OrangeHRM_AddUser");
+      row=ws.getRow(1);
+      username_cell=row.getCell(3);
+      userName=username_cell.getStringCellValue();
+       password_cell=row.getCell(4);
+       password=password_cell.getStringCellValue();
+       empName_cell= row.getCell(5);
+       empName=empName_cell.getStringCellValue();
+       username_AddUser= row.getCell(6);
+       addUser=username_AddUser.getStringCellValue();
+
+
+    }
     @Test
     @Parameters({"browserName"})
     public void login(@Optional("chrome") String browserName) throws Exception{
         WebDriver driver= CommonUtils.browserLaunch(browserName);
-
+        BaseClass ob = new BaseClass(driver);
+        
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        String userName="CharlieABCG";
+
 
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
 
         //Enter the UserName as "Admin"
-        OrangeHRM_LoginPage.login("Admin","Admin@123");
+        OrangeHRM_LoginPage.login(userName,password);
 
         OrangeHRM_HomePage.verifyTitle();
 
         //Click on HR Administration link
         driver.findElement(OrangeHRM_HomePage.link_HRAdministration).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//crud-panel[contains(@listdata='systemUsersCtrl.listData.systemUsers']//table//tbody/tr[1]//span[text()])[1]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(OrangHRM_AddUserPage.empName_Visibility));
         //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//crud-panel[contains(@listdata,'systemUsers')]//table//tbody/tr[1]//span[text()])[1]")));
 
         //Click on + (Add User) Icon
-        driver.findElement(By.xpath("//i[@class='material-icons'][text()='add']")).click();
+        driver.findElement(OrangHRM_AddUserPage.icon_AddUser).click();
 
         //Enter Employee Name as Charlie Carter
-        driver.findElement(OrangHRM_AddUserPage.txtbx_EmployeeName).sendKeys("Charlie Car");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='selectedEmployee_dropdown']//div[@class='title-section']")));
-        driver.findElement(By.xpath("//div[@id='selectedEmployee_dropdown']//div[@class='title-section']")).click();
+        driver.findElement(OrangHRM_AddUserPage.txtbx_EmployeeName).sendKeys(empName);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(OrangHRM_AddUserPage.empName_DropdownVisibility));
+        driver.findElement(OrangHRM_AddUserPage.txtbx_EmployeeName).click();
 
         //Enter some Random UserName
-        driver.findElement(By.xpath("//input[@id='user_name']")).sendKeys(userName);
+        driver.findElement(OrangHRM_AddUserPage.txtbx_RandomUserName).sendKeys(addUser);
 
         //Enter the Password as "Admin@123"
-        driver.findElement(By.xpath("//input[@placeholder='Enter Password']")).sendKeys("Admin@123");
+        driver.findElement(OrangHRM_AddUserPage.txtbx_Pwd).sendKeys(password);
 
         //Enter the Confirm Password as "Admin@123"
-        driver.findElement(By.xpath("//input[@placeholder='Confirm Password']")).sendKeys("Admin@123");
+        driver.findElement(OrangHRM_AddUserPage.txtbx_ConfirmPwd).sendKeys(password);
 
         //Click on Save button
-        WebElement element_SaveBtn =  driver.findElement(By.xpath("//button[@id='modal-save-button']"));
+        WebElement element_SaveBtn =  driver.findElement(OrangHRM_AddUserPage.btn_Save);
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();",element_SaveBtn);
 
         //Click on Logout button
-        driver.findElement(By.xpath("//span[@class='profile-name'][text()='Log Out']")).click();
+        driver.findElement(OrangeHRM_LogoutPage.btn_logout).click();
 
         //Enter the UserName as "Charlie"
-        driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys(userName);
+        driver.findElement(OrangeHRM_LoginPage.txtbx_userName).sendKeys(userName);
 
         //Enter the Password as "Admin@123"
-        driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys("Admin@123");
+        driver.findElement(OrangeHRM_LoginPage.txtbx_Password).sendKeys(password);
 
         //Click on Login button
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        driver.findElement(OrangeHRM_LoginPage.btn_Login).click();
 
         //Verify the Employee Name as Charlie Carter
         String Employee_Name=driver.findElement(OrangeHRM_HomePage.lbl_ProfileName).getText();
-        String expected_name="Charlie Carter";
+        String expected_name=empName;
         if(Employee_Name.equalsIgnoreCase(expected_name)){
             System.out.println("UserName is matched and verified");
         }else {
@@ -82,7 +122,7 @@ public class TC03_OrangeHRM_AddUser {
         }
 
         //Click on Logout button
-        driver.findElement(By.xpath("//span[@class='profile-name'][text()='Log Out']")).click();
+        driver.findElement(OrangeHRM_LogoutPage.btn_logout).click();
 
         driver.quit();
     }

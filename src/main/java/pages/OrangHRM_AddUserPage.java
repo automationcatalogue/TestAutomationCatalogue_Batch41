@@ -11,8 +11,8 @@ public static By txtbx_Pwd=By.xpath("//input[@placeholder='Enter Password']");
 public static By txtbx_ConfirmPwd=By.xpath("//input[@placeholder='Confirm Password']");
 public static By btn_Save=By.xpath("//button[@id='modal-save-button']");
 
-
-
+public static By empName_Visibility=By.xpath("(//crud-panel[contains(@listdata='systemUsersCtrl.listData.systemUsers']//table//tbody/tr[1]//span[text()])[1]");
+public static By empName_DropdownVisibility=By.xpath("//div[@id='selectedEmployee_dropdown']//div[@class='title-section']");
 
 
 }
