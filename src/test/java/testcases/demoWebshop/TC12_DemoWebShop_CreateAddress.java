@@ -15,6 +15,7 @@ import pages.DemoWebshop_AddressesPage;
 import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
 import utilities.CommonUtils;
+import utilities.RandomGenerator;
 
 import javax.naming.Name;
 import java.io.FileInputStream;
@@ -52,13 +53,14 @@ public class TC12_DemoWebShop_CreateAddress {
     static String PhoneNumber;
     static XSSFCell cell_FaxNumber;
     static String FaxNumber;
-
+    static String projectPath;
 
     @BeforeClass
     public void prerequisite_setup() throws Exception{
-         fis = new FileInputStream("C:\\Users\\INSPIRON\\IdeaProjects.xlsx");
+        projectPath = System.getProperty("user.dir");
+        fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
          wbk = new XSSFWorkbook(fis);
-         sh = wbk.getSheet("DemoWebShop Create Address");
+         sh = wbk.getSheet("DemoWebshop_CreateAddress");
          row = sh.getRow(1);
 
          cell_UserName = row.getCell(3);
@@ -70,44 +72,54 @@ public class TC12_DemoWebShop_CreateAddress {
          System.out.println("Password from Excel sheet is:"+Password);
 
          cell_FirstName = row.getCell(5);
-         FirstName = cell_FirstName.getStringCellValue();
-         System.out.println("FirstName from Excel sheet is: "+FirstName);
+         //FirstName = cell_FirstName.getStringCellValue();
+         //System.out.println("FirstName from Excel sheet is: "+FirstName);
+        FirstName = RandomGenerator.getRandomData("firstName");
 
         cell_LastName = row.getCell(6);
-        LastName = cell_LastName.getStringCellValue();
-        System.out.println("LastName from Excel sheet is: "+LastName);
+        //LastName = cell_LastName.getStringCellValue();
+        //System.out.println("LastName from Excel sheet is: "+LastName);
+        LastName = RandomGenerator.getRandomData("lastName");
 
         cell_Email = row.getCell(7);
-        Email = cell_Email.getStringCellValue();
-        System.out.println("Email from Excel sheet is:"+Email);
+        //Email = cell_Email.getStringCellValue();
+        //System.out.println("Email from Excel sheet is:"+Email);
+        Email = RandomGenerator.getRandomEmail(8);
 
         cell_Company = row.getCell(8);
-        Company = cell_Company.getStringCellValue();
-        System.out.println("Company from Excel sheet is: "+Company);
+        //Company = cell_Company.getStringCellValue();
+       // System.out.println("Company from Excel sheet is: "+Company);
+        Company = RandomGenerator.getRandomData("company");
 
         cell_City = row.getCell(9);
-        City = cell_City.getStringCellValue();
-        System.out.println("City from Excel sheet is: "+City);
+        //City = cell_City.getStringCellValue();
+        //System.out.println("City from Excel sheet is: "+City);
+        City = RandomGenerator.getRandomData("city");
 
         cell_Address1 = row.getCell(10);
-        Address1 = cell_Address1.getStringCellValue();
-        System.out.println("Address1 from Excel sheet is: "+Address1);
+       // Address1 = cell_Address1.getStringCellValue();
+        //System.out.println("Address1 from Excel sheet is: "+Address1);
+        Address1 = RandomGenerator.getRandomData("address1");
 
         cell_Address2 = row.getCell(11);
-        Address2 = cell_Address2.getStringCellValue();
-        System.out.println("Address from Excel sheet is: "+Address2);
+        //Address2 = cell_Address2.getStringCellValue();
+        //System.out.println("Address from Excel sheet is: "+Address2);
+        Address2 = RandomGenerator.getRandomData("address2");
 
         cell_ZipPostalCode = row.getCell(12);
-        ZipPostalCode = cell_ZipPostalCode.getStringCellValue();
-        System.out.println("ZipPostalCode from Excel sheet is: "+ZipPostalCode);
+        //ZipPostalCode = cell_ZipPostalCode.getStringCellValue();
+        //System.out.println("ZipPostalCode from Excel sheet is: "+ZipPostalCode);
+        ZipPostalCode = RandomGenerator.getRandomData("zipcode");
 
         cell_PhoneNumber = row.getCell(13);
-        PhoneNumber = cell_PhoneNumber.getStringCellValue();
-        System.out.println("PhoneNumber from Excel sheet is: "+PhoneNumber);
+        //PhoneNumber = cell_PhoneNumber.getStringCellValue();
+        //System.out.println("PhoneNumber from Excel sheet is: "+PhoneNumber);
+        PhoneNumber = RandomGenerator.getRandomData("phoneNumber");
 
         cell_FaxNumber = row.getCell(14);
-        FaxNumber = cell_FaxNumber.getStringCellValue();
-        System.out.println("FaxNumber from Excel sheet is:"+FaxNumber);
+        //FaxNumber = cell_FaxNumber.getStringCellValue();
+        //System.out.println("FaxNumber from Excel sheet is:"+FaxNumber);
+        FaxNumber = RandomGenerator.getRandomNumeric(8);
     }
     @Test
     @Parameters({"browserName"})
