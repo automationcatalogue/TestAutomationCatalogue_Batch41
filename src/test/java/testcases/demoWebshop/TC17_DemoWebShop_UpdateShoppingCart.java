@@ -1,21 +1,55 @@
 package testcases.demoWebshop;
 
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.*;
+import utilities.BaseClass;
 import utilities.CommonUtils;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.time.Duration;
 
 public class TC17_DemoWebShop_UpdateShoppingCart {
-  @Test
+    String projectPath;
+    FileInputStream fis;
+    FileOutputStream fos;
+    XSSFWorkbook wbk;
+    XSSFSheet ws;
+    XSSFRow row;
+    XSSFCell userName_cell; String userName;
+    XSSFCell passWord_cell; String passWord;
+    XSSFCell length_cell; String jewel_Length;
+    XSSFCell updateQty_cell; String update_Qty;
+    XSSFCell orderNumber_cell; String orderNumber;
+ @BeforeClass
+ public void prerequisite_Setup() throws Exception {
+     projectPath = System.getProperty("user.dir");
+     fis = new FileInputStream(projectPath + "\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+     wbk = new XSSFWorkbook(fis);
+     ws = wbk.getSheet("DemoWebshop_UpdateShoppingCart");
+     row = ws.getRow(1);
+     userName_cell = row.getCell(3);
+     userName = userName_cell.getStringCellValue();
+     passWord_cell = row.getCell(4);
+     passWord = passWord_cell.getStringCellValue();
+     length_cell = row.getCell(5);
+     jewel_Length = length_cell.getStringCellValue();
+     updateQty_cell = row.getCell(6);
+     update_Qty = updateQty_cell.getStringCellValue();
+ }
+     @Test
   @Parameters({"browserName"})
     public void Update_ShoppingCart(@Optional("chrome")String browserName){
        WebDriver driver = CommonUtils.browserLaunch("Chrome");
+       BaseClass ob = new BaseClass(driver);
+
        driver.manage().window().maximize();
        JavascriptExecutor js = (JavascriptExecutor) driver;
        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -25,16 +59,9 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
       driver.findElement(DemoWebshop_HomePage.link_Login).click();
       System.out.println("Clicked on the login link");
 
-      driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys("aarosagarch@gmail.com");
-      System.out.println("Entered Email id");
+      DemoWebshop_LoginPage.login(userName,passWord);
 
-      driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys("Admin@123");
-      System.out.println("Password is Entered");
-
-      driver.findElement(DemoWebshop_LoginPage.btn_Login).click();
-      System.out.println("Clicked on the Login button");
-
-      driver.findElement(DemoWebshop_HomePage.link_HeaderBooks).click();
+      /*driver.findElement(DemoWebshop_HomePage.link_HeaderBooks).click();
       System.out.println("Clicked on Books link");
 
       driver.findElement(DemoWebshop_BooksPage.link_FirstItem).click();
@@ -49,7 +76,7 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
       driver.findElement(DemoWebshop_JewelsPage.link_FirstItem).click();
       System.out.println("Clicked on first item in jewellery ");
 
-      driver.findElement(DemoWebshop_JewelsPage.txtbx_LngthInsideFrstItm).sendKeys("10");
+      driver.findElement(DemoWebshop_JewelsPage.txtbx_LngthInsideFrstItm).sendKeys(jewel_Length);
 
       driver.findElement(DemoWebshop_JewelsPage.btn_AddCartInsideFrstItm).click();
       System.out.println("Clicked on Add to Cart Button in Jewellery");
@@ -57,7 +84,7 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
       driver.findElement(DemoWebshop_HomePage.link_ShoppingCart).click();
       System.out.println("Clicked on Shopping Cart Link");
 
-      String actual_updateQty="2";
+      String actual_updateQty=update_Qty;
 
       WebElement total1 = driver.findElement(DemoWebshop_CartPage.txt_FirstItemTotal);
       String total_1 = total1.getText();
@@ -104,12 +131,12 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
           System.out.println("Update Quantity is not successful for Book Item!!!");
       }
 
-      String text_JewelPrice = driver.findElement(By.xpath("//table[@class='cart']/tbody/tr[2]/td[4]/span[2]")).getText();
-      String text_updatedQutyJew = driver.findElement(By.xpath("//table[@class='cart']/tbody/tr[2]//input[contains(@name,'itemquantity')]")).getAttribute("value");
+      String text_JewelPrice = driver.findElement(DemoWebshop_CartPage.txt_PriceSecondItem).getText();
+      String text_updatedQutyJew = driver.findElement(DemoWebshop_CartPage.txtbx_SecondItemQty).getAttribute("value");
       if(actual_updateQty.equalsIgnoreCase(text_updatedQutyJew)){
 
           System.out.println("Update Quantity is successful for Jewel Item!!!");
-          String text_JewelTotalPrice = driver.findElement(By.xpath("(//table[@class='cart']/tbody/tr)[2]/td[6]/span[2]")).getText();
+          String text_JewelTotalPrice = driver.findElement(DemoWebshop_CartPage.txt_SecondItemTotal).getText();
 
           double JewelPrice = Double.parseDouble(text_JewelPrice);
           double updateQty = Double.parseDouble(text_updatedQuty);
@@ -126,14 +153,14 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
           System.out.println("Update Quantity is not successful for Jewel Item!!!");
       }
 
-      String text_BookTotalPrice = driver.findElement(By.xpath("(//table[@class='cart']/tbody/tr)[1]/td[6]/span[2]")).getText();
+      String text_BookTotalPrice = driver.findElement(DemoWebshop_CartPage.txt_FirstItemTotal).getText();
       double dou_BookTotalPrice = Double.parseDouble(text_BookTotalPrice);
-      String text_JewelTotalPrice = driver.findElement(By.xpath("(//table[@class='cart']/tbody/tr)[2]/td[6]/span[2]")).getText();
+      String text_JewelTotalPrice = driver.findElement(DemoWebshop_CartPage.txt_SecondItemTotal).getText();
       double dou_JewelTotalPrice = Double.parseDouble(text_JewelTotalPrice);
 
 
       double grandTotal=dou_BookTotalPrice+dou_JewelTotalPrice;
-      String actualTotal=driver.findElement(By.xpath("//table[@class='cart-total']//tr[4]/td[2]/span/span")).getText();
+      String actualTotal=driver.findElement(DemoWebshop_CartPage.txt_ActualGrandTotal).getText();
       double TOTAL=Double.parseDouble(actualTotal);
 
       if(grandTotal==TOTAL){
@@ -142,43 +169,56 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
           System.out.println("Cart total is not accurate");
       }
 
-      driver.findElement(By.xpath("//input[@id='termsofservice']")).click();
+      driver.findElement(DemoWebshop_CartPage.checkbox_Iagree).click();
       System.out.println("Check-box is clicked");
 
-      driver.findElement(By.xpath("//button[@value='checkout']")).click();
+      driver.findElement(DemoWebshop_CartPage.btn_Checkout).click();
       System.out.println("Checkout button is clicked");
 
-      driver.findElement(By.xpath("//input[@onclick='Billing.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_BillingContinue).click();
       System.out.println("Continue button is clicked under Billing Address");
 
-      driver.findElement(By.xpath("//input[@onclick='Shipping.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_ShippingAddress).click();
       System.out.println("Continue button is clicked under Shipping Address");
 
-      driver.findElement(By.xpath("//input[@onclick='ShippingMethod.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_ShippingMethod).click();
       System.out.println("Continue button is clicked under Shipping Method");
 
-      driver.findElement(By.xpath("//input[@onclick='PaymentMethod.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_PaymentMethod).click();
       System.out.println("Continue button is clicked under Payment Method");
 
-      driver.findElement(By.xpath("//input[@onclick='PaymentInfo.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_PaymentInformation).click();
       System.out.println("Continue button is clicked under Payment Information");
 
-      driver.findElement(By.xpath("//input[@onclick='ConfirmOrder.save()']")).click();
+      driver.findElement(DemoWebshop_CheckoutPage.btn_ConfirmOrder).click();
       System.out.println("Confirm button is clicked under Confirm Order");
 
-      String Ordernumber = driver.findElement(By.xpath("//ul[@class='details']/li[1]")).getText();
-      System.out.println(Ordernumber);
+      orderNumber = driver.findElement(DemoWebshop_CheckoutPage.txt_OrderNumber).getText();
+      System.out.println("Order Number:"+orderNumber);
 
-      if(Ordernumber.equalsIgnoreCase(Ordernumber)){
-          System.out.println("order number is printed");
-      }else{
-          System.out.println("order number is not printed");
-      }
 
-      driver.findElement(By.xpath("//a[@href='/logout']")).click();
+      driver.findElement(DemoWebshop_HomePage.btn_Logout).click();
       System.out.println("log out is clicked");
 
       driver.quit();
       System.out.println("Browser is closed");
   }
+    @AfterClass
+    public void tearDown() throws Exception {
+
+        orderNumber_cell = row.getCell(7);
+        if(orderNumber_cell==null){
+            orderNumber_cell=row.createCell(7);
+        }
+        orderNumber_cell.setCellValue(orderNumber);
+        fos = new FileOutputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+        wbk.write(fos);
+        System.out.println(orderNumber+" is written back to the Excel file");
+
+        fos.close();
+        System.out.println("Excel File Writing is closed");
+        fis.close();
+        System.out.println("Excel File reading is closed");*/
+    }
 }
+

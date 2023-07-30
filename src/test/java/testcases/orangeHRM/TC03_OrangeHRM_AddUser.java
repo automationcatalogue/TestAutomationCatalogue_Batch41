@@ -5,7 +5,6 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
@@ -16,11 +15,9 @@ import pages.OrangHRM_AddUserPage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
 import pages.OrangeHRM_LogoutPage;
-import seleniumPrograms.sagarTeachings.JavaScriptExecutorDemo;
-import seleniumPrograms.sagarTeachings.KeysDemo;
 import utilities.BaseClass;
 import utilities.CommonUtils;
-
+import utilities.RandomGenerator;
 import java.io.FileInputStream;
 import java.time.Duration;
 
@@ -64,6 +61,8 @@ public class TC03_OrangeHRM_AddUser {
         
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
+        String userName = RandomGenerator.getRandomData("userName");
+        System.out.println("Randomly generated username is :"+userName);
 
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
 
@@ -76,8 +75,6 @@ public class TC03_OrangeHRM_AddUser {
         driver.findElement(OrangeHRM_HomePage.link_HRAdministration).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(OrangHRM_AddUserPage.empName_Visibility));
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//crud-panel[contains(@listdata,'systemUsers')]//table//tbody/tr[1]//span[text()])[1]")));
-
         //Click on + (Add User) Icon
         driver.findElement(OrangHRM_AddUserPage.icon_AddUser).click();
 

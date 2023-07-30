@@ -32,11 +32,12 @@ public class TC02_OrangeHRM_AddEmployee {
     XSSFRow row;
     XSSFCell username_cell, password_cell, newPassword_cell, firstName_cell, lastName_cell, location_cell, maritalStatus_cell, gender_cell, region_cell, fte_cell, tempdept_cell;
     String userName, pswd, newPassword, firstName, lastName, location, marital_Status, gender, region, fte, temp_dept;
-
+    static String projectPath;
     @BeforeClass
     public void preRequisites() throws Exception {
+        projectPath = System.getProperty("user.dir");
+        fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
 
-        fis = new FileInputStream("C:\\Automation Catalogue\\TestAutomationCatalogue_Batch41\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         wbk = new XSSFWorkbook(fis);
         sht = wbk.getSheet("OrangeHRM_AddEmployee");
         row = sht.getRow(4);

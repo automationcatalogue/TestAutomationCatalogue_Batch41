@@ -29,10 +29,12 @@ public class TC01_OrangeHRM_LoginTest {
     static String userName;
     static XSSFCell cell_password;
     static String password;
+    static String projectPath;
 
     @BeforeClass
     public void prerequisite_setup() throws Exception{
-        fis = new FileInputStream("C:\\AutomationCatalogue\\Projects\\TestAutomationCatalogue_Batch41\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+        projectPath = System.getProperty("user.dir");
+        fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         wbk = new XSSFWorkbook(fis);
         sh = wbk.getSheet("OrangeHRM_Login");
         row = sh.getRow(1);
