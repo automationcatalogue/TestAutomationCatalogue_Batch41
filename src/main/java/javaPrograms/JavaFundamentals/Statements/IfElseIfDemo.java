@@ -21,8 +21,6 @@ public class IfElseIfDemo {
         }
 
         System.out.println("Value of x is :"+x+" Value of y is :"+y+" value of z is :"+z);
-
-
     }
 }
 
