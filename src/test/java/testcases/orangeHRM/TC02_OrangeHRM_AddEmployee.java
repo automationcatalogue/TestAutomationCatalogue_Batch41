@@ -77,102 +77,18 @@ public class TC02_OrangeHRM_AddEmployee {
         System.out.println("Title of the page is:" + title);
 
         OrangeHRM_LoginPage.login(userName, pswd);
+        OrangeHRM_HomePage.clickEmployeeManagementLink();
+        OrangeHRM_AddEmployeePage.enterFirstNameAndLastName(firstName,lastName);
+        OrangeHRM_AddEmployeePage.selectLocation(location);
+        OrangeHRM_AddEmployeePage.selectMaritalStatus(marital_Status);
+        OrangeHRM_AddEmployeePage.selectGender(gender);
 
-        driver.findElement(OrangeHRM_HomePage.link_EmployeeManagement).click();
-        System.out.println("Employee Management is selected");
 
-        driver.findElement(OrangeHRM_AddEmployeePage.link_add).click();
-        System.out.println("Clicked on Add button ");
 
-        driver.findElement(OrangeHRM_AddEmployeePage.txtbx_EmpFirstName).sendKeys(firstName);
-        System.out.println("First Name is entered");
 
-        driver.findElement(OrangeHRM_AddEmployeePage.txtbx_EmpLastName).sendKeys(lastName);
-        System.out.println("Last Name is entered");
 
-        driver.findElement(OrangeHRM_AddEmployeePage.drpdwn_location).click();
-        System.out.println("Location drop-down is clicked ");
 
-        if (location.equals("India Office")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.location_indiaOption).click();
-            System.out.println("India Office value is selected from a drop-down");
-        } else if (location.equals("Australia office")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.location_australiaOption).click();
-            System.out.println("Australia office value is selected from a drop-down");
-        } else if (location.equals("Australian Regional HQ")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.location_australiaHQOption).click();
-            System.out.println("Australian Regional HQ value is selected from a drop-down");
 
-        } else if (location.equals("Canadian Development Center")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.location_canadianDevCenteroption).click();
-            System.out.println("Canadian Development Center value is selected from a drop-down");
-        } else if (location.equals("Jamaica training center")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.location_jamaica_trainingCenterOption).click();
-            System.out.println("Jamaica training center value is selected from a drop-down");
-
-        } else if (location.equals("Kenya Satalite office")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.location_kenya_Sat_officeOption).click();
-            System.out.println("Kenya Satalite office value is selected from a drop-down");
-        } else if (location.equals("Mexico Office")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.location_mexicoOfficeOption).click();
-            System.out.println("Mexico Office value is selected from a drop-down");
-        } else if (location.equals("Philippine call center")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.location_philippine_calcenterOption).click();
-            System.out.println("Philippine call center value is selected from a drop-down");
-        } else if (location.equals("Singapore Regional HQ")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.location_singaporeregionalHQOption).click();
-            System.out.println("Singapore Regional HQ value is selected from a drop-down");
-        } else if (location.equals("European Office")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.location_europeanOfficeOption).click();
-            System.out.println("European Office value is selected from a drop-down");
-        } else if (location.equals("Sheffield Office")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.location_sheffieldOfficeOption).click();
-            System.out.println("Sheffield Office value is selected from a drop-down");
-        } else if (location.equals("US Office")){
-            driver.findElement(OrangeHRM_AddEmployeePage.location_UsofficeOption).click();
-            System.out.println("US Office value is selected from a drop-down");
-        } else {
-            System.out.println("Location not found");
-        }
-
-        driver.findElement(OrangeHRM_AddEmployeePage.btn_next).click();
-        System.out.println("Next button is clicked");
-
-        driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_maritalStatus).click();
-        System.out.println("Marital Status drop-down is clicked");
-
-        if (marital_Status.equals("Single")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.maritalStatus_singleOption).click();
-            System.out.println("Single is selected");
-        } else if (marital_Status.equals("Married")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.maritalstatus_marriedOption).click();
-            System.out.println("Married is selected");
-        } else if (marital_Status.equals("Other")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.maritalstatus_otherOption).click();
-            System.out.println("Marital_status is selected as Other");
-        } else {
-            System.out.println("Marital Status is not found");
-        }
-
-        driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_gender).click();
-        System.out.println("Gender drop-down is clicked");
-
-        if (gender.equals("Male")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.gender_maleOption).click();
-            System.out.println("Male is selected");
-        } else if (gender.equals("Female")) {
-
-            driver.findElement(OrangeHRM_AddEmployeePage.gender_femaleOption).click();
-            System.out.println("Male is selected");
-        } else if (gender.equals("Non-Binary")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.gender_nonBinaryOption).click();
-            System.out.println("Male is selected");
-        } else {
-            System.out.println("gender is not found");
-        }
-
-        driver.findElement(OrangeHRM_AddEmployeePage.next_btn1).click();
-        System.out.println("Clicked on Next");
 
         driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_region).click();
         System.out.println("Region drop-down is clicked");

@@ -88,9 +88,7 @@ public class TC18_DemoWebshop_ApplyDiscount {
             driver.findElement(DemoWebshop_HomePage.link_ShoppingCart).click();
             System.out.println("Shopping cart link is clicked");
 
-            String total_BeforeDiscount=driver.findElement(DemoWebshop_CartPage.txt_BeforeDiscountTotal).getText();
-            System.out.println("value of total:"+total_BeforeDiscount);
-            double totalValue_BeforeDiscount = Double.parseDouble(total_BeforeDiscount);
+            double totalValue_BeforeDiscount = DemoWebshop_CartPage.getCartPriceBeforeDiscount();
 
             driver.findElement(DemoWebshop_CartPage.txtbx_Coupon).click();
             System.out.println("coupon test box is clicked");
