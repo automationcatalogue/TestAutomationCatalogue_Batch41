@@ -164,4 +164,71 @@ public class OrangeHRM_AddEmployeePage {
                 System.out.println("Clicked on Next");
         }
 
+        public static void selectRegion(String region) {
+                WebDriver driver = BaseClass.getDriver();
+                driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_region).click();
+                System.out.println("Region drop-down is clicked");
+                if (region.equals("Region-1")) {
+                        driver.findElement(OrangeHRM_AddEmployeePage.region_region1Option).click();
+                        System.out.println("Region-1 is selected ");
+                } else if (region.equals("Region-2")) {
+                        driver.findElement(OrangeHRM_AddEmployeePage.region_region2Option).click();
+                        System.out.println("Region-2 is selected ");
+                } else if (region.equals("Region-3")) {
+                        driver.findElement(OrangeHRM_AddEmployeePage.region_region3Option).click();
+                        System.out.println("Region-3 is selected ");
+                } else {
+                        System.out.println("region is not found");
+                }
+        }
+        public static void selectFTE(String fte){
+                WebDriver driver = BaseClass.getDriver();
+                driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_fteOption).click();
+                System.out.println("FTE drop-down is clicked");
+
+                if (fte.equals("0.5")) {
+                        driver.findElement(OrangeHRM_AddEmployeePage.fte_Option1).click();
+                        System.out.println("0.75 is selected");
+                } else if (fte.equals("0.75")){
+                        driver.findElement(OrangeHRM_AddEmployeePage.fte_option2).click();
+                        System.out.println("0.75 is selected");
+                } else if (fte.equals("1")) {
+                        driver.findElement(OrangeHRM_AddEmployeePage.fte_option3).click();
+                        System.out.println("0.75 is selected");
+                } else {
+                        System.out.println("FTE is not found");
+                }
+        }
+         public static void selectTempDept(String temp_dept){
+
+                 WebDriver driver = BaseClass.getDriver();
+                 driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_tempDept).click();
+                 System.out.println("Temp Department drop-down is clicked");
+
+                 if (temp_dept.equals("Sub unit -1")) {
+                         driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitOneOption).click();
+                         System.out.println("Sub unit -2 is selected");
+                 } else if (temp_dept.equals("Sub unit-2")) {
+                         driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitTwoOption).click();
+                         System.out.println("Sub unit -2 is selected");
+                 } else if (temp_dept.equals("Sub unit-3")) {
+                         driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitThreeOption).click();
+                         System.out.println("Sub unit -2 is selected");
+                 } else if (temp_dept.equals("Sub unit-4")) {
+                         driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitFourOption).click();
+                         System.out.println("Sub unit -2 is selected");
+                 } else {
+                         System.out.println("TempDepartment is not found");
+                 }
+
+                 driver.findElement(OrangeHRM_AddEmployeePage.btn_save).click();
+                 System.out.println("clicked on Save");
+         }
+         public static void searchEmployee(String firstName, String lastName){
+                 WebDriver driver = BaseClass.getDriver();
+                 driver.findElement(OrangeHRM_AddEmployeePage.search_icon).sendKeys(firstName+" "+ lastName);
+                 driver.findElement(OrangeHRM_AddEmployeePage.txtbx_searchEmployee).click();
+                 System.out.println("Searched with Employee first and last name");
+         }
+
 }
