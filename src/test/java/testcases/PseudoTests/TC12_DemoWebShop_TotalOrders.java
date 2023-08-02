@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class TC15_DemoWebShop_TotalOrders {
+public class TC12_DemoWebShop_TotalOrders {
     public static void main(String args[]) throws Exception {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();

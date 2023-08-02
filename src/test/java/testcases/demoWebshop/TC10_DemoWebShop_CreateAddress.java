@@ -24,7 +24,7 @@ import java.util.List;
 
 import static org.testng.reporters.jq.BasePanel.C;
 
-public class TC12_DemoWebShop_CreateAddress {
+public class TC10_DemoWebShop_CreateAddress {
     static FileInputStream fis;
     static XSSFWorkbook wbk;
     static XSSFSheet sh;

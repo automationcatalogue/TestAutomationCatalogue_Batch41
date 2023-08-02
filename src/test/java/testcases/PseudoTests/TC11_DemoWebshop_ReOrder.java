@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class TC14_DemoWebshop_ReOrder {
+public class TC11_DemoWebshop_ReOrder {
 
     public static void main(String args[]) throws Exception {
         WebDriver driver = new ChromeDriver();

@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.Set;
 
 
-public class TC15_DemoWebShop_TotalOrders {
+public class TC12_DemoWebShop_TotalOrders {
 
 
     static FileInputStream fis;
