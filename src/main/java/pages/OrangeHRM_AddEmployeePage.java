@@ -3,7 +3,12 @@ package pages;
 import javaPrograms.oops.Inheritance_1.B;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.BaseClass;
+
+import java.time.Duration;
 
 public class OrangeHRM_AddEmployeePage {
 
@@ -58,6 +63,7 @@ public class OrangeHRM_AddEmployeePage {
         public static By search_icon=By.xpath("//input[contains(@id,'employee_name_quick_filter')]");
         public static By txtbx_searchEmployee= By.xpath("//input[contains(@id,'employee_name_quick_filter')]");
         public static By searched_Employee =By.xpath("//div[@class='employee-details']/div[1]");
+        public static By employee_id= By.xpath("//div[text()='Employee Id: ']/span");
 
         public static void enterFirstNameAndLastName(String firstName, String lastName){
                 WebDriver driver = BaseClass.getDriver();
@@ -231,4 +237,21 @@ public class OrangeHRM_AddEmployeePage {
                  System.out.println("Searched with Employee first and last name");
          }
 
+         public static void verifyEmployeeId_name(String firstName, String lastName){
+                 WebDriver driver = BaseClass.getDriver();
+                 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+                 WebElement searchedEmployeeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(OrangeHRM_AddEmployeePage.searched_Employee));
+                 String elementText = searchedEmployeeElement.getText().trim();
+                 System.out.println("Element Text is: " + elementText);
+
+
+                 String expectedFullName = firstName + " " + lastName;
+                 if (elementText.equalsIgnoreCase(expectedFullName)) {
+                         System.out.println("Search result is correct");
+                 } else {
+                         System.out.println("Search result is incorrect");
+                 }
+                 String empid=driver.findElement(OrangeHRM_AddEmployeePage.employee_id).getText();
+                 System.out.println("Employee id is :" + empid);
+         }
 }

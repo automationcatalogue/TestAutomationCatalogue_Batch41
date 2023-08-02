@@ -1,5 +1,7 @@
 package testcases.orangeHRM;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -8,10 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.OrangeHRM_AddEmployeePage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
@@ -21,6 +20,8 @@ import utilities.CommonUtils;
 
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.time.Duration;
 
 
@@ -33,6 +34,9 @@ public class TC02_OrangeHRM_AddEmployee {
     static XSSFCell username_cell, password_cell, newPassword_cell, firstName_cell, lastName_cell, location_cell, maritalStatus_cell, gender_cell, region_cell, fte_cell, tempdept_cell;
     static String userName, pswd, newPassword, firstName, lastName, location, marital_Status, gender, region, fte, temp_dept;
     static String projectPath;
+    static FileOutputStream  fos;
+    static String empid;
+
     @BeforeClass
     public void prerequisite_setup() throws Exception {
         projectPath = System.getProperty("user.dir");
@@ -87,24 +91,29 @@ public class TC02_OrangeHRM_AddEmployee {
         OrangeHRM_AddEmployeePage.selectTempDept(temp_dept);
         OrangeHRM_HomePage.clickEmployeeManagementLink();
         OrangeHRM_AddEmployeePage.searchEmployee(firstName,lastName);
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement searchedEmployeeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(OrangeHRM_AddEmployeePage.searched_Employee));
-        String elementText = searchedEmployeeElement.getText().trim();
-        System.out.println("Element Text is: " + elementText);
-
-
-        String expectedFullName = firstName + " " + lastName;
-        if (elementText.equalsIgnoreCase(expectedFullName)) {
-            System.out.println("Search result is correct");
-        } else {
-            System.out.println("Search result is incorrect");
-        }
-
-       OrangeHRM_LogoutPage.logout();
-
+        OrangeHRM_AddEmployeePage.verifyEmployeeId_name(firstName,lastName);
+        OrangeHRM_LogoutPage.logout();
         driver.quit();
 
     }
+
+    @AfterClass
+    public void teardown() throws Exception{
+        try{
+        Row rowToUpdate = sht.getRow(1);
+        Cell resultCell = rowToUpdate.createCell(13);
+        resultCell.setCellValue(empid);
+            FileOutputStream fos = new FileOutputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+            wbk.write(fos);
+            System.out.println(empid+" is written back to the Excel file");
+            fos.close();
+            System.out.println("ExcelFile Writing is closed");
+            fis.close();
+            System.out.println("ExcelFile reading is closed");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
