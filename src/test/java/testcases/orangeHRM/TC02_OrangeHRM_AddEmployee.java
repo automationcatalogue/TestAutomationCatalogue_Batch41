@@ -1,5 +1,7 @@
 package testcases.orangeHRM;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -8,10 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.OrangeHRM_AddEmployeePage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
@@ -21,26 +20,31 @@ import utilities.CommonUtils;
 
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.time.Duration;
 
 
 public class TC02_OrangeHRM_AddEmployee {
 
-    FileInputStream fis;
-    XSSFWorkbook wbk;
-    XSSFSheet sht;
-    XSSFRow row;
-    XSSFCell username_cell, password_cell, newPassword_cell, firstName_cell, lastName_cell, location_cell, maritalStatus_cell, gender_cell, region_cell, fte_cell, tempdept_cell;
-    String userName, pswd, newPassword, firstName, lastName, location, marital_Status, gender, region, fte, temp_dept;
+    static FileInputStream fis;
+    static XSSFWorkbook wbk;
+    static XSSFSheet sht;
+    static XSSFRow row;
+    static XSSFCell username_cell, password_cell, newPassword_cell, firstName_cell, lastName_cell, location_cell, maritalStatus_cell, gender_cell, region_cell, fte_cell, tempdept_cell;
+    static String userName, pswd, newPassword, firstName, lastName, location, marital_Status, gender, region, fte, temp_dept;
     static String projectPath;
+    static FileOutputStream  fos;
+    static String empid;
+
     @BeforeClass
-    public void preRequisites() throws Exception {
+    public void prerequisite_setup() throws Exception {
         projectPath = System.getProperty("user.dir");
         fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
 
         wbk = new XSSFWorkbook(fis);
         sht = wbk.getSheet("OrangeHRM_AddEmployee");
-        row = sht.getRow(4);
+        row = sht.getRow(1);
         username_cell = row.getCell(3);
         userName = username_cell.getStringCellValue();
         password_cell = row.getCell(4);
@@ -82,93 +86,34 @@ public class TC02_OrangeHRM_AddEmployee {
         OrangeHRM_AddEmployeePage.selectLocation(location);
         OrangeHRM_AddEmployeePage.selectMaritalStatus(marital_Status);
         OrangeHRM_AddEmployeePage.selectGender(gender);
-
-
-
-
-
-
-
-
-        driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_region).click();
-        System.out.println("Region drop-down is clicked");
-        if (region.equals("Region-1")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.region_region1Option).click();
-            System.out.println("Region-1 is selected ");
-        } else if (region.equals("Region-2")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.region_region2Option).click();
-            System.out.println("Region-2 is selected ");
-        } else if (region.equals("Region-3")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.region_region3Option).click();
-            System.out.println("Region-3 is selected ");
-        } else {
-            System.out.println("region is not found");
-        }
-
-        driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_fteOption).click();
-        System.out.println("FTE drop-down is clicked");
-
-        if (fte.equals("0.5")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.fte_Option1).click();
-            System.out.println("0.75 is selected");
-        } else if (fte.equals("0.75")){
-            driver.findElement(OrangeHRM_AddEmployeePage.fte_option2).click();
-            System.out.println("0.75 is selected");
-        } else if (fte.equals("1")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.fte_option3).click();
-            System.out.println("0.75 is selected");
-        } else {
-            System.out.println("FTE is not found");
-        }
-
-        driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_tempDept).click();
-        System.out.println("Temp Department drop-down is clicked");
-
-        if (temp_dept.equals("Sub unit -1")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitOneOption).click();
-            System.out.println("Sub unit -2 is selected");
-        } else if (temp_dept.equals("Sub unit-2")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitTwoOption).click();
-            System.out.println("Sub unit -2 is selected");
-        } else if (temp_dept.equals("Sub unit-3")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitThreeOption).click();
-            System.out.println("Sub unit -2 is selected");
-        } else if (temp_dept.equals("Sub unit-4")) {
-            driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitFourOption).click();
-            System.out.println("Sub unit -2 is selected");
-        } else {
-            System.out.println("TempDepartment is not found");
-        }
-
-        driver.findElement(OrangeHRM_AddEmployeePage.btn_save).click();
-        System.out.println("clicked on Save");
-
-        driver.findElement(OrangeHRM_HomePage.link_EmployeeManagement).click();
-        System.out.println("Employee Management is selected");
-
-        driver.findElement(OrangeHRM_AddEmployeePage.search_icon).sendKeys(firstName+" "+ lastName);
-        driver.findElement(OrangeHRM_AddEmployeePage.txtbx_searchEmployee).click();
-        System.out.println("Searched with Employee first and last name");
-
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement searchedEmployeeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(OrangeHRM_AddEmployeePage.searched_Employee));
-        String elementText = searchedEmployeeElement.getText().trim();
-        System.out.println("Element Text is: " + elementText);
-
-
-        String expectedFullName = firstName + " " + lastName;
-        if (elementText.equalsIgnoreCase(expectedFullName)) {
-            System.out.println("Search result is correct");
-        } else {
-            System.out.println("Search result is incorrect");
-        }
-
-        driver.findElement(OrangeHRM_LogoutPage.btn_logout).click();
-        System.out.println("log out is clicked");
-
+        OrangeHRM_AddEmployeePage.selectRegion(region);
+        OrangeHRM_AddEmployeePage.selectFTE(fte);
+        OrangeHRM_AddEmployeePage.selectTempDept(temp_dept);
+        OrangeHRM_HomePage.clickEmployeeManagementLink();
+        OrangeHRM_AddEmployeePage.searchEmployee(firstName,lastName);
+        OrangeHRM_AddEmployeePage.verifyEmployeeId_name(firstName,lastName);
+        OrangeHRM_LogoutPage.logout();
         driver.quit();
 
     }
+
+    @AfterClass
+    public void teardown() throws Exception{
+        try{
+        Row rowToUpdate = sht.getRow(1);
+        Cell resultCell = rowToUpdate.createCell(13);
+        resultCell.setCellValue(empid);
+            FileOutputStream fos = new FileOutputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
+            wbk.write(fos);
+            System.out.println(empid+" is written back to the Excel file");
+            fos.close();
+            System.out.println("ExcelFile Writing is closed");
+            fis.close();
+            System.out.println("ExcelFile reading is closed");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

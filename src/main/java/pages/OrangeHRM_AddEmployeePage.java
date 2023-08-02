@@ -3,7 +3,12 @@ package pages;
 import javaPrograms.oops.Inheritance_1.B;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.BaseClass;
+
+import java.time.Duration;
 
 public class OrangeHRM_AddEmployeePage {
 
@@ -58,6 +63,7 @@ public class OrangeHRM_AddEmployeePage {
         public static By search_icon=By.xpath("//input[contains(@id,'employee_name_quick_filter')]");
         public static By txtbx_searchEmployee= By.xpath("//input[contains(@id,'employee_name_quick_filter')]");
         public static By searched_Employee =By.xpath("//div[@class='employee-details']/div[1]");
+        public static By employee_id= By.xpath("//div[text()='Employee Id: ']/span");
 
         public static void enterFirstNameAndLastName(String firstName, String lastName){
                 WebDriver driver = BaseClass.getDriver();
@@ -164,4 +170,88 @@ public class OrangeHRM_AddEmployeePage {
                 System.out.println("Clicked on Next");
         }
 
+        public static void selectRegion(String region) {
+                WebDriver driver = BaseClass.getDriver();
+                driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_region).click();
+                System.out.println("Region drop-down is clicked");
+                if (region.equals("Region-1")) {
+                        driver.findElement(OrangeHRM_AddEmployeePage.region_region1Option).click();
+                        System.out.println("Region-1 is selected ");
+                } else if (region.equals("Region-2")) {
+                        driver.findElement(OrangeHRM_AddEmployeePage.region_region2Option).click();
+                        System.out.println("Region-2 is selected ");
+                } else if (region.equals("Region-3")) {
+                        driver.findElement(OrangeHRM_AddEmployeePage.region_region3Option).click();
+                        System.out.println("Region-3 is selected ");
+                } else {
+                        System.out.println("region is not found");
+                }
+        }
+        public static void selectFTE(String fte){
+                WebDriver driver = BaseClass.getDriver();
+                driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_fteOption).click();
+                System.out.println("FTE drop-down is clicked");
+
+                if (fte.equals("0.5")) {
+                        driver.findElement(OrangeHRM_AddEmployeePage.fte_Option1).click();
+                        System.out.println("0.75 is selected");
+                } else if (fte.equals("0.75")){
+                        driver.findElement(OrangeHRM_AddEmployeePage.fte_option2).click();
+                        System.out.println("0.75 is selected");
+                } else if (fte.equals("1")) {
+                        driver.findElement(OrangeHRM_AddEmployeePage.fte_option3).click();
+                        System.out.println("0.75 is selected");
+                } else {
+                        System.out.println("FTE is not found");
+                }
+        }
+         public static void selectTempDept(String temp_dept){
+
+                 WebDriver driver = BaseClass.getDriver();
+                 driver.findElement(OrangeHRM_AddEmployeePage.dropdwn_tempDept).click();
+                 System.out.println("Temp Department drop-down is clicked");
+
+                 if (temp_dept.equals("Sub unit -1")) {
+                         driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitOneOption).click();
+                         System.out.println("Sub unit -2 is selected");
+                 } else if (temp_dept.equals("Sub unit-2")) {
+                         driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitTwoOption).click();
+                         System.out.println("Sub unit -2 is selected");
+                 } else if (temp_dept.equals("Sub unit-3")) {
+                         driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitThreeOption).click();
+                         System.out.println("Sub unit -2 is selected");
+                 } else if (temp_dept.equals("Sub unit-4")) {
+                         driver.findElement(OrangeHRM_AddEmployeePage.tempDept_subunitFourOption).click();
+                         System.out.println("Sub unit -2 is selected");
+                 } else {
+                         System.out.println("TempDepartment is not found");
+                 }
+
+                 driver.findElement(OrangeHRM_AddEmployeePage.btn_save).click();
+                 System.out.println("clicked on Save");
+         }
+         public static void searchEmployee(String firstName, String lastName){
+                 WebDriver driver = BaseClass.getDriver();
+                 driver.findElement(OrangeHRM_AddEmployeePage.search_icon).sendKeys(firstName+" "+ lastName);
+                 driver.findElement(OrangeHRM_AddEmployeePage.txtbx_searchEmployee).click();
+                 System.out.println("Searched with Employee first and last name");
+         }
+
+         public static void verifyEmployeeId_name(String firstName, String lastName){
+                 WebDriver driver = BaseClass.getDriver();
+                 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+                 WebElement searchedEmployeeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(OrangeHRM_AddEmployeePage.searched_Employee));
+                 String elementText = searchedEmployeeElement.getText().trim();
+                 System.out.println("Element Text is: " + elementText);
+
+
+                 String expectedFullName = firstName + " " + lastName;
+                 if (elementText.equalsIgnoreCase(expectedFullName)) {
+                         System.out.println("Search result is correct");
+                 } else {
+                         System.out.println("Search result is incorrect");
+                 }
+                 String empid=driver.findElement(OrangeHRM_AddEmployeePage.employee_id).getText();
+                 System.out.println("Employee id is :" + empid);
+         }
 }
