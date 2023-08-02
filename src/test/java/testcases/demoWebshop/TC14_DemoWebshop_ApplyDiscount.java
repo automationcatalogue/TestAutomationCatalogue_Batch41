@@ -17,7 +17,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.time.Duration;
 
-public class TC18_DemoWebshop_ApplyDiscount {
+public class TC14_DemoWebshop_ApplyDiscount {
         static FileInputStream fis;
         static XSSFWorkbook wbk;
         static XSSFSheet sh;

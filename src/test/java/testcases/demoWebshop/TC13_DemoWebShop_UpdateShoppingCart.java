@@ -16,7 +16,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.time.Duration;
 
-public class TC17_DemoWebShop_UpdateShoppingCart {
+public class TC13_DemoWebShop_UpdateShoppingCart {
     String projectPath;
     FileInputStream fis;
     FileOutputStream fos;

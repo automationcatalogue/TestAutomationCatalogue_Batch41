@@ -14,7 +14,7 @@ import java.time.Duration;
 import java.util.List;
 
 @Test
-public class TC20_OrangeHRM_Goals {
+public class TC06_OrangeHRM_Goals {
     public void OrangeHRM_Goals() throws Exception {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
