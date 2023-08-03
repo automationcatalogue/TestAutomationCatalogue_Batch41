@@ -4,25 +4,21 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
 import pages.DemoWebshop_AddressesPage;
 import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
 import utilities.CommonUtils;
+import utilities.Config;
+import utilities.ExcelUtils;
 import utilities.RandomGenerator;
 
-import javax.naming.Name;
 import java.io.FileInputStream;
-import java.time.Duration;
 import java.util.List;
-
-import static org.testng.reporters.jq.BasePanel.C;
 
 public class TC10_DemoWebShop_CreateAddress {
     static FileInputStream fis;
@@ -54,73 +50,41 @@ public class TC10_DemoWebShop_CreateAddress {
     static XSSFCell cell_FaxNumber;
     static String FaxNumber;
     static String projectPath;
+    static String sheetName;
+    static int rowNum;
 
     @BeforeClass
-    public void prerequisite_setup() throws Exception{
-        projectPath = System.getProperty("user.dir");
-        fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-         wbk = new XSSFWorkbook(fis);
-         sh = wbk.getSheet("DemoWebshop_CreateAddress");
-         row = sh.getRow(1);
+    public void prerequisite_setup() throws Exception {
+        wbk = ExcelUtils.setExcelFilePath();
+        sheetName = "DemoWebshop_CreateAddress";
+        rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID, sheetName);
 
-         cell_UserName = row.getCell(3);
-         UserName = cell_UserName.getStringCellValue();
-         System.out.println("Email from Excel sheet is :"+UserName);
+        UserName = ExcelUtils.getCellData(sheetName, 1, Config.col_UserName);
+        System.out.println("Email from Excel sheet is :" + UserName);
 
-         cell_Password = row.getCell(4);
-         Password = cell_Password.getStringCellValue();
-         System.out.println("Password from Excel sheet is:"+Password);
+        Password = ExcelUtils.getCellData(sheetName, 1, Config.col_Password);
+        System.out.println("Password from Excel sheet is:" + Password);
 
-         cell_FirstName = row.getCell(5);
-         //FirstName = cell_FirstName.getStringCellValue();
-         //System.out.println("FirstName from Excel sheet is: "+FirstName);
         FirstName = RandomGenerator.getRandomData("firstName");
+        ExcelUtils.setCellData(FirstName, sheetName,rowNum, Config.col_createAddress_FirstName);
 
-        cell_LastName = row.getCell(6);
-        //LastName = cell_LastName.getStringCellValue();
-        //System.out.println("LastName from Excel sheet is: "+LastName);
         LastName = RandomGenerator.getRandomData("lastName");
+        ExcelUtils.setCellData(LastName, sheetName,rowNum, Config.col_createAddress_LastName);
 
-        cell_Email = row.getCell(7);
-        //Email = cell_Email.getStringCellValue();
-        //System.out.println("Email from Excel sheet is:"+Email);
         Email = RandomGenerator.getRandomEmail(8);
+        ExcelUtils.setCellData(Email, sheetName, rowNum, Config.col_createAddress_Email);
 
-        cell_Company = row.getCell(8);
-        //Company = cell_Company.getStringCellValue();
-       // System.out.println("Company from Excel sheet is: "+Company);
         Company = RandomGenerator.getRandomData("company");
+        ExcelUtils.setCellData(Company, sheetName, rowNum, Config.col_createAddress_Company);
 
-        cell_City = row.getCell(9);
-        //City = cell_City.getStringCellValue();
-        //System.out.println("City from Excel sheet is: "+City);
         City = RandomGenerator.getRandomData("city");
-
-        cell_Address1 = row.getCell(10);
-       // Address1 = cell_Address1.getStringCellValue();
-        //System.out.println("Address1 from Excel sheet is: "+Address1);
         Address1 = RandomGenerator.getRandomData("address1");
-
-        cell_Address2 = row.getCell(11);
-        //Address2 = cell_Address2.getStringCellValue();
-        //System.out.println("Address from Excel sheet is: "+Address2);
         Address2 = RandomGenerator.getRandomData("address2");
-
-        cell_ZipPostalCode = row.getCell(12);
-        //ZipPostalCode = cell_ZipPostalCode.getStringCellValue();
-        //System.out.println("ZipPostalCode from Excel sheet is: "+ZipPostalCode);
         ZipPostalCode = RandomGenerator.getRandomData("zipcode");
-
-        cell_PhoneNumber = row.getCell(13);
-        //PhoneNumber = cell_PhoneNumber.getStringCellValue();
-        //System.out.println("PhoneNumber from Excel sheet is: "+PhoneNumber);
         PhoneNumber = RandomGenerator.getRandomData("phoneNumber");
-
-        cell_FaxNumber = row.getCell(14);
-        //FaxNumber = cell_FaxNumber.getStringCellValue();
-        //System.out.println("FaxNumber from Excel sheet is:"+FaxNumber);
         FaxNumber = RandomGenerator.getRandomNumeric(8);
     }
+
     @Test
     @Parameters({"browserName"})
     public void login(@Optional("chrome") String browserName) throws Exception {
@@ -195,17 +159,17 @@ public class TC10_DemoWebShop_CreateAddress {
         List<WebElement> address_list = driver.findElements(DemoWebshop_AddressesPage.txtbx_AddressList);
 
         boolean isAddressFound = false;
-        for(WebElement name:address_list){
-            String present_name=name.getText();
-            if(present_name.equalsIgnoreCase("Rama Krishna")){
-                isAddressFound=true;
+        for (WebElement name : address_list) {
+            String present_name = name.getText();
+            if (present_name.equalsIgnoreCase("Rama Krishna")) {
+                isAddressFound = true;
                 break;
             }
         }
 
-        if(isAddressFound){
+        if (isAddressFound) {
             System.out.println("Address Creation is successful");
-        }else{
+        } else {
             System.out.println("Address Creation is not successful");
         }
 
@@ -218,8 +182,9 @@ public class TC10_DemoWebShop_CreateAddress {
         System.out.println("Browser is closed");
 
     }
+
     @AfterClass
-    public void tearDown() throws Exception{
+    public void tearDown() throws Exception {
         fis.close();
         System.out.println("Excel file reading is closed");
     }

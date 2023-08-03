@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 import pages.*;
 import utilities.BaseClass;
 import utilities.CommonUtils;
+import utilities.ExcelUtils;
 
 
 import java.io.FileInputStream;
@@ -38,9 +39,7 @@ public class TC04_OrangeHRM_EditEmployee {
     XSSFCell dietaryRequire2_Cell;String dietaryRequire2;
     @BeforeClass
     public void prerequisite_Setup() throws Exception{
-        projectPath = System.getProperty("user.dir");
-        fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-        wbk = new XSSFWorkbook(fis);
+        wbk= ExcelUtils.setExcelFilePath();
         ws = wbk.getSheet("OrangeHRM_EditEmployee");
         row = ws.getRow(1);
         userName_cell = row.getCell(3);

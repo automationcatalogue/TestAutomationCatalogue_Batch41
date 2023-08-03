@@ -17,6 +17,8 @@ import pages.OrangeHRM_LoginPage;
 import pages.OrangeHRM_LogoutPage;
 import utilities.BaseClass;
 import utilities.CommonUtils;
+import utilities.Config;
+import utilities.ExcelUtils;
 
 
 import java.io.FileInputStream;
@@ -39,32 +41,19 @@ public class TC02_OrangeHRM_AddEmployee {
 
     @BeforeClass
     public void prerequisite_setup() throws Exception {
-        projectPath = System.getProperty("user.dir");
-        fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-
-        wbk = new XSSFWorkbook(fis);
-        sht = wbk.getSheet("OrangeHRM_AddEmployee");
-        row = sht.getRow(1);
-        username_cell = row.getCell(3);
-        userName = username_cell.getStringCellValue();
-        password_cell = row.getCell(4);
-        pswd = password_cell.getStringCellValue();
-        firstName_cell = row.getCell(5);
-        firstName = firstName_cell.getStringCellValue();
-        lastName_cell = row.getCell(6);
-        lastName = lastName_cell.getStringCellValue();
-        location_cell = row.getCell(7);
-        location = location_cell.getStringCellValue();
-        maritalStatus_cell = row.getCell(8);
-        marital_Status = maritalStatus_cell.getStringCellValue();
-        gender_cell = row.getCell(9);
-        gender = gender_cell.getStringCellValue();
-        region_cell = row.getCell(10);
-        region = region_cell.getStringCellValue();
-        fte_cell = row.getCell(11);
-        fte = fte_cell.getStringCellValue();
-        tempdept_cell = row.getCell(12);
-        temp_dept = tempdept_cell.getStringCellValue();
+        wbk= ExcelUtils.setExcelFilePath();
+        String sheetName = "OrangeHRM_AddEmployee";
+        int rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        userName = ExcelUtils.getCellData(sheetName,rowNum, Config.col_UserName);
+        pswd = ExcelUtils.getCellData(sheetName,rowNum,Config.col_Password);
+        firstName = ExcelUtils.getCellData(sheetName,rowNum,Config.col_AddEmployee_FirstName);
+        lastName = ExcelUtils.getCellData(sheetName,rowNum,Config.col_AddEmployee_LastName);
+        location = ExcelUtils.getCellData(sheetName,rowNum,Config.col_AddEmployee_Location);
+        marital_Status = ExcelUtils.getCellData(sheetName,rowNum, Config.col_AddEmployee_MaritalStatus);
+        gender = ExcelUtils.getCellData(sheetName,rowNum,Config.col_AddEmployee_Gender);
+        region = ExcelUtils.getCellData(sheetName,rowNum,Config.col_AddEmployee_Region);
+        fte = ExcelUtils.getCellData(sheetName,rowNum,Config.col_AddEmployee_FTE);
+        temp_dept = ExcelUtils.getCellData(sheetName,rowNum,Config.col_AddEmployee_TempDepartment);
 
     }
     @Test
