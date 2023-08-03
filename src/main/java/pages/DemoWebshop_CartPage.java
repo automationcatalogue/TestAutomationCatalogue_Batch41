@@ -1,6 +1,8 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import utilities.BaseClass;
 
 public class DemoWebshop_CartPage {
     public static By txt_FirstItemTotal = By.xpath("(//table[@class='cart']/tbody/tr)[1]/td[6]/span[2]");
@@ -26,5 +28,12 @@ public class DemoWebshop_CartPage {
     public static By checkbox_Iagree = By.xpath("//input[@id='termsofservice']");
     public static By btn_Checkout = By.xpath("//button[@value='checkout']");
 
+    public static double getCartPriceBeforeDiscount(){
+        WebDriver driver = BaseClass.getDriver();
+        String total_BeforeDiscount=driver.findElement(DemoWebshop_CartPage.txt_BeforeDiscountTotal).getText();
+        System.out.println("value of total:"+total_BeforeDiscount);
+        double totalValue_BeforeDiscount = Double.parseDouble(total_BeforeDiscount);
+        return totalValue_BeforeDiscount;
+    }
 
 }

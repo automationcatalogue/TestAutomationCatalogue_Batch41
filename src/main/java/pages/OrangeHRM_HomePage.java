@@ -21,4 +21,10 @@ public class OrangeHRM_HomePage {
             System.out.println("Title is not verified, Login not Successful");
         }
     }
+
+    public static void clickEmployeeManagementLink(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(OrangeHRM_HomePage.link_EmployeeManagement).click();
+        System.out.println("Employee Management is selected");
+    }
 }

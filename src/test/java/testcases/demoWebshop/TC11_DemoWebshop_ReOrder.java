@@ -11,6 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import pages.*;
 import utilities.CommonUtils;
+import utilities.Config;
+import utilities.ExcelUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -31,23 +33,19 @@ public class TC11_DemoWebshop_ReOrder {
     static String orderNumber;
     static FileOutputStream fos;
     static String projectPath;
+    static String sheetName;
+    static int rowNum;
 
     @BeforeClass
     public void prerequisite_setup() throws Exception {
-        projectPath = System.getProperty("user.dir");
-        fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-        wbk = new XSSFWorkbook(fis);
-        sh = wbk.getSheet("DemoWebshop_ReOrder");
-        row = sh.getRow(1);
-
-        cell_userName = row.getCell(3);
-        userName = cell_userName.getStringCellValue();
+        wbk= ExcelUtils.setExcelFilePath();
+        sheetName = "DemoWebshop_ReOrder";
+        rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        userName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
         System.out.println("UserName from excel sheet is :" + userName);
 
-        cell_password = row.getCell(4);
-        password = cell_password.getStringCellValue();
+        password = ExcelUtils.getCellData(sheetName,rowNum,Config.col_Password);
         System.out.println("Password from excel sheet is:" + password);
-
 
     }
 
@@ -126,17 +124,9 @@ public class TC11_DemoWebshop_ReOrder {
     @AfterClass
     public void tearDown() throws Exception {
 
-        cell_OrderNumber = row.getCell(5);
-        if(cell_OrderNumber==null){
-            cell_OrderNumber=row.createCell(5);
-        }
-        cell_OrderNumber.setCellValue(orderNumber);
-        fos = new FileOutputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-        wbk.write(fos);
+        ExcelUtils.setCellData(orderNumber, sheetName, rowNum, Config.col_Reorder_OrderNumber);
         System.out.println(orderNumber+" is written back to the Excel file");
 
-        fos.close();
-        System.out.println("ExcelFile Writing is closed");
         fis.close();
         System.out.println("ExcelFile reading is closed");
     }

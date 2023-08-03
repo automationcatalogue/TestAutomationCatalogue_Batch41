@@ -20,7 +20,7 @@ public class Config {
     public static final int col_AddEmployee_Region=11;
     public static final int col_AddEmployee_FTE=12;
     public static final int col_AddEmployee_TempDepartment=13;
-    public static final int col_AddEmployee_EmployeeId=13;
+    public static final int col_AddEmployee_EmployeeId=14;
 
     //Add User testcase Column numbers
     public static final int col_AddUser_EmployeeName=6;

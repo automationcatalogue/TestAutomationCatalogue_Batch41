@@ -17,6 +17,7 @@ import pages.OrangeHRM_LoginPage;
 import pages.OrangeHRM_LogoutPage;
 import utilities.BaseClass;
 import utilities.CommonUtils;
+import utilities.ExcelUtils;
 import utilities.RandomGenerator;
 import java.io.FileInputStream;
 import java.time.Duration;
@@ -37,9 +38,7 @@ public class TC03_OrangeHRM_AddUser {
     @BeforeClass
     public void prerequisites() throws Exception
     {
-        Projectpath=System.getProperty("user.dir");
-         fis=new FileInputStream(Projectpath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-        wbk=new XSSFWorkbook(fis) ;
+      wbk= ExcelUtils.setExcelFilePath();
       ws= wbk.getSheet("OrangeHRM_AddUser");
       row=ws.getRow(1);
       username_cell=row.getCell(3);

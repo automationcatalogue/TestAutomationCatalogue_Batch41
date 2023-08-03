@@ -13,6 +13,8 @@ import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
 import utilities.BaseClass;
 import utilities.CommonUtils;
+import utilities.Config;
+import utilities.ExcelUtils;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -46,18 +48,14 @@ public class TC12_DemoWebShop_TotalOrders {
 
     @BeforeClass
     public void prerequisite_setup() throws Exception {
-        projectPath = System.getProperty("user.dir");
-        fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-        wbk = new XSSFWorkbook(fis);
-        sh = wbk.getSheet("DemoWebShop_TotalOrders");
-        row = sh.getRow(1);
+        wbk= ExcelUtils.setExcelFilePath();
+        String sheetName="DemoWebShop_TotalOrders";
+        int rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
 
-        cell_userName = row.getCell(3);
-        userName = cell_userName.getStringCellValue();
+        userName = ExcelUtils.getCellData(sheetName,rowNum,Config.col_UserName);
         System.out.println("UserName from excel sheet is :" + userName);
 
-        cell_password = row.getCell(4);
-        password = cell_password.getStringCellValue();
+        password = ExcelUtils.getCellData(sheetName,rowNum,Config.col_Password);
         System.out.println("Password from excel sheet is:" + password);
 
     }
