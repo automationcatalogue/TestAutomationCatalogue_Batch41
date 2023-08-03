@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class TC18_DemoWebshop_ApplyDiscount {
+public class TC14_DemoWebshop_ApplyDiscount {
 
         public static void main(String args[]) throws Exception{
             WebDriver driver=new ChromeDriver();

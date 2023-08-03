@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class TC17_DemoWebShop_UpdateShoppingCart {
+public class TC13_DemoWebShop_UpdateShoppingCart {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
