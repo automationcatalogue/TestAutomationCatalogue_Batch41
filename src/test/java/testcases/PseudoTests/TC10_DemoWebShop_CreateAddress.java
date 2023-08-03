@@ -14,7 +14,7 @@ import utilities.CommonUtils;
 import java.time.Duration;
 import java.util.List;
 
-public class TC12_DemoWebShop_CreateAddress {
+public class TC10_DemoWebShop_CreateAddress {
 
     public static void main(String[] args) throws Exception{
         WebDriver driver = new ChromeDriver();

@@ -8,6 +8,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.*;
+import utilities.BaseClass;
 import utilities.CommonUtils;
 
 import java.time.Duration;
@@ -20,6 +21,8 @@ public class TC05_OrangeHRM_TravelRequest {
     public void addEmployee(@Optional("chrome") String browserName) throws Exception {
 
         WebDriver driver = CommonUtils.browserLaunch("Chrome");
+        BaseClass ob = new BaseClass(driver);
+
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
