@@ -14,46 +14,36 @@ import pages.OrangHRM_AddUserPage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
 import pages.OrangeHRM_LogoutPage;
-import utilities.BaseClass;
-import utilities.CommonUtils;
-import utilities.RandomGenerator;
+import utilities.*;
+
 import java.io.FileInputStream;
 import java.time.Duration;
 
 public class TC03_OrangeHRM_AddUser {
 
-
-    String Projectpath;
-    FileInputStream  fis;
     XSSFWorkbook wbk;
-    XSSFSheet  ws;
-    XSSFRow row;
-    XSSFCell username_cell; String userName_1;
-    XSSFCell password_cell; String password;
-    XSSFCell empName_cell; String empName;
-    XSSFCell username_AddUser; String addUser;
-    XSSFCell confirm_Pwd_cell; String confirm_pwd;
-    XSSFCell newPassword_cell; String newPassword;
+    int row;
+     String userName_1;
+    String password;
+    String empName;
+   String addUser;
+    String confirm_pwd;
+    String newPassword;
+    static String sheetName;
     @BeforeClass
     public void prerequisites() throws Exception
     {
-        Projectpath=System.getProperty("user.dir");
-         fis=new FileInputStream(Projectpath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-        wbk=new XSSFWorkbook(fis);
-      ws= wbk.getSheet("OrangeHRM_AddUser");
-      row=ws.getRow(1);
-      username_cell=row.getCell(3);
-      userName_1=username_cell.getStringCellValue(); //
-       password_cell=row.getCell(4);
-       password=password_cell.getStringCellValue();
-       empName_cell= row.getCell(5);
-       empName=empName_cell.getStringCellValue();
-       username_AddUser= row.getCell(6);
-       addUser=username_AddUser.getStringCellValue();
-       newPassword_cell=row.getCell(7);
-       newPassword=newPassword_cell.getStringCellValue();
-        confirm_Pwd_cell=row.getCell(8);
-        confirm_pwd=confirm_Pwd_cell.getStringCellValue();
+        sheetName="OrangeHRM_AddUser";
+        wbk= ExcelUtils.setExcelFilePath();
+        row=ExcelUtils.getRowNumber("TC03-01",sheetName);
+        userName_1=ExcelUtils.getCellData(sheetName,row, Config.col_UserName);
+       password= ExcelUtils.getCellData(sheetName,row,Config.col_Password);
+       empName= ExcelUtils.getCellData(sheetName,row,Config.col_AddUser_EmployeeName);
+       addUser= ExcelUtils.getCellData(sheetName,row,Config.col_AddUser_NewUser);
+       newPassword=ExcelUtils.getCellData(sheetName,row,Config.col_AddUser_ConfirmPassword);
+       confirm_pwd=ExcelUtils.getCellData(sheetName,row,Config.col_AddUser_ConfirmPassword);
+
+
     }
     @Test
     @Parameters({"browserName"})
