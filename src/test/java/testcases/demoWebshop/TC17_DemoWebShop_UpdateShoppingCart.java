@@ -61,7 +61,7 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
 
       DemoWebshop_LoginPage.login(userName,passWord);
 
-      /*driver.findElement(DemoWebshop_HomePage.link_HeaderBooks).click();
+      driver.findElement(DemoWebshop_HomePage.link_HeaderBooks).click();
       System.out.println("Clicked on Books link");
 
       driver.findElement(DemoWebshop_BooksPage.link_FirstItem).click();
@@ -218,7 +218,7 @@ public class TC17_DemoWebShop_UpdateShoppingCart {
         fos.close();
         System.out.println("Excel File Writing is closed");
         fis.close();
-        System.out.println("Excel File reading is closed");*/
+        System.out.println("Excel File reading is closed");
     }
 }
 

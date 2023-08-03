@@ -5,6 +5,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
@@ -29,7 +30,7 @@ public class TC03_OrangeHRM_AddUser {
     XSSFWorkbook wbk;
     XSSFSheet  ws;
     XSSFRow row;
-    XSSFCell username_cell; String userName;
+    XSSFCell username_cell; String userName_1;
     XSSFCell password_cell; String password;
     XSSFCell empName_cell; String empName;
     XSSFCell username_AddUser; String addUser;
@@ -43,7 +44,7 @@ public class TC03_OrangeHRM_AddUser {
       ws= wbk.getSheet("OrangeHRM_AddUser");
       row=ws.getRow(1);
       username_cell=row.getCell(3);
-      userName=username_cell.getStringCellValue();
+      userName_1=username_cell.getStringCellValue();
        password_cell=row.getCell(4);
        password=password_cell.getStringCellValue();
        empName_cell= row.getCell(5);
@@ -67,7 +68,7 @@ public class TC03_OrangeHRM_AddUser {
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
 
         //Enter the UserName as "Admin"
-        OrangeHRM_LoginPage.login(userName,password);
+        OrangeHRM_LoginPage.login(userName_1,password);
 
         OrangeHRM_HomePage.verifyTitle();
 
@@ -81,10 +82,10 @@ public class TC03_OrangeHRM_AddUser {
         //Enter Employee Name as Charlie Carter
         driver.findElement(OrangHRM_AddUserPage.txtbx_EmployeeName).sendKeys(empName);
         wait.until(ExpectedConditions.visibilityOfElementLocated(OrangHRM_AddUserPage.empName_DropdownVisibility));
-        driver.findElement(OrangHRM_AddUserPage.txtbx_EmployeeName).click();
+        driver.findElement(OrangHRM_AddUserPage.empName_DropdownVisibility).click();
 
         //Enter some Random UserName
-        driver.findElement(OrangHRM_AddUserPage.txtbx_RandomUserName).sendKeys(addUser);
+        driver.findElement(OrangHRM_AddUserPage.txtbx_RandomUserName).sendKeys(userName);
 
         //Enter the Password as "Admin@123"
         driver.findElement(OrangHRM_AddUserPage.txtbx_Pwd).sendKeys(password);

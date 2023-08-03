@@ -9,8 +9,10 @@ public class OrangeHRM_UsersPage {
     public static By txtbx_enterPassword=By.xpath("(//input[@type='password'])[1]");
     public static By txtbx_confirmPassword=By.xpath("(//input[@type='password'])[2]");
     public static By btn_save =By.xpath("//button[text()='Save']");
-    public static By list_users =By.xpath("//table[@class='highlight bordered']/tbody/tr/td[4]");
+    public static By list_users =By.xpath("//tbody[@ng-if='!listData.staticBody']/tr/td[4]");
     // corresponding supervisor edit button
     public static By btn_edit =By.xpath(".//following-sibling::td[4]");
+    public static By txtbx_userName = By.xpath("//input[@id='user_name']");
+    public static By icon_crossExit = By.xpath("//button[@aria-label='Close']");
 
 }
