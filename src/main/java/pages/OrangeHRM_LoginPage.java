@@ -16,4 +16,12 @@ public class OrangeHRM_LoginPage {
         driver.findElement(OrangeHRM_LoginPage.txtbx_Password).sendKeys(password);
         driver.findElement(OrangeHRM_LoginPage.btn_Login).click();
     }
+
+    public static void login_employee(String userName,String pswd){
+        WebDriver driver =BaseClass.getDriver();
+        driver.findElement(OrangeHRM_LoginPage.txtbx_userName).sendKeys(userName);
+        driver.findElement(OrangeHRM_LoginPage.txtbx_Password).sendKeys(pswd);
+        driver.findElement(OrangeHRM_LoginPage.btn_Login).click();
+        System.out.println("Logged into " + userName + " portal");
+    }
 }
