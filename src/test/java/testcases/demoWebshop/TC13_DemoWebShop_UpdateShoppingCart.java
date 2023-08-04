@@ -11,6 +11,7 @@ import org.testng.annotations.*;
 import pages.*;
 import utilities.BaseClass;
 import utilities.CommonUtils;
+import utilities.ExcelUtils;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -30,15 +31,11 @@ public class TC13_DemoWebShop_UpdateShoppingCart {
     XSSFCell orderNumber_cell; String orderNumber;
  @BeforeClass
  public void prerequisite_Setup() throws Exception {
-     projectPath = System.getProperty("user.dir");
-     fis = new FileInputStream(projectPath + "\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-     wbk = new XSSFWorkbook(fis);
-     ws = wbk.getSheet("DemoWebshop_UpdateShoppingCart");
-     row = ws.getRow(1);
-     userName_cell = row.getCell(3);
-     userName = userName_cell.getStringCellValue();
-     passWord_cell = row.getCell(4);
-     passWord = passWord_cell.getStringCellValue();
+     wbk= ExcelUtils.setExcelFilePath();
+     String sheetName = "DemoWebshop_UpdateShoppingCart";
+
+     userName = ExcelUtils.getCellData(sheetName,1,3);
+     passWord = ExcelUtils.getCellData(sheetName,1,4);
      length_cell = row.getCell(5);
      jewel_Length = length_cell.getStringCellValue();
      updateQty_cell = row.getCell(6);

@@ -1,9 +1,8 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import utilities.BaseClass;
 
 public class OrangeHRM_HomePage {
@@ -14,33 +13,40 @@ public class OrangeHRM_HomePage {
 
     public static void verifyTitle() {
         WebDriver driver = BaseClass.getDriver();
+
         String title = driver.getTitle();
-        String expectedTitle = "Employee Management";
-        if (title.equalsIgnoreCase(expectedTitle)) {
-            System.out.println("Title is verified, Login is Successful");
-        } else {
-            System.out.println("Title is not verified, Login not Successful");
-        }
+        String expectedTitle = "Employee abcd";
+
+        BaseClass.failureReason="Title is not matched";
+        Assert.assertEquals(expectedTitle,title,"Title is not matched");
+        System.out.println("Title is verified, Login is Successful");
     }
 
     public static void clickEmployeeManagementLink() {
         WebDriver driver = BaseClass.getDriver();
-        driver.findElement(OrangeHRM_HomePage.link_EmployeeManagement).click();
+        driver.findElement(link_EmployeeManagement).click();
         System.out.println("Employee Management is selected");
     }
 
-    public static void clickHRAdministrationLink() {
+    public static void clickHrAdministrationLink() {
         WebDriver driver = BaseClass.getDriver();
-        driver.findElement(OrangeHRM_HomePage.link_HRAdministration).click();
-        System.out.println("HR Administration is selected");
+        driver.findElement(link_HRAdministration).click();
+    }
+public static void clickLogout(){
+    WebDriver driver=BaseClass.getDriver();
+            //Click on Logout button
+            driver.findElement(OrangeHRM_LogoutPage.btn_logout).click();
+        }
+
+        public static void verify_empName(String empName){
+        WebDriver driver=BaseClass.getDriver();
+                    String Employee_Name=driver.findElement(lbl_ProfileName).getText();
+            String expected_name=empName;
+            if(Employee_Name.equalsIgnoreCase(expected_name)){
+                System.out.println("UserName is matched and verified");
+            }else {
+                System.out.println("UserName is not matched");
+            }
+        }
     }
 
-    public static void clickTravelExp() {
-        WebDriver driver = BaseClass.getDriver();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement travelexp_Element = driver.findElement(OrangeHRM_HomePage.link_travelandExpense);
-        travelexp_Element.click();
-        js.executeScript("arguments[0].click;", travelexp_Element);
-        System.out.println("Travel and Expense is selected");
-    }
-}

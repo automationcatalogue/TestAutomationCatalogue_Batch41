@@ -1,7 +1,7 @@
 package utilities;
 
 public class Config {
-    public static final String TestCase_ID = "TC03-09";
+    public static final String TestCase_ID = "TC03-01";
 
     //Common TestCases Column numbers
     public static final int col_Sno=0;
@@ -10,6 +10,8 @@ public class Config {
     public static final int col_TestDescription=3;
     public static final int col_UserName=4;
     public static final int col_Password=5;
+    public static final int col_Status=4;
+    public static final int col_reason=5;
 
     //Add Employee testcase Column numbers
     public static final int col_AddEmployee_FirstName=6;
@@ -20,7 +22,7 @@ public class Config {
     public static final int col_AddEmployee_Region=11;
     public static final int col_AddEmployee_FTE=12;
     public static final int col_AddEmployee_TempDepartment=13;
-    public static final int col_AddEmployee_EmployeeId=13;
+    public static final int col_AddEmployee_EmployeeId=14;
 
     //Add User testcase Column numbers
     public static final int col_AddUser_EmployeeName=6;
