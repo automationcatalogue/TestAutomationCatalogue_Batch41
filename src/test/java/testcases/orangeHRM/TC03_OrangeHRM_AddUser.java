@@ -6,10 +6,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.ITestResult;
+import org.testng.annotations.*;
 import pages.OrangHRM_AddUserPage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
@@ -30,12 +28,14 @@ public class TC03_OrangeHRM_AddUser {
     String confirm_pwd;
     String newPassword;
     static String sheetName;
+    static int rowNum_Index;
     @BeforeClass
     public void prerequisites() throws Exception
     {
         sheetName="OrangeHRM_AddUser";
         wbk= ExcelUtils.setExcelFilePath();
-        row=ExcelUtils.getRowNumber("TC03-01",sheetName);
+        row=ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        rowNum_Index = ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
         userName_1=ExcelUtils.getCellData(sheetName,row, Config.col_UserName);
        password= ExcelUtils.getCellData(sheetName,row,Config.col_Password);
        empName= ExcelUtils.getCellData(sheetName,row,Config.col_AddUser_EmployeeName);
@@ -71,6 +71,27 @@ public class TC03_OrangeHRM_AddUser {
        OrangeHRM_HomePage.verify_empName(empName);
        OrangeHRM_HomePage.clickLogout();
         driver.quit();
+    }
+
+    @AfterMethod
+    public void tearDown(ITestResult result) throws Exception {
+
+        if(result.getStatus() == ITestResult.SUCCESS){
+            ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
+            System.out.println("TestCase is Passed and status is updated in Excel sheet");
+        }else if(result.getStatus()==ITestResult.FAILURE){
+            if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
+                ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
+                System.out.println("TestCase is Failed and status is updated in Excel sheet");
+
+                ExcelUtils.setCellData(BaseClass.failureReason,"Index",rowNum_Index,Config.col_reason);
+                System.out.println("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+            }
+        }else if(result.getStatus()==ITestResult.SKIP){
+            ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
+            System.out.println("TestCase is SKIPPED and status is updated in Excel sheet");
+        }
+        ExcelUtils.closeExcelFile();
     }
 }
 

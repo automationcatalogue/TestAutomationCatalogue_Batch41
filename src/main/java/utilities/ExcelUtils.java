@@ -44,7 +44,9 @@ public class ExcelUtils {
                 break;
             }
         }
+        BaseClass.failureReason = "TestId is not found";
         Assert.assertTrue(finalRowNumber!=0,"TestId "+testId+" is not found in the sheetName "+sheetName);
+
         System.out.println("TestId "+testId+" is found in the row number "+finalRowNumber+" for sheetName "+sheetName);
 
         return finalRowNumber;
@@ -64,5 +66,9 @@ public class ExcelUtils {
         FileOutputStream fos = new FileOutputStream(excelPath);
         wbk.write(fos);
         fos.close();
+    }
+
+    public static void closeExcelFile() throws Exception{
+        fis.close();
     }
 }
