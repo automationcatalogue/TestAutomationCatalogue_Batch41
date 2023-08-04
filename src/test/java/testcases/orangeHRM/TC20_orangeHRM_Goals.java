@@ -46,23 +46,23 @@ public class TC20_orangeHRM_Goals {
         wbk = new XSSFWorkbook(fis);
         ws = wbk.getSheet("OrangeHRM_Goals");
         row = ws.getRow(1);
-        userName_cell = row.getCell(3);
+        userName_cell = row.getCell(4);
         userName=userName_cell.getStringCellValue();
-        passWord_cell = row.getCell(4);
+        passWord_cell = row.getCell(5);
         passWord = passWord_cell.getStringCellValue();
-        employeeName_cell = row.getCell(5);
+        employeeName_cell = row.getCell(6);
         employeeName = employeeName_cell.getStringCellValue();
-        firstGoalPriority_cell = row.getCell(6);
+        firstGoalPriority_cell = row.getCell(7);
         firstGoalPriority = firstGoalPriority_cell.getStringCellValue();
-        firstGoalDate_cell = row.getCell(7);
+        firstGoalDate_cell = row.getCell(8);
         firstGoalDate = firstGoalDate_cell.getStringCellValue();
-        secondGoalPriority_cell = row.getCell(8);
+        secondGoalPriority_cell = row.getCell(9);
         secondGoalPriority = secondGoalPriority_cell.getStringCellValue();
-        secondGoalDate_cell = row.getCell(9);
+        secondGoalDate_cell = row.getCell(10);
         secondGoalDate = secondGoalDate_cell.getStringCellValue();
-        thirdGoalPriority_cell = row.getCell(10);
+        thirdGoalPriority_cell = row.getCell(11);
         thirdGoalPriority = thirdGoalPriority_cell.getStringCellValue();
-        thirdGoalDate_cell = row.getCell(11);
+        thirdGoalDate_cell = row.getCell(12);
         thirdGoalDate = thirdGoalDate_cell.getStringCellValue();
     }
     @Test
@@ -135,7 +135,6 @@ public class TC20_orangeHRM_Goals {
         driver.findElement(OrangeHRM_PerformancePage.link_goals).click();
         driver.findElement(OrangeHRM_PerformancePage.link_MyGoals).click();
         System.out.println("Clicked on My Goals");
-
 
         //First goal
         driver.findElement(OrangeHRM_GoalsPage.btn_CreateGoal).click();

@@ -42,8 +42,8 @@ public class TC13_DemoWebShop_UpdateShoppingCart {
      update_Qty = updateQty_cell.getStringCellValue();
  }
      @Test
-  @Parameters({"browserName"})
-    public void Update_ShoppingCart(@Optional("chrome")String browserName){
+     @Parameters({"browserName"})
+     public void Update_ShoppingCart(@Optional("chrome")String browserName){
        WebDriver driver = CommonUtils.browserLaunch("Chrome");
        BaseClass ob = new BaseClass(driver);
 
@@ -53,44 +53,17 @@ public class TC13_DemoWebShop_UpdateShoppingCart {
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
       driver.get("https://demowebshop.tricentis.com/");
-      driver.findElement(DemoWebshop_HomePage.link_Login).click();
-      System.out.println("Clicked on the login link");
 
       DemoWebshop_LoginPage.login(userName,passWord);
 
-      driver.findElement(DemoWebshop_HomePage.link_HeaderBooks).click();
-      System.out.println("Clicked on Books link");
-
-      driver.findElement(DemoWebshop_BooksPage.link_FirstItem).click();
-      System.out.println("Clicked on first item in books ");
-
-      driver.findElement(DemoWebshop_BooksPage.btn_AddCartInsideFirstItem).click();
-      System.out.println("Clicked on Add to Cart Button in Books");
-
-      driver.findElement(DemoWebshop_HomePage.link_HeaderJewels).click();
-      System.out.println("Clicked on Jewellery link");
-
-      driver.findElement(DemoWebshop_JewelsPage.link_FirstItem).click();
-      System.out.println("Clicked on first item in jewellery ");
-
-      driver.findElement(DemoWebshop_JewelsPage.txtbx_LngthInsideFrstItm).sendKeys(jewel_Length);
-
-      driver.findElement(DemoWebshop_JewelsPage.btn_AddCartInsideFrstItm).click();
-      System.out.println("Clicked on Add to Cart Button in Jewellery");
-
-      driver.findElement(DemoWebshop_HomePage.link_ShoppingCart).click();
-      System.out.println("Clicked on Shopping Cart Link");
-
+      DemoWebshop_HomePage.select_BooksLink();
+      DemoWebshop_BooksPage.adding_FirstBookToCart();
+      DemoWebshop_HomePage.select_JewelsLink();
+      DemoWebshop_JewelsPage.adding_firstJewelToCart(jewel_Length);
+      DemoWebshop_HomePage.select_ShoppingCart();
       String actual_updateQty=update_Qty;
-
-      WebElement total1 = driver.findElement(DemoWebshop_CartPage.txt_FirstItemTotal);
-      String total_1 = total1.getText();
-      System.out.println("Total of the first item before increasing the quantity is :" + total_1);
-
-      WebElement books_qty1 = driver.findElement(DemoWebshop_CartPage.txtbx_FirstItemQty);
-      books_qty1.clear();
-      books_qty1.sendKeys(actual_updateQty);
-      System.out.println("Quantity is increased in first item");
+      String total_1 = DemoWebshop_CartPage.price_FirstItem();
+      DemoWebshop_CartPage.price_FirstItemAfterIncreasingQty(update_Qty);
 
       WebElement total2 = driver.findElement(DemoWebshop_CartPage.txt_SecondItemTotal);
       String total_2 = total2.getText();

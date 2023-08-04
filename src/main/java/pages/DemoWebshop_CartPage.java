@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import utilities.BaseClass;
 
 public class DemoWebshop_CartPage {
@@ -36,4 +37,20 @@ public class DemoWebshop_CartPage {
         return totalValue_BeforeDiscount;
     }
 
+    public static String price_FirstItem(){
+        WebDriver driver = BaseClass.getDriver();
+        WebElement total1 = driver.findElement(DemoWebshop_CartPage.txt_FirstItemTotal);
+        String total_1 = total1.getText();
+        System.out.println("Total of the first item before increasing the quantity is :" + total_1);
+        return total_1;
+    }
+
+    public static void price_FirstItemAfterIncreasingQty(String Update){
+        WebDriver driver = BaseClass.getDriver();
+        WebElement books_qty1 = driver.findElement(DemoWebshop_CartPage.txtbx_FirstItemQty);
+        books_qty1.clear();
+        books_qty1.sendKeys(Update);
+        System.out.println("Quantity is increased in first item");
+
+    }
 }
