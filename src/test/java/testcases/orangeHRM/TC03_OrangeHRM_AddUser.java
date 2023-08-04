@@ -37,7 +37,7 @@ public class TC03_OrangeHRM_AddUser {
     @BeforeClass
     public void prerequisites() throws Exception
     {
-        Projectpath=System.getProperty("user.dir");
+       Projectpath=System.getProperty("user.dir");
          fis=new FileInputStream(Projectpath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         wbk=new XSSFWorkbook(fis) ;
       ws= wbk.getSheet("OrangeHRM_AddUser");
