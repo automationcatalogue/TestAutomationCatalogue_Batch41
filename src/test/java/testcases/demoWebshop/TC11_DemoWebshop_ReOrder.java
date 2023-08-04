@@ -8,8 +8,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
+import utilities.BaseClass;
 import utilities.CommonUtils;
 import utilities.Config;
 import utilities.ExcelUtils;
@@ -34,17 +36,19 @@ public class TC11_DemoWebshop_ReOrder {
     static FileOutputStream fos;
     static String projectPath;
     static String sheetName;
-    static int rowNum;
+    static int rowNum_testCase;
+    static int rowNum_Index;
 
     @BeforeClass
     public void prerequisite_setup() throws Exception {
         wbk= ExcelUtils.setExcelFilePath();
         sheetName = "DemoWebshop_ReOrder";
-        rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
-        userName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
+        rowNum_testCase = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        rowNum_Index = ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
+        userName = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_UserName);
         System.out.println("UserName from excel sheet is :" + userName);
 
-        password = ExcelUtils.getCellData(sheetName,rowNum,Config.col_Password);
+        password = ExcelUtils.getCellData(sheetName,rowNum_testCase,Config.col_Password);
         System.out.println("Password from excel sheet is:" + password);
 
     }
@@ -121,13 +125,27 @@ public class TC11_DemoWebshop_ReOrder {
 
     }
 
-    @AfterClass
-    public void tearDown() throws Exception {
+    @AfterMethod
+    public void tearDown(ITestResult result) throws Exception {
 
-        ExcelUtils.setCellData(orderNumber, sheetName, rowNum, Config.col_Reorder_OrderNumber);
-        System.out.println(orderNumber+" is written back to the Excel file");
+        if(result.getStatus() == ITestResult.SUCCESS){
+            ExcelUtils.setCellData(orderNumber, sheetName, rowNum_testCase, Config.col_Reorder_OrderNumber);
+            System.out.println(orderNumber+" is written back to the Excel file");
 
-        fis.close();
-        System.out.println("ExcelFile reading is closed");
+            ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
+            System.out.println("TestCase is Passed and status is updated in Excel sheet");
+        }else if(result.getStatus()==ITestResult.FAILURE){
+            if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
+                ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
+                System.out.println("TestCase is Failed and status is updated in Excel sheet");
+
+                ExcelUtils.setCellData(BaseClass.failureReason,"Index",rowNum_Index,Config.col_reason);
+                System.out.println("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+            }
+        }else if(result.getStatus()==ITestResult.SKIP){
+            ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
+            System.out.println("TestCase is SKIPPED and status is updated in Excel sheet");
+        }
+        ExcelUtils.closeExcelFile();
     }
 }
