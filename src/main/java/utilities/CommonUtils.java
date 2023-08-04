@@ -44,10 +44,11 @@ public class CommonUtils {
         FileUtils.copyFile(src,dest);
     }
 
-    public static void selectDropdownValue(By locator, String data){
+    public static void selectDropdownValue(By locator, String data) throws Exception{
         WebDriver driver = BaseClass.getDriver();
 
         List<WebElement> list_Elements = driver.findElements(locator);
+        Thread.sleep(2000);
         for (WebElement element:list_Elements)
         {
             String elementText = element.getText();
