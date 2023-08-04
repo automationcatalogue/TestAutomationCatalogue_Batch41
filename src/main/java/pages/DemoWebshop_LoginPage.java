@@ -13,9 +13,9 @@ public class DemoWebshop_LoginPage {
     public static void login(String userName, String password){
         WebDriver driver = BaseClass.getDriver();
 
-        driver.findElement(DemoWebshop_LoginPage.txtbx_UserName).sendKeys(userName);
-        driver.findElement(DemoWebshop_LoginPage.txtbx_Password).sendKeys(password);
-        driver.findElement(DemoWebshop_LoginPage.btn_Login).click();
+        driver.findElement(txtbx_UserName).sendKeys(userName);
+        driver.findElement(txtbx_Password).sendKeys(password);
+        driver.findElement(btn_Login).click();
     }
 
 }
