@@ -16,6 +16,4 @@ public class DemoWebshop_HomePage {
     public static By btn_Logout = By.xpath("//a[text()='Log out']");
 
 
-
-
 }

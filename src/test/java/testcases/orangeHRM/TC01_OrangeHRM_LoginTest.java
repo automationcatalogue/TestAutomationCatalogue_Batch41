@@ -15,6 +15,8 @@ import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
 import utilities.BaseClass;
 import utilities.CommonUtils;
+import utilities.Config;
+import utilities.ExcelUtils;
 
 import java.io.FileInputStream;
 import java.time.Duration;
@@ -33,20 +35,14 @@ public class TC01_OrangeHRM_LoginTest {
 
     @BeforeClass
     public void prerequisite_setup() throws Exception{
-        projectPath = System.getProperty("user.dir");
-        fis = new FileInputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-        wbk = new XSSFWorkbook(fis);
-        sh = wbk.getSheet("OrangeHRM_Login");
-        row = sh.getRow(1);
-
-        cell_userName = row.getCell(3);
-        userName = cell_userName.getStringCellValue();
+        wbk= ExcelUtils.setExcelFilePath();
+        String sheetName = "OrangeHRM_Login";
+        int roNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        userName = ExcelUtils.getCellData(sheetName,roNum, Config.col_UserName);
         System.out.println("UserName from excel sheet is :"+userName);
 
-        cell_password = row.getCell(4);
-        password =cell_password.getStringCellValue();
+        password = ExcelUtils.getCellData(sheetName,roNum,Config.col_Password);
         System.out.println("Password from excel sheet is:"+password);
-
     }
 
     @Test
