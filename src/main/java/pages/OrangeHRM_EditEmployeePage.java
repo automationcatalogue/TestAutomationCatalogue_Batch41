@@ -65,9 +65,10 @@ public class OrangeHRM_EditEmployeePage {
 
     public static void select_Nationality(String nation_Name)throws Exception{
         WebDriver driver = BaseClass.getDriver();
+        Thread.sleep(3000);
         Select nation = new Select(driver.findElement(OrangeHRM_EditEmployeePage.dropDown_Nationality));
         nation.selectByVisibleText(nation_Name);
-        System.out.println("Nationality selected as Indian");
+        System.out.println("Nationality selected as "+ nation_Name);
     }
 
     public static void firstSave(){

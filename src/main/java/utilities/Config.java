@@ -1,7 +1,7 @@
 package utilities;
 
 public class Config {
-    public static final String TestCase_ID = "TC03-01";
+    public static final String TestCase_ID = "TC04-01";
 
     //Common TestCases Column numbers
     public static final int col_Sno=0;
@@ -65,4 +65,16 @@ public class Config {
     //DemoWebshop Apply Discount testcases column numbers
     public static final int col_ApplyDiscount_Coupon=6;
     public static final int col_ApplyDiscount_OrderNumber=7;
+
+    //OrangeHRM Goals testcases column numbers
+    public static final int col_OrangeHRMGoals_empName=6;
+    public static final int col_OrangeHRMGoals_firstGoalPriority=7;
+    public static final int col_OrangeHRMGoals_firstGoalDate=8;
+    public static final int col_OrangeHRMGoals_secondGoalPriority=9;
+    public static final int col_OrangeHRMGoals_secondGoalDate=10;
+    public static final int col_OrangeHRMGoals_thirdGoalPriority=11;
+    public static final int col_OrangeHRMGoals_thirdGoalDate=12;
+    public static final int col_OrangeHRMGoals_firstGoalStatus=13;
+    public static final int col_OrangeHRMGoals_secondGoalStatus=14;
+    public static final int col_OrangeHRMGoals_thirdGoalStatus=15;
 }

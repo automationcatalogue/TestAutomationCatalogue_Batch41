@@ -26,20 +26,16 @@ import java.time.Duration;
 import java.util.List;
 public class TC04_OrangeHRM_EditEmployee {
     XSSFWorkbook wbk;
-    String userName;
-    String passWord;
-    String lastName;
-    String DateOfBirth;
-    String nationality;
-    String allergies;
-    String dietaryRequire1;
-    String dietaryRequire2;
+    String userName;String passWord;
+    String lastName;String DateOfBirth;
+    String nationality;String allergies;
+    String dietaryRequire1;String dietaryRequire2;
     String sheetName; int row;
     @BeforeClass
     public void prerequisite_Setup() throws Exception{
         sheetName ="OrangeHRM_EditEmployee";
         wbk= ExcelUtils.setExcelFilePath();
-        row = ExcelUtils.getRowNumber("TC04-01",sheetName);
+        row = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
         userName = ExcelUtils.getCellData(sheetName,row, Config.col_UserName);
         passWord = ExcelUtils.getCellData(sheetName,row,Config.col_Password);
         lastName = ExcelUtils.getCellData(sheetName,row,Config.col_EditEmployee_LastName);
@@ -48,8 +44,6 @@ public class TC04_OrangeHRM_EditEmployee {
         allergies = ExcelUtils.getCellData(sheetName,row,Config.col_EditEmployee_Allergies);
         dietaryRequire1 = ExcelUtils.getCellData(sheetName,row,Config.col_EditEmployee_DietaryRequirement_1);
         dietaryRequire2 = ExcelUtils.getCellData(sheetName,row,Config.col_EditEmployee_DietaryRequirement_2);
-
-
     }
    @Test
    @Parameters({"browserName"})

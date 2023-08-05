@@ -20,7 +20,7 @@ public class OrangeHRM_HomePage {
         WebDriver driver = BaseClass.getDriver();
 
         String title = driver.getTitle();
-        String expectedTitle = "Employee abcd";
+        String expectedTitle = "Employee Management";
 
         BaseClass.failureReason="Title is not matched";
         Assert.assertEquals(expectedTitle,title,"Title is not matched");
@@ -53,5 +53,18 @@ public static void clickLogout(){
                 System.out.println("UserName is not matched");
             }
         }
+
+        public static void select_Performance(){
+            WebDriver driver = BaseClass.getDriver();
+            driver.findElement(OrangeHRM_HomePage.btn_More).click();
+            driver.findElement(OrangeHRM_HomePage.link_Performance).click();
     }
+
+    public static void select_MyGoals(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(OrangeHRM_HomePage.txtbx_Search).sendKeys("Goal List");
+        driver.findElement(OrangeHRM_HomePage.link_MyGoals).click();
+
+    }
+}
 

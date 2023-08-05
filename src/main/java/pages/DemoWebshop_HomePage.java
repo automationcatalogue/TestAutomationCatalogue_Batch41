@@ -33,4 +33,9 @@ public class DemoWebshop_HomePage {
         System.out.println("Clicked on Shopping Cart Link");
     }
 
+    public static void logOut(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(DemoWebshop_HomePage.btn_Logout).click();
+        System.out.println("log out is clicked");
+    }
 }
