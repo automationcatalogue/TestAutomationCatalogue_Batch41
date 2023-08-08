@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.OrangeHRM_AddEmployeePage;
 import pages.OrangeHRM_HomePage;
@@ -38,12 +39,17 @@ public class TC02_OrangeHRM_AddEmployee {
     static String projectPath;
     static FileOutputStream  fos;
     static String empid;
+    static String sheetName;
+    static int rowNum;
+    static int rowNum_Index;
 
     @BeforeClass
     public void prerequisite_setup() throws Exception {
+
         wbk= ExcelUtils.setExcelFilePath();
-        String sheetName = "OrangeHRM_AddEmployee";
-        int rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        sheetName = "OrangeHRM_AddEmployee";
+        rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        rowNum_Index =ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
         userName = ExcelUtils.getCellData(sheetName,rowNum, Config.col_UserName);
         pswd = ExcelUtils.getCellData(sheetName,rowNum,Config.col_Password);
         firstName = ExcelUtils.getCellData(sheetName,rowNum,Config.col_AddEmployee_FirstName);
@@ -80,28 +86,34 @@ public class TC02_OrangeHRM_AddEmployee {
         OrangeHRM_AddEmployeePage.selectTempDept(temp_dept);
         OrangeHRM_HomePage.clickEmployeeManagementLink();
         OrangeHRM_AddEmployeePage.searchEmployee(firstName,lastName);
-        OrangeHRM_AddEmployeePage.verifyEmployeeId_name(firstName,lastName);
+        empid=OrangeHRM_AddEmployeePage.verifyEmployeeId_name(firstName,lastName);
         OrangeHRM_LogoutPage.logout();
         driver.quit();
 
     }
 
-    @AfterClass
-    public void teardown() throws Exception{
-        try{
-        Row rowToUpdate = sht.getRow(1);
-        Cell resultCell = rowToUpdate.createCell(13);
-        resultCell.setCellValue(empid);
-            FileOutputStream fos = new FileOutputStream(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-            wbk.write(fos);
+    @AfterMethod
+    public void tearDown(ITestResult result) throws Exception {
+
+        if(result.getStatus() == ITestResult.SUCCESS){
+            ExcelUtils.setCellData(empid,sheetName,rowNum, Config.col_AddEmployee_EmployeeId);
             System.out.println(empid+" is written back to the Excel file");
-            fos.close();
-            System.out.println("ExcelFile Writing is closed");
-            fis.close();
-            System.out.println("ExcelFile reading is closed");
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
+            System.out.println("TestCase is Passed and status is updated in Excel sheet");
+        }else if(result.getStatus()==ITestResult.FAILURE){
+            if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
+                ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
+                System.out.println("TestCase is Failed and status is updated in Excel sheet");
+
+                ExcelUtils.setCellData(BaseClass.failureReason,"Index",rowNum_Index,Config.col_reason);
+                System.out.println("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+            }
+        }else if(result.getStatus()==ITestResult.SKIP){
+            ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
+            System.out.println("TestCase is SKIPPED and status is updated in Excel sheet");
         }
+        ExcelUtils.closeExcelFile();
     }
 
 

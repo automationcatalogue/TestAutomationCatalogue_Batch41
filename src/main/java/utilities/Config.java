@@ -1,7 +1,7 @@
 package utilities;
 
 public class Config {
-    public static final String TestCase_ID = "TC01-01";
+    public static final String TestCase_ID = "TC05-01";
 
     //Common TestCases Column numbers
     public static final int col_Sno=0;
@@ -23,6 +23,20 @@ public class Config {
     public static final int col_AddEmployee_FTE=12;
     public static final int col_AddEmployee_TempDepartment=13;
     public static final int col_AddEmployee_EmployeeId=14;
+
+    //Travel Expense testcase Column numbers
+    public static final int col_TravelExpense_newPassword=6;
+    public static final int col_TravelExpense_currency=7;
+    public static final int col_TravelExpense_destination=8;
+    public static final int col_TravelExpense_travelFrom=9;
+    public static final int col_TravelExpense_travelTo=10;
+    public static final int col_TravelExpense_expenseType=11;
+    public static final int col_TravelExpense_currencyPaidIn=12;
+    public static final int col_TravelExpense_amount=13;
+    public static final int col_TravelExpense_paidBy=14;
+    public static final int col_TravelExpense_employeeName=15;
+
+
 
     //Add User testcase Column numbers
     public static final int col_AddUser_EmployeeName=6;
