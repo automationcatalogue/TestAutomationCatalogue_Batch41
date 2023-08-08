@@ -1,5 +1,7 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,22 +19,20 @@ public class OrangeHRM_EmployeeManagementPage {
     public static By list_employee = By.xpath("//table[@id='employeeListTable']/tbody/tr/td[3]");
     public static By txt_supervisorName = By.xpath(".//following-sibling::td[6]");
     public static String supervisor_name = null;
-
-
+    static Logger log = LogManager.getLogger(OrangeHRM_EmployeeManagementPage.class);
 
     public static String clickEmployeeList_getSupervisorName(String employeeName)throws Exception {
 
         WebDriver driver = BaseClass.getDriver();
-        //driver.findElement(OrangeHRM_EmployeeManagementPage.link_EmployeeList).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(Link_FirstEmployee));
 
-        List<WebElement> emp_namesList = driver.findElements(OrangeHRM_EmployeeManagementPage.list_employee);
+        List<WebElement> emp_namesList = driver.findElements(list_employee);
         for (WebElement employee_name : emp_namesList) {
             String actual_empname = employee_name.getText();
             if (actual_empname.equalsIgnoreCase(employeeName)) {
-                supervisor_name = employee_name.findElement(OrangeHRM_EmployeeManagementPage.txt_supervisorName).getText();
-                System.out.println("Supervisor name is :" + supervisor_name);
+                supervisor_name = employee_name.findElement(txt_supervisorName).getText();
+                log.info("Supervisor name is :" + supervisor_name);
                 break;
             }
         }

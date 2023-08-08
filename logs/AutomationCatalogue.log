@@ -176,3 +176,142 @@
 08:40:16:248 [main] INFO  utilities.Log - *****************************************************************
 08:40:16:250 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
 08:40:16:250 [main] INFO  utilities.Log - ******************************************************************
+17:56:08:975 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+17:56:09:034 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+17:56:14:234 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:01:57:122 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:01:57:180 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:02:01:815 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:06:08:656 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:06:08:718 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:06:13:484 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:07:15:290 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:07:15:368 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:07:19:930 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:12:08:121 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:12:08:197 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:12:12:941 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:14:41:250 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:14:41:310 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:14:45:911 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:16:54:277 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:16:54:331 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:16:59:067 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:27:17:343 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:27:17:416 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:27:22:198 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:27:43:419 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+18:27:43:463 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:27:45:688 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:28:31:642 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+18:28:31:683 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:28:33:551 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:28:39:041 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:28:39:079 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:28:41:573 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:28:57:465 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+18:28:57:507 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:28:59:334 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:35:26:113 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:35:26:164 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:35:30:930 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:35:52:046 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+18:35:52:106 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:35:54:189 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:36:37:733 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+18:36:37:774 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:36:39:570 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:36:45:313 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:36:45:352 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:36:47:806 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:37:03:259 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+18:37:03:316 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:37:05:135 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:53:55:273 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:53:55:378 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:54:00:186 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:54:21:508 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+18:54:21:566 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:54:23:405 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:55:08:260 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+18:55:08:303 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:55:10:157 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:55:15:480 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:55:15:517 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:55:18:043 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:55:33:827 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+18:55:33:871 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:55:35:666 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:14:38:426 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:14:38:476 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:14:43:344 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:15:05:645 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+19:15:05:690 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:15:07:856 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:15:47:571 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+19:15:47:612 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:15:49:442 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:15:54:673 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:15:54:714 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:15:57:172 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:16:13:038 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+19:16:13:082 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:16:14:848 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:37:35:919 [main] INFO  utilities.Log - *****************************************************************
+19:37:35:923 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+19:37:35:923 [main] INFO  utilities.Log - ******************************************************************
+19:37:41:430 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:37:41:493 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:37:46:020 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:37:46:200 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+19:37:56:250 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+19:37:56:356 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+19:37:57:258 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+19:37:57:482 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+19:37:57:712 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+19:37:57:773 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+19:38:00:452 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name is :Brody Naidu
+19:38:03:501 [main] INFO  pages.OrangeHRM_UsersPage - username of the Supervisor is :brody
+19:38:03:721 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Edit button
+19:38:04:908 [main] INFO  pages.OrangeHRM_UsersPage - Supervisor's password is updated.
+19:38:06:921 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+19:38:07:015 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+19:38:07:055 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:38:08:952 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:38:12:585 [main] INFO  pages.OrangeHRM_TravelExpensePage - Add button is selected to submit travel expense
+19:38:12:688 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency Dropdown is clicked
+19:38:12:839 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arab Emir. Dirham is selected
+19:38:20:862 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on travel information save button
+19:38:20:940 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on Add expense button
+19:38:21:024 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense Type drop-down is clicked 
+19:38:21:158 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arifare is selected
+19:38:21:836 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency drop-down is clicked
+19:38:22:475 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency is selected
+19:38:22:845 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense paid by the Company
+19:38:26:077 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on save button
+19:38:26:136 [main] INFO  pages.OrangeHRM_TravelExpensePage - Submitted the expense
+19:38:29:921 [main] INFO  pages.OrangeHRM_TravelExpensePage - Confirmed the submit
+19:38:32:346 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on arrow back
+19:38:32:367 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR103
+19:38:32:385 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Supervisor Approval
+19:38:33:850 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+19:38:45:201 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+19:38:51:272 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+19:38:52:016 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+19:38:52:063 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:38:53:920 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:38:56:961 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR103
+19:38:56:982 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Final Approval
+19:38:58:061 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+19:38:59:175 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:38:59:221 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:39:01:671 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:39:10:057 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+19:39:14:820 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on OK
+19:39:16:841 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+19:39:17:548 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+19:39:17:585 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:39:19:371 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:39:22:452 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR103
+19:39:22:468 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Approved
+19:39:23:508 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
