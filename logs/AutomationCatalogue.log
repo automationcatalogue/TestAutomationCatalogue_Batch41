@@ -1,0 +1,78 @@
+07:07:38 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Chrome Browser is launched
+07:07:38 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Chrome Browser window is maximized
+07:07:52 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - OrangeHRM website is launched
+07:07:52 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Title of the page is:OrangeHRM
+07:07:53 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Admin is entered as a UserName
+07:07:54 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Admin@123 is entered a Password
+07:08:52 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Login button is clicked
+07:08:54 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Employee Management is selected
+07:09:00 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Clicked on Add button 
+07:09:08 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - First Name is entered
+07:09:12 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Last Name is entered
+07:09:13 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Location drop-down is clicked 
+07:09:14 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - India Office value is selected from a drop-down
+07:09:16 [main] ERROR testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Next button is clicked
+07:09:34 [main] WARN  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Single is selected
+07:09:39 [main] ERROR testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Marital Status drop-down is clicked
+07:09:44 [main] ERROR testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Clicked on Next
+07:09:55 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Region drop-down is clicked
+07:09:56 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Region-3 is selected 
+07:09:56 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - FTE drop-down is clicked
+07:09:57 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - 0.75 is selected
+07:09:57 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Temp Department drop-down is clicked
+07:09:58 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Sub unit -2 is selected
+07:09:58 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - clicked on Save
+07:10:01 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Employee Management is selected
+07:10:04 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Searched with Employee first and last name
+07:10:09 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Element Text is :Shawn Desman
+07:10:09 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - Search result is correct
+07:10:20 [main] INFO  testcases.PseudoTests.TC02_OrangeHRM_AddEmployee - log out is clicked
+07:15:02 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - OrangeHRM is URL is loaded
+07:15:02 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - Username is entered
+07:15:02 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - Password is entered
+07:15:13 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - login button is clicked
+07:23:01:719 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - OrangeHRM is URL is loaded
+07:23:02:625 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - Username is entered
+07:23:03:109 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - Password is entered
+07:23:18:466 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - login button is clicked
+07:26:07:689 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - OrangeHRM is URL is loaded
+07:26:08:757 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - Username is entered
+07:26:09:284 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - Password is entered
+07:26:41:043 [main] INFO  testcases.PseudoTests.TC01_OrangeHRM_LoginTest - login button is clicked
+07:33:34:281 [main] INFO  utilities.Log - *****************************************************************
+07:33:34:327 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:33:34:330 [main] INFO  utilities.Log - ******************************************************************
+07:34:49:969 [main] INFO  utilities.Log - *****************************************************************
+07:34:49:990 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:34:49:993 [main] INFO  utilities.Log - ******************************************************************
+07:34:55:698 [main] INFO  utilities.Log - UserName from excel sheet is :aaron
+07:34:55:700 [main] INFO  utilities.Log - Password from excel sheet is:Admin@123
+07:38:50:459 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - *****************************************************************
+07:38:50:476 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:38:50:477 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - ******************************************************************
+07:38:56:929 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :aaron
+07:38:56:936 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:47:03:059 [main] INFO  utilities.Log - *****************************************************************
+07:47:03:072 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:47:03:075 [main] INFO  utilities.Log - ******************************************************************
+07:47:06:671 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :aaron
+07:47:06:672 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:47:29:659 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+07:47:30:692 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaron
+07:47:31:545 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:47:37:851 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:50:45:948 [main] INFO  utilities.Log - *****************************************************************
+07:50:45:967 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:50:45:968 [main] INFO  utilities.Log - ******************************************************************
+07:50:50:492 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :aaron
+07:50:50:494 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:51:08:861 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+07:51:53:357 [main] INFO  utilities.Log - *****************************************************************
+07:51:53:394 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:51:53:395 [main] INFO  utilities.Log - ******************************************************************
+07:51:57:544 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:51:57:546 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:52:20:124 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+07:52:20:742 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:52:21:100 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:52:32:673 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
