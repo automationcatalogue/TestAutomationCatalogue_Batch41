@@ -1,5 +1,7 @@
 package testcases.orangeHRM;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -16,10 +18,7 @@ import pages.OrangeHRM_AddEmployeePage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
 import pages.OrangeHRM_LogoutPage;
-import utilities.BaseClass;
-import utilities.CommonUtils;
-import utilities.Config;
-import utilities.ExcelUtils;
+import utilities.*;
 
 
 import java.io.FileInputStream;
@@ -42,10 +41,11 @@ public class TC02_OrangeHRM_AddEmployee {
     static String sheetName;
     static int rowNum;
     static int rowNum_Index;
+    static Logger log = LogManager.getLogger(TC02_OrangeHRM_AddEmployee.class);
 
     @BeforeClass
     public void prerequisite_setup() throws Exception {
-
+        Log.startTestCase(TC02_OrangeHRM_AddEmployee.class.getName());
         wbk= ExcelUtils.setExcelFilePath();
         sheetName = "OrangeHRM_AddEmployee";
         rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
@@ -70,10 +70,10 @@ public class TC02_OrangeHRM_AddEmployee {
         BaseClass ob = new BaseClass(driver);
 
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
-        System.out.println("OrangeHRM website is launched");
+        log.info("OrangeHRM website is launched");
 
         String title = driver.getTitle();
-        System.out.println("Title of the page is:" + title);
+        log.info("Title of the page is:" + title);
 
         OrangeHRM_LoginPage.login(userName, pswd);
         OrangeHRM_HomePage.clickEmployeeManagementLink();
@@ -97,21 +97,21 @@ public class TC02_OrangeHRM_AddEmployee {
 
         if(result.getStatus() == ITestResult.SUCCESS){
             ExcelUtils.setCellData(empid,sheetName,rowNum, Config.col_AddEmployee_EmployeeId);
-            System.out.println(empid+" is written back to the Excel file");
+            log.info(empid+" is written back to the Excel file");
 
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
-            System.out.println("TestCase is Passed and status is updated in Excel sheet");
+            log.info("TestCase is Passed and status is updated in Excel sheet");
         }else if(result.getStatus()==ITestResult.FAILURE){
             if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
                 ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
-                System.out.println("TestCase is Failed and status is updated in Excel sheet");
+                log.info("TestCase is Failed and status is updated in Excel sheet");
 
                 ExcelUtils.setCellData(BaseClass.failureReason,"Index",rowNum_Index,Config.col_reason);
-                System.out.println("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+                log.info("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
             }
         }else if(result.getStatus()==ITestResult.SKIP){
             ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
-            System.out.println("TestCase is SKIPPED and status is updated in Excel sheet");
+            log.info("TestCase is SKIPPED and status is updated in Excel sheet");
         }
         ExcelUtils.closeExcelFile();
     }
