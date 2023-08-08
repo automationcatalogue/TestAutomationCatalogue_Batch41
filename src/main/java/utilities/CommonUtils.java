@@ -7,6 +7,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import pages.OrangeHRM_EditEmployeePage;
+import pages.OrangeHRM_TravelExpensePage;
 
 import java.io.File;
 import java.time.Duration;
@@ -57,5 +58,12 @@ public class CommonUtils {
                 break;
             }
         }
+    }
+
+    public static void switchToiFrame(By locator){
+        WebDriver driver = BaseClass.getDriver();
+        WebElement element_frame = driver.findElement(locator);
+        driver.switchTo().frame(element_frame);
+        System.out.println("Switched into iFrame");
     }
 }

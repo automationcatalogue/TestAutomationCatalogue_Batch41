@@ -24,27 +24,27 @@ public class OrangHRM_AddUserPage {
 public static void clickAddUser(){
     WebDriver driver=BaseClass.getDriver();
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3000));
-    wait.until(ExpectedConditions.visibilityOfElementLocated(OrangHRM_AddUserPage.empName_Visibility));
-    driver.findElement(OrangHRM_AddUserPage.icon_AddUser).click();
+    wait.until(ExpectedConditions.visibilityOfElementLocated(empName_Visibility));
+    driver.findElement(icon_AddUser).click();
 
 }
     public static void enterAddUserDetails(String empName,String userName, String password, String confirm_pwd) {
         WebDriver driver = BaseClass.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3000));
         //Enter Employee Name as Charlie Carter
-        driver.findElement(OrangHRM_AddUserPage.txtbx_EmployeeName).sendKeys(empName);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(OrangHRM_AddUserPage.empName_DropdownVisibility));
-        driver.findElement(OrangHRM_AddUserPage.empName_DropdownVisibility).click();
+        driver.findElement(txtbx_EmployeeName).sendKeys(empName);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(empName_DropdownVisibility));
+        driver.findElement(empName_DropdownVisibility).click();
         //Enter some Random UserName
-        driver.findElement(OrangHRM_AddUserPage.txtbx_RandomUserName).sendKeys(userName);
+        driver.findElement(txtbx_RandomUserName).sendKeys(userName);
         //Enter the Password as "Admin@123"
-        driver.findElement(OrangHRM_AddUserPage.txtbx_Pwd).sendKeys(password);
+        driver.findElement(txtbx_Pwd).sendKeys(password);
         //Enter the Confirm Password as "Admin@123"
-        driver.findElement(OrangHRM_AddUserPage.txtbx_ConfirmPwd).sendKeys(confirm_pwd);
+        driver.findElement(txtbx_ConfirmPwd).sendKeys(confirm_pwd);
 }        public static void clickSave()
 {         WebDriver driver=BaseClass.getDriver();
     //Click on Save button
-    WebElement element_SaveBtn =  driver.findElement(OrangHRM_AddUserPage.btn_Save);
+    WebElement element_SaveBtn =  driver.findElement(btn_Save);
     JavascriptExecutor js = (JavascriptExecutor)driver;
     js.executeScript("arguments[0].click();",element_SaveBtn);
 }

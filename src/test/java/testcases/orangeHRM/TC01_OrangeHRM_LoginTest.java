@@ -1,5 +1,7 @@
 package testcases.orangeHRM;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -13,13 +15,10 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
-import utilities.BaseClass;
-import utilities.CommonUtils;
-import utilities.Config;
-import utilities.ExcelUtils;
+import utilities.*;
 
 import java.io.FileInputStream;
-import java.time.Duration;
+
 
 public class TC01_OrangeHRM_LoginTest {
 
@@ -32,17 +31,20 @@ public class TC01_OrangeHRM_LoginTest {
     static XSSFCell cell_password;
     static String password;
     static String projectPath;
-
+    static Logger log = LogManager.getLogger(TC01_OrangeHRM_LoginTest.class);
     @BeforeClass
     public void prerequisite_setup() throws Exception{
+        Log.startTestCase(TC01_OrangeHRM_LoginTest.class.getName());
+
         wbk= ExcelUtils.setExcelFilePath();
         String sheetName = "OrangeHRM_Login";
+
         int roNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
         userName = ExcelUtils.getCellData(sheetName,roNum, Config.col_UserName);
-        System.out.println("UserName from excel sheet is :"+userName);
+        log.info("UserName from excel sheet is :"+userName);
 
         password = ExcelUtils.getCellData(sheetName,roNum,Config.col_Password);
-        System.out.println("Password from excel sheet is:"+password);
+        log.info("Password from excel sheet is:"+password);
     }
 
     @Test
@@ -53,6 +55,8 @@ public class TC01_OrangeHRM_LoginTest {
         BaseClass ob = new BaseClass(driver);
 
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
+        log.info("OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com");
+
         OrangeHRM_LoginPage.login(userName, password);
         Thread.sleep(6000);
         OrangeHRM_HomePage.verifyTitle();
@@ -63,6 +67,7 @@ public class TC01_OrangeHRM_LoginTest {
     @AfterClass
     public void tearDown() throws Exception{
         fis.close();
-        System.out.println("ExcelFile reading is closed");
+        log.info("ExcelFile reading is closed");
+        Log.endTestCase();
     }
 }
