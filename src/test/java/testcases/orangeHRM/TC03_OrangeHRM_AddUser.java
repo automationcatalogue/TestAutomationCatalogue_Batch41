@@ -1,4 +1,6 @@
 package testcases.orangeHRM;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -29,9 +31,11 @@ public class TC03_OrangeHRM_AddUser {
     String newPassword;
     static String sheetName;
     static int rowNum_Index;
+    static Logger log = LogManager.getLogger(TC03_OrangeHRM_AddUser.class);
     @BeforeClass
     public void prerequisites() throws Exception
     {
+        Log.startTestCase(TC03_OrangeHRM_AddUser.class.getName());
         sheetName="OrangeHRM_AddUser";
         wbk= ExcelUtils.setExcelFilePath();
         row=ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
@@ -53,7 +57,7 @@ public class TC03_OrangeHRM_AddUser {
         
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         String userName = RandomGenerator.getRandomData("userName");
-        System.out.println("Randomly generated username is :"+userName);
+      log.info("Randomly generated username is :"+userName);
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
 
         //Enter the UserName as "Admin"
@@ -78,20 +82,23 @@ public class TC03_OrangeHRM_AddUser {
 
         if(result.getStatus() == ITestResult.SUCCESS){
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
-            System.out.println("TestCase is Passed and status is updated in Excel sheet");
+            log.info("TestCase is Passed and status is updated in Excel sheet");
         }else if(result.getStatus()==ITestResult.FAILURE){
             if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
                 ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
-                System.out.println("TestCase is Failed and status is updated in Excel sheet");
+              log.info("TestCase is Failed and status is updated in Excel sheet");
 
                 ExcelUtils.setCellData(BaseClass.failureReason,"Index",rowNum_Index,Config.col_reason);
-                System.out.println("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+            log.info("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
             }
         }else if(result.getStatus()==ITestResult.SKIP){
             ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
-            System.out.println("TestCase is SKIPPED and status is updated in Excel sheet");
+           log.info("TestCase is SKIPPED and status is updated in Excel sheet");
         }
         ExcelUtils.closeExcelFile();
+        log.info("ExcelFile reading is closed");
+        Log.endTestCase();
+
     }
 }
 

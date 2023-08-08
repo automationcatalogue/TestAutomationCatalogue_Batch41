@@ -10,7 +10,7 @@ public class OrangeHRM_LogoutPage {
 
     public static void logout(){
         WebDriver driver = BaseClass.getDriver();
-        driver.findElement(OrangeHRM_LogoutPage.btn_logout).click();
+        driver.findElement(btn_logout).click();
         System.out.println("log out is clicked");
     }
 }
