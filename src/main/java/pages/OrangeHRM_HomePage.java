@@ -15,7 +15,7 @@ public class OrangeHRM_HomePage {
         WebDriver driver = BaseClass.getDriver();
 
         String title = driver.getTitle();
-        String expectedTitle = "Employee abcd";
+        String expectedTitle = "Employee Management";
 
         BaseClass.failureReason="Title is not matched";
         Assert.assertEquals(expectedTitle,title,"Title is not matched");

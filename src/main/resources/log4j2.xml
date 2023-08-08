@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration status="WARN">
+    <Properties>
+        <Property name="filename">logs</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="file"
+                     fileName="${filename}/AutomationCatalogue.log"
+                     filePattern="${filename}/logdemo-%d{HH:mm:ss:SSS}.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss:SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <SizeBasedTriggeringPolicy size="1000 KB"/>
+        </RollingFile>
+        <Console name="ABC" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="recedemo1" level="info" additivity="true">
+            <AppenderRef ref="ABC"/>
+            <AppenderRef ref="file"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="ABC"/>
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+</configuration>
