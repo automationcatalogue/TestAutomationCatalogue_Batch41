@@ -12,23 +12,52 @@ public class OrangeHRM_UsersPage {
 
     public static By link_firstUserName = By.xpath("//tbody[@ng-if='!listData.staticBody']/tr[1]/td[2]//span");
     public static By icon_edit = By.xpath("//tbody[@ng-if='!listData.staticBody']/tr[1]//i");
+    public static By txtbx_employeeUserName=By.xpath("//input[@id='user_name']/..");
+    public static By txtbx_employeeName=By.cssSelector("#selectedEmployee_value");
     public static By chkbx_changePassword = By.xpath("//span[text()='Change Password']");
     public static By txtbx_enterPassword = By.xpath("(//input[@type='password'])[1]");
     public static By txtbx_confirmPassword = By.xpath("(//input[@type='password'])[2]");
     public static By btn_save = By.xpath("//button[text()='Save']");
     public static By list_users = By.xpath("//table[@class='highlight bordered']/tbody/tr/td[4]");
+    public static By txtbx_userName = By.xpath("//input[@id='user_name']");
+    public static By icon_crossExit = By.xpath("//button[@aria-label='Close']");
     // corresponding supervisor edit button
     public static By btn_edit = By.xpath(".//following-sibling::td[4]");
-
+    static String employee_UserName=null;
     static String supervisor_name=null;
-    public static void changeEmployeePassword(String newPassword) {
-        WebDriver driver = BaseClass.getDriver();
+    public static String userName=null;
+    public static String employeeName;
 
-        String userName = driver.findElement(OrangeHRM_UsersPage.link_firstUserName).getText();
+    public static void getEmployeeDetails(){
+        WebDriver driver = BaseClass.getDriver();
+        userName = driver.findElement(OrangeHRM_UsersPage.link_firstUserName).getText();
         System.out.println("First UserName from the Users List is :" + userName);
 
         driver.findElement(OrangeHRM_UsersPage.icon_edit).click();
         System.out.println("Clicked on edit button");
+
+        //employeeName=driver.findElement(OrangeHRM_UsersPage.txtbx_employeeName).getText();
+        //System.out.println(employeeName);
+
+    }
+
+    public static void getSupervisorDetails(){
+
+    }
+    public static void changeEmployeePassword(String newPassword) {
+        WebDriver driver = BaseClass.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+       //String userName = driver.findElement(OrangeHRM_UsersPage.link_firstUserName).getText();
+       //System.out.println("First UserName from the Users List is :" + userName);
+
+        //driver.findElement(OrangeHRM_UsersPage.icon_edit).click();
+       // System.out.println("Clicked on edit button");
+
+       // WebElement emp_UserName=driver.findElement(OrangeHRM_UsersPage.txtbx_employeeUserName);
+       // employee_UserName = (String) js.executeScript("return arguments[0].value", emp_UserName);
+
+       // System.out.println(employee_UserName);
 
         driver.findElement(OrangeHRM_UsersPage.chkbx_changePassword).click();
         System.out.println("change password check  box is selected");
@@ -41,9 +70,11 @@ public class OrangeHRM_UsersPage {
 
         driver.findElement(OrangeHRM_UsersPage.btn_save).click();
         System.out.println("Clicked on Save");
+
+        //return employee_UserName;l
     }
 
-    public static void changeSupervisorPassword(String pswd, String supervisor_name) {
+    public static void changeSupervisorPassword(String supervisor_name,String pswd) {
         WebDriver driver = BaseClass.getDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         List<WebElement> sup_name = driver.findElements(OrangeHRM_UsersPage.list_users);
@@ -62,6 +93,24 @@ public class OrangeHRM_UsersPage {
                 System.out.println("Supervisor's username and password is updated.");
             }
         }
+    }
+    public static String username_Supervisor(String supervisorName){
+        WebDriver driver = BaseClass.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String supervisor_userName = null;
+        List<WebElement> supervisorUserName_List = driver.findElements(OrangeHRM_UsersPage.list_users);
+        for (WebElement SupervisorName : supervisorUserName_List) {
+            String name = SupervisorName.getText();
+            if (name.equalsIgnoreCase(supervisorName)) {
+                SupervisorName.findElement(OrangeHRM_UsersPage.btn_edit).click();
+                WebElement SupervisorUsername_Element = driver.findElement(OrangeHRM_UsersPage.txtbx_userName);
+                supervisor_userName = (String) js.executeScript("return arguments[0].value", SupervisorUsername_Element);
+                System.out.println("username of the Supervisor is :"+supervisor_userName);
+                driver.findElement(OrangeHRM_UsersPage.icon_crossExit).click();
+                break;
+            }
+        }
+        return supervisor_userName;
     }
 
 }

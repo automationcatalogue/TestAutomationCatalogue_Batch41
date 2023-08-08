@@ -237,7 +237,7 @@ public class OrangeHRM_AddEmployeePage {
                  System.out.println("Searched with Employee first and last name");
          }
 
-         public static void verifyEmployeeId_name(String firstName, String lastName){
+         public static String verifyEmployeeId_name(String firstName, String lastName){
                  WebDriver driver = BaseClass.getDriver();
                  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
                  WebElement searchedEmployeeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(OrangeHRM_AddEmployeePage.searched_Employee));
@@ -253,5 +253,6 @@ public class OrangeHRM_AddEmployeePage {
                  }
                  String empid=driver.findElement(employee_id).getText();
                  System.out.println("Employee id is :" + empid);
+                 return empid;
          }
 }

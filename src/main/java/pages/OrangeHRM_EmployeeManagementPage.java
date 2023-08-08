@@ -3,8 +3,11 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.BaseClass;
 
+import java.time.Duration;
 import java.util.List;
 
 public class OrangeHRM_EmployeeManagementPage {
@@ -13,17 +16,18 @@ public class OrangeHRM_EmployeeManagementPage {
     public static By link_EmployeeList = By.xpath("//a[text()='Employee List ']");
     public static By list_employee = By.xpath("//table[@id='employeeListTable']/tbody/tr/td[3]");
     public static By txt_supervisorName = By.xpath(".//following-sibling::td[6]");
-    static String supervisor_name = null;
+    public static String supervisor_name = null;
 
 
-    public static String clickEmployeeList_getSupervisorName(String employeeName) {
+
+    public static String clickEmployeeList_getSupervisorName(String employeeName)throws Exception {
 
         WebDriver driver = BaseClass.getDriver();
+        //driver.findElement(OrangeHRM_EmployeeManagementPage.link_EmployeeList).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(Link_FirstEmployee));
 
-        driver.findElement(OrangeHRM_EmployeeManagementPage.link_EmployeeList).click();
-        supervisor_name = null;
         List<WebElement> emp_namesList = driver.findElements(OrangeHRM_EmployeeManagementPage.list_employee);
-
         for (WebElement employee_name : emp_namesList) {
             String actual_empname = employee_name.getText();
             if (actual_empname.equalsIgnoreCase(employeeName)) {
@@ -34,6 +38,7 @@ public class OrangeHRM_EmployeeManagementPage {
         }
         return supervisor_name;
     }
+
 }
 
 

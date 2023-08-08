@@ -63,30 +63,30 @@ public class OrangeHRM_TravelExpensePage {
     public static By ExpType_OfficeSupplies = By.xpath("//label[text()='Expense Types']/../div/ul/li[10]/span");
 
     public static By dropdown_currencyPaidin = By.xpath("//label[@for='estimation_currency_id']//following-sibling::div/input");
-    public static By currencyPaidin_CAD = By.xpath("//label[@for='estimation_currency_id']//following-sibling::div/ul//span[text()='CAD - Canadian Dollar']");
+    public static By currencyPaid = By.xpath("//label[@for='estimation_currency_id']//following-sibling::div/ul/li[2]/span");
 
     public static By textbox_amount = By.xpath("//label[@for='estimation_amount']/../input");
 
     public static By dropdwn_paidBy = By.xpath("//label[@for='estimation_amount']/../../div[3]/div");
     public static By paidby_staff = By.xpath("//label[text()='Paid By']/..//ul/li[2]/span[text()='Staff']");
-    public static By paidby_company=By.xpath("//label[text()='Paid By']/..//ul/li[3]/span[text()='Company']");
+    public static By paidby_company = By.xpath("//label[text()='Paid By']/..//ul/li[3]/span[text()='Company']");
 
     public static By btn_saveTravelExpEst = By.cssSelector("#formSave");
     public static By btn_submit = By.xpath("//a[text()='Submit']");
     public static By btn_oktoConfirm = By.xpath("//a[text()='OK']");
     public static By navLink_backarrow = By.xpath("//i[text()='arrow_back']");
     public static By list_travelReqId = By.xpath("//table[@id='resultTable']/tbody//td/a");
-    public static By list_reqStatus = By.xpath("//table[@id='resultTable']/tbody/tr/td[4]");
+    public static By list_reqStatus = By.xpath("//./../../td[5]");
     public static By btn_approve = By.xpath("//a[@status='Approve']");
 
-    static String request_id=null;
-
-
+    static String request_id, status;
+    static String element;
+    static String updatedStatus;
 
     public static void clickAddTravelExp() {
         WebDriver driver = BaseClass.getDriver();
 
-       driver.findElement(OrangeHRM_TravelExpensePage.btn_travelRequestAdd).click();
+        driver.findElement(OrangeHRM_TravelExpensePage.btn_travelRequestAdd).click();
         System.out.println("Add button is selected to submit travel expense");
 
     }
@@ -135,13 +135,14 @@ public class OrangeHRM_TravelExpensePage {
     public static void addTravelinfo() {
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_TravelExpensePage.btn_addTravelInfo).click();
-         }
+    }
+
     public static void destination(String destination) {
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_TravelExpensePage.txtbx_destination).sendKeys(destination);
     }
 
-    public static void travelFrom(String travelFrom){
+    public static void travelFrom(String travelFrom) {
         WebDriver driver = BaseClass.getDriver();
         String from_date = travelFrom;
         String from_calender[] = from_date.split("-");
@@ -151,7 +152,6 @@ public class OrangeHRM_TravelExpensePage {
 
         driver.findElement(OrangeHRM_TravelExpensePage.Calender_travelFrom).click();
         driver.findElement(OrangeHRM_TravelExpensePage.dropdwn_monthFrom).click();
-
         CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_monthsFrom, from_month);
 
         driver.findElement(OrangeHRM_TravelExpensePage.dropdwn_yearFrom).click();
@@ -160,7 +160,7 @@ public class OrangeHRM_TravelExpensePage {
         CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_daysFrom, from_day);
     }
 
-    public static void travelto(String travelTo){
+    public static void travelto(String travelTo) {
         WebDriver driver = BaseClass.getDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         String toDate = travelTo;
@@ -172,13 +172,15 @@ public class OrangeHRM_TravelExpensePage {
         WebElement element_TravelPeriodTo = driver.findElement(OrangeHRM_TravelExpensePage.Calender_travelTo);
         js.executeScript("arguments[0].click();", element_TravelPeriodTo);
         driver.findElement(OrangeHRM_TravelExpensePage.dropdwn_monthTo).click();
-        CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_monthsTo,toMonth);
+        CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_monthsTo, toMonth);
+
         driver.findElement(OrangeHRM_TravelExpensePage.dropdwn_yearTo).click();
-        CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_yearsTo,toYear);
-        CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_daysTo,toDay);
+        CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_yearsTo, toYear);
+
+        CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_daysTo, toDay);
     }
 
-    public static void saveTravelexp(){
+    public static void saveTravelexp() {
         WebDriver driver = BaseClass.getDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebElement save_expreq = driver.findElement(OrangeHRM_TravelExpensePage.btn_saveTravelReq);
@@ -230,32 +232,43 @@ public class OrangeHRM_TravelExpensePage {
 
     }
 
-    public static void currency_paidin()throws Exception{
-         WebDriver driver = BaseClass.getDriver();
-         JavascriptExecutor js = (JavascriptExecutor) driver;
-         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-         for (int count = 1; count <= 3; ++count) {
-              try {
-                   WebElement element_Currency = driver.findElement(OrangeHRM_TravelExpensePage.dropdown_currencyPaidin);
-                   js.executeScript("arguments[0].click();", element_Currency);
-                   System.out.println("Currency drop-down is clicked");
-                   break;
-              } catch (Exception e) {
+    public static void currency_paidin(String Currency) throws Exception {
+        WebDriver driver = BaseClass.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        for (int count = 1; count <= 3; ++count) {
+            try {
+                WebElement element_Currency = driver.findElement(OrangeHRM_TravelExpensePage.dropdown_currencyPaidin);
+                js.executeScript("arguments[0].click();", element_Currency);
+                System.out.println("Currency drop-down is clicked");
+                wait.until(ExpectedConditions.textToBePresentInElementLocated(OrangeHRM_TravelExpensePage.currencyPaid, Currency));
+                driver.findElement(OrangeHRM_TravelExpensePage.currencyPaid).click();
+                System.out.println("Currency is selected");
+                /*  List<WebElement> currencyOptions = driver.findElements(By.xpath("//label[text()='Currency Paid In']/../div/ul/li"));
 
-                   System.out.println(" Exception is occurred for " + count + " time.");
-              }
-         }
+                // select any available currency option
+                for (WebElement currency : currencyOptions) {
+                    js.executeScript("arguments[0].click();", currency);
+                    System.out.println("Selected Currency: " + currency.getText());
+                    break;
+                }*/
+                break;
+            } catch (Exception e) {
 
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(OrangeHRM_TravelExpensePage.currencyPaidin_CAD, "CAD - Canadian Dollar"));
+                System.out.println(" Exception is occurred for " + count + " time.");
+            }
+        }
+
+        /*wait.until(ExpectedConditions.textToBePresentInElementLocated(OrangeHRM_TravelExpensePage.currencyPaidin_CAD, Currency));
         driver.findElement(OrangeHRM_TravelExpensePage.currencyPaidin_CAD).click();
-        System.out.println("Currency is selected");
+        System.out.println("Currency is selected");*/
 
     }
 
-    public static void amount(String amount){
+    public static void amount(String amount) {
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_TravelExpensePage.textbox_amount).sendKeys(amount);
-        }
+    }
 
     public static void selectPaidby(String paidBy) {
         WebDriver driver = BaseClass.getDriver();
@@ -271,7 +284,8 @@ public class OrangeHRM_TravelExpensePage {
             System.out.println("invalid expense paid by is selected");
         }
     }
-    public static void submit_travelexp(){
+
+    public static void submit_travelexp() {
         WebDriver driver = BaseClass.getDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebElement save_expense = driver.findElement(OrangeHRM_TravelExpensePage.btn_saveTravelExpEst);
@@ -291,56 +305,83 @@ public class OrangeHRM_TravelExpensePage {
         System.out.println("Clicked on arrow back");
     }
 
-    public static String reqestId(){
+    public static String reqestId() {
         WebDriver driver = BaseClass.getDriver();
         WebElement requestElement = driver.findElement(OrangeHRM_TravelExpensePage.list_travelReqId);
-         request_id = requestElement.getText();
+        request_id = requestElement.getText();
         System.out.println("Travel Request ID :" + request_id);
-
         return request_id;
 
     }
-    public static String request_Status(){
+
+    public static String request_Status() {
         WebDriver driver = BaseClass.getDriver();
         WebElement statusElement = driver.findElement(OrangeHRM_TravelExpensePage.list_reqStatus);
-        String status = statusElement.getText();
-        System.out.println("Request status is :" + status);
-
-        if (status.equalsIgnoreCase("Pending Supervisor Approval")) {
+        status = statusElement.getText();
+        System.out.println("Request status is:"+status);
+        /*if (status.equalsIgnoreCase("Pending Supervisor Approval")) {
             System.out.println("Request status is :" + status);
         } else {
             System.out.println("Incorrect request status");
-        }
+        }*/
         return status;
     }
 
-    public static void supervisor_approval(){
+    public static void supervisor_approval() {
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_TravelExpensePage.btn_approve).click();
         System.out.println("Approved the Expense request");
         driver.findElement(OrangeHRM_TravelExpensePage.btn_oktoConfirm).click();
     }
 
-    public static void verifyRequestIdAndStatus(String requestId, String requestStatus){
+    public static void verifyRequestIdAndStatus(String requestId, String requestStatus) {
         WebDriver driver = BaseClass.getDriver();
         String travelreqid = driver.findElement(OrangeHRM_TravelExpensePage.list_travelReqId).getText();
         System.out.println("Travel Request ID :" + travelreqid);
-        Assert.assertEquals(requestId,travelreqid,"RequestID is not matched");
+        Assert.assertEquals(requestId, travelreqid, "RequestID is not matched");
         System.out.println("Request ID is matched");
 
 
         WebElement element_reqstatus = driver.findElement(OrangeHRM_TravelExpensePage.list_reqStatus);
         String updated_status = element_reqstatus.getText();
         System.out.println("Request status is :" + updated_status);
-        Assert.assertEquals(requestId,updated_status,"RequestStatus is not matched");
+        Assert.assertEquals(requestId, updated_status, "RequestStatus is not matched");
         System.out.println("Request Status is matched");
     }
-    public static void finalApproval(){
+
+    public static void finalApproval() {
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_TravelExpensePage.btn_approve).click();
         System.out.println("Approved the Expense request");
         driver.findElement(OrangeHRM_TravelExpensePage.btn_oktoConfirm).click();
         System.out.println("Clicked on OK");
+    }
+
+    public static String updatedStatus(By locator, String data) {
+        WebDriver driver = BaseClass.getDriver();
+
+        List<WebElement> list_Elements = driver.findElements(locator);
+        for (WebElement element : list_Elements) {
+            String elementText = element.getText();
+            if (elementText.equalsIgnoreCase(data)) {
+                break;
+            }
+        }
+        return element;
+    }
+    public static String getStatus(By locator, String data) {
+        WebDriver driver = BaseClass.getDriver();
+
+        List<WebElement> list_Elements = driver.findElements(locator);
+        for (WebElement element : list_Elements) {
+            String elementText = element.getText();
+            if (elementText.equalsIgnoreCase(data)) {
+                String updatedStatus=element.findElement(list_reqStatus).getText();
+                System.out.println(updatedStatus);
+                break;
+            }
+        }
+        return updatedStatus;
     }
 
 }
