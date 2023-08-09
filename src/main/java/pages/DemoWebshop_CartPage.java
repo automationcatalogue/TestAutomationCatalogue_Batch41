@@ -36,6 +36,56 @@ public class DemoWebshop_CartPage {
         double totalValue_BeforeDiscount = Double.parseDouble(total_BeforeDiscount);
         return totalValue_BeforeDiscount;
     }
+    public static void clickCheckboxIagree(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(checkbox_Iagree).click();
+        System.out.println("Check-box is clicked");
+    }
+    public  static void clickCheckoutBtn(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(btn_Checkout).click();
+        System.out.println("Checkout button is clicked");
+    }
+    public static void clickTxtbxCoupon(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(txtbx_Coupon).click();
+        System.out.println("coupon test box is clicked");
+    }
+    public static void enterTxtbxCoupon(String ApplyCoupon){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(txt_EnterCoupon).sendKeys(ApplyCoupon);
+        System.out.println("coupon code is Entered");
+    }
+    public static void clickApplyCouponBtn(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(btn_ApplyCoupon).click();
+        System.out.println("ApplyCoupon button is clicked");
+    }
+
+    public static void getTxtMessagePrinted(){
+        WebDriver driver = BaseClass.getDriver();
+        String message = driver.findElement(DemoWebshop_CartPage.getTxt_MessagePrinted).getText();
+        System.out.println("message:" + message);
+        if (message.trim().equalsIgnoreCase("The coupon code was applied")) {
+            System.out.println("Coupon applied successfully");
+        } else {
+            System.out.println("Coupon applied is not successful");
+        }
+    }
+    public static double getDiscountAmount(){
+        WebDriver driver = BaseClass.getDriver();
+        String discount = driver.findElement(DemoWebshop_CartPage.txt_DiscountAmount).getText();
+        System.out.println("Applied Discount Amount is :" + discount);
+        double discountValue = Double.parseDouble(discount);
+        return discountValue;
+    }
+    public static double getCartPriceAfterDiscount() {
+        WebDriver driver = BaseClass.getDriver();
+        String total_AfterDiscount = driver.findElement(DemoWebshop_CartPage.txt_AfterDiscountTotal).getText();
+        System.out.println("After discount value of total:" + total_AfterDiscount);
+        double totalValue_AfterDiscount = Double.parseDouble(total_AfterDiscount);
+        return totalValue_AfterDiscount;
+    }
 
     public static String price_FirstItemBeforeIncreasingQty(){
         WebDriver driver = BaseClass.getDriver();
