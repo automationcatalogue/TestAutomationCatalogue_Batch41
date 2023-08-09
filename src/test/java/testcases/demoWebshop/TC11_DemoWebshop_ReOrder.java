@@ -1,5 +1,7 @@
 package testcases.demoWebshop;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -16,10 +18,8 @@ import pages.DemoWebshop_CartPage;
 import pages.DemoWebshop_OrderInformationPage;
 import pages.DemoWebShop_OrdersPage;
 import pages.DemoWebshop_HomePage;
-import utilities.BaseClass;
-import utilities.CommonUtils;
-import utilities.Config;
-import utilities.ExcelUtils;
+import testcases.orangeHRM.TC02_OrangeHRM_AddEmployee;
+import utilities.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,9 +43,12 @@ public class TC11_DemoWebshop_ReOrder {
     static String sheetName;
     static int rowNum_testCase;
     static int rowNum_Index;
+    static Logger log = LogManager.getLogger(TC11_DemoWebshop_ReOrder.class);
+
 
     @BeforeClass
     public void prerequisite_setup() throws Exception {
+        Log.startTestCase(TC11_DemoWebshop_ReOrder.class.getName());
         wbk= ExcelUtils.setExcelFilePath();
         sheetName = "DemoWebshop_ReOrder";
         rowNum_testCase = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
@@ -62,7 +65,10 @@ public class TC11_DemoWebshop_ReOrder {
         BaseClass ob = new BaseClass(driver);
 
         driver.get("https://demowebshop.tricentis.com/");
-        System.out.println("Demo website is loaded");
+        log.info("Demo website is loaded");
+
+        String title = driver.getTitle();
+        log.info("Title of the page is:" + title);
 
         DemoWebshop_HomePage.clickLoginLink();
         DemoWebshop_LoginPage.login(userName,password);
@@ -90,21 +96,21 @@ public class TC11_DemoWebshop_ReOrder {
 
         if(result.getStatus() == ITestResult.SUCCESS){
             ExcelUtils.setCellData(orderNumber, sheetName, rowNum_testCase, Config.col_Reorder_OrderNumber);
-            System.out.println(orderNumber+" is written back to the Excel file");
+            log.info(orderNumber+" is written back to the Excel file");
 
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
-            System.out.println("TestCase is Passed and status is updated in Excel sheet");
+            log.info("TestCase is Passed and status is updated in Excel sheet");
         }else if(result.getStatus()==ITestResult.FAILURE){
             if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
                 ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
-                System.out.println("TestCase is Failed and status is updated in Excel sheet");
+                log.info("TestCase is Failed and status is updated in Excel sheet");
 
                 ExcelUtils.setCellData(BaseClass.failureReason,"Index",rowNum_Index,Config.col_reason);
-                System.out.println("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+                log.info("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
             }
         }else if(result.getStatus()==ITestResult.SKIP){
             ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
-            System.out.println("TestCase is SKIPPED and status is updated in Excel sheet");
+            log.info("TestCase is SKIPPED and status is updated in Excel sheet");
         }
         ExcelUtils.closeExcelFile();
     }
