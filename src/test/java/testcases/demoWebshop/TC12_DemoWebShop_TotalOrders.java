@@ -1,5 +1,7 @@
 package testcases.demoWebshop;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -7,14 +9,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.DemoWebShop_OrdersPage;
 import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
-import utilities.BaseClass;
-import utilities.CommonUtils;
-import utilities.Config;
-import utilities.ExcelUtils;
+import testcases.orangeHRM.TC01_OrangeHRM_LoginTest;
+import utilities.*;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -29,7 +30,7 @@ public class TC12_DemoWebShop_TotalOrders {
 
     static FileInputStream fis;
     static XSSFWorkbook wbk;
-    static XSSFSheet sh;
+    static XSSFSheet sh;;
     static XSSFRow row;
     static XSSFCell cell_userName;
     static String userName;
@@ -46,17 +47,27 @@ public class TC12_DemoWebShop_TotalOrders {
     static FileOutputStream fos;
     static String projectPath;
 
+    static String sheetName;
+    static int rowNum_testCase;
+    static int rowNum_Index;
+
+    static Logger log = LogManager.getLogger(TC12_DemoWebShop_TotalOrders.class);
+
+
     @BeforeClass
     public void prerequisite_setup() throws Exception {
+        Log.startTestCase(TC12_DemoWebShop_TotalOrders.class.getName());
         wbk= ExcelUtils.setExcelFilePath();
-        String sheetName="DemoWebShop_TotalOrders";
-        int rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        sheetName="DemoWebShop_TotalOrders";
+        rowNum_testCase = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        rowNum_Index = ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
+        //int rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
 
-        userName = ExcelUtils.getCellData(sheetName,rowNum,Config.col_UserName);
-        System.out.println("UserName from excel sheet is :" + userName);
+        userName = ExcelUtils.getCellData(sheetName,rowNum_testCase,Config.col_UserName);
+        log.info("UserName from excel sheet is :" + userName);
 
-        password = ExcelUtils.getCellData(sheetName,rowNum,Config.col_Password);
-        System.out.println("Password from excel sheet is:" + password);
+        password = ExcelUtils.getCellData(sheetName,rowNum_testCase,Config.col_Password);
+        log.info("Password from excel sheet is:" + password);
 
     }
 
@@ -75,58 +86,35 @@ public class TC12_DemoWebShop_TotalOrders {
 
         driver.findElement(DemoWebshop_HomePage.link_Email).click();
         driver.findElement(DemoWebShop_OrdersPage.link_Orders).click();
-        List<WebElement> OrderNumbers = driver.findElements(DemoWebShop_OrdersPage.listOfAllOrders);
-        TotalNumberOfOrders = String.valueOf((int) OrderNumbers.size());
-        System.out.println("Total number of orders is :" + OrderNumbers.size());
-        List<WebElement> OrderTotal = driver.findElements(DemoWebShop_OrdersPage.listOfAllOrderTotal);
-        String temp = "", temp1 = "", temp2 = "";
-        float TotalValue = 0.0f;
-        Float OrderValue = null;
-        Float TotalValue1 = 0.0f;
-        for (WebElement OrderStatement : OrderTotal) {
-            String TotalOrderStatement = OrderStatement.getText();
-
-            String str1[] = TotalOrderStatement.split(":");
-            temp = str1[1];
-            OrderValue = Float.valueOf(temp);
-            TotalValue = TotalValue + OrderValue;
-
-            SumOfAllOrders = String.valueOf(TotalValue);
-
-
-        }
-        System.out.println("The total value of all orders placed is : " + TotalValue);
-
-        HashMap<String, Double> map_DayWiseOrders = new HashMap<String, Double>();
-        List<WebElement> elements_allOrders = driver.findElements(DemoWebShop_OrdersPage.listOfOrdersDayWise);
-        //List<WebElement> elements_allOrders=listOfOrdersForDayWise;
-        for (WebElement element_Order : elements_allOrders) {
-            String orderDate = element_Order.getText();
-            orderDate = orderDate.split(":")[1].trim();
-            orderDate = orderDate.split(" ")[0];
-
-            String orderValue = element_Order.findElement(DemoWebShop_OrdersPage.orderValue).getText();
-            orderValue = orderValue.split(":")[1].trim();
-            Double dOrderValue = Double.parseDouble(orderValue);
-
-            if (map_DayWiseOrders.containsKey(orderDate)) {
-                double dtotalOrderValue = map_DayWiseOrders.get(orderDate);
-                dtotalOrderValue += dOrderValue;
-                map_DayWiseOrders.put(orderDate, dtotalOrderValue);
-            } else {
-                map_DayWiseOrders.put(orderDate, dOrderValue);
-            }
-        }
-        //Printing sumOf Orders Daywise
-        Set<Map.Entry<String, Double>> allEntries_Daywise = map_DayWiseOrders.entrySet();
-        for (Map.Entry<String, Double> eachEntry_Daywise : allEntries_Daywise) {
-            System.out.println("Order Date is :" + eachEntry_Daywise.getKey() + " Sum of all Orders :" + eachEntry_Daywise.getValue());
-        }
+        DemoWebShop_OrdersPage.totalNumberOfOrders();
+        DemoWebShop_OrdersPage.sumOfAllOrdersPlaced();
+        DemoWebShop_OrdersPage.sumOfOrdersDayWise();
        driver.close();
     }
 
     @AfterClass
-    public void tearDown() throws Exception {
+    public void tearDown(ITestResult result) throws Exception {
+
+        /*if(result.getStatus() == ITestResult.SUCCESS){
+            ExcelUtils.setCellData(SumOfAllOrders, sheetName, rowNum_testCase, Config.col_TotalOrders_SumOfAllOrders);
+            log.info(SumOfAllOrders+" is written back to the Excel file");
+
+            ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
+            log.info("TestCase is Passed and status is updated in Excel sheet");
+        }else if(result.getStatus()==ITestResult.FAILURE){
+            if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
+                ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
+                log.info("TestCase is Failed and status is updated in Excel sheet");
+
+                ExcelUtils.setCellData(BaseClass.failureReason,"Index",rowNum_Index,Config.col_reason);
+                log.info("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+            }
+        }else if(result.getStatus()==ITestResult.SKIP){
+            ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
+            log.info("TestCase is SKIPPED and status is updated in Excel sheet");
+        }
+        ExcelUtils.closeExcelFile();
+    }*/
 
         cell_TotalNumberOfOrders = row.getCell(5);
         cell_SumOfAllOrders = row.getCell(6);
@@ -151,6 +139,7 @@ public class TC12_DemoWebShop_TotalOrders {
         System.out.println("ExcelFile Writing is closed");
         fis.close();
         System.out.println("ExcelFile reading is closed");
+
     }
 
 }
