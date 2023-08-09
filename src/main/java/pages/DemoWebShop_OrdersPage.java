@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+
 public class DemoWebShop_OrdersPage {
 
     public static By link_Email = By.xpath("//div[@class='master-wrapper-content']//a[@class='account']");
@@ -86,6 +87,17 @@ public class DemoWebShop_OrdersPage {
         }
     }
 
+
+    public static void clickLinkOrders(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(link_Orders).click();
+        System.out.println("Order link is clicked");
+    }
+    public static void clickOrderDetailsBtn(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(btn_OrderDetails).click();
+        System.out.println("Order details button is clicked");
+    }
 
 }
 

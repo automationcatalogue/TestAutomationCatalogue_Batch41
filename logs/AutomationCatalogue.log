@@ -176,3 +176,11 @@
 08:40:16:248 [main] INFO  utilities.Log - *****************************************************************
 08:40:16:250 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
 08:40:16:250 [main] INFO  utilities.Log - ******************************************************************
+13:12:08:322 [main] INFO  utilities.Log - *****************************************************************
+13:12:08:334 [main] INFO  utilities.Log - **********testcases.demoWebshop.TC11_DemoWebshop_ReOrder************
+13:12:08:335 [main] INFO  utilities.Log - ******************************************************************
+13:13:37:623 [main] INFO  utilities.Log - *****************************************************************
+13:13:37:628 [main] INFO  utilities.Log - **********testcases.demoWebshop.TC11_DemoWebshop_ReOrder************
+13:13:37:629 [main] INFO  utilities.Log - ******************************************************************
+13:15:51:613 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Demo website is loaded
+13:15:51:758 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Title of the page is:Demo Web Shop
