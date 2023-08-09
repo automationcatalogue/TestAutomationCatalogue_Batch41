@@ -48,4 +48,10 @@ public class OrangeHRM_HRAdministrationPage {
         }
         return supervisor_ActualUserName;
     }
+
+    public static void clickOnUsersLink(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(OrangeHRM_HRAdministrationPage.link_users).click();
+        System.out.println("clicked on Users button");
+    }
 }

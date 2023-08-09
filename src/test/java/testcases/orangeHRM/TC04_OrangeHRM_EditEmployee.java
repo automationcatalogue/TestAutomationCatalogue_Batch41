@@ -1,5 +1,7 @@
 package testcases.orangeHRM;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -18,6 +20,7 @@ import utilities.BaseClass;
 import utilities.CommonUtils;
 import utilities.Config;
 import utilities.ExcelUtils;
+import utilities.Log;
 
 
 import java.io.FileInputStream;
@@ -31,9 +34,12 @@ public class TC04_OrangeHRM_EditEmployee {
     String nationality;String allergies;
     String dietaryRequire1;String dietaryRequire2;
     String sheetName; int row;
+
+    static Logger log = LogManager.getLogger(TC04_OrangeHRM_EditEmployee.class);
     @BeforeClass
     public void prerequisite_Setup() throws Exception{
-        sheetName ="OrangeHRM_EditEmployee";
+        Log.startTestCase(TC04_OrangeHRM_EditEmployee.class.getName());
+
         wbk= ExcelUtils.setExcelFilePath();
         row = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
         userName = ExcelUtils.getCellData(sheetName,row, Config.col_UserName);
@@ -55,7 +61,7 @@ public class TC04_OrangeHRM_EditEmployee {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
 
         driver.get("https://seleniumautom-trials710.orangehrmlive.com");
-        System.out.println("OrangeHRM website is launched");
+        log.info("OrangeHRM website is launched");
 
         OrangeHRM_LoginPage.login(userName,passWord);
         OrangeHRM_HomePage.verifyTitle();
@@ -75,7 +81,7 @@ public class TC04_OrangeHRM_EditEmployee {
         OrangeHRM_EditEmployeePage.verify_SuccessfullyUpdated("Dietary Requirement");
         OrangeHRM_LogoutPage.logout();
         driver.quit();
-        System.out.println("browser is closed");
+       log.info("browser is closed");
     }
 
 }

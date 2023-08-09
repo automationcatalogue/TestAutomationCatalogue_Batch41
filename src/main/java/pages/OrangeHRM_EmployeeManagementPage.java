@@ -4,7 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utilities.BaseClass;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utilities.BaseClass;
 
+import java.time.Duration;
 import java.util.List;
 
 public class OrangeHRM_EmployeeManagementPage {
@@ -40,3 +44,5 @@ public class OrangeHRM_EmployeeManagementPage {
         return supervisor_name;
     }
 }
+
+

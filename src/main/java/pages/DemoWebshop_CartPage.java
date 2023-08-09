@@ -31,7 +31,7 @@ public class DemoWebshop_CartPage {
 
     public static double getCartPriceBeforeDiscount(){
         WebDriver driver = BaseClass.getDriver();
-        String total_BeforeDiscount=driver.findElement(DemoWebshop_CartPage.txt_BeforeDiscountTotal).getText();
+        String total_BeforeDiscount=driver.findElement(txt_BeforeDiscountTotal).getText();
         System.out.println("value of total:"+total_BeforeDiscount);
         double totalValue_BeforeDiscount = Double.parseDouble(total_BeforeDiscount);
         return totalValue_BeforeDiscount;
