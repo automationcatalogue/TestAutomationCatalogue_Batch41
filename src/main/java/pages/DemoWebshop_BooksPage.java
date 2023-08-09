@@ -21,5 +21,13 @@ public class DemoWebshop_BooksPage {
         driver.findElement(btn_AddToCart).click();
         System.out.println("Add to cart button is clicked");
     }
+    public static void adding_FirstBookToCart(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(DemoWebshop_BooksPage.link_FirstItem).click();
+        System.out.println("Clicked on first item in books ");
 
+        driver.findElement(DemoWebshop_BooksPage.btn_AddCartInsideFirstItem).click();
+        System.out.println("Clicked on Add to Cart Button in Books");
+
+    }
 }
