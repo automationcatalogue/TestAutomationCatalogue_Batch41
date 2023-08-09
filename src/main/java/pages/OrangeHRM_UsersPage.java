@@ -11,19 +11,19 @@ import utilities.BaseClass;
 import java.util.List;
 
 public class OrangeHRM_UsersPage {
-
-    public static By link_firstUserName = By.xpath("//tbody[@ng-if='!listData.staticBody']/tr[1]/td[2]//span");
-    public static By icon_edit = By.xpath("//tbody[@ng-if='!listData.staticBody']/tr[1]//i");
-    public static By txtbx_employeeUserName=By.xpath("//input[@id='user_name']/..");
-    public static By txtbx_employeeName=By.cssSelector("#selectedEmployee_value");
-    public static By chkbx_changePassword = By.xpath("//span[text()='Change Password']");
-    public static By txtbx_enterPassword = By.xpath("(//input[@type='password'])[1]");
-    public static By txtbx_confirmPassword = By.xpath("(//input[@type='password'])[2]");
-    public static By btn_save = By.xpath("//button[text()='Save']");
-    public static By list_users = By.xpath("//table[@class='highlight bordered']/tbody/tr/td[4]");
+    public static By link_firstUserName =By.xpath("//tbody[@ng-if='!listData.staticBody']/tr[1]/td[2]//span");
+    public static By icon_edit= By.xpath("//tbody[@ng-if='!listData.staticBody']/tr[1]//i");
+    public static By chkbx_changePassword=By.xpath("//span[text()='Change Password']");
+    public static By txtbx_enterPassword=By.xpath("(//input[@type='password'])[1]");
+    public static By txtbx_confirmPassword=By.xpath("(//input[@type='password'])[2]");
+    public static By btn_save =By.xpath("//button[text()='Save']");
+    public static By list_users =By.xpath("//tbody[@ng-if='!listData.staticBody']/tr/td[4]");
+    // corresponding supervisor edit button
+    public static By btn_edit =By.xpath(".//following-sibling::td[4]");
     public static By txtbx_userName = By.xpath("//input[@id='user_name']");
     public static By icon_crossExit = By.xpath("//button[@aria-label='Close']");
-    public static By btn_edit = By.xpath(".//following-sibling::td[4]");
+
+
     public static String userName=null;
     static Logger log = LogManager.getLogger(OrangeHRM_UsersPage.class);
 

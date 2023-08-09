@@ -76,10 +76,9 @@ public class TC05_OrangeHRM_TravelRequest {
         //select a first employee from employee list and change password
         OrangeHRM_UsersPage.getEmployeeDetails();
         OrangeHRM_UsersPage.changeEmployeePassword(newPassword);
-
-
         OrangeHRM_HomePage.clickEmployeeManagementLink();
-        supervisor_name = OrangeHRM_EmployeeManagementPage.clickEmployeeList_getSupervisorName(employeeName);
+
+        supervisor_name =OrangeHRM_EmployeeManagementPage.finding_supervisorName(employeeName);
         OrangeHRM_HomePage.clickHrAdministrationLink();
         supervisor_username = OrangeHRM_UsersPage.username_Supervisor(supervisor_name);
 

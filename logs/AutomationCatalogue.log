@@ -176,6 +176,7 @@
 08:40:16:248 [main] INFO  utilities.Log - *****************************************************************
 08:40:16:250 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
 08:40:16:250 [main] INFO  utilities.Log - ******************************************************************
+<<<<<<< HEAD
 17:56:08:975 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
 17:56:09:034 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
 17:56:14:234 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
@@ -315,3 +316,13 @@
 19:39:22:452 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR103
 19:39:22:468 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Approved
 19:39:23:508 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+=======
+13:12:08:322 [main] INFO  utilities.Log - *****************************************************************
+13:12:08:334 [main] INFO  utilities.Log - **********testcases.demoWebshop.TC11_DemoWebshop_ReOrder************
+13:12:08:335 [main] INFO  utilities.Log - ******************************************************************
+13:13:37:623 [main] INFO  utilities.Log - *****************************************************************
+13:13:37:628 [main] INFO  utilities.Log - **********testcases.demoWebshop.TC11_DemoWebshop_ReOrder************
+13:13:37:629 [main] INFO  utilities.Log - ******************************************************************
+13:15:51:613 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Demo website is loaded
+13:15:51:758 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Title of the page is:Demo Web Shop
+>>>>>>> master
