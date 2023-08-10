@@ -1,11 +1,67 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Suite1" verbose="1" parallel="tests" thread-count="1">
     <parameter name="browserName"  value="Chrome"/>
-    <test name="OrangeHRM">
+    <test name="test1">
+        <parameter name="testID" value="TC03-01"/>
         <classes>
-            <class name="testcases.demoWebshop.TC11_DemoWebshop_ReOrder"/>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
         </classes>
     </test>
+    <test name="test2">
+        <parameter name="testID" value="TC03-02"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test3">
+        <parameter name="testID" value="TC03-03"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test4">
+        <parameter name="testID" value="TC03-04"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test5">
+        <parameter name="testID" value="TC03-05"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test6">
+        <parameter name="testID" value="TC03-06"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test7">
+        <parameter name="testID" value="TC03-07"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test8">
+        <parameter name="testID" value="TC03-08"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test9">
+        <parameter name="testID" value="TC03-09"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test10">
+        <parameter name="testID" value="TC03-10"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+
 </suite>
 
 

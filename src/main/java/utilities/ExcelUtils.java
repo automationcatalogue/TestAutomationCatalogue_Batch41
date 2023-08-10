@@ -27,8 +27,14 @@ public class ExcelUtils {
 
     public static String getCellData(String sheetName, int rowNum, int colNum){
         sh = wbk.getSheet(sheetName);
-        row= sh.getRow(rowNum);
+        row = sh.getRow(rowNum);
+        if(row==null){
+            row = sh.createRow(rowNum);
+        }
         col = row.getCell(colNum);
+        if(col==null){
+            col = row.createCell(colNum);
+        }
         String excelData = col.getStringCellValue();
         return excelData;
     }
@@ -66,6 +72,17 @@ public class ExcelUtils {
         FileOutputStream fos = new FileOutputStream(excelPath);
         wbk.write(fos);
         fos.close();
+    }
+
+    public static int getRowUsed(String sSheetName) throws Exception {
+        sh = wbk.getSheet(sSheetName);
+        try {
+            int iRowCount = sh.getLastRowNum();
+            return iRowCount;
+        } catch (Exception e) {
+            System.out.println("Error in excel file in the method: getRowUsed");
+            throw (e);
+        }
     }
 
     public static void closeExcelFile() throws Exception{

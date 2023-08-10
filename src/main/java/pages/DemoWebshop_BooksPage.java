@@ -11,6 +11,16 @@ public class DemoWebshop_BooksPage {
     public static By link_Books = By.xpath("//div//ul[@class='top-menu']//a[@href='/books']");
     public static By btn_AddToCart = By.xpath("(//div[@class='product-grid']//input)[1]");
 
+    public static void clickBooksLink(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(link_Books).click();
+        System.out.println("Books link is clicked");
+    }
+    public static void clickAddToCartBtn(){
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(btn_AddToCart).click();
+        System.out.println("Add to cart button is clicked");
+    }
     public static void adding_FirstBookToCart(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_BooksPage.link_FirstItem).click();

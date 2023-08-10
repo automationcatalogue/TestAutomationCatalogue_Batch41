@@ -36,12 +36,14 @@ public class TC04_OrangeHRM_EditEmployee {
     String sheetName; int row;
 
     static Logger log = LogManager.getLogger(TC04_OrangeHRM_EditEmployee.class);
+
+    @Parameters("{testID}")
     @BeforeClass
-    public void prerequisite_Setup() throws Exception{
+    public void prerequisite_Setup(@Optional(Config.TestCase_ID) String testID) throws Exception{
         Log.startTestCase(TC04_OrangeHRM_EditEmployee.class.getName());
         sheetName = "OrangeHRM_EditEmployee";
         wbk= ExcelUtils.setExcelFilePath();
-        row = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        row = ExcelUtils.getRowNumber(testID,sheetName);
         userName = ExcelUtils.getCellData(sheetName,row, Config.col_UserName);
         passWord = ExcelUtils.getCellData(sheetName,row,Config.col_Password);
         lastName = ExcelUtils.getCellData(sheetName,row,Config.col_EditEmployee_LastName);
