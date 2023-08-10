@@ -142,7 +142,7 @@ public class OrangeHRM_TravelExpensePage {
         driver.findElement(OrangeHRM_TravelExpensePage.txtbx_destination).sendKeys(destination);
     }
 
-    public static void travelFrom(String travelFrom) {
+    public static void travelFrom(String travelFrom) throws Exception{
         WebDriver driver = BaseClass.getDriver();
         String from_date = travelFrom;
         String from_calender[] = from_date.split("-");
@@ -160,7 +160,7 @@ public class OrangeHRM_TravelExpensePage {
         CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_daysFrom, from_day);
     }
 
-    public static void travelto(String travelTo) {
+    public static void travelto(String travelTo) throws Exception{
         WebDriver driver = BaseClass.getDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         String toDate = travelTo;

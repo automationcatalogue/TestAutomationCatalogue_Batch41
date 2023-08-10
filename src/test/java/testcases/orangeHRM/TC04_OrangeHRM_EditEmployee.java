@@ -39,7 +39,7 @@ public class TC04_OrangeHRM_EditEmployee {
     @BeforeClass
     public void prerequisite_Setup() throws Exception{
         Log.startTestCase(TC04_OrangeHRM_EditEmployee.class.getName());
-
+        sheetName = "OrangeHRM_EditEmployee";
         wbk= ExcelUtils.setExcelFilePath();
         row = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
         userName = ExcelUtils.getCellData(sheetName,row, Config.col_UserName);
