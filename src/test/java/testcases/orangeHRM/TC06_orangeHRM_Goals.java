@@ -29,12 +29,14 @@ public class TC06_orangeHRM_Goals {
     static String supervisor_ActualUserName;
     static String firstGoal_status; static String secondGoal_status; static String thirdGoal_status;
     static String sheetName;
+
+    @Parameters("{testID}")
     @BeforeClass
-    public void prerequisite_Setup() throws Exception{
+    public void prerequisite_Setup(@Optional(Config.TestCase_ID) String testID) throws Exception{
         wbk= ExcelUtils.setExcelFilePath();
         sheetName = "OrangeHRM_Goals";
-        row = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
-        row_index = ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
+        row = ExcelUtils.getRowNumber(testID,sheetName);
+        row_index = ExcelUtils.getRowNumber(testID,"Index");
         userName = ExcelUtils.getCellData(sheetName,row,Config.col_UserName);
         passWord = ExcelUtils.getCellData(sheetName,row,Config.col_Password);
         employeeName = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_empName);

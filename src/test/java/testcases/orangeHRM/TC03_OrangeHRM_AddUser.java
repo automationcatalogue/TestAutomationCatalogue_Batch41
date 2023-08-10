@@ -32,14 +32,16 @@ public class TC03_OrangeHRM_AddUser {
     static String sheetName;
     static int rowNum_Index;
     static Logger log = LogManager.getLogger(TC03_OrangeHRM_AddUser.class);
-    @BeforeClass
-    public void prerequisites() throws Exception
+
+    @Parameters({"testID"})
+    @BeforeMethod
+    public void prerequisites(@Optional(Config.TestCase_ID) String testID) throws Exception
     {
         Log.startTestCase(TC03_OrangeHRM_AddUser.class.getName());
         sheetName="OrangeHRM_AddUser";
         wbk= ExcelUtils.setExcelFilePath();
-        row=ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
-        rowNum_Index = ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
+        row=ExcelUtils.getRowNumber(testID,sheetName);
+        rowNum_Index = ExcelUtils.getRowNumber(testID,"Index");
         userName_1=ExcelUtils.getCellData(sheetName,row, Config.col_UserName);
        password= ExcelUtils.getCellData(sheetName,row,Config.col_Password);
        empName= ExcelUtils.getCellData(sheetName,row,Config.col_AddUser_EmployeeName);

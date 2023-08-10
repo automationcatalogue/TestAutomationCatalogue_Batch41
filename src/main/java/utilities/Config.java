@@ -10,8 +10,9 @@ public class Config {
     public static final int col_TestDescription=3;
     public static final int col_UserName=4;
     public static final int col_Password=5;
-    public static final int col_Status=4;
-    public static final int col_reason=5;
+    public static final int col_RunMode=4;
+    public static final int col_Status=5;
+    public static final int col_reason=6;
 
     //Add Employee testcase Column numbers
     public static final int col_AddEmployee_FirstName=6;
@@ -35,8 +36,6 @@ public class Config {
     public static final int col_TravelExpense_amount=13;
     public static final int col_TravelExpense_paidBy=14;
     public static final int col_TravelExpense_employeeName=15;
-
-
 
     //Add User testcase Column numbers
     public static final int col_AddUser_EmployeeName=6;

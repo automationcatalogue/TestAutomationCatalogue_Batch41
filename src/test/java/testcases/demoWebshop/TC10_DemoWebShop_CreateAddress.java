@@ -26,12 +26,14 @@ public class TC10_DemoWebShop_CreateAddress {
     static String City; static String Address1;static String Address2;
     static String ZipPostalCode;static String PhoneNumber;static String FaxNumber;
     static int rowNum; static int row_index;
+
+    @Parameters("{testID}")
     @BeforeClass
-    public void prerequisite_setup() throws Exception {
+    public void prerequisite_setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
         wbk = ExcelUtils.setExcelFilePath();
         sheetName = "DemoWebshop_CreateAddress";
-        rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID, sheetName);
-        row_index = ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
+        rowNum = ExcelUtils.getRowNumber(testID, sheetName);
+        row_index = ExcelUtils.getRowNumber(testID,"Index");
         UserName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
         Password = ExcelUtils.getCellData(sheetName, rowNum, Config.col_Password);
         FirstName = RandomGenerator.getRandomData("firstName");

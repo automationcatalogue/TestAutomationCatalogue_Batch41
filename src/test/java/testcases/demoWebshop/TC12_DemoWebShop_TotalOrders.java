@@ -46,11 +46,12 @@ public class TC12_DemoWebShop_TotalOrders {
     static FileOutputStream fos;
     static String projectPath;
 
+    @Parameters("{testID}")
     @BeforeClass
-    public void prerequisite_setup() throws Exception {
+    public void prerequisite_setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
         wbk= ExcelUtils.setExcelFilePath();
         String sheetName="DemoWebShop_TotalOrders";
-        int rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        int rowNum = ExcelUtils.getRowNumber(testID,sheetName);
 
         userName = ExcelUtils.getCellData(sheetName,rowNum,Config.col_UserName);
         System.out.println("UserName from excel sheet is :" + userName);

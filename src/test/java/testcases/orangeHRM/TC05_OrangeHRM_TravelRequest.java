@@ -33,14 +33,13 @@ public class TC05_OrangeHRM_TravelRequest {
     static String sheetName;
     static String supervisor_name;
 
+    @Parameters("{testID}")
     @BeforeClass
-    public void prerequisite_setup() throws Exception {
-
-
+    public void prerequisite_setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
         wbk= ExcelUtils.setExcelFilePath();
         sheetName = "OrangeHRM_TravelExpense";
-        rowNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
-        rowNum_Index =ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
+        rowNum = ExcelUtils.getRowNumber(testID,sheetName);
+        rowNum_Index =ExcelUtils.getRowNumber(testID,"Index");
         userName=ExcelUtils.getCellData(sheetName,rowNum,Config.col_UserName);
         pswd=ExcelUtils.getCellData(sheetName,rowNum,Config.col_Password);
         newPassword = ExcelUtils.getCellData(sheetName,rowNum,Config.col_TravelExpense_newPassword);
