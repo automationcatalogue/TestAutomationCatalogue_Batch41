@@ -1,5 +1,7 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +23,7 @@ public class OrangHRM_AddUserPage {
 
     public static By empName_Visibility = By.xpath("//div[@id='systemUserDiv']//table//tbody/tr[1]/td[2]//span[text()]");
     public static By empName_DropdownVisibility = By.xpath("//div[@id='selectedEmployee_dropdown']//div[@class='title-section']");
+    static Logger log = LogManager.getLogger(OrangHRM_AddUserPage.class);
 public static void clickAddUser(){
     WebDriver driver=BaseClass.getDriver();
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3000));

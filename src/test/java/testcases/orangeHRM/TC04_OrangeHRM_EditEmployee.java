@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
@@ -53,7 +54,7 @@ public class TC04_OrangeHRM_EditEmployee {
         dietaryRequire1 = ExcelUtils.getCellData(sheetName,row,Config.col_EditEmployee_DietaryRequirement_1);
         dietaryRequire2 = ExcelUtils.getCellData(sheetName,row,Config.col_EditEmployee_DietaryRequirement_2);
     }
-   @Test
+    @Test
    @Parameters({"browserName"})
     public void EditEmployee(@Optional("chrome") String browserName) throws Exception{
        WebDriver driver =CommonUtils.browserLaunch(browserName);
@@ -83,7 +84,8 @@ public class TC04_OrangeHRM_EditEmployee {
         OrangeHRM_EditEmployeePage.verify_SuccessfullyUpdated("Dietary Requirement");
         OrangeHRM_LogoutPage.logout();
         driver.quit();
-       log.info("browser is closed");
+        log.info("browser is closed");
+        Log.endTestCase();
     }
 
 }
