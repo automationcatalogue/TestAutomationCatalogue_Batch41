@@ -30,12 +30,14 @@ public class TC13_DemoWebShop_UpdateShoppingCart {
     static  String total_1; static String total_2;
     static String text_BookPrice; static String text_updatedQuty;
     static String text_JewelPrice;static String sheetName;
+
+    @Parameters("{testID}")
     @BeforeClass
- public void prerequisite_Setup() throws Exception {
+ public void prerequisite_Setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
      wbk= ExcelUtils.setExcelFilePath();
      sheetName = "DemoWebshop_UpdateShoppingCart";
-     row = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
-     row_index = ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
+     row = ExcelUtils.getRowNumber(testID,sheetName);
+     row_index = ExcelUtils.getRowNumber(testID,"Index");
      userName = ExcelUtils.getCellData(sheetName,row,Config.col_UserName);
      passWord = ExcelUtils.getCellData(sheetName,row,Config.col_Password);
      jewel_Length = ExcelUtils.getCellData(sheetName,row,Config.col_UpdateCart_Length);

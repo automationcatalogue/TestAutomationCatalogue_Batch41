@@ -30,7 +30,7 @@ public static void clickAddUser(){
 }
     public static void enterAddUserDetails(String empName,String userName, String password, String confirm_pwd) {
         WebDriver driver = BaseClass.getDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3000));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         //Enter Employee Name as Charlie Carter
         driver.findElement(txtbx_EmployeeName).sendKeys(empName);
         wait.until(ExpectedConditions.visibilityOfElementLocated(empName_DropdownVisibility));

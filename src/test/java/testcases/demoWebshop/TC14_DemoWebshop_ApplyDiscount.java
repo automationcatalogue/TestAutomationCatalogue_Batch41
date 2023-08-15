@@ -36,13 +36,14 @@ public class TC14_DemoWebshop_ApplyDiscount {
     static int rowNum_Index;
     static Logger log = LogManager.getLogger(TC14_DemoWebshop_ApplyDiscount.class);
 
+    @Parameters("{testID}")
     @BeforeClass
-    public void prerequisite_setup() throws Exception {
+    public void prerequisite_setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC14_DemoWebshop_ApplyDiscount.class.getName());
         wbk= ExcelUtils.setExcelFilePath();
         sh = wbk.getSheet("DemoWebshop_ApplyDiscount");
-        rowNum_testCase = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
-        rowNum_Index = ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
+        rowNum_testCase = ExcelUtils.getRowNumber(testID,sheetName);
+        rowNum_Index = ExcelUtils.getRowNumber(testID,"Index");
         userName = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_UserName);
         password = ExcelUtils.getCellData(sheetName,rowNum_testCase,Config.col_Password);
         ApplyCoupon = ExcelUtils.getCellData(sheetName,rowNum_testCase,Config.col_ApplyDiscount_Coupon);

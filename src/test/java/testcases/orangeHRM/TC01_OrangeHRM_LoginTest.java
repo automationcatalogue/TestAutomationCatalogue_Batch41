@@ -32,14 +32,17 @@ public class TC01_OrangeHRM_LoginTest {
     static String password;
     static String projectPath;
     static Logger log = LogManager.getLogger(TC01_OrangeHRM_LoginTest.class);
+
+
     @BeforeClass
-    public void prerequisite_setup() throws Exception{
+    @Parameters("{testID}")
+    public void prerequisite_setup(@Optional(Config.TestCase_ID) String testID) throws Exception{
         Log.startTestCase(TC01_OrangeHRM_LoginTest.class.getName());
 
         wbk= ExcelUtils.setExcelFilePath();
         String sheetName = "OrangeHRM_Login";
 
-        int roNum = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
+        int roNum = ExcelUtils.getRowNumber(testID,sheetName);
         userName = ExcelUtils.getCellData(sheetName,roNum, Config.col_UserName);
         log.info("UserName from excel sheet is :"+userName);
 
