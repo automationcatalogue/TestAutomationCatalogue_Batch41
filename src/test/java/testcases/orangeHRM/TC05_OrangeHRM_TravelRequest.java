@@ -148,7 +148,7 @@ public class TC05_OrangeHRM_TravelRequest {
 
 
     }
-    /*@AfterMethod
+    @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
 
         if (result.getStatus() == ITestResult.SUCCESS) {
@@ -173,5 +173,5 @@ public class TC05_OrangeHRM_TravelRequest {
         }
 
         ExcelUtils.closeExcelFile();
-    }*/
+    }
 }

@@ -326,3 +326,549 @@
 13:15:51:613 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Demo website is loaded
 13:15:51:758 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Title of the page is:Demo Web Shop
 >>>>>>> master
+09:29:09:911 [main] INFO  utilities.Log - *****************************************************************
+09:29:09:917 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+09:29:09:917 [main] INFO  utilities.Log - ******************************************************************
+09:33:54:387 [main] INFO  utilities.Log - *****************************************************************
+09:33:54:395 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+09:33:54:395 [main] INFO  utilities.Log - ******************************************************************
+09:35:20:681 [main] INFO  utilities.Log - *****************************************************************
+09:35:20:688 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+09:35:20:689 [main] INFO  utilities.Log - ******************************************************************
+09:36:30:005 [main] INFO  utilities.Log - *****************************************************************
+09:36:30:011 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+09:36:30:011 [main] INFO  utilities.Log - ******************************************************************
+09:38:44:838 [main] INFO  utilities.Log - *****************************************************************
+09:38:44:844 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+09:38:44:844 [main] INFO  utilities.Log - ******************************************************************
+09:38:54:186 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+09:38:54:655 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+09:39:00:647 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+09:39:01:074 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+09:39:11:522 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+09:39:11:734 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+09:39:13:024 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+09:39:13:525 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+09:39:13:935 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+09:39:14:060 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+09:39:24:105 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+09:39:24:234 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+09:39:24:336 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+09:39:26:742 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+09:39:30:557 [main] INFO  pages.OrangeHRM_TravelExpensePage - Add button is selected to submit travel expense
+09:39:30:777 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency Dropdown is clicked
+09:39:31:033 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arab Emir. Dirham is selected
+09:39:52:796 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on travel information save button
+09:39:52:970 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on Add expense button
+09:39:53:171 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense Type drop-down is clicked 
+09:39:53:394 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arifare is selected
+09:39:53:942 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency drop-down is clicked
+09:39:54:681 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency is selected
+09:39:55:367 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense paid by the Company
+09:39:58:856 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on save button
+09:39:58:903 [main] INFO  pages.OrangeHRM_TravelExpensePage - Submitted the expense
+09:40:02:942 [main] INFO  pages.OrangeHRM_TravelExpensePage - Confirmed the submit
+09:40:05:702 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on arrow back
+09:40:05:759 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR104
+09:40:05:786 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Supervisor Approval
+09:40:07:441 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+09:44:15:000 [main] INFO  utilities.Log - *****************************************************************
+09:44:15:004 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+09:44:15:004 [main] INFO  utilities.Log - ******************************************************************
+09:44:25:273 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+09:44:25:385 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+09:44:30:864 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+09:44:31:161 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+09:44:41:284 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+09:44:41:441 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+09:44:42:590 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+09:44:42:969 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+09:44:43:387 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+09:44:43:525 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+09:44:52:518 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+09:44:52:621 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+09:44:52:688 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+09:44:54:965 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+09:46:58:099 [main] INFO  utilities.Log - *****************************************************************
+09:46:58:106 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+09:46:58:106 [main] INFO  utilities.Log - ******************************************************************
+09:47:07:484 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+09:47:07:652 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+09:47:13:224 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+09:47:13:447 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+09:47:23:654 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+09:47:23:867 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+09:47:49:124 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+09:47:49:697 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+09:47:50:163 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+09:47:50:323 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+09:51:11:541 [main] INFO  utilities.Log - *****************************************************************
+09:51:11:557 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+09:51:11:558 [main] INFO  utilities.Log - ******************************************************************
+09:51:21:577 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+09:51:21:899 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+09:51:27:723 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+09:51:28:196 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+09:51:39:048 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+09:51:39:505 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+09:51:44:122 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+09:51:44:599 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+09:51:45:092 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+09:51:45:257 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+10:00:53:152 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+10:00:54:143 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+10:00:55:691 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+10:01:13:641 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+10:01:34:813 [main] INFO  pages.OrangeHRM_TravelExpensePage - Add button is selected to submit travel expense
+10:01:35:102 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency Dropdown is clicked
+10:01:35:807 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arab Emir. Dirham is selected
+10:02:00:418 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on travel information save button
+10:02:00:594 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on Add expense button
+10:02:00:782 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense Type drop-down is clicked 
+10:02:00:942 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arifare is selected
+10:02:01:527 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency drop-down is clicked
+10:02:22:085 [main] INFO  pages.OrangeHRM_TravelExpensePage -  Exception is occurred for 1 time.
+10:02:22:146 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency drop-down is clicked
+10:02:42:403 [main] INFO  pages.OrangeHRM_TravelExpensePage -  Exception is occurred for 2 time.
+10:02:42:452 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency drop-down is clicked
+10:03:02:774 [main] INFO  pages.OrangeHRM_TravelExpensePage -  Exception is occurred for 3 time.
+10:03:03:257 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense paid by the Company
+10:03:03:334 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on save button
+10:03:03:406 [main] INFO  pages.OrangeHRM_TravelExpensePage - Submitted the expense
+10:03:07:393 [main] INFO  pages.OrangeHRM_TravelExpensePage - Confirmed the submit
+10:03:10:137 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on arrow back
+10:03:10:183 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR105
+10:03:10:235 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Supervisor Approval
+10:03:11:970 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+10:04:08:919 [main] INFO  utilities.Log - *****************************************************************
+10:04:08:926 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+10:04:08:926 [main] INFO  utilities.Log - ******************************************************************
+10:04:18:175 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+10:04:18:388 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+10:04:24:194 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+10:04:24:433 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+10:04:36:545 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+10:04:36:747 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+10:04:38:028 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+10:04:38:478 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+10:04:38:993 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+10:04:39:137 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+10:04:42:118 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name is :Brody Naidu
+10:04:46:182 [main] INFO  pages.OrangeHRM_UsersPage - username of the Supervisor is :brody
+10:04:46:894 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Edit button
+10:04:49:256 [main] INFO  pages.OrangeHRM_UsersPage - Supervisor's password is updated.
+10:04:51:550 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+10:04:51:777 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+10:04:51:891 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+10:04:55:805 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+10:04:59:569 [main] INFO  pages.OrangeHRM_TravelExpensePage - Add button is selected to submit travel expense
+10:04:59:780 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency Dropdown is clicked
+10:05:00:057 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arab Emir. Dirham is selected
+10:05:21:918 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on travel information save button
+10:05:22:141 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on Add expense button
+10:05:22:368 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense Type drop-down is clicked 
+10:05:22:606 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arifare is selected
+10:05:23:134 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency drop-down is clicked
+10:05:23:833 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency is selected
+10:05:24:451 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense paid by the Company
+10:05:27:969 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on save button
+10:05:28:023 [main] INFO  pages.OrangeHRM_TravelExpensePage - Submitted the expense
+10:05:32:004 [main] INFO  pages.OrangeHRM_TravelExpensePage - Confirmed the submit
+10:05:34:676 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on arrow back
+10:05:34:765 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR106
+10:05:34:800 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Supervisor Approval
+10:05:36:570 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+10:05:51:403 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+10:05:53:319 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+10:05:54:177 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+10:05:54:272 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+10:05:56:562 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+10:05:59:665 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR106
+10:05:59:693 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Supervisor Approval
+10:06:00:876 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+10:06:02:125 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+10:06:02:207 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+10:06:05:155 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+10:10:22:681 [main] INFO  utilities.Log - *****************************************************************
+10:10:22:690 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+10:10:22:692 [main] INFO  utilities.Log - ******************************************************************
+10:10:30:850 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+10:10:30:996 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+10:10:36:458 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+10:10:36:760 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+10:10:46:749 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+10:10:46:952 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+10:10:58:161 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+10:10:58:620 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+10:10:58:987 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+10:10:59:137 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+10:11:03:134 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name is :Brody Naidu
+10:11:10:732 [main] INFO  pages.OrangeHRM_UsersPage - username of the Supervisor is :brody
+10:11:12:120 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Edit button
+10:11:13:811 [main] INFO  pages.OrangeHRM_UsersPage - Supervisor's password is updated.
+10:11:17:377 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+10:11:44:103 [main] INFO  utilities.Log - *****************************************************************
+10:11:44:110 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+10:11:44:110 [main] INFO  utilities.Log - ******************************************************************
+10:11:51:973 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+10:11:52:137 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+10:11:57:541 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+10:11:57:780 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+10:12:07:929 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+10:12:08:111 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+10:12:09:413 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+10:12:10:218 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+10:12:11:099 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+10:12:11:288 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+10:12:13:826 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name is :Brody Naidu
+10:12:17:243 [main] INFO  pages.OrangeHRM_UsersPage - username of the Supervisor is :brody
+10:12:17:612 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Edit button
+10:12:19:313 [main] INFO  pages.OrangeHRM_UsersPage - Supervisor's password is updated.
+10:12:21:792 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+10:12:21:984 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+10:12:22:139 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+10:12:24:660 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+10:12:28:079 [main] INFO  pages.OrangeHRM_TravelExpensePage - Add button is selected to submit travel expense
+10:12:28:188 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency Dropdown is clicked
+10:12:28:360 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arab Emir. Dirham is selected
+10:12:48:908 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on travel information save button
+10:12:49:005 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on Add expense button
+10:12:49:094 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense Type drop-down is clicked 
+10:12:49:261 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arifare is selected
+10:12:49:939 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency drop-down is clicked
+10:12:50:579 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency is selected
+10:12:50:978 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense paid by the Company
+10:12:54:301 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on save button
+10:12:54:328 [main] INFO  pages.OrangeHRM_TravelExpensePage - Submitted the expense
+10:12:58:241 [main] INFO  pages.OrangeHRM_TravelExpensePage - Confirmed the submit
+10:13:00:958 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on arrow back
+10:13:00:980 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR107
+10:13:00:997 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Supervisor Approval
+10:13:02:642 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+10:13:16:265 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+10:13:22:628 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+10:13:23:419 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+10:13:23:482 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+10:13:25:479 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+10:13:28:639 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR107
+10:13:28:670 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Final Approval
+10:13:30:499 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+10:13:31:563 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+10:13:31:629 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+10:13:34:429 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:49:59:501 [main] INFO  utilities.Log - *****************************************************************
+21:49:59:505 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+21:49:59:506 [main] INFO  utilities.Log - ******************************************************************
+21:50:07:572 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:50:07:834 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:50:13:583 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:50:13:853 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+21:50:26:799 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+21:50:27:069 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+21:50:28:723 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+21:50:29:562 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+21:50:30:308 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+21:50:30:538 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+21:50:33:127 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name is :Brody Naidu
+21:50:37:281 [main] INFO  pages.OrangeHRM_UsersPage - username of the Supervisor is :brody
+21:50:37:652 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Edit button
+21:50:39:342 [main] INFO  pages.OrangeHRM_UsersPage - Supervisor's password is updated.
+21:50:42:094 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:50:42:344 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+21:50:42:471 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:50:45:929 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:50:49:159 [main] INFO  pages.OrangeHRM_TravelExpensePage - Add button is selected to submit travel expense
+21:50:49:339 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency Dropdown is clicked
+21:50:49:562 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arab Emir. Dirham is selected
+21:51:11:661 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on travel information save button
+21:51:11:805 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on Add expense button
+21:51:11:953 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense Type drop-down is clicked 
+21:51:12:155 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arifare is selected
+21:51:12:729 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency drop-down is clicked
+21:51:13:393 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency is selected
+21:51:13:926 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense paid by the Company
+21:51:17:760 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on save button
+21:51:17:802 [main] INFO  pages.OrangeHRM_TravelExpensePage - Submitted the expense
+21:51:21:737 [main] INFO  pages.OrangeHRM_TravelExpensePage - Confirmed the submit
+21:51:24:435 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on arrow back
+21:51:24:468 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR108
+21:51:24:484 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Supervisor Approval
+21:51:26:032 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:51:40:088 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+21:51:46:472 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:51:47:485 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+21:51:47:553 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:51:49:622 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:51:52:692 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR108
+21:51:52:712 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Final Approval
+21:51:54:296 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:51:55:376 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:51:55:441 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:51:58:161 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:52:09:524 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+21:52:09:700 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on OK
+21:52:11:326 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:52:12:614 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+21:52:12:751 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:52:15:095 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:52:18:223 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR108
+21:52:18:243 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Final Approval
+21:52:19:789 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:54:46:982 [main] INFO  utilities.Log - *****************************************************************
+21:54:46:986 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+21:54:46:986 [main] INFO  utilities.Log - ******************************************************************
+21:54:53:475 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:54:53:600 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:54:58:714 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:54:58:929 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+21:55:09:474 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+21:55:09:625 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+21:55:10:660 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+21:55:11:003 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+21:55:11:329 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+21:55:11:440 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+21:55:14:086 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name is :Brody Naidu
+21:55:17:776 [main] INFO  pages.OrangeHRM_UsersPage - username of the Supervisor is :brody
+21:55:18:101 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Edit button
+21:55:19:588 [main] INFO  pages.OrangeHRM_UsersPage - Supervisor's password is updated.
+21:55:21:917 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:55:22:006 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+21:55:22:089 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:55:24:487 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:55:28:370 [main] INFO  pages.OrangeHRM_TravelExpensePage - Add button is selected to submit travel expense
+21:55:28:505 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency Dropdown is clicked
+21:55:28:675 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arab Emir. Dirham is selected
+21:55:50:424 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on travel information save button
+21:55:50:538 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on Add expense button
+21:55:50:668 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense Type drop-down is clicked 
+21:55:50:869 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arifare is selected
+21:55:51:385 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency drop-down is clicked
+21:55:52:038 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency is selected
+21:55:52:517 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense paid by the Company
+21:55:55:975 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on save button
+21:55:56:025 [main] INFO  pages.OrangeHRM_TravelExpensePage - Submitted the expense
+21:55:59:880 [main] INFO  pages.OrangeHRM_TravelExpensePage - Confirmed the submit
+21:56:02:702 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on arrow back
+21:56:02:727 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR109
+21:56:02:752 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Supervisor Approval
+21:56:03:841 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:56:18:025 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+21:56:24:313 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:56:25:179 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+21:56:25:245 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:56:27:642 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:56:30:806 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR109
+21:56:30:825 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Final Approval
+21:56:32:376 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:56:33:265 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:56:33:331 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:56:35:989 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:56:46:462 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+21:56:51:397 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on OK
+21:56:53:474 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:56:54:355 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+21:56:54:411 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:56:56:414 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:56:59:646 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR109
+21:56:59:660 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Approved
+21:57:01:307 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:58:50:626 [main] INFO  utilities.Log - *****************************************************************
+21:58:50:630 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+21:58:50:630 [main] INFO  utilities.Log - ******************************************************************
+21:58:56:788 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:58:57:179 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:59:02:558 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:59:02:797 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+21:59:12:964 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+21:59:13:106 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+21:59:14:185 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+21:59:14:502 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+21:59:14:808 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+21:59:14:910 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+21:59:17:387 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name is :Brody Naidu
+21:59:20:983 [main] INFO  pages.OrangeHRM_UsersPage - username of the Supervisor is :brody
+21:59:21:329 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Edit button
+21:59:23:002 [main] INFO  pages.OrangeHRM_UsersPage - Supervisor's password is updated.
+21:59:25:720 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+21:59:25:858 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+21:59:25:963 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:59:28:366 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:59:32:126 [main] INFO  pages.OrangeHRM_TravelExpensePage - Add button is selected to submit travel expense
+21:59:32:267 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency Dropdown is clicked
+21:59:32:433 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arab Emir. Dirham is selected
+21:59:54:038 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on travel information save button
+21:59:54:165 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on Add expense button
+21:59:54:286 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense Type drop-down is clicked 
+21:59:54:484 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arifare is selected
+21:59:54:982 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency drop-down is clicked
+21:59:55:624 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency is selected
+21:59:56:081 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense paid by the Company
+21:59:59:590 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on save button
+21:59:59:623 [main] INFO  pages.OrangeHRM_TravelExpensePage - Submitted the expense
+22:00:03:771 [main] INFO  pages.OrangeHRM_TravelExpensePage - Confirmed the submit
+22:00:06:612 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on arrow back
+22:00:06:635 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR110
+22:00:06:654 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Supervisor Approval
+22:00:08:300 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:00:22:157 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+22:00:28:571 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:00:29:485 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+22:00:29:548 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:00:31:681 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:00:34:897 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR110
+22:00:34:920 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Final Approval
+22:00:36:540 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:00:37:494 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+22:00:37:551 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:00:40:241 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:00:50:853 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+22:00:55:844 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on OK
+22:00:58:043 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:00:58:918 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+22:00:58:983 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:01:00:903 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:01:04:014 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR110
+22:01:04:033 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Approved
+22:01:05:567 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:05:43:387 [main] INFO  utilities.Log - *****************************************************************
+22:05:43:391 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+22:05:43:392 [main] INFO  utilities.Log - ******************************************************************
+22:05:49:397 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+22:05:49:481 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:05:54:492 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:05:54:736 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+22:06:05:625 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+22:06:05:951 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+22:06:07:691 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+22:06:08:493 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+22:06:09:218 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+22:06:09:408 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+22:06:12:559 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name is :Brody Naidu
+22:06:16:170 [main] INFO  pages.OrangeHRM_UsersPage - username of the Supervisor is :brody
+22:06:16:475 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Edit button
+22:06:17:994 [main] INFO  pages.OrangeHRM_UsersPage - Supervisor's password is updated.
+22:06:20:798 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:06:20:870 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+22:06:20:931 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:06:22:976 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:06:26:589 [main] INFO  pages.OrangeHRM_TravelExpensePage - Add button is selected to submit travel expense
+22:06:26:717 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency Dropdown is clicked
+22:06:26:877 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arab Emir. Dirham is selected
+22:06:49:292 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on travel information save button
+22:06:49:538 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on Add expense button
+22:06:49:752 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense Type drop-down is clicked 
+22:09:47:926 [main] INFO  utilities.Log - *****************************************************************
+22:09:47:931 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+22:09:47:931 [main] INFO  utilities.Log - ******************************************************************
+22:09:54:202 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+22:09:54:284 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:09:59:364 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:09:59:621 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+22:10:10:159 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+22:10:10:332 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+22:10:11:377 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+22:10:11:717 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+22:10:12:060 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+22:10:12:169 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+22:10:14:780 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name is :Brody Naidu
+22:10:18:925 [main] INFO  pages.OrangeHRM_UsersPage - username of the Supervisor is :brody
+22:10:19:333 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Edit button
+22:10:21:029 [main] INFO  pages.OrangeHRM_UsersPage - Supervisor's password is updated.
+22:10:25:591 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:10:25:694 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+22:10:25:802 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:10:29:248 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:10:43:777 [main] INFO  utilities.Log - *****************************************************************
+22:10:43:782 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC05_OrangeHRM_TravelRequest************
+22:10:43:782 [main] INFO  utilities.Log - ******************************************************************
+22:10:49:373 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+22:10:49:451 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:10:54:762 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:10:55:008 [main] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+22:11:05:142 [main] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+22:11:05:302 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+22:11:06:416 [main] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+22:11:06:757 [main] INFO  pages.OrangeHRM_UsersPage - entered the new password
+22:11:07:087 [main] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+22:11:07:216 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+22:11:09:969 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name is :Brody Naidu
+22:11:13:608 [main] INFO  pages.OrangeHRM_UsersPage - username of the Supervisor is :brody
+22:11:14:032 [main] INFO  pages.OrangeHRM_UsersPage - Clicked on Edit button
+22:11:15:631 [main] INFO  pages.OrangeHRM_UsersPage - Supervisor's password is updated.
+22:11:18:385 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:11:18:480 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+22:11:18:557 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:11:20:709 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:11:24:370 [main] INFO  pages.OrangeHRM_TravelExpensePage - Add button is selected to submit travel expense
+22:11:24:523 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency Dropdown is clicked
+22:11:24:728 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arab Emir. Dirham is selected
+22:11:46:022 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on travel information save button
+22:11:46:156 [main] INFO  pages.OrangeHRM_TravelExpensePage - clicked on Add expense button
+22:11:46:302 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense Type drop-down is clicked 
+22:11:46:496 [main] INFO  pages.OrangeHRM_TravelExpensePage - Arifare is selected
+22:11:46:987 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency drop-down is clicked
+22:11:47:650 [main] INFO  pages.OrangeHRM_TravelExpensePage - Currency is selected
+22:11:48:162 [main] INFO  pages.OrangeHRM_TravelExpensePage - Expense paid by the Company
+22:11:51:500 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on save button
+22:11:51:539 [main] INFO  pages.OrangeHRM_TravelExpensePage - Submitted the expense
+22:11:55:446 [main] INFO  pages.OrangeHRM_TravelExpensePage - Confirmed the submit
+22:11:58:222 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on arrow back
+22:11:58:257 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR112
+22:11:58:284 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Supervisor Approval
+22:11:59:857 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:12:13:861 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+22:12:20:057 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:12:21:091 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+22:12:21:169 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:12:23:169 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:12:26:229 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR112
+22:12:26:255 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Pending Final Approval
+22:12:27:903 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:12:28:764 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+22:12:28:840 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:12:31:594 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:12:42:292 [main] INFO  pages.OrangeHRM_TravelExpensePage - Approved the Expense request
+22:12:46:985 [main] INFO  pages.OrangeHRM_TravelExpensePage - Clicked on OK
+22:12:49:011 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:12:49:869 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+22:12:49:926 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:12:51:939 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:12:55:041 [main] INFO  pages.OrangeHRM_TravelExpensePage - Travel Request ID :202308TVR112
+22:12:55:057 [main] INFO  pages.OrangeHRM_TravelExpensePage - Request status is:Approved
+22:12:56:671 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:13:11:530 [main] INFO  utilities.Log - *****************************************************************
+22:13:11:533 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+22:13:11:533 [main] INFO  utilities.Log - ******************************************************************
+22:14:14:947 [main] INFO  utilities.Log - *****************************************************************
+22:14:14:950 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+22:14:14:951 [main] INFO  utilities.Log - ******************************************************************
+22:14:20:508 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - OrangeHRM website is launched
+22:14:20:525 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - Title of the page is:OrangeHRM
+22:14:20:632 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+22:14:20:697 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:14:25:809 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:14:29:296 [main] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Add button 
+22:14:32:431 [main] INFO  pages.OrangeHRM_AddEmployeePage - First Name is entered
+22:14:32:586 [main] INFO  pages.OrangeHRM_AddEmployeePage - Last Name is entered
+22:14:32:655 [main] INFO  pages.OrangeHRM_AddEmployeePage - Location drop-down is clicked 
+22:14:32:777 [main] INFO  pages.OrangeHRM_AddEmployeePage - India Office value is selected from a drop-down
+22:14:32:869 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+22:14:38:408 [main] INFO  pages.OrangeHRM_AddEmployeePage - Marital Status drop-down is clicked
+22:14:38:653 [main] INFO  pages.OrangeHRM_AddEmployeePage - Single is selected
+22:14:38:759 [main] INFO  pages.OrangeHRM_AddEmployeePage - Gender drop-down is clicked
+22:14:39:023 [main] INFO  pages.OrangeHRM_AddEmployeePage - Male is selected
+22:14:39:129 [main] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Next
+22:14:44:084 [main] INFO  pages.OrangeHRM_AddEmployeePage - Region drop-down is clicked
+22:14:44:181 [main] INFO  pages.OrangeHRM_AddEmployeePage - Region-1 is selected 
+22:14:44:238 [main] INFO  pages.OrangeHRM_AddEmployeePage - FTE drop-down is clicked
+22:14:44:321 [main] INFO  pages.OrangeHRM_AddEmployeePage - 0.75 is selected
+22:14:44:370 [main] INFO  pages.OrangeHRM_AddEmployeePage - Temp Department drop-down is clicked
+22:14:44:370 [main] INFO  pages.OrangeHRM_AddEmployeePage - TempDepartment is not found
+22:14:44:437 [main] INFO  pages.OrangeHRM_AddEmployeePage - clicked on Save
+22:14:44:723 [main] INFO  pages.OrangeHRM_AddEmployeePage - Searched with Employee first and last name
+22:14:51:434 [main] INFO  pages.OrangeHRM_AddEmployeePage - Element Text is: John Mikel
+22:14:51:434 [main] INFO  pages.OrangeHRM_AddEmployeePage - Search result is correct
+22:14:51:460 [main] INFO  pages.OrangeHRM_AddEmployeePage - Employee id is :0171
+22:14:54:154 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:14:54:654 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - 0171 is written back to the Excel file
+22:14:54:740 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - TestCase is Passed and status is updated in Excel sheet

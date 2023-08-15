@@ -45,7 +45,7 @@ public class TC14_DemoWebshop_ApplyDiscount {
         rowNum_Index = ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
         userName = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_UserName);
         password = ExcelUtils.getCellData(sheetName,rowNum_testCase,Config.col_Password);
-        ApplyCoupon = ExcelUtils.getCellData(sheetName,rowNum_testCase,Config.col_ApplyCoupon);
+        ApplyCoupon = ExcelUtils.getCellData(sheetName,rowNum_testCase,Config.col_ApplyDiscount_Coupon);
 
     }
 
