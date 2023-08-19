@@ -184,3 +184,131 @@
 13:13:37:629 [main] INFO  utilities.Log - ******************************************************************
 13:15:51:613 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Demo website is loaded
 13:15:51:758 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Title of the page is:Demo Web Shop
+07:46:58:732 [main] INFO  utilities.Log - *****************************************************************
+07:46:58:761 [main] INFO  utilities.Log - **********testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount************
+07:46:58:763 [main] INFO  utilities.Log - ******************************************************************
+06:39:09:946 [main] INFO  utilities.Log - *****************************************************************
+06:39:09:955 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+06:39:09:955 [main] INFO  utilities.Log - ******************************************************************
+06:39:40:548 [main] INFO  utilities.Log - *****************************************************************
+06:39:40:559 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+06:39:40:560 [main] INFO  utilities.Log - ******************************************************************
+06:39:41:863 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+06:39:41:866 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+06:39:55:841 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+06:39:55:962 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+06:39:56:042 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+06:40:21:571 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:41:12:409 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+06:41:12:413 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+06:41:12:413 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+06:41:13:481 [TestNG-tests-1] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+06:41:13:482 [TestNG-tests-1] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+06:41:22:587 [TestNG-tests-1] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+06:41:22:700 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+06:41:22:786 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+06:41:29:583 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:41:36:357 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+06:41:36:357 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+06:41:36:357 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+06:41:36:529 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+06:41:36:530 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+06:41:36:530 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+06:58:39:036 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+06:58:39:042 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+06:58:39:043 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+06:58:40:847 [TestNG-tests-1] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+06:58:40:848 [TestNG-tests-1] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+06:58:54:092 [TestNG-tests-1] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+06:58:54:233 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+06:58:54:350 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+06:59:02:537 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:59:09:389 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+06:59:09:389 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+06:59:09:390 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+06:59:09:687 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+06:59:09:687 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+06:59:09:688 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:01:11:694 [main] INFO  utilities.Log - *****************************************************************
+07:01:11:704 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:01:11:704 [main] INFO  utilities.Log - ******************************************************************
+07:01:12:155 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:01:12:156 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:01:25:120 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+07:01:25:278 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:01:25:408 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:01:32:597 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:02:18:451 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:02:18:459 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+07:02:18:460 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:02:20:686 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:02:20:686 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+07:02:20:686 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:04:38:917 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:04:38:925 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+07:04:38:926 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:04:41:356 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:04:41:357 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+07:04:41:357 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:06:43:767 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:06:43:788 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+07:06:43:789 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:06:47:306 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:06:47:306 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+07:06:47:307 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:09:54:311 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:09:54:345 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+07:09:54:349 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:10:05:371 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:10:05:374 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+07:10:05:379 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:12:00:921 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:12:00:939 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+07:12:00:941 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:12:04:647 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:12:04:648 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+07:12:04:649 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:13:35:297 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:13:35:326 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+07:13:35:327 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:13:38:390 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:13:38:392 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+07:13:38:393 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:13:49:506 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :reggie.koepp
+07:13:55:857 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:13:56:138 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:14:04:919 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:56:21:660 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:56:21:676 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+07:56:21:677 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:56:37:413 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :lenny.goodwin
+07:56:45:583 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:56:45:970 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:57:04:346 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+08:02:49:773 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+08:02:49:786 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+08:02:49:788 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+08:03:04:428 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :aubrey.spinka
+08:03:11:845 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+08:03:12:085 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+08:03:20:684 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+08:04:00:762 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+08:04:00:762 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+08:04:00:763 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+08:04:08:774 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :junie.cole
+08:04:16:609 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+08:04:16:926 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+08:04:27:085 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+08:05:09:622 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+08:05:09:622 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+08:05:09:623 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+08:05:19:083 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :kurtis.labadie
+08:05:25:372 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+08:05:25:636 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+08:05:34:666 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+08:07:51:693 [main] INFO  utilities.Log - *****************************************************************
+08:07:51:750 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+08:07:51:752 [main] INFO  utilities.Log - ******************************************************************
+08:08:47:105 [main] INFO  utilities.Log - *****************************************************************
+08:08:47:117 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+08:08:47:118 [main] INFO  utilities.Log - ******************************************************************

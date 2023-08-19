@@ -45,14 +45,14 @@ public class TC11_DemoWebshop_ReOrder {
     static int rowNum_Index;
     static Logger log = LogManager.getLogger(TC11_DemoWebshop_ReOrder.class);
 
-
+    @Parameters("{testID}")
     @BeforeClass
-    public void prerequisite_setup() throws Exception {
+    public void prerequisite_setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC11_DemoWebshop_ReOrder.class.getName());
         wbk= ExcelUtils.setExcelFilePath();
         sheetName = "DemoWebshop_ReOrder";
-        rowNum_testCase = ExcelUtils.getRowNumber(Config.TestCase_ID,sheetName);
-        rowNum_Index = ExcelUtils.getRowNumber(Config.TestCase_ID,"Index");
+        rowNum_testCase = ExcelUtils.getRowNumber(testID,sheetName);
+        rowNum_Index = ExcelUtils.getRowNumber(testID,"Index");
         userName = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_UserName);
         password = ExcelUtils.getCellData(sheetName,rowNum_testCase,Config.col_Password);
     }
