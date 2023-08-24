@@ -312,3 +312,41 @@
 08:08:47:105 [main] INFO  utilities.Log - *****************************************************************
 08:08:47:117 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
 08:08:47:118 [main] INFO  utilities.Log - ******************************************************************
+06:52:05:573 [main] INFO  utilities.Log - *****************************************************************
+06:52:05:584 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+06:52:05:584 [main] INFO  utilities.Log - ******************************************************************
+06:52:51:482 [main] INFO  utilities.Log - *****************************************************************
+06:52:51:492 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+06:52:51:493 [main] INFO  utilities.Log - ******************************************************************
+06:58:28:270 [main] INFO  utilities.Log - *****************************************************************
+06:58:28:291 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+06:58:28:293 [main] INFO  utilities.Log - ******************************************************************
+07:03:03:797 [main] INFO  utilities.Log - *****************************************************************
+07:03:03:828 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:03:03:835 [main] INFO  utilities.Log - ******************************************************************
+07:03:48:317 [main] INFO  utilities.Log - *****************************************************************
+07:03:48:349 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+07:03:48:353 [main] INFO  utilities.Log - ******************************************************************
+07:04:36:675 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - OrangeHRM website is launched
+07:04:36:764 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - Title of the page is:OrangeHRM
+07:04:38:017 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:04:38:701 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:05:06:083 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:05:54:990 [main] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Add button 
+07:06:03:873 [main] INFO  pages.OrangeHRM_AddEmployeePage - First Name is entered
+07:06:05:074 [main] INFO  pages.OrangeHRM_AddEmployeePage - Last Name is entered
+07:06:07:207 [main] INFO  pages.OrangeHRM_AddEmployeePage - Location drop-down is clicked 
+07:06:07:886 [main] INFO  pages.OrangeHRM_AddEmployeePage - India Office value is selected from a drop-down
+07:06:08:629 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+07:06:19:189 [main] INFO  pages.OrangeHRM_AddEmployeePage - Marital Status drop-down is clicked
+07:06:21:373 [main] INFO  pages.OrangeHRM_AddEmployeePage - Single is selected
+07:06:22:638 [main] INFO  pages.OrangeHRM_AddEmployeePage - Gender drop-down is clicked
+07:06:23:363 [main] INFO  pages.OrangeHRM_AddEmployeePage - Male is selected
+07:06:25:527 [main] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Next
+07:06:36:420 [main] INFO  pages.OrangeHRM_AddEmployeePage - Region drop-down is clicked
+07:06:37:176 [main] INFO  pages.OrangeHRM_AddEmployeePage - Region-1 is selected 
+07:06:37:693 [main] INFO  pages.OrangeHRM_AddEmployeePage - FTE drop-down is clicked
+07:06:38:417 [main] INFO  pages.OrangeHRM_AddEmployeePage - 0.75 is selected
+07:06:39:099 [main] INFO  pages.OrangeHRM_AddEmployeePage - Temp Department drop-down is clicked
+07:06:39:106 [main] INFO  pages.OrangeHRM_AddEmployeePage - TempDepartment is not found
+07:06:39:788 [main] INFO  pages.OrangeHRM_AddEmployeePage - clicked on Save
