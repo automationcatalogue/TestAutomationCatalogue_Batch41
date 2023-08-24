@@ -63,6 +63,7 @@ public class TC01_OrangeHRM_LoginTest {
         OrangeHRM_LoginPage.login(userName, password);
         Thread.sleep(6000);
         OrangeHRM_HomePage.verifyTitle();
+        CommonUtils.takeScreenshot("OrangeHRMLoginPage");
 
         driver.quit();
     }
