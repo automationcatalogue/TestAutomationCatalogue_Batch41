@@ -312,3 +312,143 @@
 08:08:47:105 [main] INFO  utilities.Log - *****************************************************************
 08:08:47:117 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
 08:08:47:118 [main] INFO  utilities.Log - ******************************************************************
+21:28:19:599 [main] INFO  utilities.Log - *****************************************************************
+21:28:19:608 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+21:28:19:610 [main] INFO  utilities.Log - ******************************************************************
+21:28:56:378 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+21:28:56:743 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:28:56:997 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:29:30:899 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:29:31:455 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+21:29:31:776 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+21:29:35:305 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+21:29:40:506 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+21:29:42:853 [main] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+21:29:43:294 [main] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+21:29:43:691 [main] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+21:34:14:861 [main] INFO  utilities.Log - *****************************************************************
+21:34:14:870 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+21:34:14:871 [main] INFO  utilities.Log - ******************************************************************
+21:34:34:092 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+21:34:34:381 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:34:34:566 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:35:06:866 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:35:07:365 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+21:35:07:625 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+21:35:10:522 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+21:35:14:531 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+21:35:17:596 [main] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+21:35:18:157 [main] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+21:35:19:004 [main] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+21:40:44:169 [main] INFO  utilities.Log - *****************************************************************
+21:40:44:179 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+21:40:44:180 [main] INFO  utilities.Log - ******************************************************************
+21:41:01:996 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+21:41:02:303 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:41:02:600 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:41:33:830 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:41:34:403 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+21:41:34:683 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+21:41:37:724 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+21:48:12:583 [main] INFO  utilities.Log - *****************************************************************
+21:48:12:591 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+21:48:12:592 [main] INFO  utilities.Log - ******************************************************************
+21:48:33:880 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+21:48:34:332 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:48:34:552 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:49:01:431 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:49:02:965 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+21:49:03:308 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+21:49:06:383 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+21:49:10:668 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+21:49:13:409 [main] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+21:49:14:097 [main] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+21:49:14:306 [main] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+21:54:48:670 [main] INFO  utilities.Log - *****************************************************************
+21:54:48:679 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+21:54:48:680 [main] INFO  utilities.Log - ******************************************************************
+21:55:05:261 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+21:55:05:787 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:55:06:055 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:55:33:245 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:55:33:780 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+21:55:34:054 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+21:55:37:028 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+21:57:12:698 [main] INFO  utilities.Log - *****************************************************************
+21:57:12:706 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+21:57:12:707 [main] INFO  utilities.Log - ******************************************************************
+21:57:29:675 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+21:57:30:079 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:57:30:446 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:57:38:797 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:57:39:114 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+21:57:39:397 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+22:42:57:223 [main] INFO  utilities.Log - *****************************************************************
+22:42:57:234 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+22:42:57:235 [main] INFO  utilities.Log - ******************************************************************
+22:43:18:971 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+22:43:19:375 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+22:43:19:622 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:43:30:671 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:43:31:275 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+22:43:31:634 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+22:43:37:387 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+22:43:41:027 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+22:57:20:096 [main] INFO  utilities.Log - *****************************************************************
+22:57:20:105 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+22:57:20:106 [main] INFO  utilities.Log - ******************************************************************
+22:57:43:124 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+22:57:43:416 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+22:57:43:664 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+22:58:09:024 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+22:58:09:414 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+22:58:09:908 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+22:58:12:640 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+22:58:16:743 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+22:58:19:521 [main] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+22:58:20:096 [main] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+22:58:20:541 [main] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+22:58:36:932 [main] INFO  pages.OrangeHRM_EditEmployeePage - Nationality selected as Indian
+22:58:37:085 [main] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on first save button
+22:58:41:325 [main] INFO  pages.OrangeHRM_EditEmployeePage - Data is successfully Updated
+22:58:43:578 [main] INFO  pages.OrangeHRM_EditEmployeePage - Allergies radio Button is not clicked
+22:58:43:895 [main] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Hygiene save button
+22:58:46:755 [main] INFO  pages.OrangeHRM_EditEmployeePage - Hygiene is successfully Updated
+22:58:47:049 [main] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Kosher is not available 
+22:58:47:049 [main] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Vegetarian is not available 
+22:58:47:157 [main] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Dietary Requirements save button
+22:58:48:206 [main] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement is successfully Updated
+22:59:16:432 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+22:59:20:414 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - browser is closed
+22:59:20:415 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+22:59:20:415 [main] INFO  utilities.Log - X
+22:59:20:416 [main] INFO  utilities.Log - X
+23:05:21:158 [main] INFO  utilities.Log - *****************************************************************
+23:05:21:168 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+23:05:21:169 [main] INFO  utilities.Log - ******************************************************************
+23:05:39:346 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+23:05:39:687 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+23:05:39:954 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+23:05:49:528 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+23:05:49:916 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+23:05:50:745 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+23:05:59:234 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+23:06:03:859 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+23:06:06:373 [main] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+23:06:06:840 [main] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+23:06:07:650 [main] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+23:06:25:129 [main] INFO  pages.OrangeHRM_EditEmployeePage - Nationality selected as Indian
+23:06:25:328 [main] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on first save button
+23:06:29:544 [main] INFO  pages.OrangeHRM_EditEmployeePage - Data is successfully Updated
+23:06:31:797 [main] INFO  pages.OrangeHRM_EditEmployeePage - Allergies radio Button is not clicked
+23:06:32:145 [main] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Hygiene save button
+23:06:36:378 [main] INFO  pages.OrangeHRM_EditEmployeePage - Hygiene is successfully Updated
+23:06:36:654 [main] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Kosher is not available 
+23:06:36:654 [main] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Vegetarian is not available 
+23:06:36:758 [main] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Dietary Requirements save button
+23:06:37:698 [main] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement is successfully Updated
+23:07:04:090 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+23:07:06:205 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - browser is closed
+23:07:06:205 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+23:07:06:206 [main] INFO  utilities.Log - X
+23:07:06:206 [main] INFO  utilities.Log - X
