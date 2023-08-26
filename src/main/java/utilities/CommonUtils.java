@@ -11,11 +11,13 @@ import pages.OrangeHRM_TravelExpensePage;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.Date;
 import java.util.List;
 
 public class CommonUtils {
 
     static WebDriver driver;
+
 
     public static WebDriver browserLaunch(String browserName){
         driver=null;
@@ -37,7 +39,9 @@ public class CommonUtils {
         return driver;
     }
 
-    public static void takeScreenshot(String fileName) throws Exception{
+    public static void takeScreenshot(String className,String instance) throws Exception{
+        Date d = new Date();
+        String fileName = className +"; "+ instance +"; "+ d.toString().replace(":","_").replace(" ","_");
         TakesScreenshot ts = (TakesScreenshot)driver;
         String projectPath = System.getProperty("user.dir");
         File dest = new File(projectPath+"\\screenshots\\"+fileName+".jpg");

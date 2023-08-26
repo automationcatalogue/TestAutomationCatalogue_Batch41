@@ -1,5 +1,7 @@
 package testcases.demoWebshop;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -10,10 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
-import utilities.BaseClass;
-import utilities.CommonUtils;
-import utilities.Config;
-import utilities.ExcelUtils;
+import testcases.orangeHRM.TC04_OrangeHRM_EditEmployee;
+import utilities.*;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -30,10 +30,12 @@ public class TC13_DemoWebShop_UpdateShoppingCart {
     static  String total_1; static String total_2;
     static String text_BookPrice; static String text_updatedQuty;
     static String text_JewelPrice;static String sheetName;
+    static Logger log = LogManager.getLogger(TC13_DemoWebShop_UpdateShoppingCart.class);
 
     @Parameters("{testID}")
     @BeforeClass
  public void prerequisite_Setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
+        Log.startTestCase(TC13_DemoWebShop_UpdateShoppingCart.class.getName());
      wbk= ExcelUtils.setExcelFilePath();
      sheetName = "DemoWebshop_UpdateShoppingCart";
      row = ExcelUtils.getRowNumber(testID,sheetName);
@@ -78,30 +80,31 @@ public class TC13_DemoWebShop_UpdateShoppingCart {
       orderNumber = DemoWebshop_CheckoutPage.checking_paymentGateway();
 
       driver.quit();
-      System.out.println("Browser is closed");
+      log.info("Browser is closed");
   }
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
-
+        Log.endTestCase();
         if(result.getStatus() == ITestResult.SUCCESS){
             ExcelUtils.setCellData(orderNumber, sheetName,row, Config.col_UpdateCart_OrderNumber);
-            System.out.println(orderNumber+" is written back to the Excel file");
+            log.info(orderNumber+" is written back to the Excel file");
 
             ExcelUtils.setCellData("PASSED", "Index",row_index, Config.col_Status);
-            System.out.println("TestCase is Passed and status is updated in Excel sheet");
+            log.info("TestCase is Passed and status is updated in Excel sheet");
         }else if(result.getStatus()==ITestResult.FAILURE){
             if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
                 ExcelUtils.setCellData("FAILED", "Index",row_index, Config.col_Status);
-                System.out.println("TestCase is Failed and status is updated in Excel sheet");
+                log.info("TestCase is Failed and status is updated in Excel sheet");
 
                 ExcelUtils.setCellData(BaseClass.failureReason,"Index",row_index,Config.col_reason);
-                System.out.println("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+                log.info("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
             }
         }else if(result.getStatus()==ITestResult.SKIP){
             ExcelUtils.setCellData("SKIPPED", "Index",row_index, Config.col_Status);
-            System.out.println("TestCase is SKIPPED and status is updated in Excel sheet");
+            log.info("TestCase is SKIPPED and status is updated in Excel sheet");
         }
         ExcelUtils.closeExcelFile();
+        Log.endTestCase();
     }
 }
 

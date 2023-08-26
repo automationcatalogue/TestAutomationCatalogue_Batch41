@@ -1,5 +1,7 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +18,7 @@ public class OrangeHRM_HomePage {
     public static By link_Performance = By.xpath("(//a[@data-tooltip='Performance'])[1]");
     public static By txtbx_Search = By.xpath("//input[@placeholder='Search']");
     public static By link_MyGoals = By.xpath("//div[text()='Goal List']");
+    static Logger log = LogManager.getLogger(OrangeHRM_HomePage.class);
 
 
     public static void verifyTitle() {
@@ -26,7 +29,7 @@ public class OrangeHRM_HomePage {
 
         BaseClass.failureReason = "Title is not matched";
         Assert.assertEquals(expectedTitle, title, "Title is not matched");
-        System.out.println("Title is verified, Login is Successful");
+        log.info("Title is verified, Login is Successful");
     }
 
     public static void clickEmployeeManagementLink() throws Exception {
@@ -34,7 +37,7 @@ public class OrangeHRM_HomePage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebElement emp_mgmt = driver.findElement(link_EmployeeManagement);
         js.executeScript("arguments[0].click();", emp_mgmt);
-        System.out.println("Employee Management is selected");
+        log.info("Employee Management is selected");
     }
 
     public static void clickHrAdministrationLink() throws Exception{
@@ -48,9 +51,9 @@ public class OrangeHRM_HomePage {
         String Employee_Name=driver.findElement(lbl_ProfileName).getText();
             String expected_name=empName;
             if(Employee_Name.equalsIgnoreCase(expected_name)){
-                System.out.println("UserName is matched and verified");
+                log.info("UserName is matched and verified");
             }else {
-                System.out.println("UserName is not matched");
+                log.info("UserName is not matched");
             }
         }
 
@@ -73,7 +76,7 @@ public class OrangeHRM_HomePage {
         WebElement travelexp_Element = driver.findElement(By.xpath("(//a[@data-tooltip='Travel and Expense'])[1]"));
         travelexp_Element.click();
         js.executeScript("arguments[0].click;", travelexp_Element);
-        System.out.println("Travel and Expense is selected");
+        log.info("Travel and Expense is selected");
     }
 
     public static void clickLogout() {

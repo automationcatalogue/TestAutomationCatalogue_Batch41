@@ -1,5 +1,7 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -37,6 +39,7 @@ public class OrangeHRM_GoalsPage {
     public static By txt_status = By.xpath("//div[@class='secondary-data-container']/span[3]/div[2]");
     public static By btn_achieved = By.xpath("//div[text()='Achieved']");
     public static By btn_OnHold = By.xpath("//div[text()='On Hold']");
+    static Logger log = LogManager.getLogger(OrangeHRM_GoalsPage.class);
 
 
     public static void create_FirstGoal(String priority,String date)throws Exception{
@@ -64,20 +67,20 @@ public class OrangeHRM_GoalsPage {
         Thread.sleep(3000);
         Select select_MonthGoal1 = new Select(driver.findElement(OrangeHRM_GoalsPage.month_dropDown));
         select_MonthGoal1.selectByVisibleText(month_goal1);
-        System.out.println("Month is selected as :"+month_goal1);
+        log.info("Month is selected as :"+month_goal1);
 
         //year selector
         Thread.sleep(3000);
         Select select_YearGoal1 = new Select(driver.findElement(OrangeHRM_GoalsPage.year_dropDown));
         select_YearGoal1.selectByVisibleText(year_goal1);
-        System.out.println("Year is selected as :"+year_goal1);
+        log.info("Year is selected as :"+year_goal1);
 
         //date selector
         Thread.sleep(2000);
         CommonUtils.selectDropdownValue(OrangeHRM_GoalsPage.date_list,day_goal1);
 
         driver.findElement(OrangeHRM_GoalsPage.btn_Submit).click();
-        System.out.println("First goal is successfully created");
+        log.info("First goal is successfully created");
         driver.findElement(OrangeHRM_GoalsPage.icon_backArrow).click();
     }
 
@@ -106,19 +109,19 @@ public class OrangeHRM_GoalsPage {
         Thread.sleep(3000);
         Select select_MonthGoal2 = new Select(driver.findElement(OrangeHRM_GoalsPage.month_dropDown));
         select_MonthGoal2.selectByVisibleText(month_goal2);
-        System.out.println("Month is selected as :"+month_goal2);
+        log.info("Month is selected as :"+month_goal2);
 
         //year selector
         Thread.sleep(3000);
         Select select_YearGoal2 = new Select(driver.findElement(OrangeHRM_GoalsPage.year_dropDown));
         select_YearGoal2.selectByVisibleText(year_goal2);
-        System.out.println("Year is selected as :"+year_goal2);
+        log.info("Year is selected as :"+year_goal2);
 
         //date selector
         CommonUtils.selectDropdownValue(OrangeHRM_GoalsPage.date_list,day_goal2);
 
         driver.findElement(OrangeHRM_GoalsPage.btn_Submit).click();
-        System.out.println("Second goal is successfully created");
+        log.info("Second goal is successfully created");
         driver.findElement(OrangeHRM_GoalsPage.icon_backArrow).click();
     }
 
@@ -147,13 +150,13 @@ public class OrangeHRM_GoalsPage {
         Thread.sleep(3000);
         Select select_MonthGoal3 = new Select(driver.findElement(OrangeHRM_GoalsPage.month_dropDown));
         select_MonthGoal3.selectByVisibleText(month_goal3);
-        System.out.println("Month is selected as :"+month_goal3);
+        log.info("Month is selected as :"+month_goal3);
 
         //year selector
         Thread.sleep(3000);
         Select select_YearGoal3 = new Select(driver.findElement(OrangeHRM_GoalsPage.year_dropDown));
         select_YearGoal3.selectByVisibleText(year_goal3);
-        System.out.println("Year is selected as :"+year_goal3);
+        log.info("Year is selected as :"+year_goal3);
 
         //date selector
         Thread.sleep(2000);
@@ -161,7 +164,7 @@ public class OrangeHRM_GoalsPage {
 
         Thread.sleep(3000);
         driver.findElement(OrangeHRM_GoalsPage.btn_Submit).click();
-        System.out.println("Third goal is successfully created");
+        log.info("Third goal is successfully created");
         Thread.sleep(3000);
         driver.findElement(OrangeHRM_GoalsPage.icon_backArrow).click();
     }
@@ -173,7 +176,7 @@ public class OrangeHRM_GoalsPage {
         driver.findElement(OrangeHRM_GoalsPage.btn_Approve).click();
         driver.findElement(OrangeHRM_GoalsPage.txtbx_approveDescription).sendKeys("Approved all the goals for aaliyah haq on telecom, financial and E commerce domains");
         driver.findElement(OrangeHRM_GoalsPage.btn_finalApprove).click();
-        System.out.println("Approved all the goals created by the employee");
+        log.info("Approved all the goals created by the employee");
     }
 
     public static void progress_firstGoal(){
@@ -186,7 +189,7 @@ public class OrangeHRM_GoalsPage {
             driver.findElement(OrangeHRM_GoalsPage.icon_addprogress).click();
         }
         driver.findElement(OrangeHRM_GoalsPage.btn_Update).click();
-        System.out.println("Updated the first goal by 25%");
+        log.info("Updated the first goal by 25%");
         driver.findElement(OrangeHRM_GoalsPage.icon_backArrow).click();
     }
 
@@ -200,7 +203,7 @@ public class OrangeHRM_GoalsPage {
             driver.findElement(OrangeHRM_GoalsPage.icon_addprogress).click();
         }
         driver.findElement(OrangeHRM_GoalsPage.btn_Update).click();
-        System.out.println("Updated the second goal by 100%");
+        log.info("Updated the second goal by 100%");
         driver.findElement(OrangeHRM_GoalsPage.icon_backArrow).click();
     }
 
@@ -213,7 +216,7 @@ public class OrangeHRM_GoalsPage {
         Select status = new Select(driver.findElement(OrangeHRM_GoalsPage.dropdown_status));
         status.selectByVisibleText("On Hold");
         driver.findElement(OrangeHRM_GoalsPage.btn_Update).click();
-        System.out.println("Updated the third goal by keeping it in On Hold");
+        log.info("Updated the third goal by keeping it in On Hold");
         driver.findElement(OrangeHRM_GoalsPage.icon_backArrow).click();
     }
 
@@ -225,10 +228,10 @@ public class OrangeHRM_GoalsPage {
         for(int i=1; i<=3; i++){
             try {
                 firstGoal_status = driver.findElement(OrangeHRM_GoalsPage.txt_status).getText();
-                System.out.println("Status of the first goal is :"+firstGoal_status);
+                log.info("Status of the first goal is :"+firstGoal_status);
                 break;
             }catch (StaleElementReferenceException se){
-                System.out.println("Text not found");
+                log.info("Text not found");
             }
         }
         driver.findElement(OrangeHRM_GoalsPage.icon_backArrow).click();
@@ -243,10 +246,10 @@ public class OrangeHRM_GoalsPage {
         for(int i=1; i<=3; i++){
             try {
                 secondGoal_status= driver.findElement(OrangeHRM_GoalsPage.txt_status).getText();
-                System.out.println("Status of the second goal is :"+secondGoal_status);
+                log.info("Status of the second goal is :"+secondGoal_status);
                 break;
             }catch (StaleElementReferenceException se){
-                System.out.println("Text not found");
+                log.info("Text not found");
             }
         }
         driver.findElement(OrangeHRM_GoalsPage.icon_backArrow).click();
@@ -261,10 +264,10 @@ public class OrangeHRM_GoalsPage {
         for (int i=1; i<=3; i++){
             try {
                 thirdGoal_status = driver.findElement(OrangeHRM_GoalsPage.txt_status).getText();
-                System.out.println("Status of the third goal is :"+thirdGoal_status);
+                log.info("Status of the third goal is :"+thirdGoal_status);
                 break;
             }catch (StaleElementReferenceException se){
-                System.out.println("Text is not found");
+                log.info("Text is not found");
             }
         }
         return thirdGoal_status;

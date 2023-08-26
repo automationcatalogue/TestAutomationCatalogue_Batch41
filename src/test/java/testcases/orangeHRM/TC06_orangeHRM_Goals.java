@@ -1,15 +1,15 @@
 package testcases.orangeHRM;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
-import utilities.BaseClass;
-import utilities.CommonUtils;
-import utilities.Config;
-import utilities.ExcelUtils;
+import testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart;
+import utilities.*;
 
 import java.time.Duration;
 
@@ -29,10 +29,12 @@ public class TC06_orangeHRM_Goals {
     static String supervisor_ActualUserName;
     static String firstGoal_status; static String secondGoal_status; static String thirdGoal_status;
     static String sheetName;
+    static Logger log = LogManager.getLogger(TC06_orangeHRM_Goals.class);
 
     @Parameters("{testID}")
     @BeforeClass
     public void prerequisite_Setup(@Optional(Config.TestCase_ID) String testID) throws Exception{
+        Log.startTestCase(TC06_orangeHRM_Goals.class.getName());
         wbk= ExcelUtils.setExcelFilePath();
         sheetName = "OrangeHRM_Goals";
         row = ExcelUtils.getRowNumber(testID,sheetName);
@@ -77,7 +79,7 @@ public class TC06_orangeHRM_Goals {
 
         //Logging in with the Employee Username
         OrangeHRM_LoginPage.login(Actual_UserName,passWord);
-        System.out.println("Logged in with the Employee credentials");
+        log.info("Logged in with the Employee credentials");
         OrangeHRM_HomePage.select_Performance();
         OrangeHRM_PerformancePage.select_MyGoals();
 
@@ -93,7 +95,7 @@ public class TC06_orangeHRM_Goals {
 
         // Logging in with the supervisor username
         OrangeHRM_LoginPage.login(supervisor_ActualUserName,passWord);
-        System.out.println("Logged in with the supervisor credentials");
+        log.info("Logged in with the supervisor credentials");
 
         OrangeHRM_HomePage.select_MyGoals();
         OrangeHRM_GoalsPage.supervisor_ApproveGoals();
@@ -103,7 +105,7 @@ public class TC06_orangeHRM_Goals {
 
         // Logging in with the employee username
         OrangeHRM_LoginPage.login(Actual_UserName,passWord);
-        System.out.println("Logged in with the employee credentials");
+        log.info("Logged in with the employee credentials");
         OrangeHRM_HomePage.select_Performance();
         OrangeHRM_PerformancePage.select_MyGoals();
 
@@ -135,27 +137,28 @@ public class TC06_orangeHRM_Goals {
 
         if(result.getStatus() == ITestResult.SUCCESS){
             ExcelUtils.setCellData(firstGoal_status, sheetName,row, Config.col_OrangeHRMGoals_firstGoalStatus);
-            System.out.println(firstGoal_status+" is written back to the Excel file");
+            log.info(firstGoal_status+" is written back to the Excel file");
             ExcelUtils.setCellData(secondGoal_status, sheetName,row, Config.col_OrangeHRMGoals_secondGoalStatus);
-            System.out.println(secondGoal_status+" is written back to the Excel file");
+            log.info(secondGoal_status+" is written back to the Excel file");
             ExcelUtils.setCellData(thirdGoal_status, sheetName,row, Config.col_OrangeHRMGoals_thirdGoalStatus);
-            System.out.println(thirdGoal_status+" is written back to the Excel file");
+            log.info(thirdGoal_status+" is written back to the Excel file");
 
             ExcelUtils.setCellData("PASSED", "Index",row_index, Config.col_Status);
-            System.out.println("TestCase is Passed and status is updated in Excel sheet");
+            log.info("TestCase is Passed and status is updated in Excel sheet");
         }else if(result.getStatus()==ITestResult.FAILURE){
             if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
                 ExcelUtils.setCellData("FAILED", "Index",row_index, Config.col_Status);
-                System.out.println("TestCase is Failed and status is updated in Excel sheet");
+                log.info("TestCase is Failed and status is updated in Excel sheet");
 
                 ExcelUtils.setCellData(BaseClass.failureReason,"Index",row_index,Config.col_reason);
-                System.out.println("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+                log.info("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
             }
         }else if(result.getStatus()==ITestResult.SKIP){
             ExcelUtils.setCellData("SKIPPED", "Index",row_index, Config.col_Status);
-            System.out.println("TestCase is SKIPPED and status is updated in Excel sheet");
+            log.info("TestCase is SKIPPED and status is updated in Excel sheet");
         }
         ExcelUtils.closeExcelFile();
+        Log.endTestCase();
     }
 
 }

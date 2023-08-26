@@ -1,5 +1,7 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +13,7 @@ import java.util.List;
 public class OrangeHRM_HRAdministrationPage {
 
     public static By link_users = By.xpath("//a[text()='Users ']");
+    static Logger log = LogManager.getLogger(OrangeHRM_HRAdministrationPage.class);
     public static String username_Employee(String employeeName){
         WebDriver driver = BaseClass.getDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -22,7 +25,7 @@ public class OrangeHRM_HRAdministrationPage {
                 userName.findElement(OrangeHRM_UsersPage.btn_edit).click();
                 WebElement Username_Element = driver.findElement(OrangeHRM_UsersPage.txtbx_userName);
                 Actual_UserName = (String) js.executeScript("return arguments[0].value", Username_Element);
-                System.out.println("Username of the Employee is :"+Actual_UserName);
+                log.info("Username of the Employee is :"+Actual_UserName);
                 driver.findElement(OrangeHRM_UsersPage.icon_crossExit).click();
                 break;
             }
@@ -41,7 +44,7 @@ public class OrangeHRM_HRAdministrationPage {
                 SupervisorName.findElement(OrangeHRM_UsersPage.btn_edit).click();
                 WebElement SupervisorUsername_Element = driver.findElement(OrangeHRM_UsersPage.txtbx_userName);
                 supervisor_ActualUserName = (String) js.executeScript("return arguments[0].value", SupervisorUsername_Element);
-                System.out.println("username of the Supervisor is :"+supervisor_ActualUserName);
+                log.info("username of the Supervisor is :"+supervisor_ActualUserName);
                 driver.findElement(OrangeHRM_UsersPage.icon_crossExit).click();
                 break;
             }
@@ -52,6 +55,6 @@ public class OrangeHRM_HRAdministrationPage {
     public static void clickOnUsersLink(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_HRAdministrationPage.link_users).click();
-        System.out.println("clicked on Users button");
+        log.info("clicked on Users button");
     }
 }
