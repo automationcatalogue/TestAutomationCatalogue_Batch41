@@ -6,15 +6,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import pages.OrangeHRM_EditEmployeePage;
-import pages.OrangeHRM_TravelExpensePage;
 
 import java.io.File;
 import java.time.Duration;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class CommonUtils {
+public class CommonUtils{
 
     static WebDriver driver;
 
@@ -45,6 +44,13 @@ public class CommonUtils {
         FileUtils.copyFile(src,dest);
     }
 
+    public static void takeScreenshot(String screenshotsPath, String fileName) throws Exception{
+        TakesScreenshot ts = (TakesScreenshot)driver;
+        File src= ts.getScreenshotAs(OutputType.FILE);
+        File dest = new File(screenshotsPath+"//"+fileName+".jpg");
+        FileUtils.copyFile(src,dest);
+    }
+
     public static void selectDropdownValue(By locator, String data) throws Exception{
         WebDriver driver = BaseClass.getDriver();
 
@@ -67,4 +73,13 @@ public class CommonUtils {
         driver.switchTo().frame(element_frame);
         System.out.println("Switched into iFrame");
     }
+
+    public static String generateFolderNameWithTmeStamp(){
+        LocalDateTime now =LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMMyyyy_HHmmss");
+        String dateTime = now.format(formatter);
+        return dateTime;
+    }
+
+
 }

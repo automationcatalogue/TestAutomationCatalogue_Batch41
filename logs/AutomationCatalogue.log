@@ -452,3 +452,28 @@
 23:07:06:205 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
 23:07:06:206 [main] INFO  utilities.Log - X
 23:07:06:206 [main] INFO  utilities.Log - X
+07:44:30:473 [main] INFO  utilities.Log - *****************************************************************
+07:44:30:503 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:44:30:505 [main] INFO  utilities.Log - ******************************************************************
+07:58:38:926 [main] INFO  utilities.Log - *****************************************************************
+07:58:38:940 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:58:38:941 [main] INFO  utilities.Log - ******************************************************************
+08:07:47:381 [main] INFO  utilities.Log - *****************************************************************
+08:07:47:421 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+08:07:47:422 [main] INFO  utilities.Log - ******************************************************************
+08:14:54:061 [main] INFO  utilities.Log - *****************************************************************
+08:14:54:084 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+08:14:54:087 [main] INFO  utilities.Log - ******************************************************************
+08:14:58:984 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+08:14:58:994 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+08:15:30:793 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+08:21:11:038 [main] INFO  utilities.Log - *****************************************************************
+08:21:11:061 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+08:21:11:063 [main] INFO  utilities.Log - ******************************************************************
+08:21:17:451 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+08:21:17:454 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+08:21:47:178 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+08:21:48:831 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+08:21:49:816 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+08:22:08:227 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+08:22:39:437 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
