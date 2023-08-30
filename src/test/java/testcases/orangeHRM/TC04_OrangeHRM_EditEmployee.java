@@ -69,32 +69,32 @@ public class TC04_OrangeHRM_EditEmployee {
         log.info("OrangeHRM website is launched");
 
         OrangeHRM_LoginPage.login(userName,passWord);
-        CommonUtils.takeScreenshot(className,"login");
+       // CommonUtils.takeScreenshot();
 
         OrangeHRM_HomePage.verifyTitle();
-        CommonUtils.takeScreenshot(className,"Title verification");
+        //CommonUtils.takeScreenshot(className,"Title verification");
 
         OrangeHRM_HomePage.clickEmployeeManagementLink();
         OrangeHRM_EmployeeManagementPage.personalDetails_firstEmployee();
         OrangeHRM_EditEmployeePage.enterLastName(lastName);
-        CommonUtils.takeScreenshot(className,"Entered last name");
+        //CommonUtils.takeScreenshot(className,"Entered last name");
 
         OrangeHRM_EditEmployeePage.Selection_DateOfBirth(DateOfBirth);
         OrangeHRM_EditEmployeePage.select_Nationality(nationality);
         OrangeHRM_EditEmployeePage.firstSave();
         OrangeHRM_EditEmployeePage.verify_SuccessfullyUpdated("Data");
-        CommonUtils.takeScreenshot(className,"Verification primary details");
+        //CommonUtils.takeScreenshot(className,"Verification primary details");
 
         OrangeHRM_EditEmployeePage.select_Allergies(allergies);
         OrangeHRM_EditEmployeePage.secondSave();
         OrangeHRM_EditEmployeePage.verify_SuccessfullyUpdated("Hygiene");
-        CommonUtils.takeScreenshot(className,"Verification hygiene details");
+        //CommonUtils.takeScreenshot(className,"Verification hygiene details");
 
         OrangeHRM_EditEmployeePage.select_diet(dietaryRequire1);
         OrangeHRM_EditEmployeePage.select_diet(dietaryRequire2);
         OrangeHRM_EditEmployeePage.thirdSave();
         OrangeHRM_EditEmployeePage.verify_SuccessfullyUpdated("Dietary Requirement");
-        CommonUtils.takeScreenshot(className,"Verification dietary details");
+        //CommonUtils.takeScreenshot(className,"Verification dietary details");
 
         OrangeHRM_LogoutPage.logout();
         driver.quit();

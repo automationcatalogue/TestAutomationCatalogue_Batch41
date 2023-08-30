@@ -39,12 +39,8 @@ public class CommonUtils {
         return driver;
     }
 
-    public static void takeScreenshot(String className,String instance) throws Exception{
-        Date d = new Date();
-        String fileName = className +"; "+ instance +"; "+ d.toString().replace(":","_").replace(" ","_");
+    public static void takeScreenshot(File dest) throws Exception{
         TakesScreenshot ts = (TakesScreenshot)driver;
-        String projectPath = System.getProperty("user.dir");
-        File dest = new File(projectPath+"\\screenshots\\"+fileName+".jpg");
         File src= ts.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(src,dest);
     }

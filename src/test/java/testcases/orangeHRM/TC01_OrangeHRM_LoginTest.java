@@ -17,7 +17,9 @@ import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
 import utilities.*;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.util.Date;
 
 
 public class TC01_OrangeHRM_LoginTest {
@@ -32,7 +34,16 @@ public class TC01_OrangeHRM_LoginTest {
     static String password;
     static String projectPath;
     static Logger log = LogManager.getLogger(TC01_OrangeHRM_LoginTest.class);
+    static File file;
 
+    @BeforeSuite
+    public void screenshot(){
+        String projectPath = System.getProperty("user.dir");
+        Date date = new Date();
+        String fileName = date.toString().replace(":","_").replace(" ","_");
+        String filePath = projectPath+"\\screenshots\\"+fileName;
+        file = new File(filePath);
+    }
 
     @BeforeClass
     @Parameters("{testID}")
