@@ -24,5 +24,23 @@ public class ALDemo2 {
 
         ob.addAll(3,ob2);
         System.out.println(ob);
+
+
+        /*ob.clear();
+        System.out.println(ob);
+        b=ob.isEmpty();
+        System.out.println(b);*/
+
+        Object ob9=ob.get(4);
+        System.out.println(ob9);
+
+        /*for(int i=0;i<ob.size();i++){
+            Object o=ob.get(i);
+            System.out.println(o);
+        }*/
+
+        for(Object o:ob){
+            System.out.println(o);
+        }
     }
 }
