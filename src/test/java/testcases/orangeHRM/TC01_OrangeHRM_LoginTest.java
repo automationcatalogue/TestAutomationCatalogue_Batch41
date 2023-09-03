@@ -6,21 +6,19 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
+
 import org.testng.annotations.*;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
+import testcases.setup.TestRunner;
 import utilities.*;
 
+import java.io.File;
 import java.io.FileInputStream;
 
 
-public class TC01_OrangeHRM_LoginTest {
+public class TC01_OrangeHRM_LoginTest  extends TestRunner {
 
     static FileInputStream fis;
     static XSSFWorkbook wbk;
@@ -32,11 +30,12 @@ public class TC01_OrangeHRM_LoginTest {
     static String password;
     static String projectPath;
     static Logger log = LogManager.getLogger(TC01_OrangeHRM_LoginTest.class);
-
+    static File file;
 
     @BeforeClass
     @Parameters("{testID}")
     public void prerequisite_setup(@Optional(Config.TestCase_ID) String testID) throws Exception{
+
         Log.startTestCase(TC01_OrangeHRM_LoginTest.class.getName());
 
         wbk= ExcelUtils.setExcelFilePath();
@@ -57,13 +56,13 @@ public class TC01_OrangeHRM_LoginTest {
         WebDriver driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
 
-        driver.get("https://seleniumautom-trials710.orangehrmlive.com");
+        driver.get("https://automationo-trials710.orangehrmlive.com");
         log.info("OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com");
 
         OrangeHRM_LoginPage.login(userName, password);
         Thread.sleep(6000);
         OrangeHRM_HomePage.verifyTitle();
-        CommonUtils.takeScreenshot("OrangeHRMLoginPage");
+        CommonUtils.takeScreenshot(screenshotsPath,"OrangeHRM_HomePage");
 
         driver.quit();
     }

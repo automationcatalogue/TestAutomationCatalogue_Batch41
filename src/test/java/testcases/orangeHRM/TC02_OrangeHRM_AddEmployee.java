@@ -77,13 +77,13 @@ public class TC02_OrangeHRM_AddEmployee {
         log.info("Title of the page is:" + title);
 
         OrangeHRM_LoginPage.login(userName, pswd);
-        CommonUtils.takeScreenshot("LoginPage");
+        //CommonUtils.takeScreenshot();
 
         OrangeHRM_HomePage.clickEmployeeManagementLink();
-        CommonUtils.takeScreenshot("EmployeeManagementLink");
+        //CommonUtils.takeScreenshot();
 
         OrangeHRM_AddEmployeePage.enterFirstNameAndLastName(firstName,lastName);
-        CommonUtils.takeScreenshot("FirstName_LastName");
+        //CommonUtils.takeScreenshot();
 
         OrangeHRM_AddEmployeePage.selectLocation(location);
         OrangeHRM_AddEmployeePage.selectMaritalStatus(marital_Status);

@@ -1,9 +1,7 @@
-package listeners;
+package testcases.setup;
 
-import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import utilities.CommonUtils;
 
 public class OrangeHRMListener implements ITestListener {
 
@@ -17,7 +15,7 @@ public class OrangeHRMListener implements ITestListener {
 
     public void onTestFailure(ITestResult result) {
         try{
-            CommonUtils.takeScreenshot("OrangeHRM_Failed");
+           // CommonUtils.takeScreenshot();
             System.out.println("Screenshot is captured for failed testcase");
         }catch(Exception e){
             System.out.println("Screenshot is not captured for failed testcase");

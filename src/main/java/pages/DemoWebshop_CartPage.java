@@ -1,5 +1,7 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,60 +31,61 @@ public class DemoWebshop_CartPage {
     public static By checkbox_Iagree = By.xpath("//input[@id='termsofservice']");
     public static By btn_Checkout = By.xpath("//button[@value='checkout']");
 
+    static Logger log = LogManager.getLogger(DemoWebshop_CartPage.class);
     public static double getCartPriceBeforeDiscount(){
         WebDriver driver = BaseClass.getDriver();
         String total_BeforeDiscount=driver.findElement(txt_BeforeDiscountTotal).getText();
-        System.out.println("value of total:"+total_BeforeDiscount);
+        log.info("value of total:"+total_BeforeDiscount);
         double totalValue_BeforeDiscount = Double.parseDouble(total_BeforeDiscount);
         return totalValue_BeforeDiscount;
     }
     public static void clickCheckboxIagree(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(checkbox_Iagree).click();
-        System.out.println("Check-box is clicked");
+        log.info("Check-box is clicked");
     }
     public  static void clickCheckoutBtn(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(btn_Checkout).click();
-        System.out.println("Checkout button is clicked");
+        log.info("Checkout button is clicked");
     }
     public static void clickTxtbxCoupon(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(txtbx_Coupon).click();
-        System.out.println("coupon test box is clicked");
+        log.info("coupon test box is clicked");
     }
     public static void enterTxtbxCoupon(String ApplyCoupon){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(txt_EnterCoupon).sendKeys(ApplyCoupon);
-        System.out.println("coupon code is Entered");
+        log.info("coupon code is Entered");
     }
     public static void clickApplyCouponBtn(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(btn_ApplyCoupon).click();
-        System.out.println("ApplyCoupon button is clicked");
+        log.info("ApplyCoupon button is clicked");
     }
 
     public static void getTxtMessagePrinted(){
         WebDriver driver = BaseClass.getDriver();
         String message = driver.findElement(DemoWebshop_CartPage.getTxt_MessagePrinted).getText();
-        System.out.println("message:" + message);
+        log.info("message:" + message);
         if (message.trim().equalsIgnoreCase("The coupon code was applied")) {
-            System.out.println("Coupon applied successfully");
+            log.info("Coupon applied successfully");
         } else {
-            System.out.println("Coupon applied is not successful");
+            log.info("Coupon applied is not successful");
         }
     }
     public static double getDiscountAmount(){
         WebDriver driver = BaseClass.getDriver();
         String discount = driver.findElement(DemoWebshop_CartPage.txt_DiscountAmount).getText();
-        System.out.println("Applied Discount Amount is :" + discount);
+        log.info("Applied Discount Amount is :" + discount);
         double discountValue = Double.parseDouble(discount);
         return discountValue;
     }
     public static double getCartPriceAfterDiscount() {
         WebDriver driver = BaseClass.getDriver();
         String total_AfterDiscount = driver.findElement(DemoWebshop_CartPage.txt_AfterDiscountTotal).getText();
-        System.out.println("After discount value of total:" + total_AfterDiscount);
+        log.info("After discount value of total:" + total_AfterDiscount);
         double totalValue_AfterDiscount = Double.parseDouble(total_AfterDiscount);
         return totalValue_AfterDiscount;
     }
@@ -91,7 +94,7 @@ public class DemoWebshop_CartPage {
         WebDriver driver = BaseClass.getDriver();
         WebElement total1 = driver.findElement(DemoWebshop_CartPage.txt_FirstItemTotal);
         String total_1 = total1.getText();
-        System.out.println("Total of the first item before increasing the quantity is :" + total_1);
+        log.info("Total of the first item before increasing the quantity is :" + total_1);
         return total_1;
     }
 
@@ -100,14 +103,14 @@ public class DemoWebshop_CartPage {
         WebElement books_qty1 = driver.findElement(DemoWebshop_CartPage.txtbx_FirstItemQty);
         books_qty1.clear();
         books_qty1.sendKeys(Update);
-        System.out.println("Quantity is increased in first item");
+        log.info("Quantity is increased in first item");
     }
 
     public static String price_SecondItemBeforeIncreasingQty(){
         WebDriver driver = BaseClass.getDriver();
         WebElement total2 = driver.findElement(DemoWebshop_CartPage.txt_SecondItemTotal);
         String total_2 = total2.getText();
-        System.out.println("Total of the second item before increasing the quantity is :" + total_2);
+        log.info("Total of the second item before increasing the quantity is :" + total_2);
         return total_2;
     }
 
@@ -116,13 +119,13 @@ public class DemoWebshop_CartPage {
         WebElement jewel_qty2 = driver.findElement(DemoWebshop_CartPage.txtbx_SecondItemQty);
         jewel_qty2.clear();
         jewel_qty2.sendKeys(Update);
-        System.out.println("Quantity is increased in second item");
+        log.info("Quantity is increased in second item");
     }
 
     public static void select_updateCartButton(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_CartPage.btn_UpdateShopCart).click();
-        System.out.println("Clicked on the Update cart button");
+        log.info("Clicked on the Update cart button");
     }
 
     public static String price_textBook(){
@@ -141,7 +144,7 @@ public class DemoWebshop_CartPage {
         WebDriver driver = BaseClass.getDriver();
         if(updateQty.equalsIgnoreCase(text_updatedQty)){
 
-            System.out.println("Update Quantity is successful for Book Item!!!");
+            log.info("Update Quantity is successful for Book Item!!!");
             String text_BookTotalPrice = driver.findElement(DemoWebshop_CartPage.txt_FirstItemTotal).getText();
 
             double bookPrice = Double.parseDouble(text_BookPrice);
@@ -149,13 +152,13 @@ public class DemoWebshop_CartPage {
             double bookTotalPrice = Double.parseDouble(text_BookTotalPrice);
             double expectedTotalPrice = bookPrice * UpdateQty;
             if(expectedTotalPrice == bookTotalPrice){
-                System.out.println("Update Shopping Cart is successful for Book Item and Price is matched i.e :"+bookTotalPrice);
+                log.info("Update Shopping Cart is successful for Book Item and Price is matched i.e :"+bookTotalPrice);
             }else{
-                System.out.println("Update Shopping Cart is not successful for Book Item and Price is not matched!!!");
+                log.info("Update Shopping Cart is not successful for Book Item and Price is not matched!!!");
             }
 
         }else{
-            System.out.println("Update Quantity is not successful for Book Item!!!");
+            log.info("Update Quantity is not successful for Book Item!!!");
         }
     }
 
@@ -169,7 +172,7 @@ public class DemoWebshop_CartPage {
         WebDriver driver = BaseClass.getDriver();
         if(updateQty.equalsIgnoreCase(text_updatedQty)){
 
-            System.out.println("Update Quantity is successful for Jewel Item!!!");
+            log.info("Update Quantity is successful for Jewel Item!!!");
             String text_JewelTotalPrice = driver.findElement(DemoWebshop_CartPage.txt_SecondItemTotal).getText();
 
             double JewelPrice = Double.parseDouble(text_JewelPrice);
@@ -178,13 +181,13 @@ public class DemoWebshop_CartPage {
 
             double expectedTotalPrice = JewelPrice * UpdateQty;
             if(expectedTotalPrice == JewelTotalPrice){
-                System.out.println("Update Shopping Cart is successful for Jewel Item and Price is matched i.e :"+JewelTotalPrice);
+                log.info("Update Shopping Cart is successful for Jewel Item and Price is matched i.e :"+JewelTotalPrice);
             }else{
-                System.out.println("Update Shopping Cart is not successful for Jewel Item and Price is not matched!!!");
+                log.info("Update Shopping Cart is not successful for Jewel Item and Price is not matched!!!");
             }
 
         }else{
-            System.out.println("Update Quantity is not successful for Jewel Item!!!");
+            log.info("Update Quantity is not successful for Jewel Item!!!");
         }
     }
 
@@ -210,9 +213,9 @@ public class DemoWebshop_CartPage {
     public static void select_checkOut(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_CartPage.checkbox_Iagree).click();
-        System.out.println("Check-box is clicked");
+        log.info("Check-box is clicked");
 
         driver.findElement(DemoWebshop_CartPage.btn_Checkout).click();
-        System.out.println("Checkout button is clicked");
+        log.info("Checkout button is clicked");
     }
 }

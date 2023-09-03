@@ -6,16 +6,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import pages.OrangeHRM_EditEmployeePage;
-import pages.OrangeHRM_TravelExpensePage;
 
 import java.io.File;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class CommonUtils {
+public class CommonUtils{
 
     static WebDriver driver;
+
 
     public static WebDriver browserLaunch(String browserName){
         driver=null;
@@ -37,11 +38,16 @@ public class CommonUtils {
         return driver;
     }
 
-    public static void takeScreenshot(String fileName) throws Exception{
+    public static void takeScreenshot(File dest) throws Exception{
         TakesScreenshot ts = (TakesScreenshot)driver;
-        String projectPath = System.getProperty("user.dir");
-        File dest = new File(projectPath+"\\screenshots\\"+fileName+".jpg");
         File src= ts.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(src,dest);
+    }
+
+    public static void takeScreenshot(String screenshotsPath, String fileName) throws Exception{
+        TakesScreenshot ts = (TakesScreenshot)driver;
+        File src= ts.getScreenshotAs(OutputType.FILE);
+        File dest = new File(screenshotsPath+"//"+fileName+".jpg");
         FileUtils.copyFile(src,dest);
     }
 
@@ -67,4 +73,13 @@ public class CommonUtils {
         driver.switchTo().frame(element_frame);
         System.out.println("Switched into iFrame");
     }
+
+    public static String generateFolderNameWithTmeStamp(){
+        LocalDateTime now =LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMMyyyy_HHmmss");
+        String dateTime = now.format(formatter);
+        return dateTime;
+    }
+
+
 }

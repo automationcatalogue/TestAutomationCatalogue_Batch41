@@ -1,5 +1,7 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -25,14 +27,14 @@ public class OrangeHRM_UsersPage {
     static String supervisor_name=null;
     public static String userName=null;
     public static String employeeName;
-
+    static Logger log = LogManager.getLogger(OrangeHRM_UsersPage.class);
     public static void getEmployeeDetails(){
         WebDriver driver = BaseClass.getDriver();
         userName = driver.findElement(OrangeHRM_UsersPage.link_firstUserName).getText();
-        System.out.println("First UserName from the Users List is :" + userName);
+        log.info("First UserName from the Users List is :" + userName);
 
         driver.findElement(OrangeHRM_UsersPage.icon_edit).click();
-        System.out.println("Clicked on edit button");
+        log.info("Clicked on edit button");
 
         //employeeName=driver.findElement(OrangeHRM_UsersPage.txtbx_employeeName).getText();
         //System.out.println(employeeName);
@@ -58,16 +60,16 @@ public class OrangeHRM_UsersPage {
        // System.out.println(employee_UserName);
 
         driver.findElement(OrangeHRM_UsersPage.chkbx_changePassword).click();
-        System.out.println("change password check  box is selected");
+        log.info("change password check  box is selected");
 
         driver.findElement(OrangeHRM_UsersPage.txtbx_enterPassword).sendKeys(newPassword);
-        System.out.println("entered the new password");
+        log.info("entered the new password");
 
         driver.findElement(OrangeHRM_UsersPage.txtbx_confirmPassword).sendKeys(newPassword);
-        System.out.println("re-entered the new password");
+        log.info("re-entered the new password");
 
         driver.findElement(OrangeHRM_UsersPage.btn_save).click();
-        System.out.println("Clicked on Save");
+        log.info("Clicked on Save");
 
         //return employee_UserName;l
     }
@@ -81,14 +83,14 @@ public class OrangeHRM_UsersPage {
             String currentSupervisorName = supervisor.getText();
             if (currentSupervisorName.equalsIgnoreCase(supervisor_name)) {
                 supervisor.findElement(OrangeHRM_UsersPage.btn_edit).click();
-                System.out.println("Clicked on Edit button");
+                log.info("Clicked on Edit button");
 
                 WebElement changepswd_chkbox = driver.findElement(OrangeHRM_UsersPage.chkbx_changePassword);
                 js.executeScript("arguments[0].click();", changepswd_chkbox);
                 driver.findElement(OrangeHRM_UsersPage.txtbx_enterPassword).sendKeys(pswd);
                 driver.findElement(OrangeHRM_UsersPage.txtbx_confirmPassword).sendKeys(pswd);
                 driver.findElement(OrangeHRM_UsersPage.btn_save).click();
-                System.out.println("Supervisor's username and password is updated.");
+                log.info("Supervisor's username and password is updated.");
             }
         }
     }
@@ -103,7 +105,7 @@ public class OrangeHRM_UsersPage {
                 SupervisorName.findElement(OrangeHRM_UsersPage.btn_edit).click();
                 WebElement SupervisorUsername_Element = driver.findElement(OrangeHRM_UsersPage.txtbx_userName);
                 supervisor_userName = (String) js.executeScript("return arguments[0].value", SupervisorUsername_Element);
-                System.out.println("username of the Supervisor is :"+supervisor_userName);
+                log.info("username of the Supervisor is :"+supervisor_userName);
                 driver.findElement(OrangeHRM_UsersPage.icon_crossExit).click();
                 break;
             }

@@ -1,5 +1,7 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,109 +20,110 @@ public class DemoWebshop_HomePage {
     public static By link_mailID = By.xpath("(//a[@href='/customer/info'])[1]");
     public static By link_Address = By.xpath("(//a[text()='Addresses'])[1]");
     public static By btn_Logout = By.xpath("//a[text()='Log out']");
+    static Logger log = LogManager.getLogger(DemoWebshop_HomePage.class);
 
     public static void clickLoginLink() {
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(link_Login).click();
-        System.out.println("Login Link is clicked");
+        log.info("Login Link is clicked");
     }
         public static void clickEmailLink(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(link_Email).click();
-        System.out.println("Email Link is clicked");
+        log.info("Email Link is clicked");
     }
     public static void logout(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(btn_Logout).click();
-        System.out.println("log out is clicked");
+        log.info("log out is clicked");
     }
     public static void clickShoppingCartLink(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(link_ShoppingCart).click();
-        System.out.println("Shopping cart link is clicked");
+        log.info("Shopping cart link is clicked");
     }
     public static void select_BooksLink(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_HomePage.link_HeaderBooks).click();
-        System.out.println("Clicked on Books link");
+        log.info("Clicked on Books link");
     }
 
     public static void select_JewelsLink(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_HomePage.link_HeaderJewels).click();
-        System.out.println("Clicked on Jewellery link");
+        log.info("Clicked on Jewellery link");
     }
 
     public static void select_ShoppingCart(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_HomePage.link_ShoppingCart).click();
-        System.out.println("Clicked on Shopping Cart Link");
+        log.info("Clicked on Shopping Cart Link");
     }
 
     public static void click_mailId(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_HomePage.link_mailID).click();
-        System.out.println("clicked on the email.id");
+        log.info("clicked on the email.id");
 
     }
 
     public static void select_AddressLink(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_HomePage.link_Address).click();
-        System.out.println("clicked on Address ");
+        log.info("clicked on Address ");
     }
 
     public static void createName(String FN, String LN){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_AddressesPage.btn_AddNew).click();
-        System.out.println("Clicked on the Add New Button");
+        log.info("Clicked on the Add New Button");
 
         driver.findElement(DemoWebshop_AddressesPage.txtbx_FirstName).sendKeys(FN);
-        System.out.println("Entered Random First Name");
+        log.info("Entered Random First Name");
 
         driver.findElement(DemoWebshop_AddressesPage.txtbx_LastName).sendKeys(LN);
-        System.out.println("Entered Random last name");
+        log.info("Entered Random last name");
     }
 
     public static void createEmailAndCompany(String mail,String com){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_AddressesPage.link_mailID).sendKeys(mail);
-        System.out.println("Entered Random Email");
+        log.info("Entered Random Email");
 
         driver.findElement(DemoWebshop_AddressesPage.txtbx_companyName).sendKeys(com);
-        System.out.println("Entered Random company name");
+        log.info("Entered Random company name");
 
         WebElement element_Country = driver.findElement(DemoWebshop_AddressesPage.dropdown_Country);
         Select select_Country = new Select(element_Country);
         select_Country.selectByVisibleText("India");
-        System.out.println("India is selected from the Country drop-down");
+        log.info("India is selected from the Country drop-down");
     }
 
     public static void createCityAndAddresses(String cty, String ad1, String ad2){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_AddressesPage.txtbx_City).sendKeys(cty);
-        System.out.println("Entered Random city");
+        log.info("Entered Random city");
 
         driver.findElement(DemoWebshop_AddressesPage.txtbx_Address1).sendKeys(ad1);
-        System.out.println("Entered Random Address1");
+        log.info("Entered Random Address1");
 
         driver.findElement(DemoWebshop_AddressesPage.txtbx_Address2).sendKeys(ad2);
-        System.out.println("Entered Random Address2");
+        log.info("Entered Random Address2");
     }
 
     public static void createContactNumbers(String zip, String PhNo, String FxNo){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_AddressesPage.txtbx_Zipcode).sendKeys(zip);
-        System.out.println("Entered Random Zip code");
+        log.info("Entered Random Zip code");
 
         driver.findElement(DemoWebshop_AddressesPage.txtbx_Phonenumber).sendKeys(PhNo);
-        System.out.println("Entered Random Phone number");
+        log.info("Entered Random Phone number");
 
         driver.findElement(DemoWebshop_AddressesPage.txtbx_Faxnumber).sendKeys(FxNo);
-        System.out.println("Entered Fax Number");
+        log.info("Entered Fax Number");
 
         driver.findElement(DemoWebshop_AddressesPage.btn_Save).click();
-        System.out.println("Clicked on Save Button");
+        log.info("Clicked on Save Button");
     }
 
     public static void verify_Address(String firstname, String lastname){
@@ -136,15 +139,15 @@ public class DemoWebshop_HomePage {
             }
         }
         if (isAddressFound) {
-            System.out.println("Address Creation is successful");
+            log.info("Address Creation is successful");
         } else {
-            System.out.println("Address Creation is not successful");
+            log.info("Address Creation is not successful");
         }
     }
 
     public static void logOut(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_HomePage.btn_Logout).click();
-        System.out.println("log out is clicked");
+        log.info("log out is clicked");
     }
 }

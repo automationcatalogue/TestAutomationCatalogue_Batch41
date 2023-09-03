@@ -4,14 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import utilities.BaseClass;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 
 public class DemoWebShop_OrdersPage {
 
@@ -27,78 +20,14 @@ public class DemoWebShop_OrdersPage {
     public static By orderValue = By.xpath("./../li[3]");
     static Logger log = LogManager.getLogger(DemoWebShop_OrdersPage.class);
 
-    public static void totalNumberOfOrders() {
-        WebDriver driver = BaseClass.getDriver();
-
-        List<WebElement> OrderNumbers = driver.findElements(DemoWebShop_OrdersPage.listOfAllOrders);
-        String TotalNumberOfOrders = String.valueOf((int) OrderNumbers.size());
-        log.info("Total number of orders is :" + OrderNumbers.size());
-    }
-
-    public static void sumOfAllOrdersPlaced() {
-        WebDriver driver = BaseClass.getDriver();
-        List<WebElement> OrderTotal = driver.findElements(DemoWebShop_OrdersPage.listOfAllOrderTotal);
-        String temp = "", temp1 = "", temp2 = "";
-        float TotalValue = 0.0f;
-        Float OrderValue = null;
-        Float TotalValue1 = 0.0f;
-        for (WebElement OrderStatement : OrderTotal) {
-            String TotalOrderStatement = OrderStatement.getText();
-
-            String str1[] = TotalOrderStatement.split(":");
-            temp = str1[1];
-            OrderValue = Float.valueOf(temp);
-            TotalValue = TotalValue + OrderValue;
-
-            String SumOfAllOrders = String.valueOf(TotalValue);
-
-
-        }
-        log.info("The total value of all orders placed is : " + TotalValue);
-    }
-
-    public static void sumOfOrdersDayWise()
-    {
-        WebDriver driver = BaseClass.getDriver();
-        HashMap<String, Double> map_DayWiseOrders = new HashMap<String, Double>();
-        List<WebElement> elements_allOrders = driver.findElements(DemoWebShop_OrdersPage.listOfOrdersDayWise);
-        //List<WebElement> elements_allOrders=listOfOrdersForDayWise;
-        for (WebElement element_Order : elements_allOrders) {
-            String orderDate = element_Order.getText();
-            orderDate = orderDate.split(":")[1].trim();
-            orderDate = orderDate.split(" ")[0];
-
-            String orderValue = element_Order.findElement(DemoWebShop_OrdersPage.orderValue).getText();
-            orderValue = orderValue.split(":")[1].trim();
-            Double dOrderValue = Double.parseDouble(orderValue);
-
-            if (map_DayWiseOrders.containsKey(orderDate)) {
-                double dtotalOrderValue = map_DayWiseOrders.get(orderDate);
-                dtotalOrderValue += dOrderValue;
-                map_DayWiseOrders.put(orderDate, dtotalOrderValue);
-            } else {
-                map_DayWiseOrders.put(orderDate, dOrderValue);
-            }
-        }
-        //Printing sumOf Orders Daywise
-        Set<Map.Entry<String, Double>> allEntries_Daywise = map_DayWiseOrders.entrySet();
-        for (Map.Entry<String, Double> eachEntry_Daywise : allEntries_Daywise) {
-            log.info("Order Date is :" + eachEntry_Daywise.getKey() + " Sum of all Orders :" + eachEntry_Daywise.getValue());
-        }
-    }
-
-
     public static void clickLinkOrders(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(link_Orders).click();
-        System.out.println("Order link is clicked");
+        log.info("Order link is clicked");
     }
     public static void clickOrderDetailsBtn(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(btn_OrderDetails).click();
-        System.out.println("Order details button is clicked");
+        log.info("Order details button is clicked");
     }
-
 }
-
-

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="1" failed="1" skipped="1">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-07-14T07:34:50 IST" name="Suite1" finished-at="2023-07-14T07:37:32 IST" duration-ms="162388">
+    <groups>
+    </groups>
+    <test started-at="2023-07-14T07:34:50 IST" name="OrangeHRM1" finished-at="2023-07-14T07:37:32 IST" duration-ms="162388">
+      <class name="testcases.orangeHRM.TC04_OrangeHRM_EditEmployee">
+        <test-method signature="editEmployee()[pri:0, instance:testcases.orangeHRM.TC04_OrangeHRM_EditEmployee@17a7f733]" started-at="2023-07-14T07:36:50 IST" name="editEmployee" finished-at="2023-07-14T07:37:32 IST" duration-ms="42032" status="SKIP">
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[Skipping Edit Employee]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: Skipping Edit Employee
+at testcases.orangeHRM.TC04_OrangeHRM_EditEmployee.editEmployee(TC04_OrangeHRM_EditEmployee.java:43)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editEmployee -->
+      </class> <!-- testcases.orangeHRM.TC04_OrangeHRM_EditEmployee -->
+      <class name="testcases.orangeHRM.TC01_OrangeHRM_LoginTest">
+        <test-method signature="test_OrangeHRMLogin()[pri:3, instance:testcases.orangeHRM.TC01_OrangeHRM_LoginTest@7b02881e]" started-at="2023-07-14T07:34:50 IST" name="test_OrangeHRMLogin" finished-at="2023-07-14T07:36:15 IST" duration-ms="84685" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_OrangeHRMLogin -->
+      </class> <!-- testcases.orangeHRM.TC01_OrangeHRM_LoginTest -->
+      <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser">
+        <test-method signature="addUser()[pri:0, instance:testcases.orangeHRM.TC03_OrangeHRM_AddUser@2118cddf]" started-at="2023-07-14T07:36:15 IST" name="addUser" finished-at="2023-07-14T07:36:50 IST" duration-ms="34932" status="FAIL">
+          <exception class="org.openqa.selenium.InvalidSelectorException">
+            <message>
+              <![CDATA[invalid selector: Unable to locate an element with the xpath expression (//crud-panel[contains(@listdata='systemUsersCtrl.listData.systemUsers']//table//tbody/tr[1]//span[text()])[1] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '(//crud-panel[contains(@listdata='systemUsersCtrl.listData.systemUsers']//table//tbody/tr[1]//span[text()])[1]' is not a valid XPath expression.
+  (Session info: chrome=114.0.5735.199)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0e434e979f5d44f1af592656039b41a9, findElement {using=xpath, value=(//crud-panel[contains(@listdata='systemUsersCtrl.listData.systemUsers']//table//tbody/tr[1]//span[text()])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\AaradhyaVashisht\A...}, goog:chromeOptions: {debuggerAddress: localhost:52367}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52367/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0e434e979f5d44f1af592656039b41a9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression (//crud-panel[contains(@listdata='systemUsersCtrl.listData.systemUsers']//table//tbody/tr[1]//span[text()])[1] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '(//crud-panel[contains(@listdata='systemUsersCtrl.listData.systemUsers']//table//tbody/tr[1]//span[text()])[1]' is not a valid XPath expression.
+  (Session info: chrome=114.0.5735.199)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0e434e979f5d44f1af592656039b41a9, findElement {using=xpath, value=(//crud-panel[contains(@listdata='systemUsersCtrl.listData.systemUsers']//table//tbody/tr[1]//span[text()])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\AaradhyaVashisht\A...}, goog:chromeOptions: {debuggerAddress: localhost:52367}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52367/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0e434e979f5d44f1af592656039b41a9
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+at testcases.orangeHRM.TC03_OrangeHRM_AddUser.addUser(TC03_OrangeHRM_AddUser.java:49)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addUser -->
+      </class> <!-- testcases.orangeHRM.TC03_OrangeHRM_AddUser -->
+    </test> <!-- OrangeHRM1 -->
+  </suite> <!-- Suite1 -->
+</testng-results>
