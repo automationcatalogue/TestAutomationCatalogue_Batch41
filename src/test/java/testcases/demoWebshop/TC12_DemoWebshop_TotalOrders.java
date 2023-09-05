@@ -98,7 +98,7 @@ public class TC12_DemoWebshop_TotalOrders {
         driver.close();
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
 
 
