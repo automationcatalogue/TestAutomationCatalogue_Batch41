@@ -718,3 +718,18 @@
 07:27:45:381 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
 07:27:45:382 [main] INFO  utilities.Log - X
 07:27:45:383 [main] INFO  utilities.Log - X
+08:03:23:558 [main] INFO  utilities.Log - *****************************************************************
+08:03:23:598 [main] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+08:03:23:600 [main] INFO  utilities.Log - ******************************************************************
+08:03:24:594 [main] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+08:03:24:597 [main] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+08:03:42:844 [main] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+08:03:51:889 [main] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :411
+08:04:07:029 [main] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60122.594
+08:04:44:751 [main] INFO  pages.DemoWebshop_HomePage - log out is clicked
+08:04:46:343 [main] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 411is updated in Excel sheet as Total Order Count
+08:04:46:880 [main] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 60122.594is updated in Excel sheet as Total Order Value
+08:04:47:297 [main] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+08:04:48:996 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+08:04:48:997 [main] INFO  utilities.Log - X
+08:04:48:997 [main] INFO  utilities.Log - X

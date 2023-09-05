@@ -78,8 +78,8 @@ public class Config {
     public static final int col_Reorder_OrderNumber=6;
 
     //DemoWebshop TotalOrders testcases
-    public static final int col_TotalOrders_NumberOfOrders=7;
-    public static final int col_TotalOrders_SumOfAllOrders=8;
+    public static final int col_TotalOrders_NumberOfOrders=6;
+    public static final int col_TotalOrders_SumOfAllOrders=7;
 
     //DemoWebshop Update Shopping order testcases column numbers
     public static final int col_UpdateCart_Length=6;

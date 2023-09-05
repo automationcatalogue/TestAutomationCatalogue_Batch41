@@ -12,6 +12,7 @@ public class DemoWebshop_LoginPage {
     public static By txtbx_Password = By.cssSelector("#Password");
     public static By btn_Login = By.xpath("//input[@value='Log in']");
     static Logger log = LogManager.getLogger(OrangeHRM_LoginPage.class);
+
     public static void login(String userName, String password){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(DemoWebshop_HomePage.link_Login).click();
