@@ -2,10 +2,7 @@ package pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.BaseClass;
@@ -24,31 +21,42 @@ public class OrangHRM_AddUserPage {
     public static By empName_Visibility = By.xpath("//div[@id='systemUserDiv']//table//tbody/tr[1]/td[2]//span[text()]");
     public static By empName_DropdownVisibility = By.xpath("//div[@id='selectedEmployee_dropdown']//div[@class='title-section']");
     static Logger log = LogManager.getLogger(OrangHRM_AddUserPage.class);
-public static void clickAddUser(){
-    WebDriver driver=BaseClass.getDriver();
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3000));
-    wait.until(ExpectedConditions.visibilityOfElementLocated(empName_Visibility));
-    driver.findElement(icon_AddUser).click();
 
-}
-    public static void enterAddUserDetails(String empName,String userName, String password, String confirm_pwd) {
+    public static void clickAddUser() {
+        WebDriver driver = BaseClass.getDriver();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3000));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(empName_Visibility));
+        driver.findElement(icon_AddUser).click();
+
+    }
+
+    public static void enterAddUserDetails(String empName, String userName, String password, String confirm_pwd) {
         WebDriver driver = BaseClass.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         //Enter Employee Name as Charlie Carter
         driver.findElement(txtbx_EmployeeName).sendKeys(empName);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(empName_DropdownVisibility));
-        driver.findElement(empName_DropdownVisibility).click();
-        //Enter some Random UserName
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(empName_DropdownVisibility));
+            driver.findElement(empName_DropdownVisibility).click();
+            log.info("EmployeeName Dropdown element is visible and it is clicked");
+        } catch (TimeoutException te) {
+            log.info("EmployeeName Dropdown element is not visible");
+        }
+
         driver.findElement(txtbx_RandomUserName).sendKeys(userName);
+        log.info(userName+" is entered as UserName");
         //Enter the Password as "Admin@123"
         driver.findElement(txtbx_Pwd).sendKeys(password);
         //Enter the Confirm Password as "Admin@123"
         driver.findElement(txtbx_ConfirmPwd).sendKeys(confirm_pwd);
-}        public static void clickSave()
-{         WebDriver driver=BaseClass.getDriver();
-    //Click on Save button
-    WebElement element_SaveBtn =  driver.findElement(btn_Save);
-    JavascriptExecutor js = (JavascriptExecutor)driver;
-    js.executeScript("arguments[0].click();",element_SaveBtn);
-}
+    }
+
+    public static void clickSave() throws Exception{
+        WebDriver driver = BaseClass.getDriver();
+        Thread.sleep(2000);
+        WebElement element_SaveBtn = driver.findElement(btn_Save);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", element_SaveBtn);
+        log.info("Save button is clicked");
+    }
 }

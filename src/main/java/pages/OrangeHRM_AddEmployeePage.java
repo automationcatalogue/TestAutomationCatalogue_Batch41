@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.BaseClass;
+import utilities.CommonUtils;
 
 import java.time.Duration;
 
@@ -233,9 +234,9 @@ public class OrangeHRM_AddEmployeePage {
                  driver.findElement(btn_save).click();
                  log.info("clicked on Save");
          }
-         public static void searchEmployee(String firstName, String lastName){
+         public static void searchEmployee(String firstName, String lastName) throws Exception{
                  WebDriver driver = BaseClass.getDriver();
-                 driver.findElement(search_icon).sendKeys(firstName+" "+ lastName);
+                 CommonUtils.staleElementEnterKeys(search_icon,firstName+" "+ lastName);
                  driver.findElement(txtbx_searchEmployee).click();
                  log.info("Searched with Employee first and last name");
          }

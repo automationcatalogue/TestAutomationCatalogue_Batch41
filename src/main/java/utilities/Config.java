@@ -1,7 +1,18 @@
 package utilities;
 
 public class Config {
-    public static final String TestCase_ID = "TC01-01";
+    public static final String LoginTestCase_ID = "TC01-01";
+    public static final String AddEmployeeTestCase_ID = "TC02-01";
+    public static final String AddUserTestCase_ID = "TC03-01";
+    public static final String EditEmployeeTestCase_ID = "TC04-01";
+    public static final String TravelRequestTestCase_ID = "TC05-01";
+    public static final String GoalsRequestTestCase_ID = "TC06-01";
+    public static final String CreateAddressRequestTestCase_ID = "TC10-01";
+    public static final String ReOrderRequestTestCase_ID = "TC11-01";
+    public static final String TotalOrdersRequestTestCase_ID = "TC12-01";
+    public static final String UpdateShoppingCartRequestTestCase_ID = "TC13-01";
+    public static final String ApplyDiscountRequestTestCase_ID = "TC14-01";
+
 
     //Common TestCases Column numbers
     public static final int col_Sno=0;

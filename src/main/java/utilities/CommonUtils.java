@@ -81,5 +81,18 @@ public class CommonUtils{
         return dateTime;
     }
 
+    public static void staleElementEnterKeys(By locator, String data) throws Exception{
+        for(int count=1;count<=4;++count){
+            try{
+                driver.findElement(locator).sendKeys(data);
+                break;
+            }catch (StaleElementReferenceException se){
+                System.out.println("Stale Element is occurred and retrying");
+                Thread.sleep(1000);
+            }
+
+        }
+    }
+
 
 }

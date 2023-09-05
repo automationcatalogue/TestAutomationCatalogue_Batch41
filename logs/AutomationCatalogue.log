@@ -477,3 +477,244 @@
 08:21:49:816 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
 08:22:08:227 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
 08:22:39:437 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:30:06:480 [main] INFO  utilities.Log - *****************************************************************
+07:30:06:501 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:30:06:502 [main] INFO  utilities.Log - ******************************************************************
+07:30:07:900 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:30:07:903 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:30:42:692 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+07:30:43:323 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:30:43:741 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:30:59:330 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:31:24:053 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:35:23:100 [main] INFO  utilities.Log - *****************************************************************
+07:35:23:116 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:35:23:118 [main] INFO  utilities.Log - ******************************************************************
+07:35:24:494 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:35:24:497 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:35:46:624 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+07:35:47:371 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:35:47:803 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:36:26:682 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:36:32:702 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:36:39:136 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:36:41:579 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:36:41:583 [main] INFO  utilities.Log - X
+07:36:41:584 [main] INFO  utilities.Log - X
+07:42:28:259 [main] INFO  utilities.Log - *****************************************************************
+07:42:28:323 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:42:28:326 [main] INFO  utilities.Log - ******************************************************************
+07:42:29:987 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:42:29:989 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:43:07:977 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+07:43:08:442 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:43:08:777 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:43:19:922 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:43:41:064 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:43:53:602 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:43:57:063 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - TestCase is Passed and status is updated in Excel sheet
+07:44:00:943 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:44:00:945 [main] INFO  utilities.Log - X
+07:44:00:952 [main] INFO  utilities.Log - X
+07:45:59:375 [main] INFO  utilities.Log - *****************************************************************
+07:45:59:400 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+07:45:59:401 [main] INFO  utilities.Log - ******************************************************************
+07:46:23:913 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - OrangeHRM website is launched
+07:46:23:959 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - Title of the page is:OrangeHRM
+07:46:24:638 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:46:25:149 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:46:36:840 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:46:37:585 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+07:46:42:037 [main] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Add button 
+07:46:47:054 [main] INFO  pages.OrangeHRM_AddEmployeePage - First Name is entered
+07:46:48:133 [main] INFO  pages.OrangeHRM_AddEmployeePage - Last Name is entered
+07:46:48:573 [main] INFO  pages.OrangeHRM_AddEmployeePage - Location drop-down is clicked 
+07:46:49:364 [main] INFO  pages.OrangeHRM_AddEmployeePage - India Office value is selected from a drop-down
+07:46:49:932 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+07:46:57:946 [main] INFO  pages.OrangeHRM_AddEmployeePage - Marital Status drop-down is clicked
+07:46:58:485 [main] INFO  pages.OrangeHRM_AddEmployeePage - Single is selected
+07:46:58:969 [main] INFO  pages.OrangeHRM_AddEmployeePage - Gender drop-down is clicked
+07:46:59:383 [main] INFO  pages.OrangeHRM_AddEmployeePage - Male is selected
+07:46:59:740 [main] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Next
+07:47:10:921 [main] INFO  pages.OrangeHRM_AddEmployeePage - Region drop-down is clicked
+07:47:11:926 [main] INFO  pages.OrangeHRM_AddEmployeePage - Region-1 is selected 
+07:47:12:712 [main] INFO  pages.OrangeHRM_AddEmployeePage - FTE drop-down is clicked
+07:47:13:620 [main] INFO  pages.OrangeHRM_AddEmployeePage - 0.75 is selected
+07:47:14:157 [main] INFO  pages.OrangeHRM_AddEmployeePage - Temp Department drop-down is clicked
+07:47:14:159 [main] INFO  pages.OrangeHRM_AddEmployeePage - TempDepartment is not found
+07:47:15:055 [main] INFO  pages.OrangeHRM_AddEmployeePage - clicked on Save
+07:47:16:970 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+07:47:28:885 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:47:28:889 [main] INFO  utilities.Log - X
+07:47:28:890 [main] INFO  utilities.Log - X
+07:55:00:003 [main] INFO  utilities.Log - *****************************************************************
+07:55:00:095 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+07:55:00:096 [main] INFO  utilities.Log - ******************************************************************
+07:55:26:061 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:55:26:061 [main] INFO  utilities.Log - X
+07:55:26:062 [main] INFO  utilities.Log - X
+06:37:39:978 [main] INFO  utilities.Log - *****************************************************************
+06:37:39:981 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+06:37:39:981 [main] INFO  utilities.Log - ******************************************************************
+06:37:52:477 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - OrangeHRM website is launched
+06:37:52:496 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - Title of the page is:OrangeHRM
+06:37:52:585 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+06:37:52:654 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+06:38:00:140 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:38:00:237 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+06:38:04:723 [main] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Add button 
+06:38:08:458 [main] INFO  pages.OrangeHRM_AddEmployeePage - First Name is entered
+06:38:08:596 [main] INFO  pages.OrangeHRM_AddEmployeePage - Last Name is entered
+06:38:08:659 [main] INFO  pages.OrangeHRM_AddEmployeePage - Location drop-down is clicked 
+06:38:08:767 [main] INFO  pages.OrangeHRM_AddEmployeePage - India Office value is selected from a drop-down
+06:38:08:854 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+06:38:15:290 [main] INFO  pages.OrangeHRM_AddEmployeePage - Marital Status drop-down is clicked
+06:38:15:533 [main] INFO  pages.OrangeHRM_AddEmployeePage - Single is selected
+06:38:15:610 [main] INFO  pages.OrangeHRM_AddEmployeePage - Gender drop-down is clicked
+06:38:15:825 [main] INFO  pages.OrangeHRM_AddEmployeePage - Male is selected
+06:38:15:890 [main] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Next
+06:38:23:021 [main] INFO  pages.OrangeHRM_AddEmployeePage - Region drop-down is clicked
+06:38:23:091 [main] INFO  pages.OrangeHRM_AddEmployeePage - Region-1 is selected 
+06:38:23:144 [main] INFO  pages.OrangeHRM_AddEmployeePage - FTE drop-down is clicked
+06:38:23:213 [main] INFO  pages.OrangeHRM_AddEmployeePage - 0.75 is selected
+06:38:23:284 [main] INFO  pages.OrangeHRM_AddEmployeePage - Temp Department drop-down is clicked
+06:38:23:284 [main] INFO  pages.OrangeHRM_AddEmployeePage - TempDepartment is not found
+06:38:23:362 [main] INFO  pages.OrangeHRM_AddEmployeePage - clicked on Save
+06:38:23:476 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+06:38:23:709 [main] INFO  pages.OrangeHRM_AddEmployeePage - Searched with Employee first and last name
+06:38:31:810 [main] INFO  pages.OrangeHRM_AddEmployeePage - Element Text is: John Mikel
+06:38:31:810 [main] INFO  pages.OrangeHRM_AddEmployeePage - Search result is correct
+06:38:31:852 [main] INFO  pages.OrangeHRM_AddEmployeePage - Employee id is :0141
+06:38:38:569 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+06:38:39:018 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - 0141 is written back to the Excel file
+06:38:39:129 [main] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - TestCase is Passed and status is updated in Excel sheet
+06:38:40:001 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:38:40:001 [main] INFO  utilities.Log - X
+06:38:40:001 [main] INFO  utilities.Log - X
+06:41:54:230 [main] INFO  utilities.Log - *****************************************************************
+06:41:54:236 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+06:41:54:237 [main] INFO  utilities.Log - ******************************************************************
+06:41:58:344 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :barbra.farrell
+06:42:08:797 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+06:42:08:798 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:42:08:798 [main] INFO  utilities.Log - X
+06:42:08:798 [main] INFO  utilities.Log - X
+06:42:42:868 [main] INFO  utilities.Log - *****************************************************************
+06:42:42:873 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+06:42:42:874 [main] INFO  utilities.Log - ******************************************************************
+06:42:46:918 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :preston.hettinger
+06:42:53:420 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+06:42:53:493 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+06:43:00:757 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:43:00:764 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+06:43:36:292 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Failed and status is updated in Excel sheet
+06:43:36:373 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Failure Reason is :Title is not matched and status is updated in Excel sheet
+06:43:36:374 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+06:43:36:374 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:43:36:374 [main] INFO  utilities.Log - X
+06:43:36:374 [main] INFO  utilities.Log - X
+06:50:57:432 [main] INFO  utilities.Log - *****************************************************************
+06:50:57:438 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+06:50:57:439 [main] INFO  utilities.Log - ******************************************************************
+06:51:02:432 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :shirley.abbott
+06:51:08:154 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+06:51:08:242 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+06:51:31:194 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:51:31:206 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+06:52:01:242 [main] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+06:52:04:071 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Failed and status is updated in Excel sheet
+06:52:04:161 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Failure Reason is :Title is not matched and status is updated in Excel sheet
+06:52:04:162 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+06:52:04:162 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:52:04:162 [main] INFO  utilities.Log - X
+06:52:04:163 [main] INFO  utilities.Log - X
+06:57:14:709 [main] INFO  utilities.Log - *****************************************************************
+06:57:14:715 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+06:57:14:715 [main] INFO  utilities.Log - ******************************************************************
+06:57:20:829 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :carmelo.wisoky
+06:57:27:161 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+06:57:27:280 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+06:57:34:370 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:57:34:380 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+06:58:08:884 [main] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+06:58:13:315 [main] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+06:58:14:972 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Failed and status is updated in Excel sheet
+06:58:15:178 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Failure Reason is :Title is not matched and status is updated in Excel sheet
+06:58:15:179 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+06:58:15:179 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:58:15:180 [main] INFO  utilities.Log - X
+06:58:15:180 [main] INFO  utilities.Log - X
+07:06:09:036 [main] INFO  utilities.Log - *****************************************************************
+07:06:09:045 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+07:06:09:045 [main] INFO  utilities.Log - ******************************************************************
+07:06:28:485 [main] INFO  utilities.Log - *****************************************************************
+07:06:28:492 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+07:06:28:493 [main] INFO  utilities.Log - ******************************************************************
+07:06:41:058 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :rema.torp
+07:06:47:969 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:06:48:270 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:06:58:176 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:06:58:226 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:07:34:868 [main] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+07:07:35:684 [main] INFO  pages.OrangHRM_AddUserPage - mark.labadie is entered as UserName
+07:07:39:615 [main] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+07:07:46:065 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :mark.labadie
+07:07:46:314 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:07:52:545 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:07:52:642 [main] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+07:08:00:546 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - mark.labadieis updated in Excel sheet as New UserName
+07:08:00:887 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+07:08:02:727 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+07:08:02:728 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:08:02:728 [main] INFO  utilities.Log - X
+07:08:02:729 [main] INFO  utilities.Log - X
+07:13:13:574 [main] INFO  utilities.Log - *****************************************************************
+07:13:13:588 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+07:13:13:590 [main] INFO  utilities.Log - ******************************************************************
+07:13:33:731 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+07:13:34:140 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:13:34:486 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:13:43:561 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:13:43:604 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:13:44:308 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+07:13:48:208 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+07:13:55:844 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+07:14:00:558 [main] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+07:14:01:051 [main] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+07:14:01:530 [main] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+07:14:22:431 [main] INFO  pages.OrangeHRM_EditEmployeePage - Nationality selected as Indian
+07:14:22:690 [main] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on first save button
+07:14:28:319 [main] INFO  pages.OrangeHRM_EditEmployeePage - Data is successfully Updated
+07:14:30:325 [main] INFO  pages.OrangeHRM_EditEmployeePage - Allergies radio Button is not clicked
+07:14:30:658 [main] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Hygiene save button
+07:14:34:810 [main] INFO  pages.OrangeHRM_EditEmployeePage - Hygiene is successfully Updated
+07:14:34:811 [main] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Kosher is not available 
+07:14:34:812 [main] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Vegetarian is not available 
+07:14:35:321 [main] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Dietary Requirements save button
+07:14:36:923 [main] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement is successfully Updated
+07:14:43:009 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:14:44:204 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Passed and status is updated in Excel sheet
+07:14:46:402 [main] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - ExcelFile reading is closed
+07:14:46:402 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:14:46:403 [main] INFO  utilities.Log - X
+07:14:46:403 [main] INFO  utilities.Log - X
+07:24:31:648 [main] INFO  utilities.Log - *****************************************************************
+07:24:31:661 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC06_OrangeHRM_Goals************
+07:24:31:662 [main] INFO  utilities.Log - ******************************************************************
+07:25:56:670 [main] INFO  utilities.Log - *****************************************************************
+07:25:56:716 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC06_OrangeHRM_Goals************
+07:25:56:717 [main] INFO  utilities.Log - ******************************************************************
+07:26:21:694 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:26:22:090 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:26:33:491 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:26:52:944 [main] INFO  pages.OrangeHRM_HRAdministrationPage - Username of the Employee is :aaliyah.haq
+07:26:55:298 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+07:27:02:168 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name of the given employee is :Brody Alan
+07:27:10:329 [main] INFO  pages.OrangeHRM_HRAdministrationPage - username of the Supervisor is :brody
+07:27:18:448 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+07:27:18:854 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:27:23:450 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:27:23:452 [main] INFO  testcases.orangeHRM.TC06_OrangeHRM_Goals - Logged in with the Employee credentials
+07:27:45:381 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:27:45:382 [main] INFO  utilities.Log - X
+07:27:45:383 [main] INFO  utilities.Log - X

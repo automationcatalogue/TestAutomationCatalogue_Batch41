@@ -47,7 +47,7 @@ public class TC11_DemoWebshop_ReOrder {
 
     @Parameters("{testID}")
     @BeforeClass
-    public void prerequisite_setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
+    public void prerequisite_setup(@Optional(Config.ReOrderRequestTestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC11_DemoWebshop_ReOrder.class.getName());
         wbk= ExcelUtils.setExcelFilePath();
         sheetName = "DemoWebshop_ReOrder";

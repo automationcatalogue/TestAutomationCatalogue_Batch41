@@ -38,7 +38,7 @@ public class TC14_DemoWebshop_ApplyDiscount {
 
     @Parameters("{testID}")
     @BeforeClass
-    public void prerequisite_setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
+    public void prerequisite_setup(@Optional(Config.ApplyDiscountRequestTestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC14_DemoWebshop_ApplyDiscount.class.getName());
         wbk= ExcelUtils.setExcelFilePath();
         sh = wbk.getSheet("DemoWebshop_ApplyDiscount");

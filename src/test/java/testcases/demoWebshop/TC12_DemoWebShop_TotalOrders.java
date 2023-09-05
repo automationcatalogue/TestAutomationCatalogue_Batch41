@@ -48,7 +48,7 @@ public class TC12_DemoWebShop_TotalOrders {
 
     @Parameters("{testID}")
     @BeforeClass
-    public void prerequisite_setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
+    public void prerequisite_setup(@Optional(Config.TotalOrdersRequestTestCase_ID) String testID) throws Exception {
         wbk= ExcelUtils.setExcelFilePath();
         String sheetName="DemoWebShop_TotalOrders";
         int rowNum = ExcelUtils.getRowNumber(testID,sheetName);

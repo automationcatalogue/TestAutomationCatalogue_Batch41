@@ -29,7 +29,7 @@ public class TC10_DemoWebShop_CreateAddress {
 
     @Parameters("{testID}")
     @BeforeClass
-    public void prerequisite_setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
+    public void prerequisite_setup(@Optional(Config.CreateAddressRequestTestCase_ID) String testID) throws Exception {
         wbk = ExcelUtils.setExcelFilePath();
         sheetName = "DemoWebshop_CreateAddress";
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);

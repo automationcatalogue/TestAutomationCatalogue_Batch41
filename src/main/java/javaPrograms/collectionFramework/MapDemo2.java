@@ -13,16 +13,16 @@ public class MapDemo2 {
         for(int i=0;i<empNames.length;i++){
             map.put(empNames[i],empSalaries[i]);
         }
-        System.out.println(map);
+        //System.out.println(map);
         map.put("Automation","Testing");
-        System.out.println(map);
+        //System.out.println(map);
 
         Object ob = map.remove("Sunitha");
-        System.out.println(ob);
-        System.out.println(map);
+       // System.out.println(ob);
+        //System.out.println(map);
 
         map.replace("Lavanya",650000,"75000");
-        System.out.println(map);
+        //System.out.println(map);
 
         return map;
 

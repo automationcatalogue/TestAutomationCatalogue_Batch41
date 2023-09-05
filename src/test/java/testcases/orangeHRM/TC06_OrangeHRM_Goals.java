@@ -8,12 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
-import testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart;
 import utilities.*;
 
 import java.time.Duration;
 
-public class TC06_orangeHRM_Goals {
+public class TC06_OrangeHRM_Goals {
     XSSFWorkbook wbk;
     int row; int row_index;
     String userName;
@@ -29,12 +28,12 @@ public class TC06_orangeHRM_Goals {
     static String supervisor_ActualUserName;
     static String firstGoal_status; static String secondGoal_status; static String thirdGoal_status;
     static String sheetName;
-    static Logger log = LogManager.getLogger(TC06_orangeHRM_Goals.class);
-
+    static Logger log = LogManager.getLogger(TC06_OrangeHRM_Goals.class);
+    static WebDriver driver;
+    @BeforeMethod
     @Parameters("{testID}")
-    @BeforeClass
-    public void prerequisite_Setup(@Optional(Config.TestCase_ID) String testID) throws Exception{
-        Log.startTestCase(TC06_orangeHRM_Goals.class.getName());
+    public void prerequisite_Setup(@Optional(Config.GoalsRequestTestCase_ID) String testID) throws Exception{
+        Log.startTestCase(TC06_OrangeHRM_Goals.class.getName());
         wbk= ExcelUtils.setExcelFilePath();
         sheetName = "OrangeHRM_Goals";
         row = ExcelUtils.getRowNumber(testID,sheetName);
@@ -52,12 +51,12 @@ public class TC06_orangeHRM_Goals {
     @Test
     @Parameters({"browserName"})
     public void OrangeHRM_Goals(@Optional("chrome") String browserName) throws Exception {
-        WebDriver driver = CommonUtils.browserLaunch(browserName);
+        driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        driver.get("https://seleniumautom-trials710.orangehrmlive.com");
+        driver.get("https://automationo-trials710.orangehrmlive.com");
 
         OrangeHRM_LoginPage.login(userName,passWord);
         String employee_name = employeeName;
@@ -129,8 +128,6 @@ public class TC06_orangeHRM_Goals {
 
         //Logging out from Employee Credentials
         OrangeHRM_HomePage.clickLogout();
-
-        driver.quit();
     }
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
@@ -157,6 +154,7 @@ public class TC06_orangeHRM_Goals {
             ExcelUtils.setCellData("SKIPPED", "Index",row_index, Config.col_Status);
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
         }
+        driver.quit();
         ExcelUtils.closeExcelFile();
         Log.endTestCase();
     }

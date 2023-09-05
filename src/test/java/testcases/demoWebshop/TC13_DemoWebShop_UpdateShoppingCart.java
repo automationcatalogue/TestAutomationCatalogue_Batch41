@@ -34,7 +34,7 @@ public class TC13_DemoWebShop_UpdateShoppingCart {
 
     @Parameters("{testID}")
     @BeforeClass
- public void prerequisite_Setup(@Optional(Config.TestCase_ID) String testID) throws Exception {
+ public void prerequisite_Setup(@Optional(Config.UpdateShoppingCartRequestTestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC13_DemoWebShop_UpdateShoppingCart.class.getName());
      wbk= ExcelUtils.setExcelFilePath();
      sheetName = "DemoWebshop_UpdateShoppingCart";
