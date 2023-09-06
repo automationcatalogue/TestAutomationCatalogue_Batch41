@@ -19,22 +19,17 @@ import java.time.Duration;
 
 
 public class TC05_OrangeHRM_TravelRequest {
-
-    static FileInputStream fis;
     static XSSFWorkbook wbk;
-    static XSSFSheet sht;
     static int rowNum, rowNum_Index;
-    static XSSFCell username_cell, password_cell, newPassword_cell, employeeName_Cell;
-    static XSSFCell currency_cell, destination_cell, travelFrom_cell, travelTO_cell, expenseType_cell, currencyPaidIn_cell, amount_cell, paidBy_cell, travelReqId_cell, reqStatus_cell;
     static String userName, pswd, newPassword, currency, destination, travelFrom, travelTo, expenseType, currencyPaidIn, paidBy, travelReqId, reqStatus;
-    static String projectPath, employeeName, supervisor_username;
-    static FileOutputStream fos;
+    static String employeeName, supervisor_username;
     static String amount;
     static String Id, Status;
     static String status;
     static String request_id;
     static String requestStatus;
     static String sheetName;
+    static String employee_UserName;
     static String supervisor_name;
     static Logger log = LogManager.getLogger(TC04_OrangeHRM_EditEmployee.class);
     static WebDriver driver;
@@ -58,7 +53,6 @@ public class TC05_OrangeHRM_TravelRequest {
         amount = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_amount);
         paidBy = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_paidBy);
         employeeName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_employeeName);
-
     }
 
     @Test
@@ -67,43 +61,29 @@ public class TC05_OrangeHRM_TravelRequest {
         driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-
-        driver.get("https://seleniumautom-trials710.orangehrmlive.com");
+        driver.get("https://automationo-trials710.orangehrmlive.com");
         System.out.println("OrangeHRM website is launched");
 
         //logged in as admin
         OrangeHRM_LoginPage.login(userName, pswd);
-
-        //title verification
         OrangeHRM_HomePage.verifyTitle();
         OrangeHRM_HomePage.clickHrAdministrationLink();
         OrangeHRM_HRAdministrationPage.clickOnUsersLink();
-
-        //select a first employee from employee list and change password
-        OrangeHRM_UsersPage.getEmployeeDetails();
+        employee_UserName = OrangeHRM_UsersPage.getEmployeeDetails();
         OrangeHRM_UsersPage.changeEmployeePassword(newPassword);
-
-        // find supervisor of the employee *** should it return sup name???
-
-
         OrangeHRM_HomePage.clickEmployeeManagementLink();
-
         supervisor_name = OrangeHRM_EmployeeManagementPage.finding_supervisorName(employeeName);
         OrangeHRM_HomePage.clickHrAdministrationLink();
         supervisor_username = OrangeHRM_UsersPage.username_Supervisor(supervisor_name);
-
         OrangeHRM_UsersPage.changeSupervisorPassword(supervisor_name, newPassword);
         OrangeHRM_LogoutPage.logout();
 
-
         //Login to employee's account, create and submit the travel request
-        OrangeHRM_LoginPage.login_employee(OrangeHRM_UsersPage.userName, newPassword);
+        OrangeHRM_LoginPage.login_employee(employee_UserName, newPassword);
         OrangeHRM_HomePage.clickTRavelExpLink();
         CommonUtils.switchToiFrame(OrangeHRM_TravelExpensePage.switchto_Iframe);
         OrangeHRM_TravelExpensePage.clickAddTravelExp();
-        OrangeHRM_TravelExpensePage.selectcurrency(currency);
+        OrangeHRM_TravelExpensePage.selectCurrency(currency);
         OrangeHRM_TravelExpensePage.addTravelinfo();
         OrangeHRM_TravelExpensePage.destination(destination);
         OrangeHRM_TravelExpensePage.travelFrom(travelFrom);
@@ -115,7 +95,6 @@ public class TC05_OrangeHRM_TravelRequest {
         OrangeHRM_TravelExpensePage.amount(amount);
         OrangeHRM_TravelExpensePage.selectPaidby(paidBy);
         OrangeHRM_TravelExpensePage.submit_travelexp();
-
         request_id = OrangeHRM_TravelExpensePage.reqestId();
         requestStatus = OrangeHRM_TravelExpensePage.request_Status();
         OrangeHRM_LogoutPage.logout();
@@ -130,17 +109,13 @@ public class TC05_OrangeHRM_TravelRequest {
         OrangeHRM_TravelExpensePage.supervisor_approval();
         OrangeHRM_LogoutPage.logout();
         driver.switchTo().defaultContent();
-
-        OrangeHRM_LoginPage.login(OrangeHRM_UsersPage.userName, newPassword);
+        OrangeHRM_LoginPage.login(employee_UserName, newPassword);
         OrangeHRM_HomePage.clickTRavelExpLink();
         CommonUtils.switchToiFrame(OrangeHRM_TravelExpensePage.switchto_Iframe);
-
         Id = OrangeHRM_TravelExpensePage.updatedStatus(OrangeHRM_TravelExpensePage.list_travelReqId, request_id);
         System.out.println("Request is id " + Id);
-
         Status = OrangeHRM_TravelExpensePage.getStatus(OrangeHRM_TravelExpensePage.list_travelReqId, request_id);
         System.out.println("Status of the request is " + status);
-
         OrangeHRM_LogoutPage.logout();
         driver.switchTo().defaultContent();
 
@@ -154,20 +129,14 @@ public class TC05_OrangeHRM_TravelRequest {
         driver.switchTo().defaultContent();
 
         //login as Employee to check the final status
-
-        OrangeHRM_LoginPage.login(OrangeHRM_UsersPage.userName, newPassword);
+        OrangeHRM_LoginPage.login(employee_UserName, newPassword);
         OrangeHRM_HomePage.clickTRavelExpLink();
         CommonUtils.switchToiFrame(OrangeHRM_TravelExpensePage.switchto_Iframe);
-
         Id = OrangeHRM_TravelExpensePage.updatedStatus(OrangeHRM_TravelExpensePage.list_travelReqId, request_id);
         System.out.println("Request is id " + Id);
-
         Status = OrangeHRM_TravelExpensePage.getStatus(OrangeHRM_TravelExpensePage.list_travelReqId, request_id);
         System.out.println("Status of the request is " + status);
-
         OrangeHRM_LogoutPage.logout();
-
-
     }
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
@@ -191,6 +160,5 @@ public class TC05_OrangeHRM_TravelRequest {
         ExcelUtils.closeExcelFile();
         log.info("ExcelFile reading is closed");
         Log.endTestCase();
-
     }
 }

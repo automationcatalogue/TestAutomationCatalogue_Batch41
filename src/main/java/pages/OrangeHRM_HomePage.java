@@ -40,27 +40,33 @@ public class OrangeHRM_HomePage {
         log.info("Employee Management is selected");
     }
 
-    public static void clickHrAdministrationLink() throws Exception{
+    public static void clickHrAdministrationLink() throws Exception {
 
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(link_HRAdministration).click();
     }
 
-        public static void verify_empName(String empName){
-        WebDriver driver=BaseClass.getDriver();
-        String Employee_Name=driver.findElement(lbl_ProfileName).getText();
-            String expected_name=empName;
-            if(Employee_Name.equalsIgnoreCase(expected_name)){
-                log.info("UserName is matched and verified");
-            }else {
-                log.info("UserName is not matched");
-            }
+    public static void verify_empName(String empName) {
+        WebDriver driver = BaseClass.getDriver();
+        String Employee_Name = driver.findElement(lbl_ProfileName).getText();
+        String expected_name = empName;
+        if (Employee_Name.equalsIgnoreCase(expected_name)) {
+            log.info("UserName is matched and verified");
+        } else {
+            log.info("UserName is not matched");
         }
+    }
 
-        public static void select_Performance(){
-            WebDriver driver = BaseClass.getDriver();
+    public static void selectPerformance() {
+        WebDriver driver = BaseClass.getDriver();
+        try{
             driver.findElement(OrangeHRM_HomePage.btn_More).click();
-            driver.findElement(OrangeHRM_HomePage.link_Performance).click();
+            log.info("More button is visible and clicked");
+        }catch (Exception e){
+            log.info("More button is not visible");
+        }
+        driver.findElement(OrangeHRM_HomePage.link_Performance).click();
+        log.info("Performance link is clicked");
     }
 
     public static void select_MyGoals() {
@@ -69,7 +75,8 @@ public class OrangeHRM_HomePage {
         driver.findElement(OrangeHRM_HomePage.link_MyGoals).click();
 
     }
-    public static void clickTRavelExpLink(){
+
+    public static void clickTRavelExpLink() {
 
         WebDriver driver = BaseClass.getDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;

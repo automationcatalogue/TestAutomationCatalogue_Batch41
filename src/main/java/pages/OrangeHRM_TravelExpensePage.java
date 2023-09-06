@@ -86,17 +86,29 @@ public class OrangeHRM_TravelExpensePage {
 
     public static void clickAddTravelExp() {
         WebDriver driver = BaseClass.getDriver();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(btn_travelRequestAdd));
+        JavascriptExecutor js = (JavascriptExecutor)driver;
 
-        driver.findElement(OrangeHRM_TravelExpensePage.btn_travelRequestAdd).click();
+        WebElement element_TravelRequestAdd = driver.findElement(btn_travelRequestAdd);
+        js.executeScript("arguments[0].click();",element_TravelRequestAdd);
         System.out.println("Add button is selected to submit travel expense");
-
     }
 
-    public static void selectcurrency(String currency) {
+    public static void selectCurrency(String currency) throws Exception{
         WebDriver driver = BaseClass.getDriver();
-        driver.findElement(OrangeHRM_TravelExpensePage.drpdown_Currency).click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(drpdown_Currency));
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+
+        WebElement element_Currency = driver.findElement(drpdown_Currency);
+        js.executeScript("arguments[0].click();",element_Currency);
         System.out.println("Currency Dropdown is clicked");
+
+        Thread.sleep(2000);
         if (currency.equalsIgnoreCase("AED - Utd. Arab Emir. Dirham")) {
+
             driver.findElement(OrangeHRM_TravelExpensePage.currency_AED).click();
             System.out.println("Arab Emir. Dirham is selected");
         } else if (currency.equalsIgnoreCase("CAD - Canadian Dollar")) {
@@ -350,17 +362,17 @@ public class OrangeHRM_TravelExpensePage {
         System.out.println("Request Status is matched");
     }
 
-    public static void finalApproval() {
+    public static void finalApproval() throws Exception{
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_TravelExpensePage.btn_approve).click();
         System.out.println("Approved the Expense request");
+        Thread.sleep(2000);
         driver.findElement(OrangeHRM_TravelExpensePage.btn_oktoConfirm).click();
         System.out.println("Clicked on OK");
     }
 
     public static String updatedStatus(By locator, String data) {
         WebDriver driver = BaseClass.getDriver();
-
         List<WebElement> list_Elements = driver.findElements(locator);
         for (WebElement element : list_Elements) {
             String elementText = element.getText();

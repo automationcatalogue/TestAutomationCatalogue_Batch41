@@ -28,17 +28,14 @@ public class OrangeHRM_UsersPage {
     public static String userName=null;
     public static String employeeName;
     static Logger log = LogManager.getLogger(OrangeHRM_UsersPage.class);
-    public static void getEmployeeDetails(){
+    public static String getEmployeeDetails(){
         WebDriver driver = BaseClass.getDriver();
         userName = driver.findElement(OrangeHRM_UsersPage.link_firstUserName).getText();
         log.info("First UserName from the Users List is :" + userName);
 
         driver.findElement(OrangeHRM_UsersPage.icon_edit).click();
         log.info("Clicked on edit button");
-
-        //employeeName=driver.findElement(OrangeHRM_UsersPage.txtbx_employeeName).getText();
-        //System.out.println(employeeName);
-
+        return userName;
     }
 
     public static void getSupervisorDetails(){
