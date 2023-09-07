@@ -64,9 +64,9 @@ public class MasterSuiteDriverScript {
                 test.setParameters(parameters);
                 List<XmlClass> classes=new ArrayList<>();
                 if(sTestName.contains("OrangeHRM")){
-                    classes.add(new XmlClass("testcases.orangeHRM"+sTestName));
+                    classes.add(new XmlClass(sTestName));
                 }else{
-                    classes.add(new XmlClass("testcases.demoWebshop."+sTestName));
+                    classes.add(new XmlClass(sTestName));
                 }
                 test.setXmlClasses(classes);
             }

@@ -2,14 +2,8 @@ package testcases.demoWebshop;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.DemoWebshop_CheckoutPage;
@@ -18,32 +12,19 @@ import pages.DemoWebshop_CartPage;
 import pages.DemoWebshop_OrderInformationPage;
 import pages.DemoWebShop_OrdersPage;
 import pages.DemoWebshop_HomePage;
-import testcases.orangeHRM.TC02_OrangeHRM_AddEmployee;
 import utilities.*;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.time.Duration;
 
 public class TC11_DemoWebshop_ReOrder {
 
-    static FileInputStream fis;
     static XSSFWorkbook wbk;
-    static XSSFSheet sh;
-    static XSSFRow row;
-    static XSSFCell cell_userName;
     static String userName;
-    static XSSFCell cell_password;
     static String password;
-    static XSSFCell cell_OrderNumber;
     static String orderNumber;
-    static FileOutputStream fos;
-    static String projectPath;
     static String sheetName;
     static int rowNum_testCase;
     static int rowNum_Index;
     static Logger log = LogManager.getLogger(TC11_DemoWebshop_ReOrder.class);
+    static WebDriver driver;
 
     @Parameters("{testID}")
     @BeforeClass
@@ -61,7 +42,7 @@ public class TC11_DemoWebshop_ReOrder {
     @Parameters({"browserName"})
     public static void ReOrder(@Optional("chrome") String browserName) throws Exception {
 
-        WebDriver driver = CommonUtils.browserLaunch(browserName);
+        driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
 
         driver.get("https://demowebshop.tricentis.com/");
@@ -84,11 +65,8 @@ public class TC11_DemoWebshop_ReOrder {
         DemoWebshop_CheckoutPage.clickPaymentMethodBtn();
         DemoWebshop_CheckoutPage.clickPaymentInformationBtn();
         DemoWebshop_CheckoutPage.clickConfirmOrderBtn();
-        DemoWebshop_CheckoutPage.getOrderNumber();
-
+        orderNumber=DemoWebshop_CheckoutPage.getOrderNumber();
         DemoWebshop_HomePage.logout();
-        driver.close();
-
     }
 
     @AfterMethod
@@ -112,6 +90,9 @@ public class TC11_DemoWebshop_ReOrder {
             ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
         }
+
+        driver.quit();
         ExcelUtils.closeExcelFile();
+        Log.endTestCase();
     }
 }

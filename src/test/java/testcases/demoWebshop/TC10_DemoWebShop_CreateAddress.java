@@ -1,22 +1,12 @@
 package testcases.demoWebshop;
 
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import pages.DemoWebshop_AddressesPage;
 import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
 import utilities.*;
-
-import java.io.FileInputStream;
-import java.util.List;
 
 public class TC10_DemoWebShop_CreateAddress {
     static XSSFWorkbook wbk; static String sheetName;
@@ -26,9 +16,10 @@ public class TC10_DemoWebShop_CreateAddress {
     static String City; static String Address1;static String Address2;
     static String ZipPostalCode;static String PhoneNumber;static String FaxNumber;
     static int rowNum; static int row_index;
+    static WebDriver driver;
 
+    @BeforeMethod
     @Parameters("{testID}")
-    @BeforeClass
     public void prerequisite_setup(@Optional(Config.CreateAddressRequestTestCase_ID) String testID) throws Exception {
         wbk = ExcelUtils.setExcelFilePath();
         sheetName = "DemoWebshop_CreateAddress";
@@ -47,12 +38,12 @@ public class TC10_DemoWebShop_CreateAddress {
         PhoneNumber = RandomGenerator.getRandomData("phoneNumber");
         FaxNumber = RandomGenerator.getRandomNumeric(8);
     }
+
     @Test
     @Parameters({"browserName"})
-    public void login(@Optional("chrome") String browserName) throws Exception {
-        WebDriver driver = CommonUtils.browserLaunch(browserName);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-
+    public void createAddress(@Optional("chrome") String browserName) throws Exception {
+        driver = CommonUtils.browserLaunch(browserName);
+        BaseClass ob = new BaseClass(driver);
         driver.get("https://demowebshop.tricentis.com/");
         System.out.println("DemoWebShop Website is launched");
 
@@ -77,8 +68,6 @@ public class TC10_DemoWebShop_CreateAddress {
         DemoWebshop_HomePage.logOut();
 
         Thread.sleep(6000);
-
-        driver.quit();
     }
 
     @AfterMethod
@@ -110,6 +99,8 @@ public class TC10_DemoWebShop_CreateAddress {
             ExcelUtils.setCellData("SKIPPED", "Index",row_index, Config.col_Status);
             System.out.println("TestCase is SKIPPED and status is updated in Excel sheet");
         }
+        driver.quit();
         ExcelUtils.closeExcelFile();
+        Log.endTestCase();
     }
 }

@@ -1063,3 +1063,472 @@
 08:16:30:297 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
 08:16:30:299 [main] INFO  utilities.Log - X
 08:16:30:299 [main] INFO  utilities.Log - X
+06:40:07:934 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:40:08:112 [main] INFO  utilities.Log - X
+06:40:08:114 [main] INFO  utilities.Log - X
+06:43:54:807 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:43:54:822 [main] INFO  utilities.Log - X
+06:43:54:823 [main] INFO  utilities.Log - X
+06:45:57:658 [main] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+06:46:02:579 [main] INFO  pages.DemoWebshop_HomePage - clicked on the email.id
+06:46:08:289 [main] INFO  pages.DemoWebshop_HomePage - clicked on Address 
+06:46:11:119 [main] INFO  pages.DemoWebshop_HomePage - Clicked on the Add New Button
+06:46:11:856 [main] INFO  pages.DemoWebshop_HomePage - Entered Random First Name
+06:46:13:289 [main] INFO  pages.DemoWebshop_HomePage - Entered Random last name
+06:46:14:925 [main] INFO  pages.DemoWebshop_HomePage - Entered Random Email
+06:46:16:284 [main] INFO  pages.DemoWebshop_HomePage - Entered Random company name
+06:46:17:410 [main] INFO  pages.DemoWebshop_HomePage - India is selected from the Country drop-down
+06:46:19:383 [main] INFO  pages.DemoWebshop_HomePage - Entered Random city
+06:46:20:411 [main] INFO  pages.DemoWebshop_HomePage - Entered Random Address1
+06:46:21:876 [main] INFO  pages.DemoWebshop_HomePage - Entered Random Address2
+06:46:22:741 [main] INFO  pages.DemoWebshop_HomePage - Entered Random Zip code
+06:46:23:728 [main] INFO  pages.DemoWebshop_HomePage - Entered Random Phone number
+06:46:24:234 [main] INFO  pages.DemoWebshop_HomePage - Entered Fax Number
+06:46:30:325 [main] INFO  pages.DemoWebshop_HomePage - Clicked on Save Button
+06:46:34:938 [main] INFO  pages.DemoWebshop_HomePage - clicked on Address 
+06:46:36:764 [main] INFO  pages.DemoWebshop_HomePage - Address Creation is not successful
+06:46:38:298 [main] INFO  pages.DemoWebshop_HomePage - log out is clicked
+06:47:12:974 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:47:12:975 [main] INFO  utilities.Log - X
+06:47:12:975 [main] INFO  utilities.Log - X
+06:51:16:823 [main] INFO  utilities.Log - *****************************************************************
+06:51:16:901 [main] INFO  utilities.Log - **********testcases.demoWebshop.TC11_DemoWebshop_ReOrder************
+06:51:16:904 [main] INFO  utilities.Log - ******************************************************************
+06:51:48:567 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Demo website is loaded
+06:51:48:598 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Title of the page is:Demo Web Shop
+06:51:50:352 [main] INFO  pages.DemoWebshop_HomePage - Login Link is clicked
+06:51:51:739 [main] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+06:52:00:893 [main] INFO  pages.DemoWebshop_HomePage - Email Link is clicked
+06:52:04:720 [main] INFO  pages.DemoWebShop_OrdersPage - Order link is clicked
+06:52:07:531 [main] INFO  pages.DemoWebShop_OrdersPage - Order details button is clicked
+06:52:10:054 [main] INFO  pages.DemoWebshop_OrderInformationPage - Re-order button is clicked
+06:52:11:138 [main] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+06:52:15:416 [main] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+06:52:16:087 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+06:52:17:084 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+06:52:17:936 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+06:52:18:857 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+06:52:19:572 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+06:52:20:451 [main] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+06:52:22:907 [main] INFO  pages.DemoWebshop_CheckoutPage - order number is generated Order number: 1505330
+06:52:24:365 [main] INFO  pages.DemoWebshop_HomePage - log out is clicked
+06:52:26:493 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Order number: 1505330 is written back to the Excel file
+06:52:27:353 [main] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - TestCase is Passed and status is updated in Excel sheet
+06:52:30:191 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:52:30:191 [main] INFO  utilities.Log - X
+06:52:30:191 [main] INFO  utilities.Log - X
+06:57:00:231 [main] INFO  utilities.Log - *****************************************************************
+06:57:00:256 [main] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+06:57:00:258 [main] INFO  utilities.Log - ******************************************************************
+06:57:32:888 [main] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+06:57:37:346 [main] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+06:57:39:743 [main] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+06:57:40:059 [main] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+06:57:41:327 [main] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+06:57:44:086 [main] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+06:57:47:708 [main] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+06:57:50:017 [main] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+06:57:50:561 [main] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+06:57:51:316 [main] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+06:57:51:521 [main] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+06:57:52:433 [main] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+06:57:54:609 [main] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+06:57:55:227 [main] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+06:57:55:331 [main] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+06:57:55:461 [main] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+06:57:55:605 [main] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+06:57:56:426 [main] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+06:57:58:875 [main] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+06:57:59:120 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+06:57:59:818 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+06:58:00:360 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+06:58:00:759 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+06:58:01:154 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+06:58:01:654 [main] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+06:58:03:446 [main] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505331
+06:58:04:581 [main] INFO  pages.DemoWebshop_HomePage - log out is clicked
+06:58:04:597 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:58:04:598 [main] INFO  utilities.Log - X
+06:58:04:599 [main] INFO  utilities.Log - X
+06:58:06:312 [main] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505331 is written back to the Excel file
+06:58:06:742 [main] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+06:58:09:969 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:58:09:969 [main] INFO  utilities.Log - X
+06:58:09:969 [main] INFO  utilities.Log - X
+07:02:34:582 [main] INFO  utilities.Log - *****************************************************************
+07:02:34:636 [main] INFO  utilities.Log - **********testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount************
+07:02:34:640 [main] INFO  utilities.Log - ******************************************************************
+07:05:42:590 [main] INFO  utilities.Log - *****************************************************************
+07:05:42:616 [main] INFO  utilities.Log - **********testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount************
+07:05:42:617 [main] INFO  utilities.Log - ******************************************************************
+07:06:06:979 [main] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - Demo website is loaded
+07:06:07:338 [main] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - Title of the page is:Demo Web Shop
+07:06:10:366 [main] INFO  pages.DemoWebshop_HomePage - Login Link is clicked
+07:06:12:217 [main] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+07:06:16:253 [main] INFO  pages.DemoWebshop_BooksPage - Books link is clicked
+07:06:16:658 [main] INFO  pages.DemoWebshop_BooksPage - Add to cart button is clicked
+07:06:18:223 [main] INFO  pages.DemoWebshop_HomePage - Shopping cart link is clicked
+07:06:18:468 [main] INFO  pages.DemoWebshop_CartPage - value of total:10.00
+07:06:18:910 [main] INFO  pages.DemoWebshop_CartPage - coupon test box is clicked
+07:06:19:338 [main] INFO  pages.DemoWebshop_CartPage - coupon code is Entered
+07:06:20:824 [main] INFO  pages.DemoWebshop_CartPage - ApplyCoupon button is clicked
+07:06:21:091 [main] INFO  pages.DemoWebshop_CartPage - message:The coupon code was applied
+07:06:21:093 [main] INFO  pages.DemoWebshop_CartPage - Coupon applied successfully
+07:06:21:250 [main] INFO  pages.DemoWebshop_CartPage - Applied Discount Amount is :-2.00
+07:06:21:363 [main] INFO  pages.DemoWebshop_CartPage - After discount value of total:8.00
+07:06:21:364 [main] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - Discount value is not correctly applied on Cart
+07:06:21:663 [main] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+07:06:23:621 [main] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+07:06:23:963 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+07:06:24:746 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+07:06:25:376 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+07:06:25:850 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+07:06:26:383 [main] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+07:06:26:875 [main] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+07:06:28:699 [main] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - order number is generated Order number: 1505333
+07:06:30:277 [main] INFO  pages.DemoWebshop_HomePage - log out is clicked
+07:06:30:293 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:06:30:294 [main] INFO  utilities.Log - X
+07:06:30:294 [main] INFO  utilities.Log - X
+07:06:33:539 [main] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - Order number: 1505333 is written back to the Excel file
+07:06:34:644 [main] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - TestCase is Passed and status is updated in Excel sheet
+07:06:38:330 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:06:38:332 [main] INFO  utilities.Log - X
+07:06:38:333 [main] INFO  utilities.Log - X
+07:15:23:878 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:15:23:899 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:15:23:900 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:15:25:239 [TestNG-tests-1] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:15:25:244 [TestNG-tests-1] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:15:52:760 [TestNG-tests-1] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com
+07:15:53:823 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:15:54:278 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:16:12:319 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:16:32:402 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:16:43:022 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:16:45:394 [TestNG-tests-1] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - TestCase is Passed and status is updated in Excel sheet
+07:16:49:423 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:16:49:426 [TestNG-tests-1] INFO  utilities.Log - X
+07:16:49:430 [TestNG-tests-1] INFO  utilities.Log - X
+07:16:49:478 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:16:49:479 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC02_OrangeHRM_AddEmployee************
+07:16:49:482 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:17:09:801 [TestNG-tests-1] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - OrangeHRM website is launched
+07:17:09:834 [TestNG-tests-1] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - Title of the page is:OrangeHRM
+07:17:10:625 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:17:11:225 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:17:22:974 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:17:23:954 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+07:17:28:523 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Add button 
+07:17:36:372 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - First Name is entered
+07:17:38:426 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Last Name is entered
+07:17:38:927 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Location drop-down is clicked 
+07:17:39:581 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - India Office value is selected from a drop-down
+07:17:40:125 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+07:17:47:638 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Marital Status drop-down is clicked
+07:17:48:257 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Single is selected
+07:17:49:278 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Gender drop-down is clicked
+07:17:50:563 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Male is selected
+07:17:51:676 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Next
+07:18:03:533 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Region drop-down is clicked
+07:18:04:515 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Region-1 is selected 
+07:18:05:191 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - FTE drop-down is clicked
+07:18:05:936 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - 0.75 is selected
+07:18:06:583 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Temp Department drop-down is clicked
+07:18:06:584 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - TempDepartment is not found
+07:18:07:657 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - clicked on Save
+07:18:09:338 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+07:18:13:978 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Searched with Employee first and last name
+07:18:19:316 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Element Text is: John Mikel
+07:18:19:318 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Search result is correct
+07:18:19:505 [TestNG-tests-1] INFO  pages.OrangeHRM_AddEmployeePage - Employee id is :0142
+07:18:34:972 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:18:35:521 [TestNG-tests-1] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - 0142 is written back to the Excel file
+07:18:35:957 [TestNG-tests-1] INFO  testcases.orangeHRM.TC02_OrangeHRM_AddEmployee - TestCase is Passed and status is updated in Excel sheet
+07:18:38:899 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:18:38:900 [TestNG-tests-1] INFO  utilities.Log - X
+07:18:38:901 [TestNG-tests-1] INFO  utilities.Log - X
+07:18:38:914 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:18:38:915 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+07:18:38:915 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:18:50:939 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :natalya.jast
+07:18:58:345 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:18:59:002 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:19:12:355 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:19:12:403 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:20:01:032 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+07:20:04:306 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - roosevelt.leuschke is entered as UserName
+07:20:13:189 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+07:20:22:661 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :roosevelt.leuschke
+07:20:23:018 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:20:30:780 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:20:31:152 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+07:20:37:623 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - roosevelt.leuschkeis updated in Excel sheet as New UserName
+07:20:38:046 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+07:20:40:419 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+07:20:40:421 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:20:40:424 [TestNG-tests-1] INFO  utilities.Log - X
+07:20:40:426 [TestNG-tests-1] INFO  utilities.Log - X
+07:20:40:444 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:20:40:446 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+07:20:40:446 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:20:59:015 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+07:20:59:720 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:21:00:707 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:21:12:723 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:21:12:772 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:21:13:934 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+07:21:17:755 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+07:21:30:733 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+07:21:35:554 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+07:21:37:744 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+07:21:39:172 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+07:22:04:392 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Nationality selected as Indian
+07:22:04:734 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on first save button
+07:22:13:218 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Data is successfully Updated
+07:22:15:230 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Allergies radio Button is not clicked
+07:22:15:640 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Hygiene save button
+07:22:21:175 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Hygiene is successfully Updated
+07:22:21:179 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Kosher is not available 
+07:22:21:182 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Vegetarian is not available 
+07:22:22:094 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Dietary Requirements save button
+07:22:28:584 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement is successfully Updated
+07:22:35:686 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:22:36:438 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Passed and status is updated in Excel sheet
+07:22:41:584 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - ExcelFile reading is closed
+07:22:41:586 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:22:41:587 [TestNG-tests-1] INFO  utilities.Log - X
+07:22:41:587 [TestNG-tests-1] INFO  utilities.Log - X
+07:23:06:652 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:23:07:331 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:23:22:731 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:23:22:948 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:23:25:051 [TestNG-tests-1] INFO  pages.OrangeHRM_HRAdministrationPage - clicked on Users button
+07:23:38:678 [TestNG-tests-1] INFO  pages.OrangeHRM_UsersPage - First UserName from the Users List is :aaliyah.haq
+07:23:39:642 [TestNG-tests-1] INFO  pages.OrangeHRM_UsersPage - Clicked on edit button
+07:23:49:035 [TestNG-tests-1] INFO  pages.OrangeHRM_UsersPage - change password check  box is selected
+07:23:54:675 [TestNG-tests-1] INFO  pages.OrangeHRM_UsersPage - entered the new password
+07:23:58:865 [TestNG-tests-1] INFO  pages.OrangeHRM_UsersPage - re-entered the new password
+07:23:59:565 [TestNG-tests-1] INFO  pages.OrangeHRM_UsersPage - Clicked on Save
+07:24:01:101 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+07:24:06:583 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name of the given employee is :Brody Naidu
+07:24:12:573 [TestNG-tests-1] INFO  pages.OrangeHRM_UsersPage - username of the Supervisor is :brody
+07:24:13:963 [TestNG-tests-1] INFO  pages.OrangeHRM_UsersPage - Clicked on Edit button
+07:24:21:033 [TestNG-tests-1] INFO  pages.OrangeHRM_UsersPage - Supervisor's username and password is updated.
+07:24:29:349 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:24:38:363 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Logged into aaliyah.haq portal
+07:24:39:543 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Travel and Expense is selected
+07:25:48:238 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:26:01:364 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Logged in as brody
+07:26:02:232 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Travel and Expense is selected
+07:26:27:528 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:26:32:003 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+07:26:32:808 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:26:40:851 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:26:41:656 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Travel and Expense is selected
+07:26:49:685 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:26:56:796 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:26:57:359 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:27:05:261 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:27:06:709 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Travel and Expense is selected
+07:27:33:073 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:27:38:286 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+07:27:38:762 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:27:45:011 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:27:46:697 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Travel and Expense is selected
+07:27:53:905 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:27:54:402 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Passed and status is updated in Excel sheet
+07:27:57:529 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - ExcelFile reading is closed
+07:27:57:532 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:27:57:532 [TestNG-tests-1] INFO  utilities.Log - X
+07:27:57:533 [TestNG-tests-1] INFO  utilities.Log - X
+07:27:57:544 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:27:57:544 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC06_OrangeHRM_Goals************
+07:27:57:545 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:28:17:384 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:28:17:870 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:28:31:123 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:28:48:871 [TestNG-tests-1] INFO  pages.OrangeHRM_HRAdministrationPage - Username of the Employee is :aaliyah.haq
+07:28:52:912 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+07:29:02:339 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name of the given employee is :Brody Naidu
+07:29:15:643 [TestNG-tests-1] INFO  pages.OrangeHRM_HRAdministrationPage - username of the Supervisor is :brody
+07:29:24:896 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+07:29:25:757 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:29:34:570 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:29:34:571 [TestNG-tests-1] INFO  testcases.orangeHRM.TC06_OrangeHRM_Goals - Logged in with the Employee credentials
+07:29:55:027 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - More button is not visible
+07:29:55:600 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Performance link is clicked
+07:29:56:089 [TestNG-tests-1] INFO  pages.OrangeHRM_PerformancePage - Clicked on Goals link
+07:29:58:217 [TestNG-tests-1] INFO  pages.OrangeHRM_PerformancePage - Clicked on My Goals
+07:30:15:781 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Month is selected as :September
+07:30:18:932 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Year is selected as :2023
+07:30:24:516 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - First goal is successfully created
+07:30:38:016 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Month is selected as :January
+07:30:41:311 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Year is selected as :2024
+07:30:44:294 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Second goal is successfully created
+07:30:58:138 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Month is selected as :March
+07:31:01:470 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Year is selected as :2024
+07:31:09:668 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Third goal is successfully created
+07:31:26:314 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :brody
+07:31:26:685 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:31:33:131 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:31:33:131 [TestNG-tests-1] INFO  testcases.orangeHRM.TC06_OrangeHRM_Goals - Logged in with the supervisor credentials
+07:31:45:706 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Approved all the goals created by the employee
+07:31:53:572 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+07:31:54:038 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:31:59:699 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:31:59:700 [TestNG-tests-1] INFO  testcases.orangeHRM.TC06_OrangeHRM_Goals - Logged in with the employee credentials
+07:32:20:999 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - More button is not visible
+07:32:21:612 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Performance link is clicked
+07:32:22:201 [TestNG-tests-1] INFO  pages.OrangeHRM_PerformancePage - Clicked on Goals link
+07:32:23:941 [TestNG-tests-1] INFO  pages.OrangeHRM_PerformancePage - Clicked on My Goals
+07:32:42:798 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Updated the first goal by 25%
+07:33:19:944 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Updated the second goal by 100%
+07:33:30:445 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Updated the third goal by keeping it in On Hold
+07:33:38:617 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Status of the first goal is :In Progress
+07:33:46:905 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Status of the second goal is :Achieved
+07:33:53:318 [TestNG-tests-1] INFO  pages.OrangeHRM_GoalsPage - Status of the third goal is :On Hold
+07:33:59:488 [TestNG-tests-1] INFO  testcases.orangeHRM.TC06_OrangeHRM_Goals - In Progress is written back to the Excel file
+07:33:59:782 [TestNG-tests-1] INFO  testcases.orangeHRM.TC06_OrangeHRM_Goals - Achieved is written back to the Excel file
+07:34:00:019 [TestNG-tests-1] INFO  testcases.orangeHRM.TC06_OrangeHRM_Goals - On Hold is written back to the Excel file
+07:34:00:547 [TestNG-tests-1] INFO  testcases.orangeHRM.TC06_OrangeHRM_Goals - TestCase is Passed and status is updated in Excel sheet
+07:34:04:142 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:34:04:143 [TestNG-tests-1] INFO  utilities.Log - X
+07:34:04:144 [TestNG-tests-1] INFO  utilities.Log - X
+07:34:22:825 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+07:34:27:394 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - clicked on the email.id
+07:34:31:854 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - clicked on Address 
+07:34:32:941 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on the Add New Button
+07:34:33:384 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Entered Random First Name
+07:34:33:825 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Entered Random last name
+07:34:34:303 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Entered Random Email
+07:34:34:864 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Entered Random company name
+07:34:35:268 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - India is selected from the Country drop-down
+07:34:35:576 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Entered Random city
+07:34:36:150 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Entered Random Address1
+07:34:36:609 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Entered Random Address2
+07:34:36:915 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Entered Random Zip code
+07:34:37:369 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Entered Random Phone number
+07:34:37:774 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Entered Fax Number
+07:34:43:057 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Save Button
+07:34:47:552 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - clicked on Address 
+07:34:49:547 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Address Creation is not successful
+07:34:51:062 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+07:35:02:791 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:35:02:792 [TestNG-tests-1] INFO  utilities.Log - X
+07:35:02:793 [TestNG-tests-1] INFO  utilities.Log - X
+07:35:02:805 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:35:02:808 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC11_DemoWebshop_ReOrder************
+07:35:02:810 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:35:19:149 [TestNG-tests-1] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Demo website is loaded
+07:35:19:321 [TestNG-tests-1] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Title of the page is:Demo Web Shop
+07:35:21:623 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Login Link is clicked
+07:35:23:089 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+07:35:28:609 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Email Link is clicked
+07:35:31:769 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Order link is clicked
+07:35:33:328 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Order details button is clicked
+07:35:34:768 [TestNG-tests-1] INFO  pages.DemoWebshop_OrderInformationPage - Re-order button is clicked
+07:35:35:108 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+07:35:37:209 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+07:35:37:621 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+07:35:38:531 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+07:35:39:110 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+07:35:39:548 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+07:35:40:146 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+07:35:40:595 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+07:35:42:438 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - order number is generated Order number: 1505346
+07:35:43:813 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+07:35:44:009 [TestNG-tests-1] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - Order number: 1505346 is written back to the Excel file
+07:35:44:231 [TestNG-tests-1] INFO  testcases.demoWebshop.TC11_DemoWebshop_ReOrder - TestCase is Passed and status is updated in Excel sheet
+07:35:46:790 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:35:46:790 [TestNG-tests-1] INFO  utilities.Log - X
+07:35:46:790 [TestNG-tests-1] INFO  utilities.Log - X
+07:35:46:797 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:35:46:797 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+07:35:46:797 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:35:47:473 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+07:35:47:475 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+07:36:03:749 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+07:36:12:123 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :415
+07:36:31:353 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60416.195
+07:37:28:492 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 415 is updated as Total Number of Orders
+07:37:28:848 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 415 is updated as Sum Of All Orders
+07:37:29:215 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+07:37:29:912 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:37:29:913 [TestNG-tests-1] INFO  utilities.Log - X
+07:37:29:914 [TestNG-tests-1] INFO  utilities.Log - X
+07:37:29:924 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:37:29:932 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+07:37:29:937 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:37:47:802 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+07:37:53:774 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+07:37:56:501 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+07:37:57:026 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+07:37:59:198 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+07:38:01:566 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+07:38:04:480 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+07:38:07:165 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+07:38:07:439 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+07:38:08:323 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+07:38:08:502 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+07:38:09:243 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+07:38:10:809 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+07:38:11:152 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+07:38:11:233 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+07:38:11:335 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+07:38:11:415 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+07:38:12:286 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+07:38:14:415 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+07:38:15:344 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+07:38:16:494 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+07:38:17:322 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+07:38:18:281 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+07:38:19:081 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+07:38:20:082 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+07:38:22:226 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505347
+07:38:25:295 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+07:38:25:301 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:38:25:302 [TestNG-tests-1] INFO  utilities.Log - X
+07:38:25:303 [TestNG-tests-1] INFO  utilities.Log - X
+07:38:25:703 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505347 is written back to the Excel file
+07:38:26:096 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+07:38:30:440 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:38:30:441 [TestNG-tests-1] INFO  utilities.Log - X
+07:38:30:442 [TestNG-tests-1] INFO  utilities.Log - X
+07:38:30:454 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+07:38:30:455 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount************
+07:38:30:456 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+07:38:41:973 [TestNG-tests-1] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - Demo website is loaded
+07:38:42:105 [TestNG-tests-1] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - Title of the page is:Demo Web Shop
+07:38:43:727 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Login Link is clicked
+07:38:44:759 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+07:38:48:251 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Books link is clicked
+07:38:48:567 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Add to cart button is clicked
+07:38:49:938 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Shopping cart link is clicked
+07:38:50:081 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - value of total:10.00
+07:38:50:381 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - coupon test box is clicked
+07:38:50:623 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - coupon code is Entered
+07:38:51:654 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - ApplyCoupon button is clicked
+07:38:51:754 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - message:The coupon code was applied
+07:38:51:754 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Coupon applied successfully
+07:38:51:833 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Applied Discount Amount is :-2.00
+07:38:51:883 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - After discount value of total:8.00
+07:38:51:883 [TestNG-tests-1] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - Discount value is not correctly applied on Cart
+07:38:52:057 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+07:38:53:789 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+07:38:54:123 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+07:38:54:885 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+07:38:55:340 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+07:38:55:871 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+07:38:56:335 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+07:38:56:839 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+07:38:58:324 [TestNG-tests-1] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - order number is generated Order number: 1505349
+07:39:00:308 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+07:39:00:311 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:39:00:312 [TestNG-tests-1] INFO  utilities.Log - X
+07:39:00:312 [TestNG-tests-1] INFO  utilities.Log - X
+07:39:00:582 [TestNG-tests-1] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - Order number: 1505349 is written back to the Excel file
+07:39:00:773 [TestNG-tests-1] INFO  testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount - TestCase is Passed and status is updated in Excel sheet
+07:39:02:190 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:39:02:191 [TestNG-tests-1] INFO  utilities.Log - X
+07:39:02:191 [TestNG-tests-1] INFO  utilities.Log - X

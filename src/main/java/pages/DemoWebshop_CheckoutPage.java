@@ -51,17 +51,18 @@ public class DemoWebshop_CheckoutPage {
         driver.findElement(btn_ConfirmOrder).click();
         log.info("Confirm button is clicked under Confirm Order");
     }
-    public static void getOrderNumber(){
+    public static String getOrderNumber(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(txt_OrderNumber).getText();
         WebElement element_OrderNumber = driver.findElement(DemoWebshop_CheckoutPage.txt_OrderNumber);
+        String orderNumber="";
         if (element_OrderNumber.isDisplayed()) {
-            String orderNumber = element_OrderNumber.getText();
+            orderNumber = element_OrderNumber.getText();
             log.info("order number is generated " + orderNumber);
         } else {
             log.info("OrderNumber is not generated");
         }
-
+        return orderNumber;
     }
 
     static String orderNumber;

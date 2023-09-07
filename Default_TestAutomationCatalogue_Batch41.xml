@@ -2,25 +2,25 @@
 <suite name="Suite1" verbose="1" parallel="tests" thread-count="1">
     <parameter name="browserName"  value="Chrome"/>
     <test name="test1">
+        <parameter name="testID" value="TC01-01"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC01_OrangeHRM_LoginTest"/>
+        </classes>
+    </test>
+    <test name="test2">
+        <parameter name="testID" value="TC02-01"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC02_OrangeHRM_AddEmployee"/>
+        </classes>
+    </test>
+    <test name="test3">
         <parameter name="testID" value="TC03-01"/>
         <classes>
             <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
         </classes>
     </test>
-    <test name="test2">
-        <parameter name="testID" value="TC03-02"/>
-        <classes>
-            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
-        </classes>
-    </test>
-    <test name="test3">
-        <parameter name="testID" value="TC03-03"/>
-        <classes>
-            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
-        </classes>
-    </test>
     <test name="test4">
-        <parameter name="testID" value="TC03-04"/>
+        <parameter name="testID" value="TC04-01"/>
         <classes>
             <class name="testcases.orangeHRM.TC04_OrangeHRM_EditEmployee"/>
         </classes>

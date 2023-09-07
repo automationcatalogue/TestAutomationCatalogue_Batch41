@@ -8,6 +8,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
 import utilities.*;
@@ -18,44 +19,32 @@ import java.io.FileOutputStream;
 import static testcases.demoWebshop.TC11_DemoWebshop_ReOrder.sheetName;
 
 public class TC14_DemoWebshop_ApplyDiscount {
-    static FileInputStream fis;
     static XSSFWorkbook wbk;
-    static XSSFSheet sh;
-    static XSSFRow row;
-    static XSSFCell cell_userName;
     static String userName;
-    static XSSFCell cell_password;
     static String password;
-    static XSSFCell cell_ApplyCoupon;
     static String ApplyCoupon;
-    static XSSFCell cell_OrderNumber;
     static String orderNumber;
-    static FileOutputStream fos;
-    static String projectPath;
     static int rowNum_testCase;
     static int rowNum_Index;
     static Logger log = LogManager.getLogger(TC14_DemoWebshop_ApplyDiscount.class);
-
+    static WebDriver driver;
+    @BeforeMethod
     @Parameters("{testID}")
-    @BeforeClass
     public void prerequisite_setup(@Optional(Config.ApplyDiscountRequestTestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC14_DemoWebshop_ApplyDiscount.class.getName());
-        wbk= ExcelUtils.setExcelFilePath();
-        sh = wbk.getSheet("DemoWebshop_ApplyDiscount");
-        rowNum_testCase = ExcelUtils.getRowNumber(testID,sheetName);
-        rowNum_Index = ExcelUtils.getRowNumber(testID,"Index");
+        wbk = ExcelUtils.setExcelFilePath();
+        sheetName = "DemoWebshop_ApplyDiscount";
+        rowNum_testCase = ExcelUtils.getRowNumber(testID, sheetName);
+        rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
         userName = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_UserName);
-        password = ExcelUtils.getCellData(sheetName,rowNum_testCase,Config.col_Password);
-        ApplyCoupon = ExcelUtils.getCellData(sheetName,rowNum_testCase,Config.col_ApplyDiscount_Coupon);
-
+        password = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_Password);
+        ApplyCoupon = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_ApplyDiscount_Coupon);
     }
 
     @Test
     @Parameters({"browserName"})
-    //public static WebDriver TotalOrder() {
     public void TotalOrder(@Optional("chrome") String browserName) throws Exception {
-
-        WebDriver driver = CommonUtils.browserLaunch("chrome");
+        driver = CommonUtils.browserLaunch("chrome");
         BaseClass ob = new BaseClass(driver);
 
         driver.get("https://demowebshop.tricentis.com/");
@@ -65,7 +54,7 @@ public class TC14_DemoWebshop_ApplyDiscount {
         log.info("Title of the page is:" + title);
 
         DemoWebshop_HomePage.clickLoginLink();
-        DemoWebshop_LoginPage.login(userName,password);
+        DemoWebshop_LoginPage.login(userName, password);
         DemoWebshop_BooksPage.clickBooksLink();
         DemoWebshop_BooksPage.clickAddToCartBtn();
         DemoWebshop_HomePage.clickShoppingCartLink();
@@ -80,7 +69,7 @@ public class TC14_DemoWebshop_ApplyDiscount {
         if (totalValue_AfterDiscount == (totalValue_BeforeDiscount - discountValue)) {
             log.info("Discount value is correctly applied on Cart and verified");
         } else {
-           log.info("Discount value is not correctly applied on Cart");
+            log.info("Discount value is not correctly applied on Cart");
         }
 
         DemoWebshop_CartPage.clickCheckboxIagree();
@@ -99,28 +88,33 @@ public class TC14_DemoWebshop_ApplyDiscount {
         } else {
             log.info("OrderNumber is not generated");
         }
-
         DemoWebshop_HomePage.logout();
-        driver.close();
-
     }
 
-    @AfterClass
-    public void tearDown() throws Exception {
+    @AfterMethod
+    public void tearDown(ITestResult result) throws Exception {
+        Log.endTestCase();
+        if (result.getStatus() == ITestResult.SUCCESS) {
+            ExcelUtils.setCellData(orderNumber, sheetName, rowNum_testCase, Config.col_ApplyDiscount_OrderNumber);
+            log.info(orderNumber + " is written back to the Excel file");
 
-        cell_OrderNumber = row.getCell(6);
-        if (cell_OrderNumber == null) {
-            cell_OrderNumber = row.createCell(6);
+            ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
+            log.info("TestCase is Passed and status is updated in Excel sheet");
+        } else if (result.getStatus() == ITestResult.FAILURE) {
+            if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
+                ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
+                log.info("TestCase is Failed and status is updated in Excel sheet");
+
+                ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
+                log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
+            }
+        } else if (result.getStatus() == ITestResult.SKIP) {
+            ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
+            log.info("TestCase is SKIPPED and status is updated in Excel sheet");
         }
-        cell_OrderNumber.setCellValue(orderNumber);
-        fos = new FileOutputStream(projectPath + "\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
-        wbk.write(fos);
-       log.info(orderNumber + " is written back to the Excel file");
-
-        fos.close();
-        log.info("ExcelFile Writing is closed");
-        fis.close();
-        log.info("ExcelFile reading is closed");
+        driver.quit();
+        ExcelUtils.closeExcelFile();
+        Log.endTestCase();
     }
 }
 
