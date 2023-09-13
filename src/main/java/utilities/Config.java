@@ -1,6 +1,10 @@
 package utilities;
 
 public class Config {
+
+    public static final String browserName = "Chrome";
+    public static final String url_DemoWebshop = "https://demowebshop.tricentis.com/";
+
     public static final String LoginTestCase_ID = "TC01-01";
     public static final String AddEmployeeTestCase_ID = "TC02-01";
     public static final String AddUserTestCase_ID = "TC03-01";
