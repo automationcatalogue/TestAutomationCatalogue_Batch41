@@ -1532,3 +1532,484 @@
 07:39:02:190 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
 07:39:02:191 [TestNG-tests-1] INFO  utilities.Log - X
 07:39:02:191 [TestNG-tests-1] INFO  utilities.Log - X
+19:47:00:960 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+19:47:00:966 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+19:47:00:966 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+19:47:11:902 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :abel.hilpert
+19:47:14:207 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:47:14:307 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:47:19:742 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:47:19:752 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+19:47:53:761 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+19:47:54:408 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - wanda.morissette is entered as UserName
+19:47:57:290 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+19:48:03:163 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :wanda.morissette
+19:48:03:236 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:48:05:875 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:48:05:958 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+19:48:13:482 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - wanda.morissetteis updated in Excel sheet as New UserName
+19:48:13:630 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+19:48:14:787 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+19:48:14:787 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+19:48:14:787 [TestNG-tests-1] INFO  utilities.Log - X
+19:48:14:787 [TestNG-tests-1] INFO  utilities.Log - X
+19:48:14:810 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+19:48:14:810 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+19:48:14:811 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+19:48:17:599 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :vania.green
+19:48:23:486 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:48:23:597 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:48:29:381 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:48:29:390 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+19:49:01:534 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+19:49:02:279 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - kerstin.williamson is entered as UserName
+19:49:05:205 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+19:49:10:416 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :kerstin.williamson
+19:49:10:491 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:49:13:144 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:49:13:320 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+19:49:20:621 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - kerstin.williamsonis updated in Excel sheet as New UserName
+19:49:20:909 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+19:49:22:307 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+19:49:22:308 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+19:49:22:309 [TestNG-tests-1] INFO  utilities.Log - X
+19:49:22:311 [TestNG-tests-1] INFO  utilities.Log - X
+19:49:22:341 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+19:49:22:341 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+19:49:22:341 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+19:49:25:212 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :keely.quigley
+19:49:30:873 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:49:31:048 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:49:37:437 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:49:37:448 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+19:50:09:365 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+19:50:09:852 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - chadwick.trantow is entered as UserName
+19:50:12:588 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+19:50:18:871 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :chadwick.trantow
+19:50:18:944 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:50:21:472 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:50:21:601 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+19:50:24:203 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - chadwick.trantowis updated in Excel sheet as New UserName
+19:50:24:473 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+19:50:26:224 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+19:50:26:224 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+19:50:26:224 [TestNG-tests-1] INFO  utilities.Log - X
+19:50:26:225 [TestNG-tests-1] INFO  utilities.Log - X
+19:50:26:233 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+19:50:26:234 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+19:50:26:235 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+19:50:28:867 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :tuan.cruickshank
+19:50:35:296 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:50:35:395 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:50:41:579 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:50:41:586 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+19:51:13:466 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+19:51:13:878 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - rico.dietrich is entered as UserName
+19:51:16:592 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+19:51:17:868 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Failed and status is updated in Excel sheet
+19:51:17:964 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Failure Reason is :Title is not matched and status is updated in Excel sheet
+19:51:18:536 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+19:51:18:536 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+19:51:18:536 [TestNG-tests-1] INFO  utilities.Log - X
+19:51:18:537 [TestNG-tests-1] INFO  utilities.Log - X
+19:51:18:549 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+19:51:18:549 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+19:51:18:549 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+19:51:21:140 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :luigi.batz
+19:51:28:301 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:51:28:383 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:51:34:375 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:51:34:383 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+19:52:06:405 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+19:52:06:913 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - jeneva.wilkinson is entered as UserName
+19:52:09:613 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+19:52:15:573 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :jeneva.wilkinson
+19:52:15:653 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:52:18:584 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:52:18:667 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+19:52:25:667 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - jeneva.wilkinsonis updated in Excel sheet as New UserName
+19:52:25:804 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+19:52:26:594 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+19:52:26:594 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+19:52:26:596 [TestNG-tests-1] INFO  utilities.Log - X
+19:52:26:596 [TestNG-tests-1] INFO  utilities.Log - X
+19:52:26:601 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+19:52:26:601 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+19:52:26:602 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+19:52:29:036 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :esteban.fahey
+19:52:34:254 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:52:34:355 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:52:40:026 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:52:40:036 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+19:53:12:069 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+19:53:12:517 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - dick.oreilly is entered as UserName
+19:53:15:203 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+19:53:16:485 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Failed and status is updated in Excel sheet
+19:53:16:570 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Failure Reason is :Title is not matched and status is updated in Excel sheet
+19:53:17:013 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+19:53:17:014 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+19:53:17:014 [TestNG-tests-1] INFO  utilities.Log - X
+19:53:17:015 [TestNG-tests-1] INFO  utilities.Log - X
+19:53:17:019 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+19:53:17:019 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+19:53:17:019 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+19:53:20:137 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :bettyann.bailey
+19:53:25:501 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:53:25:593 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:53:31:915 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:53:31:926 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+19:54:03:980 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+19:54:04:367 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - france.yost is entered as UserName
+19:54:07:175 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+19:54:16:210 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :france.yost
+19:54:16:281 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:54:18:750 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:54:18:847 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+19:54:25:492 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - france.yostis updated in Excel sheet as New UserName
+19:54:25:548 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+19:54:26:558 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+19:54:26:559 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+19:54:26:559 [TestNG-tests-1] INFO  utilities.Log - X
+19:54:26:559 [TestNG-tests-1] INFO  utilities.Log - X
+19:54:26:564 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+19:54:26:564 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+19:54:26:565 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+19:54:29:041 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :jame.kub
+19:54:34:817 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:54:34:909 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:54:40:812 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:54:40:821 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+19:55:12:766 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+19:55:13:250 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - fidela.powlowski is entered as UserName
+19:55:16:014 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+19:55:22:809 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :fidela.powlowski
+19:55:22:879 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:55:25:559 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:55:25:640 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+19:55:31:959 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - fidela.powlowskiis updated in Excel sheet as New UserName
+19:55:32:037 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+19:55:33:023 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+19:55:33:024 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+19:55:33:025 [TestNG-tests-1] INFO  utilities.Log - X
+19:55:33:025 [TestNG-tests-1] INFO  utilities.Log - X
+19:55:33:030 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+19:55:33:030 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+19:55:33:030 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+19:55:35:520 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :dudley.hammes
+19:55:42:116 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+19:55:42:210 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:55:48:751 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:55:48:759 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+19:56:20:772 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+19:56:21:226 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - lonnie.hickle is entered as UserName
+19:56:23:996 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+19:56:30:648 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :lonnie.hickle
+19:56:30:819 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+19:56:34:325 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+19:56:34:402 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+19:56:40:607 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - lonnie.hickleis updated in Excel sheet as New UserName
+19:56:40:700 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+19:56:42:404 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+19:56:42:404 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+19:56:42:405 [TestNG-tests-1] INFO  utilities.Log - X
+19:56:42:405 [TestNG-tests-1] INFO  utilities.Log - X
+19:56:42:421 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+19:56:42:422 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+19:56:42:422 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+19:56:42:938 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+19:56:42:938 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+19:56:42:939 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:53:59:136 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:53:59:145 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+20:53:59:146 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:54:14:861 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :emmett.heaney
+20:54:22:038 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:54:22:222 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:54:29:885 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:54:29:905 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:55:06:030 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+20:55:07:878 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - buck.rice is entered as UserName
+20:55:11:202 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+20:55:19:829 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :buck.rice
+20:55:20:017 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:55:23:429 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:55:23:510 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+20:55:28:244 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - buck.riceis updated in Excel sheet as New UserName
+20:55:28:521 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+20:55:34:088 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+20:55:34:089 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+20:55:34:089 [TestNG-tests-1] INFO  utilities.Log - X
+20:55:34:089 [TestNG-tests-1] INFO  utilities.Log - X
+20:55:34:139 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:55:34:139 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+20:55:34:139 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:55:39:002 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :edward.oreilly
+20:55:45:025 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:55:45:466 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:55:53:423 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:55:53:434 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:56:28:210 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+20:56:29:004 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - asa.grimes is entered as UserName
+20:56:33:814 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+20:56:42:145 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :asa.grimes
+20:56:42:325 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:56:46:887 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:56:47:083 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+20:56:55:863 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - asa.grimesis updated in Excel sheet as New UserName
+20:56:55:979 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+20:57:04:095 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+20:57:04:096 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+20:57:04:096 [TestNG-tests-1] INFO  utilities.Log - X
+20:57:04:096 [TestNG-tests-1] INFO  utilities.Log - X
+20:57:04:115 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:57:04:115 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+20:57:04:115 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:57:11:109 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :jodee.leannon
+20:57:18:336 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:57:18:453 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:57:26:055 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:57:26:066 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:57:59:415 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+20:58:00:200 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - vernon.boyer is entered as UserName
+20:58:03:722 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+20:58:11:020 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :vernon.boyer
+20:58:11:173 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:58:15:193 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:58:15:428 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+20:58:18:308 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - vernon.boyeris updated in Excel sheet as New UserName
+20:58:18:442 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+20:58:25:622 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+20:58:25:623 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+20:58:25:624 [TestNG-tests-1] INFO  utilities.Log - X
+20:58:25:624 [TestNG-tests-1] INFO  utilities.Log - X
+20:58:25:643 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:58:25:644 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+20:58:25:644 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:58:34:684 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :lang.kub
+20:58:41:453 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:58:41:602 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:58:48:979 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:58:48:995 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:59:22:631 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+20:59:23:571 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - earle.spinka is entered as UserName
+20:59:26:856 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+20:59:28:742 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Failed and status is updated in Excel sheet
+20:59:28:846 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Failure Reason is :Title is not matched and status is updated in Excel sheet
+20:59:30:565 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+20:59:30:565 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+20:59:30:565 [TestNG-tests-1] INFO  utilities.Log - X
+20:59:30:567 [TestNG-tests-1] INFO  utilities.Log - X
+20:59:30:573 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:59:30:573 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+20:59:30:573 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:59:38:293 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :lashawn.kertzmann
+20:59:46:716 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:59:46:864 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:59:53:506 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:59:53:516 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+21:00:27:855 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+21:00:28:684 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - maynard.ankunding is entered as UserName
+21:00:31:917 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+21:00:40:044 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :maynard.ankunding
+21:00:40:190 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:00:44:223 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:00:44:392 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+21:00:48:505 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - maynard.ankundingis updated in Excel sheet as New UserName
+21:00:48:684 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+21:00:53:041 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+21:00:53:041 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:00:53:041 [TestNG-tests-1] INFO  utilities.Log - X
+21:00:53:041 [TestNG-tests-1] INFO  utilities.Log - X
+21:00:53:052 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:00:53:053 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+21:00:53:053 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:00:59:522 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :dixie.okeefe
+21:01:08:948 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:01:09:222 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:01:17:616 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:01:17:665 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+21:01:51:178 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+21:01:52:000 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - treasa.friesen is entered as UserName
+21:01:56:041 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+21:01:58:361 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Failed and status is updated in Excel sheet
+21:01:58:514 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Failure Reason is :Title is not matched and status is updated in Excel sheet
+21:02:03:842 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+21:02:03:843 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:02:03:843 [TestNG-tests-1] INFO  utilities.Log - X
+21:02:03:843 [TestNG-tests-1] INFO  utilities.Log - X
+21:02:03:853 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:02:03:853 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+21:02:03:853 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:02:08:568 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :kortney.lindgren
+21:02:14:914 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:02:15:064 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:02:21:673 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:02:21:681 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+21:02:55:015 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+21:02:55:846 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - tabatha.roob is entered as UserName
+21:02:59:224 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+21:03:07:492 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :tabatha.roob
+21:03:07:628 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:03:11:836 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:03:11:951 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+21:03:20:112 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - tabatha.roobis updated in Excel sheet as New UserName
+21:03:20:396 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+21:03:23:129 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+21:03:23:130 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:03:23:130 [TestNG-tests-1] INFO  utilities.Log - X
+21:03:23:130 [TestNG-tests-1] INFO  utilities.Log - X
+21:03:23:162 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:03:23:163 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+21:03:23:163 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:03:33:051 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :stuart.schmidt
+21:03:42:647 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:03:42:795 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:03:49:855 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:03:49:864 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+21:04:23:706 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+21:04:24:465 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - iva.walker is entered as UserName
+21:04:27:926 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+21:04:34:167 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :iva.walker
+21:04:34:313 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:04:38:551 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:04:38:709 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+21:04:46:987 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - iva.walkeris updated in Excel sheet as New UserName
+21:04:47:166 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+21:04:53:564 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+21:04:53:566 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:04:53:567 [TestNG-tests-1] INFO  utilities.Log - X
+21:04:53:567 [TestNG-tests-1] INFO  utilities.Log - X
+21:04:53:587 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:04:53:588 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+21:04:53:588 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:04:58:417 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :sidney.goyette
+21:05:05:236 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+21:05:05:409 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:05:12:795 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:05:12:802 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+21:05:45:996 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+21:05:46:872 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - monika.schuppe is entered as UserName
+21:05:50:195 [TestNG-tests-1] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+21:05:58:161 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :monika.schuppe
+21:05:58:344 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+21:06:02:550 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+21:06:02:826 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+21:06:05:371 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - monika.schuppeis updated in Excel sheet as New UserName
+21:06:05:485 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+21:06:10:384 [TestNG-tests-1] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+21:06:10:385 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:06:10:385 [TestNG-tests-1] INFO  utilities.Log - X
+21:06:10:385 [TestNG-tests-1] INFO  utilities.Log - X
+21:06:10:400 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:06:10:400 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+21:06:10:400 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+16:17:04:953 [main] INFO  utilities.Log - *****************************************************************
+16:17:04:964 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+16:17:04:965 [main] INFO  utilities.Log - ******************************************************************
+16:17:24:076 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :nicolas.stiedemann
+16:17:48:408 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - ExcelFile reading is closed
+16:17:48:414 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+16:17:48:415 [main] INFO  utilities.Log - X
+16:17:48:416 [main] INFO  utilities.Log - X
+16:19:33:609 [main] INFO  utilities.Log - *****************************************************************
+16:19:33:617 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
+16:19:33:618 [main] INFO  utilities.Log - ******************************************************************
+16:19:51:359 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - Randomly generated username is :eli.auer
+16:19:59:509 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+16:19:59:861 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+16:20:08:931 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+16:20:09:609 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+16:20:45:080 [main] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+16:20:45:627 [main] INFO  pages.OrangHRM_AddUserPage - tien.kiehn is entered as UserName
+16:20:48:685 [main] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+16:20:56:353 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :tien.kiehn
+16:20:56:523 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+16:21:00:019 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+16:21:00:448 [main] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+16:21:08:244 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - tien.kiehnis updated in Excel sheet as New UserName
+16:21:08:474 [main] INFO  testcases.orangeHRM.TC03_OrangeHRM_AddUser - TestCase is Passed and status is updated in Excel sheet
+17:50:54:521 [main] INFO  utilities.Log - *****************************************************************
+17:50:54:530 [main] INFO  utilities.Log - **********stepdefinitions.OrangeHRM_StepDefinition************
+17:50:54:530 [main] INFO  utilities.Log - ******************************************************************
+17:51:28:400 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+17:51:29:568 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+17:51:30:000 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+17:51:39:241 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+17:51:39:509 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+17:51:40:498 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+17:51:48:806 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Add button 
+17:51:52:820 [main] INFO  pages.OrangeHRM_AddEmployeePage - First Name is entered
+17:51:53:274 [main] INFO  pages.OrangeHRM_AddEmployeePage - Last Name is entered
+17:51:53:486 [main] INFO  pages.OrangeHRM_AddEmployeePage - Location drop-down is clicked 
+17:51:53:689 [main] INFO  pages.OrangeHRM_AddEmployeePage - India Office value is selected from a drop-down
+17:51:53:865 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+17:51:53:997 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+17:51:55:852 [main] INFO  utilities.Log - *****************************************************************
+17:51:55:852 [main] INFO  utilities.Log - **********stepdefinitions.OrangeHRM_StepDefinition************
+17:51:55:852 [main] INFO  utilities.Log - ******************************************************************
+17:52:15:488 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+17:52:15:895 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+17:52:16:087 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+17:52:22:946 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+17:52:22:979 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+17:52:55:729 [main] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+17:52:56:589 [main] INFO  pages.OrangHRM_AddUserPage - lyman.pouros is entered as UserName
+17:53:00:483 [main] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+17:53:09:093 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :lyman.pouros
+17:53:09:383 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+17:53:13:317 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+17:53:13:452 [main] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+17:56:43:227 [main] INFO  utilities.Log - *****************************************************************
+17:56:43:238 [main] INFO  utilities.Log - **********stepdefinitions.OrangeHRM_StepDefinition************
+17:56:43:238 [main] INFO  utilities.Log - ******************************************************************
+17:57:08:624 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+17:57:09:438 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+17:57:09:618 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+17:57:16:720 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+17:57:16:756 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+17:58:25:861 [main] INFO  utilities.Log - *****************************************************************
+17:58:25:869 [main] INFO  utilities.Log - **********stepdefinitions.OrangeHRM_StepDefinition************
+17:58:25:869 [main] INFO  utilities.Log - ******************************************************************
+17:59:09:452 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+17:59:10:561 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+17:59:10:949 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+17:59:40:146 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+17:59:40:357 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+18:00:14:269 [main] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+18:00:19:407 [main] INFO  pages.OrangHRM_AddUserPage - johnson.baumbach is entered as UserName
+18:00:39:200 [main] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+18:01:09:706 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :johnson.baumbach
+18:01:11:182 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:01:39:574 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:01:51:866 [main] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+18:05:07:567 [main] INFO  utilities.Log - *****************************************************************
+18:05:07:578 [main] INFO  utilities.Log - **********stepdefinitions.OrangeHRM_StepDefinition************
+18:05:07:579 [main] INFO  utilities.Log - ******************************************************************
+18:05:30:959 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+18:05:36:335 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:05:36:549 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:05:44:834 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:05:45:686 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+18:05:46:684 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+18:05:54:070 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Add button 
+18:05:57:021 [main] INFO  pages.OrangeHRM_AddEmployeePage - First Name is entered
+18:05:57:385 [main] INFO  pages.OrangeHRM_AddEmployeePage - Last Name is entered
+18:05:57:527 [main] INFO  pages.OrangeHRM_AddEmployeePage - Location drop-down is clicked 
+18:05:57:665 [main] INFO  pages.OrangeHRM_AddEmployeePage - India Office value is selected from a drop-down
+18:05:57:913 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+18:05:58:018 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+18:05:58:288 [main] INFO  utilities.Log - *****************************************************************
+18:05:58:288 [main] INFO  utilities.Log - **********stepdefinitions.OrangeHRM_StepDefinition************
+18:05:58:288 [main] INFO  utilities.Log - ******************************************************************
+18:06:18:594 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+18:06:18:919 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+18:06:19:098 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:06:25:679 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:06:25:904 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+18:06:59:101 [main] INFO  pages.OrangHRM_AddUserPage - EmployeeName Dropdown element is not visible
+18:06:59:893 [main] INFO  pages.OrangHRM_AddUserPage - andrew.lind is entered as UserName
+18:07:03:857 [main] INFO  pages.OrangHRM_AddUserPage - Save button is clicked
+18:07:12:202 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :andrew.lind
+18:07:12:359 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+18:07:16:474 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+18:07:16:766 [main] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified

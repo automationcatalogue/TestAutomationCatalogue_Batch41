@@ -4,10 +4,10 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        tags = "@AddEmployee",
+        tags = " @OrangeHRM",
         features = "src/test/resources/",
         glue = "stepdefinitions",
-        dryRun = true
+        dryRun = false
         //plugin={"pretty"}
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
