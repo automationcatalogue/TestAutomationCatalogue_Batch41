@@ -53,10 +53,7 @@ public class DemoWebshop_Stepdefintion {
     public void user_enters_phone_number_as_and_fax_number_as(String string, String string2) {
 
     }
-    @When("User Clicks on Save button")
-    public void user_clicks_on_save_button() {
 
-    }
     @Then("User Verifies Address is added")
     public void user_verifies_address_is_added() {
 

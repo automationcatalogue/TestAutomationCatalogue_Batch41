@@ -69,6 +69,18 @@ public class OrangeHRM_AddEmployeePage {
         public static By employee_id= By.xpath("//div[text()='Employee Id: ']/span");
         static Logger log = LogManager.getLogger(OrangeHRM_AddEmployeePage.class);
 
+        public static void enterFirstName_LastName_Location(String firstName, String lastName, String location){
+                WebDriver driver = BaseClass.getDriver();
+                driver.findElement(txtbx_EmpFirstName).sendKeys(firstName);
+                log.info("First Name is entered");
+                driver.findElement(txtbx_EmpLastName).sendKeys(lastName);
+                log.info("Last Name is entered");
+                selectLocation(location);
+                driver.findElement(btn_next).click();
+                log.info("Next button is clicked");
+        }
+
+
         public static void enterFirstNameAndLastName(String firstName, String lastName){
                 WebDriver driver = BaseClass.getDriver();
                 driver.findElement(link_add).click();

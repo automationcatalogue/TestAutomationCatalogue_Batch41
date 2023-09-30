@@ -19,6 +19,8 @@ public class OrangeHRM_EmployeeManagementPage {
     public static By link_EmployeeList =By.xpath("//a[text()='Employee List ']");
     public static By list_employee= By.xpath("//table[@id='employeeListTable']/tbody/tr/td[3]");
     public static By txt_supervisorName=By.xpath(".//following-sibling::td[6]");
+    public static By link_add=By.xpath("//i[text()='add']");
+
     static Logger log = LogManager.getLogger(OrangeHRM_EmployeeManagementPage.class);
 
     public static void personalDetails_firstEmployee(){
@@ -45,6 +47,13 @@ public class OrangeHRM_EmployeeManagementPage {
             }
         }
         return supervisor_name;
+    }
+
+    public static void openAddEmployee() throws Exception{
+        OrangeHRM_HomePage.clickEmployeeManagementLink();
+        WebDriver driver = BaseClass.getDriver();
+        driver.findElement(link_add).click();
+        log.info("Clicked on Add button ");
     }
 }
 
