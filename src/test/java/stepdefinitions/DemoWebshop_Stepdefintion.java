@@ -1,19 +1,26 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import javaPrograms.assignments.Assignment_16.D;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.UsernameAndPassword;
 import org.openqa.selenium.WebDriver;
+import pages.*;
+import seleniumPrograms.sagarTeachings.DemoWebshop_ReOrder;
+import testcases.demoWebshop.TC11_DemoWebshop_ReOrder;
 import testcases.orangeHRM.TC01_OrangeHRM_LoginTest;
 import utilities.BaseClass;
 import utilities.CommonUtils;
 import utilities.Config;
 
+
 public class DemoWebshop_Stepdefintion {
     public static WebDriver driver;
-
+    static Logger log = LogManager.getLogger(DemoWebshop_ReOrder.class);
 
     @Given("User loads DemoWebshop Application")
     public void user_loads_demo_webshop_application() {
@@ -22,9 +29,68 @@ public class DemoWebshop_Stepdefintion {
         driver.get(Config.url_DemoWebshop);
         System.out.println("DemoWebShop Website is launched");
     }
-    @When("User login into DemoWebshop Application with UserName {string} and Password {string}")
-    public void user_login_into_demo_webshop_application_with_user_name_and_password(String string, String string2) {
-
+    @Given("User loads DemoWebshop Application in {string} browser")
+    public void loadDemoWebshopApplication(String browserName) {
+        driver = CommonUtils.browserLaunch(browserName);
+        BaseClass baseClass = new BaseClass(driver);
+        driver.get("https://demowebshop.tricentis.com/");
+        log.info("Demo website is loaded");
+    }
+    @When("User Login into DemoWebshop Application with UserName as {string} and Password as {string}")
+    public void loginDemoWebshop(String userName, String password) {
+        DemoWebshop_LoginPage.login(userName, password);
+    }
+    @Then("User clicks Email link")
+    public void user_clicks_email_link(){
+        DemoWebshop_HomePage.clickEmailLink();
+    }
+    @And("User Clicks on Orders link")
+    public void user_clicks_on_orders_link(){
+        DemoWebShop_OrdersPage.clickLinkOrders();
+    }
+    @And("User Clicks on OrderDetails button")
+    public void user_clicks_on_OrderDetails_button(){
+        DemoWebShop_OrdersPage.clickOrderDetailsBtn();
+    }
+    @Then("User Clicks on ReOrder button")
+    public void user_clicks_on_orderdetails_button(){
+        DemoWebshop_OrderInformationPage.clickReorderBtn();
+    }
+    @And("User Clicks on Iagree button")
+    public void user_clicks_on_iagree_button(){
+        DemoWebshop_CartPage.clickCheckboxIagree();
+    }
+    @And("User Clicks on Checkout button")
+    public void clickscheckoutbutton(){
+        DemoWebshop_CartPage.clickCheckoutBtn();
+    }
+    @When("User Clicks on BillingContinue button")
+    public void clicksbillingcontinuebutton(){
+        DemoWebshop_CheckoutPage.clickBillingContinue();
+    }
+    @Then("User Clicks on ShippingAddress button")
+    public void clickshippingaddressbutton(){
+        DemoWebshop_CheckoutPage.clickShippingAddressBtn();
+    }
+    @And("User Clicks on ShippingMethod button")
+    public void clickshippingmethodbutton(){
+        DemoWebshop_CheckoutPage.clickShippingMethodBtn();
+    }
+    @And("User Clicks on PaymentMethod button")
+    public void click_paymentmethod_button(){
+        DemoWebshop_CheckoutPage.clickPaymentMethodBtn();
+    }
+    @And("User Clicks on PaymentInformation button")
+    public void click_paymentinformation_button(){
+        DemoWebshop_CheckoutPage.clickPaymentInformationBtn();
+    }
+    @When("User Clicks on ConfirmOrder button")
+    public void click_confirmorder_button(){
+        DemoWebshop_CheckoutPage.clickConfirmOrderBtn();
+    }
+    @Then("User Get OrderNumber")
+    public void getordernumber(){
+        DemoWebshop_CheckoutPage.getOrderNumber();
     }
     @Then("User Verifies Successful login of DemoWebshop application")
     public void user_verifies_successful_login_of_demo_webshop_application() {
