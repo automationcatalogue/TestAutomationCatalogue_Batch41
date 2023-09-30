@@ -1,5 +1,9 @@
 @All @DemoWebshop
 Feature: DemoWebshop Application Calculating Total Orders
+
+  Background: PreRequisites of Total Order testcase
+    Given User reads TotalOrder Data from "DemoWebShop_TotalOrders" using TestID "TC12-01"
+
 @TotalOrders
   Scenario: Total Orders count, DateWise Orders display, Sum of All Orders
     Given User loads DemoWebshop Application
