@@ -17,7 +17,6 @@ public class OrangeHRM_LoginPage {
 
     public static void login(String userName, String password) {
         WebDriver driver = BaseClass.getDriver();
-
         driver.findElement(txtbx_userName).sendKeys(userName);
         log.info("UserName is Entered :" + userName);
         driver.findElement(txtbx_Password).sendKeys(password);
