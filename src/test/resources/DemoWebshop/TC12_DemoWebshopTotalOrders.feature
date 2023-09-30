@@ -1,4 +1,11 @@
+@All @DemoWebshop
 Feature: DemoWebshop Application Calculating Total Orders
-
+@TotalOrders
   Scenario: Total Orders count, DateWise Orders display, Sum of All Orders
-    Given User login into DemoWebshop Application
+    Given User loads DemoWebshop Application
+    When User login into DemoWebshop Application with UserName "aarosagarch@gmail.com" and Password "Admin@123"
+    Then User Verifies Successful login of DemoWebshop application
+    When User clicks on Email Address and click on orders link
+    Then User performs Total Orders count
+    And User Performs Sum of All Orders Placed
+    And User displays Sum of orders DateWise

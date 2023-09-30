@@ -53,4 +53,5 @@ public class OrangeHRM_StepDefinition {
         Assert.assertEquals(actualTitle,expectedTitle,"Title of the webpage is not matched");
         System.out.println("Title of the webpage is matched and verified");
     }
+
 }
