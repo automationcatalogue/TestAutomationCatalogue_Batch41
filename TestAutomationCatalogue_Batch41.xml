@@ -2,69 +2,63 @@
 <suite name="Suite1" verbose="1" parallel="tests" thread-count="1">
     <parameter name="browserName"  value="Chrome"/>
     <test name="test1">
-        <parameter name="testID" value="TC03-01"/>
-        <classes>
-            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
-        </classes>
-    </test>
-    <test name="test2">
-        <parameter name="testID" value="TC03-02"/>
-        <classes>
-            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
-        </classes>
-    </test>
-    <test name="test3">
-        <parameter name="testID" value="TC03-03"/>
-        <classes>
-            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
-        </classes>
-    </test>
-    <test name="test4">
-        <parameter name="testID" value="TC03-04"/>
-        <classes>
-            <class name="testcases.orangeHRM.TC04_OrangeHRM_EditEmployee"/>
-        </classes>
-    </test>
-    <test name="test5">
-        <parameter name="testID" value="TC05-01"/>
-        <classes>
-            <class name="testcases.orangeHRM.TC05_OrangeHRM_TravelRequest"/>
-        </classes>
-    </test>
-    <test name="test6">
-        <parameter name="testID" value="TC06-01"/>
-        <classes>
-            <class name="testcases.orangeHRM.TC06_OrangeHRM_Goals"/>
-        </classes>
-    </test>
-    <test name="test7">
-        <parameter name="testID" value="TC10-01"/>
-        <classes>
-            <class name="testcases.demoWebshop.TC10_DemoWebShop_CreateAddress"/>
-        </classes>
-    </test>
-    <test name="test8">
-        <parameter name="testID" value="TC11-01"/>
-        <classes>
-            <class name="testcases.demoWebshop.TC11_DemoWebshop_ReOrder"/>
-        </classes>
-    </test>
-    <test name="test9">
-        <parameter name="testID" value="TC12-01"/>
-        <classes>
-            <class name="testcases.demoWebshop.TC12_DemoWebshop_TotalOrders"/>
-        </classes>
-    </test>
-    <test name="test10">
         <parameter name="testID" value="TC13-01"/>
         <classes>
             <class name="testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart"/>
         </classes>
     </test>
-    <test name="test11">
-        <parameter name="testID" value="TC14-01"/>
+    <test name="test2">
+        <parameter name="testID" value="TC13-02"/>
         <classes>
-            <class name="testcases.demoWebshop.TC14_DemoWebshop_ApplyDiscount"/>
+            <class name="testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart"/>
+        </classes>
+    </test>
+    <test name="test3">
+        <parameter name="testID" value="TC13-03"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart"/>
+        </classes>
+    </test>
+    <test name="test4">
+        <parameter name="testID" value="TC13-04"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart"/>
+        </classes>
+    </test>
+    <test name="test5">
+        <parameter name="testID" value="TC13-05"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart"/>
+        </classes>
+    </test>
+    <test name="test6">
+        <parameter name="testID" value="TC13-06"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart"/>
+        </classes>
+    </test>
+    <test name="test7">
+        <parameter name="testID" value="TC13-07"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart"/>
+        </classes>
+    </test>
+    <test name="test8">
+        <parameter name="testID" value="TC13-08"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart"/>
+        </classes>
+    </test>
+    <test name="test9">
+        <parameter name="testID" value="TC13-09"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart"/>
+        </classes>
+    </test>
+    <test name="test10">
+        <parameter name="testID" value="TC13-10"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart"/>
         </classes>
     </test>
 </suite>

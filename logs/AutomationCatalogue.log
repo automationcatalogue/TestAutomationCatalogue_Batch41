@@ -1532,3 +1532,893 @@
 07:39:02:190 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
 07:39:02:191 [TestNG-tests-1] INFO  utilities.Log - X
 07:39:02:191 [TestNG-tests-1] INFO  utilities.Log - X
+20:04:41:707 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:04:41:719 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+20:04:41:720 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:05:46:626 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+20:05:47:125 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:05:47:734 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:06:31:253 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:06:31:273 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:06:31:562 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+20:06:34:639 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+20:06:39:151 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+20:06:42:339 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+20:06:42:811 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+20:06:43:266 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+20:06:58:892 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Nationality selected as Indian
+20:06:59:210 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on first save button
+20:07:03:221 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Data is successfully Updated
+20:07:05:235 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Allergies radio Button is not clicked
+20:07:05:458 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Hygiene save button
+20:07:08:528 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Hygiene is successfully Updated
+20:07:08:529 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Kosher is not available 
+20:07:08:530 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Vegetarian is not available 
+20:07:08:800 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Dietary Requirements save button
+20:07:09:812 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement is successfully Updated
+20:09:40:281 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+20:09:42:113 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Passed and status is updated in Excel sheet
+20:09:43:055 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - ExcelFile reading is closed
+20:09:43:056 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+20:09:43:056 [TestNG-tests-1] INFO  utilities.Log - X
+20:09:43:057 [TestNG-tests-1] INFO  utilities.Log - X
+20:09:43:076 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:09:43:076 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+20:09:43:077 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:10:19:743 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+20:10:20:212 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:10:20:580 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:11:09:041 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:11:09:056 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:11:09:326 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+20:11:12:237 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+20:11:16:979 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+20:11:21:638 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+20:11:22:369 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+20:11:22:625 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+20:11:36:514 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Nationality selected as Afghan
+20:11:36:652 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on first save button
+20:11:40:511 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Data is successfully Updated
+20:11:42:519 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Allergies radio Button is not clicked
+20:11:42:738 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Hygiene save button
+20:11:45:103 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Hygiene is successfully Updated
+20:11:45:104 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Vegetarian is not available 
+20:11:45:104 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Kosher is not available 
+20:11:45:298 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Dietary Requirements save button
+20:11:46:308 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement is successfully Updated
+20:14:20:261 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+20:14:20:581 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Passed and status is updated in Excel sheet
+20:14:21:366 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - ExcelFile reading is closed
+20:14:21:367 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+20:14:21:368 [TestNG-tests-1] INFO  utilities.Log - X
+20:14:21:370 [TestNG-tests-1] INFO  utilities.Log - X
+20:14:21:378 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:14:21:379 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+20:14:21:380 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:14:48:215 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+20:14:48:544 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:14:48:764 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:16:13:310 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:16:13:326 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:16:13:585 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+20:16:16:376 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+20:16:20:603 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+20:16:24:455 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+20:16:24:950 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+20:16:25:225 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+20:16:38:705 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Nationality selected as Armenian
+20:16:38:935 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on first save button
+20:16:44:134 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Data is successfully Updated
+20:16:46:140 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Allergies radio Button is not clicked
+20:16:46:356 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Hygiene save button
+20:16:48:585 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Hygiene is successfully Updated
+20:16:48:586 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Vegetarian is not available 
+20:16:48:586 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Kosher is not available 
+20:16:48:760 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Dietary Requirements save button
+20:16:49:696 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement is successfully Updated
+20:19:50:192 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Failed and status is updated in Excel sheet
+20:19:50:334 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - Failure Reason is :Title is not matched and status is updated in Excel sheet
+20:20:15:429 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:20:15:439 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+20:20:15:439 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:22:29:108 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+20:22:29:390 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:22:29:567 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:23:15:665 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:23:15:680 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:23:15:952 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+20:23:18:784 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+20:23:22:709 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+20:23:25:672 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+20:23:25:944 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+20:23:26:301 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+20:23:40:198 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Nationality selected as Australian
+20:23:40:354 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on first save button
+20:23:44:337 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Data is successfully Updated
+20:23:46:339 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Allergies radio Button is not clicked
+20:23:46:571 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Hygiene save button
+20:23:48:904 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Hygiene is successfully Updated
+20:23:48:921 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Kosher is not available 
+20:23:48:921 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Kosher is not available 
+20:23:49:158 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Dietary Requirements save button
+20:23:50:146 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement is successfully Updated
+20:26:50:326 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Failed and status is updated in Excel sheet
+20:26:50:428 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - Failure Reason is :Title is not matched and status is updated in Excel sheet
+20:27:15:505 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:27:15:506 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+20:27:15:506 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:30:44:299 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:30:44:306 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+20:30:44:308 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:32:08:179 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+20:32:08:325 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:32:08:455 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:32:51:004 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:32:51:019 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:32:51:383 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+20:32:54:663 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+20:32:58:945 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+20:33:01:333 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+20:33:01:652 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+20:33:01:804 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+20:33:16:729 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Nationality selected as Chinese
+20:33:16:883 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on first save button
+20:33:23:635 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Data is successfully Updated
+20:33:25:649 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Allergies radio Button is not clicked
+20:33:25:888 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Hygiene save button
+20:33:28:269 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Hygiene is successfully Updated
+20:33:28:269 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Kosher is not available 
+20:33:28:270 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Vegetarian is not available 
+20:33:28:459 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Dietary Requirements save button
+20:33:29:443 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement is successfully Updated
+20:36:00:697 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+20:36:00:850 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Passed and status is updated in Excel sheet
+20:36:01:637 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - ExcelFile reading is closed
+20:36:01:638 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+20:36:01:638 [TestNG-tests-1] INFO  utilities.Log - X
+20:36:01:639 [TestNG-tests-1] INFO  utilities.Log - X
+20:36:01:646 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:36:01:647 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+20:36:01:647 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:36:28:949 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+20:36:29:211 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:36:29:470 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:37:20:149 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:37:20:163 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:37:20:410 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+20:37:23:115 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+20:37:27:720 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+20:37:30:424 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+20:37:30:835 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+20:37:31:304 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+20:37:47:022 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Nationality selected as Croatian
+20:37:47:159 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on first save button
+20:37:50:974 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Data is successfully Updated
+20:37:52:978 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Allergies radio Button is not clicked
+20:37:53:218 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Hygiene save button
+20:37:55:732 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Hygiene is successfully Updated
+20:37:55:732 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Vegetarian is not available 
+20:37:55:732 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Kosher is not available 
+20:37:55:923 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Dietary Requirements save button
+20:37:56:842 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement is successfully Updated
+20:40:07:187 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+20:40:07:555 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Passed and status is updated in Excel sheet
+20:40:11:028 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - ExcelFile reading is closed
+20:40:11:029 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+20:40:11:029 [TestNG-tests-1] INFO  utilities.Log - X
+20:40:11:029 [TestNG-tests-1] INFO  utilities.Log - X
+20:40:11:033 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:40:11:033 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+20:40:11:033 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:40:36:877 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+20:40:37:177 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:40:37:397 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:41:24:168 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:41:24:178 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:41:24:448 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+20:41:27:148 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+20:41:31:164 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+20:41:34:036 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+20:41:34:337 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+20:41:34:913 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+20:41:49:669 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Nationality selected as Greek
+20:41:49:940 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on first save button
+20:41:55:412 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Data is successfully Updated
+20:41:57:424 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Allergies radio Button is not clicked
+20:41:57:616 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Hygiene save button
+20:41:59:942 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Hygiene is successfully Updated
+20:41:59:942 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Vegetarian is not available 
+20:41:59:943 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement Vegetarian is not available 
+20:42:00:048 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Clicked on Dietary Requirements save button
+20:42:01:066 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Dietary Requirement is successfully Updated
+20:44:38:721 [TestNG-tests-1] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+20:44:38:849 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Passed and status is updated in Excel sheet
+20:44:39:792 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - ExcelFile reading is closed
+20:44:39:792 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+20:44:39:792 [TestNG-tests-1] INFO  utilities.Log - X
+20:44:39:793 [TestNG-tests-1] INFO  utilities.Log - X
+20:44:39:797 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:44:39:797 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+20:44:39:797 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:45:10:062 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+20:45:10:335 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:45:10:531 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:45:53:875 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:45:53:891 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:45:54:162 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+20:45:56:765 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+20:46:01:276 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+20:46:04:396 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+20:46:04:980 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+20:46:05:144 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+20:46:14:851 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Failed and status is updated in Excel sheet
+20:46:14:941 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - Failure Reason is :Title is not matched and status is updated in Excel sheet
+20:46:16:616 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - ExcelFile reading is closed
+20:46:16:616 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+20:46:16:617 [TestNG-tests-1] INFO  utilities.Log - X
+20:46:16:617 [TestNG-tests-1] INFO  utilities.Log - X
+20:46:16:620 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+20:46:16:621 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC04_OrangeHRM_EditEmployee************
+20:46:16:621 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+20:46:56:074 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - OrangeHRM website is launched
+20:46:56:365 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+20:46:56:604 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+20:47:41:058 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+20:47:41:068 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+20:47:41:345 [TestNG-tests-1] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+20:47:44:099 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Click on First Employee Data
+20:47:49:138 [TestNG-tests-1] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Personal Details tab
+20:47:53:534 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Cleared the last name
+20:47:54:164 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Updated the last name
+20:47:54:344 [TestNG-tests-1] INFO  pages.OrangeHRM_EditEmployeePage - Date picker icon is clicked
+20:48:07:441 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - TestCase is Failed and status is updated in Excel sheet
+20:48:07:684 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - Failure Reason is :Title is not matched and status is updated in Excel sheet
+20:48:09:009 [TestNG-tests-1] INFO  testcases.orangeHRM.TC04_OrangeHRM_EditEmployee - ExcelFile reading is closed
+20:48:09:009 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+20:48:09:010 [TestNG-tests-1] INFO  utilities.Log - X
+20:48:09:010 [TestNG-tests-1] INFO  utilities.Log - X
+21:19:50:179 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:19:50:188 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:19:50:189 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:20:34:430 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:20:38:580 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:20:41:406 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:20:41:537 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:20:43:010 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:20:46:463 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:20:48:747 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:20:49:958 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:20:50:040 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:20:50:278 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:20:50:329 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:20:50:553 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:20:52:571 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:20:52:728 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:20:52:763 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:20:52:828 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:20:52:863 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:20:53:061 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:20:55:479 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:20:55:605 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:20:56:460 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:20:57:536 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:20:58:178 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:20:58:762 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:20:59:294 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:21:01:643 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505818
+21:21:03:261 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:21:03:286 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:21:03:287 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:03:288 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:04:970 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505818 is written back to the Excel file
+21:21:05:740 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:21:06:886 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:21:06:887 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:06:887 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:06:910 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:21:06:911 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:21:06:912 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:21:10:659 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:21:10:660 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:10:661 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:10:662 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:21:10:662 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:10:662 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:10:672 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:21:10:675 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:21:10:675 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:21:22:666 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:21:25:562 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:21:29:562 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:21:29:876 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:21:31:040 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:21:32:691 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:21:34:936 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:21:35:990 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:21:36:083 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:21:36:265 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:21:36:316 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:21:36:491 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:21:37:815 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:21:37:911 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:21:37:947 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:21:37:986 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:21:38:021 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:21:38:231 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:21:41:061 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:21:41:165 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:21:41:832 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:21:42:286 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:21:42:791 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:21:43:618 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:21:44:139 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:21:46:318 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505820
+21:21:48:302 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:21:48:308 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:21:48:309 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:48:310 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:48:680 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505820 is written back to the Excel file
+21:21:48:845 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:21:49:549 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:21:49:550 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:49:550 [TestNG-tests-1] INFO  utilities.Log - X
+21:21:49:556 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:21:49:556 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:21:49:557 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:22:11:385 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:22:15:011 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:22:19:104 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:22:19:228 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:22:20:412 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:22:22:212 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:22:24:490 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:22:25:733 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:22:25:817 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:22:25:990 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:22:26:056 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:22:26:343 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:22:37:598 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:22:37:698 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:22:37:730 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:22:37:769 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:22:37:799 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:22:38:006 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:22:53:733 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:22:53:855 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:22:57:190 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:22:58:018 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:22:58:655 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:23:00:587 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:23:01:323 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:23:05:414 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505821
+21:23:09:481 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:23:09:509 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:23:09:510 [TestNG-tests-1] INFO  utilities.Log - X
+21:23:09:511 [TestNG-tests-1] INFO  utilities.Log - X
+21:23:09:995 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505821 is written back to the Excel file
+21:23:10:462 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:23:12:758 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:23:12:759 [TestNG-tests-1] INFO  utilities.Log - X
+21:23:12:759 [TestNG-tests-1] INFO  utilities.Log - X
+21:23:12:768 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:23:12:770 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:23:12:771 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:23:16:850 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:23:16:851 [TestNG-tests-1] INFO  utilities.Log - X
+21:23:16:852 [TestNG-tests-1] INFO  utilities.Log - X
+21:23:16:854 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:23:16:854 [TestNG-tests-1] INFO  utilities.Log - X
+21:23:16:854 [TestNG-tests-1] INFO  utilities.Log - X
+21:23:16:860 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:23:16:861 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:23:16:861 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:23:38:051 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:23:41:143 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:23:45:921 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:23:46:044 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:23:48:108 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:23:49:907 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:23:52:156 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:23:53:274 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:23:53:384 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:23:53:581 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:23:53:624 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:23:53:822 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:23:55:417 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:23:55:519 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:23:55:553 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:23:55:607 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:23:55:652 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:23:55:891 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:23:59:153 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:23:59:276 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:23:59:975 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:24:00:539 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:24:01:067 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:24:01:580 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:24:02:103 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:24:03:822 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505822
+21:24:06:414 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:24:06:418 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:24:06:418 [TestNG-tests-1] INFO  utilities.Log - X
+21:24:06:419 [TestNG-tests-1] INFO  utilities.Log - X
+21:24:06:642 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505822 is written back to the Excel file
+21:24:06:780 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:24:07:466 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:24:07:466 [TestNG-tests-1] INFO  utilities.Log - X
+21:24:07:466 [TestNG-tests-1] INFO  utilities.Log - X
+21:24:07:470 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:24:07:470 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:24:07:470 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:24:19:317 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:24:22:183 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:24:24:570 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:24:24:681 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:24:25:896 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:24:30:090 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:24:32:351 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:24:33:738 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:24:33:796 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:24:33:963 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:24:34:004 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:24:34:181 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:24:36:577 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:24:36:663 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:24:36:692 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:24:36:728 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:24:36:756 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:24:36:953 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:24:39:475 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:24:39:591 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:24:40:445 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:24:40:973 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:24:41:426 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:24:42:278 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:24:42:799 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:24:46:814 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505823
+21:24:49:253 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:24:49:263 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:24:49:263 [TestNG-tests-1] INFO  utilities.Log - X
+21:24:49:264 [TestNG-tests-1] INFO  utilities.Log - X
+21:24:49:482 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505823 is written back to the Excel file
+21:24:49:605 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:24:50:554 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:24:50:554 [TestNG-tests-1] INFO  utilities.Log - X
+21:24:50:555 [TestNG-tests-1] INFO  utilities.Log - X
+21:24:50:559 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:24:50:559 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:24:50:559 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:25:23:667 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:25:27:854 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:25:33:741 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:25:33:859 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:25:34:920 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:25:42:044 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:25:44:383 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:25:47:740 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:25:47:794 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:25:47:974 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:25:48:028 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:25:48:218 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:25:52:456 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:25:52:536 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:25:52:568 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:25:52:606 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:25:52:637 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:25:52:841 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:25:55:696 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:25:55:845 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:25:57:309 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:25:58:757 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:25:59:456 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:26:00:327 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:26:01:679 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:26:08:410 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505824
+21:26:11:963 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:26:11:969 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:26:11:970 [TestNG-tests-1] INFO  utilities.Log - X
+21:26:11:970 [TestNG-tests-1] INFO  utilities.Log - X
+21:26:12:109 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505824 is written back to the Excel file
+21:26:12:290 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:26:13:454 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:26:13:454 [TestNG-tests-1] INFO  utilities.Log - X
+21:26:13:455 [TestNG-tests-1] INFO  utilities.Log - X
+21:26:13:458 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:26:13:458 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:26:13:459 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:26:23:176 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:26:26:019 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:26:28:103 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:26:28:256 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:26:31:074 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:26:33:593 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:26:35:813 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:26:36:870 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:26:36:924 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:26:37:078 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:26:37:132 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:26:37:307 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:26:38:538 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:26:38:620 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:26:38:651 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:26:38:696 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:26:38:726 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:26:38:947 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:26:41:141 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:26:41:258 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:26:42:032 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:26:42:613 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:26:43:056 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:26:43:869 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:26:44:348 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:26:46:130 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505825
+21:26:47:557 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:26:47:563 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:26:47:563 [TestNG-tests-1] INFO  utilities.Log - X
+21:26:47:563 [TestNG-tests-1] INFO  utilities.Log - X
+21:26:47:737 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505825 is written back to the Excel file
+21:26:47:841 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:26:48:466 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:26:48:466 [TestNG-tests-1] INFO  utilities.Log - X
+21:26:48:466 [TestNG-tests-1] INFO  utilities.Log - X
+21:26:48:470 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:26:48:470 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:26:48:470 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:27:06:693 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:27:09:505 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:27:13:296 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:27:13:413 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:27:14:524 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:27:16:703 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:27:18:931 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:27:20:247 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:27:20:304 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:27:20:489 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:27:20:537 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:27:20:704 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:27:21:803 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:27:21:879 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:27:21:911 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:27:21:951 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:27:21:979 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:27:22:172 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:27:24:190 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:27:24:296 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:27:24:975 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:27:25:805 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:27:26:261 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:27:27:006 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:27:27:512 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:27:29:627 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505827
+21:27:31:787 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:27:31:791 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:27:31:792 [TestNG-tests-1] INFO  utilities.Log - X
+21:27:31:792 [TestNG-tests-1] INFO  utilities.Log - X
+21:27:31:902 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505827 is written back to the Excel file
+21:27:32:017 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:27:32:750 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:27:32:750 [TestNG-tests-1] INFO  utilities.Log - X
+21:27:32:751 [TestNG-tests-1] INFO  utilities.Log - X
+21:32:05:090 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:32:05:100 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:32:05:103 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:32:22:660 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:32:25:548 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:32:28:210 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:32:28:334 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:32:29:923 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:32:31:571 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:32:33:825 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:32:35:167 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:32:35:239 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:32:35:426 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:32:55:534 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:32:55:539 [TestNG-tests-1] INFO  utilities.Log - X
+21:32:55:543 [TestNG-tests-1] INFO  utilities.Log - X
+21:32:56:785 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:32:56:786 [TestNG-tests-1] INFO  utilities.Log - X
+21:32:56:787 [TestNG-tests-1] INFO  utilities.Log - X
+21:32:56:796 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:32:56:796 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:32:56:797 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:33:06:109 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:33:09:716 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:33:11:432 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:33:11:542 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:33:12:480 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:33:14:096 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:33:16:344 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:33:17:315 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:33:17:383 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :20.00
+21:33:17:585 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:33:17:632 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :200.00
+21:33:17:856 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:33:18:965 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:33:19:072 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:33:19:107 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:33:19:145 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:33:19:178 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:33:19:400 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:33:21:366 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:33:21:485 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:33:22:083 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:33:22:644 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:33:23:281 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:33:23:847 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:33:24:379 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:33:26:628 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505829
+21:33:28:133 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:33:28:139 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:33:28:140 [TestNG-tests-1] INFO  utilities.Log - X
+21:33:28:141 [TestNG-tests-1] INFO  utilities.Log - X
+21:33:29:405 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505829 is written back to the Excel file
+21:33:29:575 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:33:30:755 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:33:30:756 [TestNG-tests-1] INFO  utilities.Log - X
+21:33:30:756 [TestNG-tests-1] INFO  utilities.Log - X
+21:33:30:764 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:33:30:764 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:33:30:765 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:33:41:043 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:33:43:679 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:33:46:605 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:33:46:744 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:33:48:007 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:33:49:920 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:33:52:226 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:33:53:222 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:33:53:299 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:33:53:485 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:33:53:537 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:33:53:771 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:33:54:865 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:33:54:971 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:33:55:015 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:33:55:053 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:33:55:098 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:33:55:315 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:33:57:159 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:33:57:263 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:33:57:935 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:33:58:526 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:33:59:123 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:33:59:831 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:34:00:436 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:34:02:123 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505830
+21:34:03:298 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:34:03:302 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:34:03:303 [TestNG-tests-1] INFO  utilities.Log - X
+21:34:03:303 [TestNG-tests-1] INFO  utilities.Log - X
+21:34:03:739 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505830 is written back to the Excel file
+21:34:03:919 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:34:04:761 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:34:04:761 [TestNG-tests-1] INFO  utilities.Log - X
+21:34:04:762 [TestNG-tests-1] INFO  utilities.Log - X
+21:34:04:766 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:34:04:766 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:34:04:766 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:34:14:456 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:34:17:339 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:34:20:104 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:34:20:228 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:34:21:308 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:34:23:855 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:34:26:137 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:34:27:316 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:34:27:395 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:34:27:628 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:34:27:670 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:34:27:880 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:34:28:866 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:34:28:997 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:34:29:033 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:34:29:075 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:34:29:112 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:34:29:316 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:34:31:175 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:34:31:284 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:34:31:870 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:34:32:300 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:34:32:791 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:34:33:431 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:34:34:015 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:34:35:751 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505831
+21:34:37:213 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:34:37:224 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:34:37:226 [TestNG-tests-1] INFO  utilities.Log - X
+21:34:37:229 [TestNG-tests-1] INFO  utilities.Log - X
+21:34:37:566 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505831 is written back to the Excel file
+21:34:37:735 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:34:38:671 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:34:38:671 [TestNG-tests-1] INFO  utilities.Log - X
+21:34:38:672 [TestNG-tests-1] INFO  utilities.Log - X
+21:34:38:676 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:34:38:676 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:34:38:677 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:35:06:156 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:35:20:574 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:35:23:465 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:35:23:581 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:35:27:878 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:35:33:171 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:35:35:433 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:35:40:870 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:35:40:933 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:35:41:171 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:35:41:254 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:35:41:526 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:35:43:601 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:35:43:697 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:35:43:727 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:35:43:766 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:35:43:796 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:35:44:015 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:35:47:452 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:35:47:571 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:35:48:284 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:35:48:836 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:35:49:336 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:35:50:026 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:35:50:691 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:35:52:753 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505832
+21:35:57:747 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:35:57:757 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:35:57:758 [TestNG-tests-1] INFO  utilities.Log - X
+21:35:57:758 [TestNG-tests-1] INFO  utilities.Log - X
+21:35:57:929 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505832 is written back to the Excel file
+21:35:58:084 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:35:59:663 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:35:59:663 [TestNG-tests-1] INFO  utilities.Log - X
+21:35:59:664 [TestNG-tests-1] INFO  utilities.Log - X
+21:35:59:669 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:35:59:670 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:35:59:670 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:36:12:040 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:36:14:682 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:36:20:095 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:36:20:217 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:36:22:722 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:36:30:271 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:36:32:558 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:36:35:340 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:36:35:399 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:36:35:569 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:36:55:611 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:36:55:611 [TestNG-tests-1] INFO  utilities.Log - X
+21:36:55:611 [TestNG-tests-1] INFO  utilities.Log - X
+21:36:56:180 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:36:56:180 [TestNG-tests-1] INFO  utilities.Log - X
+21:36:56:180 [TestNG-tests-1] INFO  utilities.Log - X
+21:36:56:184 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:36:56:185 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:36:56:185 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:37:22:860 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:37:27:318 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:37:29:211 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:37:29:335 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:37:30:507 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:37:31:591 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:37:33:826 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:37:35:467 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:37:35:532 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :20.00
+21:37:35:728 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:37:35:766 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:37:35:958 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:37:40:220 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:37:40:342 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:37:40:381 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:37:40:431 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:37:40:472 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:37:40:679 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:37:47:288 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:37:47:421 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:37:48:354 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:37:48:953 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:37:50:674 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:37:51:495 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:37:51:987 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:37:55:295 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505833
+21:37:57:212 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:37:57:217 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:37:57:218 [TestNG-tests-1] INFO  utilities.Log - X
+21:37:57:219 [TestNG-tests-1] INFO  utilities.Log - X
+21:37:57:359 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505833 is written back to the Excel file
+21:37:57:469 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:37:59:280 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:37:59:280 [TestNG-tests-1] INFO  utilities.Log - X
+21:37:59:281 [TestNG-tests-1] INFO  utilities.Log - X
+21:37:59:284 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:37:59:284 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:37:59:285 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:38:08:288 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:38:11:330 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:38:16:453 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:38:16:606 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:38:23:906 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:38:33:733 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:38:36:050 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:38:38:897 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:38:38:978 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:38:39:165 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:38:59:219 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:38:59:220 [TestNG-tests-1] INFO  utilities.Log - X
+21:38:59:220 [TestNG-tests-1] INFO  utilities.Log - X
+21:39:00:196 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:39:00:197 [TestNG-tests-1] INFO  utilities.Log - X
+21:39:00:197 [TestNG-tests-1] INFO  utilities.Log - X
+21:39:00:204 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:39:00:204 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:39:00:205 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:39:26:319 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:39:30:258 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:39:31:809 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:39:31:950 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:39:32:937 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:39:34:126 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:39:36:367 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:39:37:764 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:39:37:823 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :20.00
+21:39:38:003 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:39:38:046 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :200.00
+21:39:38:224 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:39:39:206 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:39:39:297 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:39:39:328 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:39:39:364 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:39:39:393 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:39:39:587 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:39:41:484 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:39:41:594 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:39:42:263 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:39:42:841 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:39:43:403 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:39:44:142 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:39:44:690 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:39:46:891 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505834
+21:39:50:866 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:39:50:870 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:39:50:871 [TestNG-tests-1] INFO  utilities.Log - X
+21:39:50:871 [TestNG-tests-1] INFO  utilities.Log - X
+21:39:51:014 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505834 is written back to the Excel file
+21:39:51:153 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:39:52:448 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:39:52:449 [TestNG-tests-1] INFO  utilities.Log - X
+21:39:52:449 [TestNG-tests-1] INFO  utilities.Log - X
+21:39:52:457 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+21:39:52:457 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart************
+21:39:52:458 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+21:40:03:401 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+21:40:06:430 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Books link
+21:40:09:079 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on first item in books 
+21:40:09:184 [TestNG-tests-1] INFO  pages.DemoWebshop_BooksPage - Clicked on Add to Cart Button in Books
+21:40:10:408 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Jewellery link
+21:40:12:160 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on first item in jewellery 
+21:40:14:405 [TestNG-tests-1] INFO  pages.DemoWebshop_JewelsPage - Clicked on Add to Cart Button in Jewellery
+21:40:15:608 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - Clicked on Shopping Cart Link
+21:40:15:664 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the first item before increasing the quantity is :10.00
+21:40:15:838 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in first item
+21:40:15:878 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Total of the second item before increasing the quantity is :100.00
+21:40:16:058 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Quantity is increased in second item
+21:40:17:147 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Clicked on the Update cart button
+21:40:17:264 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Book Item!!!
+21:40:17:293 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Book Item and Price is matched i.e :20.0
+21:40:17:330 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Quantity is successful for Jewel Item!!!
+21:40:17:362 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Update Shopping Cart is successful for Jewel Item and Price is matched i.e :200.0
+21:40:17:573 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Check-box is clicked
+21:40:19:480 [TestNG-tests-1] INFO  pages.DemoWebshop_CartPage - Checkout button is clicked
+21:40:19:589 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Billing Address
+21:40:20:846 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Address
+21:40:21:231 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Shipping Method
+21:40:21:781 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Method
+21:40:22:317 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Continue button is clicked under Payment Information
+21:40:22:825 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Confirm button is clicked under Confirm Order
+21:40:24:487 [TestNG-tests-1] INFO  pages.DemoWebshop_CheckoutPage - Order Number:Order number: 1505836
+21:40:25:894 [TestNG-tests-1] INFO  pages.DemoWebshop_HomePage - log out is clicked
+21:40:25:898 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:40:25:899 [TestNG-tests-1] INFO  utilities.Log - X
+21:40:25:902 [TestNG-tests-1] INFO  utilities.Log - X
+21:40:26:031 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - Order number: 1505836 is written back to the Excel file
+21:40:26:147 [TestNG-tests-1] INFO  testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart - TestCase is Passed and status is updated in Excel sheet
+21:40:26:762 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+21:40:26:762 [TestNG-tests-1] INFO  utilities.Log - X
+21:40:26:763 [TestNG-tests-1] INFO  utilities.Log - X
