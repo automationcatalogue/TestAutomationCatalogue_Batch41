@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import pages.*;
 import testcases.orangeHRM.TC03_OrangeHRM_AddUser;
 import utilities.*;
@@ -25,7 +26,7 @@ public class OrangeHRM_StepDefinition {
     static String sheetName;
     static String testID;
     static String userName_1;
-    static String password;
+    static String password, empid;
     static int row;
 
 
@@ -102,27 +103,28 @@ public class OrangeHRM_StepDefinition {
 
     @When("User Selects Marital Status and Gender and Clicks on Next")
     public void user_selects_marital_status_and_gender_and_clicks_on_next() {
-
+        OrangeHRM_AddEmployeePage.clickMaritalStatus_Gender(marital_Status, gender);
     }
 
     @When("User Selects Region, FTE, Temporary Department and Clicks on Save button")
     public void user_selects_region_fte_temporary_department_and_clicks_on_save_button() {
-
+        OrangeHRM_AddEmployeePage.selectFTE_Region_TempDepartment(fte, region, temp_dept);
     }
 
     @Then("User Search for New Employee")
-    public void user_search_for_new_employee() {
-
+    public void user_search_for_new_employee() throws Exception{
+        OrangeHRM_HomePage.clickEmployeeManagementLink();
+        OrangeHRM_AddEmployeePage.searchEmployee(firstName, lastName);
     }
 
     @Then("User Verifies New Employee information")
     public void user_verifies_new_employee_information() {
-
+        empid = OrangeHRM_AddEmployeePage.verifyEmployeeId_name(firstName, lastName);
     }
 
     @Given("User reads AddEmployee Data from {string} using TestID {string}")
     public void readExcelSheetData_AddEmployee(String sheetName, String testID) throws Exception {
-        Log.startTestCase(OrangeHRM_StepDefinition.class.getName());
+
         wbk = ExcelUtils.setExcelFilePath();
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
@@ -194,14 +196,33 @@ public class OrangeHRM_StepDefinition {
         //Verify the Employee Name as Charlie Carter
         OrangeHRM_HomePage.verify_empName(empName);
     }
-    @And("User logouts after verifying new user login")
+    @And("User logout from orangeHRM application")
     public void logOut_afterNewUser(){
         OrangeHRM_HomePage.clickLogout();
-
     }
 
 
+    @Then("User Updates the Status in ExcelSheet for Add Employee")
+    public void updateExcelSheetStatus(ITestResult result) throws Exception{
+        if (result.getStatus() == ITestResult.SUCCESS) {
+            ExcelUtils.setCellData(empid, sheetName, rowNum, Config.col_AddEmployee_EmployeeId);
+            log.info(empid + " is written back to the Excel file");
 
+            ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
+            log.info("TestCase is Passed and status is updated in Excel sheet");
+        } else if (result.getStatus() == ITestResult.FAILURE) {
+            if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
+                ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
+                log.info("TestCase is Failed and status is updated in Excel sheet");
+
+                ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
+                log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
+            }
+        } else if (result.getStatus() == ITestResult.SKIP) {
+            ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
+            log.info("TestCase is SKIPPED and status is updated in Excel sheet");
+        }
+    }
 
 
 }

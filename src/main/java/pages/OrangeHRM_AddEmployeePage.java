@@ -144,6 +144,12 @@ public class OrangeHRM_AddEmployeePage {
                 log.info("Next button is clicked");
         }
 
+
+        public static void clickMaritalStatus_Gender(String marital_Status, String gender){
+                selectMaritalStatus(marital_Status);
+                selectGender(gender);
+        }
+
         public static void selectMaritalStatus(String marital_Status){
                 WebDriver driver = BaseClass.getDriver();
                 driver.findElement(dropdwn_maritalStatus).click();
@@ -246,6 +252,13 @@ public class OrangeHRM_AddEmployeePage {
                  driver.findElement(btn_save).click();
                  log.info("clicked on Save");
          }
+
+         public static void selectFTE_Region_TempDepartment(String region, String fte, String temp_dept){
+                selectFTE(fte);
+                selectRegion(region);
+                selectTempDept(temp_dept);
+         }
+
          public static void searchEmployee(String firstName, String lastName) throws Exception{
                  WebDriver driver = BaseClass.getDriver();
                  CommonUtils.staleElementEnterKeys(search_icon,firstName+" "+ lastName);

@@ -2379,3 +2379,39 @@
 16:02:42:083 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/8/2023 Sum of all Orders :1780.0
 16:02:42:084 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/10/2023 Sum of all Orders :172.0
 
+07:59:46:303 [main] INFO  utilities.Log - *****************************************************************
+07:59:46:310 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+07:59:46:311 [main] INFO  utilities.Log - ******************************************************************
+08:00:11:350 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+08:00:11:886 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+08:00:12:122 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+08:00:21:256 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+08:00:21:282 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+08:00:21:680 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+08:00:25:709 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Add button 
+08:00:29:588 [main] INFO  pages.OrangeHRM_AddEmployeePage - First Name is entered
+08:00:30:329 [main] INFO  pages.OrangeHRM_AddEmployeePage - Last Name is entered
+08:00:30:529 [main] INFO  pages.OrangeHRM_AddEmployeePage - Location drop-down is clicked 
+08:00:30:883 [main] INFO  pages.OrangeHRM_AddEmployeePage - India Office value is selected from a drop-down
+08:00:31:170 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+08:00:31:346 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+08:00:38:621 [main] INFO  pages.OrangeHRM_AddEmployeePage - Marital Status drop-down is clicked
+08:00:39:086 [main] INFO  pages.OrangeHRM_AddEmployeePage - Single is selected
+08:00:39:310 [main] INFO  pages.OrangeHRM_AddEmployeePage - Gender drop-down is clicked
+08:00:39:597 [main] INFO  pages.OrangeHRM_AddEmployeePage - Male is selected
+08:00:39:886 [main] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Next
+08:00:48:412 [main] INFO  pages.OrangeHRM_AddEmployeePage - FTE drop-down is clicked
+08:00:48:413 [main] INFO  pages.OrangeHRM_AddEmployeePage - FTE is not found
+08:00:48:821 [main] INFO  pages.OrangeHRM_AddEmployeePage - Region drop-down is clicked
+08:00:48:821 [main] INFO  pages.OrangeHRM_AddEmployeePage - region is not found
+08:00:49:346 [main] INFO  pages.OrangeHRM_AddEmployeePage - Temp Department drop-down is clicked
+08:00:49:349 [main] INFO  pages.OrangeHRM_AddEmployeePage - TempDepartment is not found
+08:00:49:693 [main] INFO  pages.OrangeHRM_AddEmployeePage - clicked on Save
+08:00:50:547 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+08:00:52:454 [main] INFO  pages.OrangeHRM_AddEmployeePage - Searched with Employee first and last name
+08:00:58:890 [main] INFO  pages.OrangeHRM_AddEmployeePage - Element Text is: John Mikel
+08:00:58:892 [main] INFO  pages.OrangeHRM_AddEmployeePage - Search result is correct
+08:00:59:065 [main] INFO  pages.OrangeHRM_AddEmployeePage - Employee id is :0141
+08:01:08:732 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+08:01:08:732 [main] INFO  utilities.Log - X
+08:01:08:733 [main] INFO  utilities.Log - X

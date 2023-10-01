@@ -15,4 +15,6 @@ Feature: OrangeHRM Add Employee Feature
     And User Selects Region, FTE, Temporary Department and Clicks on Save button
     Then User Search for New Employee
     And User Verifies New Employee information
+    Then User logout from orangeHRM application
+    Then User Updates the Status in ExcelSheet for Add Employee
 
