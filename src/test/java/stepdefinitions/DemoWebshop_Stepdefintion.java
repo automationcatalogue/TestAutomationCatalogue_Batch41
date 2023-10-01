@@ -1,18 +1,52 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import pages.DemoWebshop_HomePage;
+import pages.DemoWebshop_LoginPage;
 import testcases.orangeHRM.TC01_OrangeHRM_LoginTest;
-import utilities.BaseClass;
-import utilities.CommonUtils;
-import utilities.Config;
+import utilities.*;
 
 public class DemoWebshop_Stepdefintion {
     public static WebDriver driver;
+    static XSSFWorkbook wbk;
+    static String sheetName;
+    static int rowNum, row_index;
+
+    static String UserName;
+    static String Password;
+    static String FirstName, LastName, Email, Company;
+    static String City, Address1, Address2;
+
+    static String ZipPostalCode, PhoneNumber, FaxNumber;
+    static String testID;
+
+    @Given("User reads CreateAddress Data from {string} using TestID {string}")
+    public void readExcelData_CreateAddress(String sheetName, String testID) throws Exception {
+        wbk = ExcelUtils.setExcelFilePath();
+        rowNum = ExcelUtils.getRowNumber(testID, sheetName);
+        row_index = ExcelUtils.getRowNumber(testID, "Index");
+        UserName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
+        Password = ExcelUtils.getCellData(sheetName, rowNum, Config.col_Password);
+        FirstName = RandomGenerator.getRandomData("firstName");
+        LastName = RandomGenerator.getRandomData("lastName");
+        Email = RandomGenerator.getRandomEmail(8);
+        Company = RandomGenerator.getRandomData("company");
+        City = RandomGenerator.getRandomData("city");
+        Address1 = RandomGenerator.getRandomData("address1");
+        Address2 = RandomGenerator.getRandomData("address2");
+        ZipPostalCode = RandomGenerator.getRandomData("zipcode");
+        PhoneNumber = RandomGenerator.getRandomData("phoneNumber");
+        FaxNumber = RandomGenerator.getRandomNumeric(8);
+    }
 
 
     @Given("User loads DemoWebshop Application")
@@ -22,37 +56,40 @@ public class DemoWebshop_Stepdefintion {
         driver.get(Config.url_DemoWebshop);
         System.out.println("DemoWebShop Website is launched");
     }
+
     @When("User login into DemoWebshop Application with UserName {string} and Password {string}")
-    public void user_login_into_demo_webshop_application_with_user_name_and_password(String string, String string2) {
-
+    public void user_login_into_demo_webshop_application_with_user_name_and_password(String UserName, String Password) {
+        DemoWebshop_LoginPage.login(UserName, Password);
     }
-    @Then("User Verifies Successful login of DemoWebshop application")
-    public void user_verifies_successful_login_of_demo_webshop_application() {
 
-    }
     @When("User Opens Address page")
     public void user_opens_address_page() {
-
+        DemoWebshop_HomePage.click_mailId();
+        DemoWebshop_HomePage.select_AddressLink();
     }
-    @When("User Clicks on AddNew button")
-    public void user_clicks_on_add_new_button() {
 
+
+    @When("User Enters address fields data for FirstName, LastName, Email and Company")
+    public void user_enters_address_fields_data_for_first_name_last_name_email_and_company() {
+        DemoWebshop_HomePage.createName(FirstName, LastName);
+
+        DemoWebshop_HomePage.createEmailAndCompany(Email, Company);
     }
-    @When("User Enters address fields data for FirstName as {string} LastName as {string} and Email as {string}")
-    public void user_enters_address_fields_data_for_first_name_as_last_name_as_and_email_as(String string, String string2, String string3) {
 
-    }
-    @When("User Selects Country as {string} State as {string} Address1 as {string} Address2 as {string} station and Postal Code as {string}")
-    public void user_selects_country_as_state_as_address1_as_address2_as_station_and_postal_code_as(String string, String string2, String string3, String string4, String string5) {
+    @When("User Provides City, Address1, Address2, ZipPostalCode, PhoneNumber and FaxNumber")
+    public void user_provides_city_address1_address2_zip_postal_code_phone_number_and_fax_number() {
+        DemoWebshop_HomePage.createCityAndAddresses(City, Address1, Address2);
 
-    }
-    @When("User Enters PhoneNumber as {string} and FaxNumber as {string}")
-    public void user_enters_phone_number_as_and_fax_number_as(String string, String string2) {
-
+        DemoWebshop_HomePage.createContactNumbers(ZipPostalCode, PhoneNumber, FaxNumber);
     }
 
     @Then("User Verifies Address is added")
     public void user_verifies_address_is_added() {
+        DemoWebshop_HomePage.verify_Address(FirstName, LastName);
+    }
 
+    @And("User logout after verification")
+    public void User_logout_after_verification() {
+        DemoWebshop_HomePage.logOut();
     }
 }
