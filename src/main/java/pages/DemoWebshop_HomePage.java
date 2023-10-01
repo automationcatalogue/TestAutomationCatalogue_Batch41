@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import utilities.BaseClass;
 
 import java.util.List;
@@ -143,6 +144,16 @@ public class DemoWebshop_HomePage {
         } else {
             log.info("Address Creation is not successful");
         }
+    }
+    public static void verifyTitle() {
+        WebDriver driver = BaseClass.getDriver();
+
+        String title = driver.getTitle();
+        String expectedTitle = "Demo Web Shop";
+
+        BaseClass.failureReason = "Title is not matched";
+        Assert.assertEquals(expectedTitle, title, "Title is not matched");
+        log.info("Title is verified, Login is Successful");
     }
 
     public static void logOut(){
