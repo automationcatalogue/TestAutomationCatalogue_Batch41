@@ -24,6 +24,13 @@ public class DemoWebShop_OrdersPage {
     public static By listOfOrdersDayWise = By.xpath("//div[@class='page account-page order-list-page']//ul/li[2]");
 
     public static By orderValue = By.xpath("./../li[3]");
+
+    public static By orderNumber = By.xpath("//div[@class='section order-item']/div/strong");
+
+    public static By orderTotals = By.xpath("//li[contains(text(),'Order Total')]");
+
+    public static By allOrdersElements = By.xpath("//div[@class='page account-page order-list-page']//ul/li[2]");
+    public static By orderValues= By.xpath("./../li[3]");
     static Logger log = LogManager.getLogger(DemoWebShop_OrdersPage.class);
 
     public static void clickLinkOrders(){
@@ -39,14 +46,14 @@ public class DemoWebShop_OrdersPage {
 
     public static int totalNumberOfOrders(){
         WebDriver driver = BaseClass.getDriver();
-        List<WebElement> OrderNumbers = driver.findElements(By.xpath("//div[@class='section order-item']/div/strong"));
+        List<WebElement> OrderNumbers = driver.findElements(orderNumber);
         log.info("Total number of orders is :" + OrderNumbers.size());
         return OrderNumbers.size();
     }
 
     public static float sumOfAllOrdersPlaced(){
         WebDriver driver = BaseClass.getDriver();
-        List<WebElement> OrderTotal = driver.findElements(By.xpath("//li[contains(text(),'Order Total')]"));
+        List<WebElement> OrderTotal = driver.findElements(orderTotals);
         String temp = "", temp1 = "", temp2 = "";
         float TotalValue = 0.0f;
         Float OrderValue = null;
@@ -67,14 +74,14 @@ public class DemoWebShop_OrdersPage {
     public static void sumOfOrdersDayWise(){
         WebDriver driver = BaseClass.getDriver();
         HashMap<String, Double> map_DayWiseOrders = new HashMap<String, Double>();
-        List<WebElement> elements_allOrders = driver.findElements(By.xpath("//div[@class='page account-page order-list-page']//ul/li[2]"));
+        List<WebElement> elements_allOrders = driver.findElements(allOrdersElements);
         //List<WebElement> elements_allOrders=listOfOrdersForDayWise;
         for (WebElement element_Order : elements_allOrders) {
             String orderDate = element_Order.getText();
             orderDate = orderDate.split(":")[1].trim();
             orderDate = orderDate.split(" ")[0];
 
-            String orderValue = element_Order.findElement(By.xpath("./../li[3]")).getText();
+            String orderValue = element_Order.findElement(orderValues).getText();
             orderValue = orderValue.split(":")[1].trim();
             Double dOrderValue = Double.parseDouble(orderValue);
 
@@ -89,7 +96,7 @@ public class DemoWebShop_OrdersPage {
         //Printing sumOf Orders Daywise
         Set<Map.Entry<String, Double>> allEntries_Daywise = map_DayWiseOrders.entrySet();
         for (Map.Entry<String, Double> eachEntry_Daywise : allEntries_Daywise) {
-            System.out.println("Order Date is :" + eachEntry_Daywise.getKey() + " Sum of all Orders :" + eachEntry_Daywise.getValue());
+            log.info("Order Date is :" + eachEntry_Daywise.getKey() + " Sum of all Orders :" + eachEntry_Daywise.getValue());
         }
     }
 }
