@@ -1532,6 +1532,7 @@
 07:39:02:190 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
 07:39:02:191 [TestNG-tests-1] INFO  utilities.Log - X
 07:39:02:191 [TestNG-tests-1] INFO  utilities.Log - X
+<<<<<<< HEAD
 19:47:00:960 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
 19:47:00:966 [TestNG-tests-1] INFO  utilities.Log - **********testcases.orangeHRM.TC03_OrangeHRM_AddUser************
 19:47:00:966 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
@@ -2013,3 +2014,368 @@
 18:07:12:359 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
 18:07:16:474 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
 18:07:16:766 [main] INFO  pages.OrangeHRM_HomePage - UserName is matched and verified
+=======
+23:07:03:173 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+23:07:03:179 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+23:07:03:179 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+23:07:03:619 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+23:07:03:620 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+23:07:13:616 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+23:07:18:078 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :417
+23:07:39:007 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60656.793
+23:08:37:477 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Total Number of Orders
+23:08:37:639 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Sum Of All Orders
+23:08:37:778 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+23:08:38:305 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+23:08:38:308 [TestNG-tests-1] INFO  utilities.Log - X
+23:08:38:308 [TestNG-tests-1] INFO  utilities.Log - X
+23:08:38:354 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+23:08:38:355 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+23:08:38:355 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+23:08:38:709 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+23:08:38:710 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+23:08:47:383 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+23:08:51:356 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :417
+23:09:11:619 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60656.793
+23:10:06:620 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Total Number of Orders
+23:10:06:735 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Sum Of All Orders
+23:10:06:837 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+23:10:07:355 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+23:10:07:356 [TestNG-tests-1] INFO  utilities.Log - X
+23:10:07:357 [TestNG-tests-1] INFO  utilities.Log - X
+23:10:07:368 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+23:10:07:369 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+23:10:07:373 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+23:10:07:749 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+23:10:07:750 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+23:10:15:675 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+23:10:19:622 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :417
+23:10:38:627 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60656.793
+23:11:32:215 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Total Number of Orders
+23:11:32:355 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Sum Of All Orders
+23:11:32:472 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+23:11:32:992 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+23:11:32:992 [TestNG-tests-1] INFO  utilities.Log - X
+23:11:32:993 [TestNG-tests-1] INFO  utilities.Log - X
+23:11:33:001 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+23:11:33:003 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+23:11:33:003 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+23:11:33:336 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+23:11:33:337 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+23:11:40:782 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+23:11:44:856 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :417
+23:12:04:572 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60656.793
+23:12:56:719 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Total Number of Orders
+23:12:56:847 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Sum Of All Orders
+23:12:56:998 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+23:12:57:525 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+23:12:57:525 [TestNG-tests-1] INFO  utilities.Log - X
+23:12:57:526 [TestNG-tests-1] INFO  utilities.Log - X
+23:12:57:529 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+23:12:57:529 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+23:12:57:529 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+23:12:57:701 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+23:12:57:701 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+23:13:06:177 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+23:13:10:161 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :417
+23:13:29:721 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60656.793
+23:14:24:302 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Total Number of Orders
+23:14:24:478 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Sum Of All Orders
+23:14:24:599 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+23:14:25:147 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+23:14:25:148 [TestNG-tests-1] INFO  utilities.Log - X
+23:14:25:148 [TestNG-tests-1] INFO  utilities.Log - X
+23:14:25:152 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+23:14:25:153 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+23:14:25:153 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+23:14:25:787 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+23:14:25:788 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+23:14:34:739 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+23:14:38:505 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :417
+23:14:58:360 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60656.793
+23:15:53:144 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Total Number of Orders
+23:15:53:231 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Sum Of All Orders
+23:15:53:351 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+23:15:53:872 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+23:15:53:873 [TestNG-tests-1] INFO  utilities.Log - X
+23:15:53:873 [TestNG-tests-1] INFO  utilities.Log - X
+23:15:53:883 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+23:15:53:885 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+23:15:53:886 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+23:15:54:184 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+23:15:54:184 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+23:16:02:496 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+23:16:06:615 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :417
+23:16:26:115 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60656.793
+23:17:23:991 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Total Number of Orders
+23:17:24:087 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Sum Of All Orders
+23:17:24:239 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+23:17:24:758 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+23:17:24:759 [TestNG-tests-1] INFO  utilities.Log - X
+23:17:24:760 [TestNG-tests-1] INFO  utilities.Log - X
+23:17:24:763 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+23:17:24:766 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+23:17:24:766 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+23:17:24:975 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+23:17:24:976 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+23:17:32:932 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+23:17:36:819 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :417
+23:17:56:360 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60656.793
+23:18:49:813 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Total Number of Orders
+23:18:49:897 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Sum Of All Orders
+23:18:49:983 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+23:18:50:501 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+23:18:50:502 [TestNG-tests-1] INFO  utilities.Log - X
+23:18:50:502 [TestNG-tests-1] INFO  utilities.Log - X
+23:18:50:506 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+23:18:50:506 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+23:18:50:506 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+23:18:50:685 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+23:18:50:685 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+23:18:59:330 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+23:19:03:323 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :417
+23:19:22:944 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60656.793
+23:20:14:548 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Total Number of Orders
+23:20:14:630 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Sum Of All Orders
+23:20:14:702 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+23:20:15:221 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+23:20:15:221 [TestNG-tests-1] INFO  utilities.Log - X
+23:20:15:222 [TestNG-tests-1] INFO  utilities.Log - X
+23:20:15:227 [TestNG-tests-1] INFO  utilities.Log - *****************************************************************
+23:20:15:232 [TestNG-tests-1] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+23:20:15:268 [TestNG-tests-1] INFO  utilities.Log - ******************************************************************
+23:20:15:484 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+23:20:15:484 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+23:20:23:881 [TestNG-tests-1] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+23:20:27:757 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :417
+23:20:47:226 [TestNG-tests-1] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 60656.793
+23:21:40:499 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Total Number of Orders
+23:21:40:572 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - 417 is updated as Sum Of All Orders
+23:21:40:674 [TestNG-tests-1] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - TestCase is Passed and status is updated in Excel sheet
+23:21:41:240 [TestNG-tests-1] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+23:21:41:240 [TestNG-tests-1] INFO  utilities.Log - X
+23:21:41:241 [TestNG-tests-1] INFO  utilities.Log - X
+16:04:26:144 [main] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+16:04:28:475 [main] INFO  pages.DemoWebshop_HomePage - Title is verified, Login is Successful
+16:04:31:102 [main] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :432
+16:04:53:285 [main] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 64061.797
+16:05:50:930 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/1/2021 Sum of all Orders :56.0
+16:05:50:931 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :1/2/2023 Sum of all Orders :18.0
+16:05:50:931 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :4/26/2022 Sum of all Orders :95.0
+16:05:50:932 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/26/2022 Sum of all Orders :94.0
+16:05:50:933 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/15/2023 Sum of all Orders :259.0
+16:05:50:934 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/26/2021 Sum of all Orders :40.0
+16:05:50:934 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/14/2023 Sum of all Orders :3470.0
+16:05:50:935 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/25/2021 Sum of all Orders :140.0
+16:05:50:936 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/29/2022 Sum of all Orders :1731.0
+16:05:50:936 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/1/2022 Sum of all Orders :101.0
+16:05:50:937 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/11/2023 Sum of all Orders :71.0
+16:05:50:938 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/22/2022 Sum of all Orders :130.0
+16:05:50:938 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/24/2022 Sum of all Orders :37.0
+16:05:50:939 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/16/2021 Sum of all Orders :139.0
+16:05:50:940 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/21/2021 Sum of all Orders :27.0
+16:05:50:940 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/10/2022 Sum of all Orders :3198.0
+16:05:50:941 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/13/2023 Sum of all Orders :5034.0
+16:05:50:942 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :10/5/2021 Sum of all Orders :88.0
+16:05:50:943 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/12/2022 Sum of all Orders :19.0
+16:05:50:943 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/12/2023 Sum of all Orders :1646.0
+16:05:50:944 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/2/2021 Sum of all Orders :168.0
+16:05:50:945 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :3/2/2023 Sum of all Orders :90.0
+16:05:50:945 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/19/2022 Sum of all Orders :57.0
+16:05:50:946 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/27/2022 Sum of all Orders :338.0
+16:05:50:947 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/27/2023 Sum of all Orders :1153.8
+16:05:50:948 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/16/2022 Sum of all Orders :22.0
+16:05:50:948 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/4/2023 Sum of all Orders :4947.0
+16:05:50:949 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/11/2022 Sum of all Orders :108.0
+16:05:50:950 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/12/2023 Sum of all Orders :667.0
+16:05:50:950 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/15/2023 Sum of all Orders :367.0
+16:05:50:951 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :2/23/2023 Sum of all Orders :55.0
+16:05:50:952 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/25/2022 Sum of all Orders :14419.0
+16:05:50:952 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/18/2023 Sum of all Orders :30.6
+16:05:50:953 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :10/28/2021 Sum of all Orders :27.0
+16:05:50:953 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/17/2022 Sum of all Orders :113.0
+16:05:50:954 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/29/2021 Sum of all Orders :138.0
+16:05:50:954 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/14/2023 Sum of all Orders :130.0
+16:05:50:955 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/30/2022 Sum of all Orders :127.0
+16:05:50:955 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :3/3/2023 Sum of all Orders :72.0
+16:05:50:956 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/24/2021 Sum of all Orders :240.0
+16:05:50:957 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/19/2022 Sum of all Orders :59.0
+16:05:50:957 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/6/2023 Sum of all Orders :152.0
+16:05:50:958 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/11/2023 Sum of all Orders :17.0
+16:05:50:959 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/28/2023 Sum of all Orders :356.0
+16:05:50:960 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/28/2022 Sum of all Orders :900.0
+16:05:50:960 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/2/2022 Sum of all Orders :40.0
+16:05:50:961 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/17/2023 Sum of all Orders :295.0
+16:05:50:961 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/23/2021 Sum of all Orders :248.0
+16:05:50:962 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :10/12/2021 Sum of all Orders :124.0
+16:05:50:963 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/20/2022 Sum of all Orders :57.0
+16:05:50:963 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/20/2021 Sum of all Orders :194.0
+16:05:50:964 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/9/2023 Sum of all Orders :198.0
+16:05:50:965 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/27/2022 Sum of all Orders :163.0
+16:05:50:965 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/7/2023 Sum of all Orders :17.0
+16:05:50:966 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/7/2023 Sum of all Orders :48.0
+16:05:50:966 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/15/2023 Sum of all Orders :157.0
+16:05:50:967 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/7/2021 Sum of all Orders :95.0
+16:05:50:967 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/23/2022 Sum of all Orders :4912.0
+16:05:50:970 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/7/2022 Sum of all Orders :50.0
+16:05:50:970 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/18/2023 Sum of all Orders :175.0
+16:05:50:971 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/30/2021 Sum of all Orders :620.0
+16:05:50:972 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/29/2021 Sum of all Orders :151.0
+16:05:50:972 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/22/2023 Sum of all Orders :1812.6
+16:05:50:973 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/17/2023 Sum of all Orders :129.0
+16:05:50:974 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/7/2023 Sum of all Orders :27.0
+16:05:50:974 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/7/2022 Sum of all Orders :19.0
+16:05:50:975 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/7/2023 Sum of all Orders :3939.2
+16:05:50:976 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/26/2021 Sum of all Orders :78.0
+16:05:50:976 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/19/2023 Sum of all Orders :901.0
+16:05:50:977 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/16/2022 Sum of all Orders :38.0
+16:05:50:978 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/5/2021 Sum of all Orders :60.0
+16:05:50:978 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/30/2021 Sum of all Orders :54.0
+16:05:50:979 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/13/2022 Sum of all Orders :36.0
+16:05:50:979 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/8/2022 Sum of all Orders :362.0
+16:05:50:980 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/9/2023 Sum of all Orders :1182.0
+16:05:50:981 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/5/2023 Sum of all Orders :107.4
+16:05:50:981 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/28/2021 Sum of all Orders :52.0
+16:05:50:982 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/24/2023 Sum of all Orders :123.19999999999999
+16:05:50:982 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/9/2023 Sum of all Orders :428.0
+16:05:50:983 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/21/2023 Sum of all Orders :237.0
+16:05:50:984 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/13/2023 Sum of all Orders :77.0
+16:05:50:984 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/24/2022 Sum of all Orders :66.0
+16:05:50:985 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/12/2023 Sum of all Orders :299.0
+16:05:50:986 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/20/2023 Sum of all Orders :908.0
+16:05:50:986 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/26/2022 Sum of all Orders :178.0
+16:05:50:987 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/29/2023 Sum of all Orders :30.0
+16:05:50:987 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/11/2022 Sum of all Orders :110.0
+16:05:50:988 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/28/2023 Sum of all Orders :38.0
+16:05:50:988 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/25/2021 Sum of all Orders :409.0
+16:05:50:989 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :10/7/2021 Sum of all Orders :389.0
+16:05:50:990 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :3/4/2023 Sum of all Orders :36.0
+16:05:50:991 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/18/2023 Sum of all Orders :17.0
+16:05:50:991 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/25/2022 Sum of all Orders :16.0
+16:05:50:992 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/4/2021 Sum of all Orders :28.0
+16:05:50:992 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/13/2023 Sum of all Orders :166.0
+16:05:50:993 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :1/9/2022 Sum of all Orders :37.0
+16:05:50:994 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/30/2022 Sum of all Orders :209.0
+16:05:50:994 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :10/1/2021 Sum of all Orders :367.0
+16:05:50:995 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/18/2021 Sum of all Orders :454.0
+16:05:50:996 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/8/2023 Sum of all Orders :1780.0
+16:05:50:996 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/10/2023 Sum of all Orders :172.0
+16:00:51:756 [main] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - DemoWebShop Website is launched
+16:00:52:910 [main] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+16:00:55:461 [main] INFO  pages.DemoWebshop_HomePage - Title is verified, Login is Successful
+16:00:55:599 [main] INFO  utilities.Log - *****************************************************************
+16:00:55:601 [main] INFO  utilities.Log - **********testcases.demoWebshop.TC12_DemoWebshop_TotalOrders************
+16:00:55:602 [main] INFO  utilities.Log - ******************************************************************
+16:01:02:339 [main] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - UserName from excel sheet is :aarosagarch@gmail.com
+16:01:02:340 [main] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Password from excel sheet is:Admin@123
+16:01:12:023 [main] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - DemoWebShop Website is launched
+16:01:12:765 [main] INFO  pages.OrangeHRM_LoginPage - Clicked on the login link
+16:01:14:452 [main] INFO  pages.DemoWebshop_HomePage - Title is verified, Login is Successful
+16:01:15:115 [main] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Clicked on Email address link
+16:01:17:697 [main] INFO  testcases.demoWebshop.TC12_DemoWebshop_TotalOrders - Clicked on orders link on MyAccount Page
+16:01:19:115 [main] INFO  pages.DemoWebShop_OrdersPage - Total number of orders is :435
+16:01:39:686 [main] INFO  pages.DemoWebShop_OrdersPage - The total value of all orders placed is : 64113.797
+16:02:41:992 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/1/2021 Sum of all Orders :56.0
+16:02:41:993 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :1/2/2023 Sum of all Orders :18.0
+16:02:41:993 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :4/26/2022 Sum of all Orders :95.0
+16:02:41:994 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/26/2022 Sum of all Orders :94.0
+16:02:41:995 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/15/2023 Sum of all Orders :259.0
+16:02:41:995 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/26/2021 Sum of all Orders :40.0
+16:02:41:996 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/14/2023 Sum of all Orders :3470.0
+16:02:41:997 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/25/2021 Sum of all Orders :140.0
+16:02:41:998 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/29/2022 Sum of all Orders :1731.0
+16:02:41:998 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/1/2022 Sum of all Orders :101.0
+16:02:41:999 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/11/2023 Sum of all Orders :71.0
+16:02:42:000 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/22/2022 Sum of all Orders :130.0
+16:02:42:001 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/24/2022 Sum of all Orders :37.0
+16:02:42:001 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/16/2021 Sum of all Orders :139.0
+16:02:42:003 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/21/2021 Sum of all Orders :27.0
+16:02:42:004 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/10/2022 Sum of all Orders :3198.0
+16:02:42:004 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/13/2023 Sum of all Orders :5034.0
+16:02:42:005 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/21/2023 Sum of all Orders :35.0
+16:02:42:006 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :10/5/2021 Sum of all Orders :88.0
+16:02:42:007 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/12/2022 Sum of all Orders :19.0
+16:02:42:008 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/12/2023 Sum of all Orders :1646.0
+16:02:42:009 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/2/2021 Sum of all Orders :168.0
+16:02:42:009 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :3/2/2023 Sum of all Orders :90.0
+16:02:42:014 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/19/2022 Sum of all Orders :57.0
+16:02:42:015 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/27/2022 Sum of all Orders :338.0
+16:02:42:016 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/27/2023 Sum of all Orders :1153.8
+16:02:42:017 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/16/2022 Sum of all Orders :22.0
+16:02:42:017 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/4/2023 Sum of all Orders :4947.0
+16:02:42:018 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/11/2022 Sum of all Orders :108.0
+16:02:42:019 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/12/2023 Sum of all Orders :667.0
+16:02:42:019 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/15/2023 Sum of all Orders :367.0
+16:02:42:020 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :2/23/2023 Sum of all Orders :55.0
+16:02:42:020 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/25/2022 Sum of all Orders :14419.0
+16:02:42:021 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/18/2023 Sum of all Orders :30.6
+16:02:42:022 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :10/28/2021 Sum of all Orders :27.0
+16:02:42:022 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/17/2022 Sum of all Orders :113.0
+16:02:42:023 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/29/2021 Sum of all Orders :138.0
+16:02:42:024 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/14/2023 Sum of all Orders :130.0
+16:02:42:025 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/30/2022 Sum of all Orders :127.0
+16:02:42:025 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :3/3/2023 Sum of all Orders :72.0
+16:02:42:026 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/24/2021 Sum of all Orders :240.0
+16:02:42:027 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/19/2022 Sum of all Orders :59.0
+16:02:42:028 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/6/2023 Sum of all Orders :152.0
+16:02:42:029 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/11/2023 Sum of all Orders :17.0
+16:02:42:030 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/28/2023 Sum of all Orders :356.0
+16:02:42:030 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/28/2022 Sum of all Orders :900.0
+16:02:42:031 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/2/2022 Sum of all Orders :40.0
+16:02:42:032 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/17/2023 Sum of all Orders :295.0
+16:02:42:033 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/23/2021 Sum of all Orders :248.0
+16:02:42:034 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :10/12/2021 Sum of all Orders :124.0
+16:02:42:035 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/20/2022 Sum of all Orders :57.0
+16:02:42:036 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/20/2021 Sum of all Orders :194.0
+16:02:42:036 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/9/2023 Sum of all Orders :198.0
+16:02:42:037 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/20/2023 Sum of all Orders :17.0
+16:02:42:038 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/27/2022 Sum of all Orders :163.0
+16:02:42:039 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/7/2023 Sum of all Orders :17.0
+16:02:42:039 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/7/2023 Sum of all Orders :48.0
+16:02:42:040 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/15/2023 Sum of all Orders :157.0
+16:02:42:041 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/7/2021 Sum of all Orders :95.0
+16:02:42:041 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/23/2022 Sum of all Orders :4912.0
+16:02:42:042 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/7/2022 Sum of all Orders :50.0
+16:02:42:043 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/18/2023 Sum of all Orders :175.0
+16:02:42:045 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/30/2021 Sum of all Orders :620.0
+16:02:42:048 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/29/2021 Sum of all Orders :151.0
+16:02:42:050 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/22/2023 Sum of all Orders :1812.6
+16:02:42:053 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/17/2023 Sum of all Orders :129.0
+16:02:42:054 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/7/2023 Sum of all Orders :27.0
+16:02:42:055 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/7/2022 Sum of all Orders :19.0
+16:02:42:056 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/7/2023 Sum of all Orders :3939.2
+16:02:42:056 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/26/2021 Sum of all Orders :78.0
+16:02:42:057 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/19/2023 Sum of all Orders :901.0
+16:02:42:059 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/16/2022 Sum of all Orders :38.0
+16:02:42:061 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/5/2021 Sum of all Orders :60.0
+16:02:42:064 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/30/2021 Sum of all Orders :54.0
+16:02:42:065 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/13/2022 Sum of all Orders :36.0
+16:02:42:067 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/8/2022 Sum of all Orders :362.0
+16:02:42:067 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/9/2023 Sum of all Orders :1182.0
+16:02:42:068 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/5/2023 Sum of all Orders :107.4
+16:02:42:069 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/28/2021 Sum of all Orders :52.0
+16:02:42:069 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/24/2023 Sum of all Orders :123.19999999999999
+16:02:42:070 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :6/9/2023 Sum of all Orders :428.0
+16:02:42:072 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/21/2023 Sum of all Orders :237.0
+16:02:42:073 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/13/2023 Sum of all Orders :77.0
+16:02:42:074 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/24/2022 Sum of all Orders :66.0
+16:02:42:074 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/12/2023 Sum of all Orders :299.0
+16:02:42:075 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/20/2023 Sum of all Orders :908.0
+16:02:42:076 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/26/2022 Sum of all Orders :178.0
+16:02:42:076 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/29/2023 Sum of all Orders :30.0
+16:02:42:077 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/11/2022 Sum of all Orders :110.0
+16:02:42:077 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/28/2023 Sum of all Orders :38.0
+16:02:42:078 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/25/2021 Sum of all Orders :409.0
+16:02:42:078 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :10/7/2021 Sum of all Orders :389.0
+16:02:42:079 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :3/4/2023 Sum of all Orders :36.0
+16:02:42:079 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :5/18/2023 Sum of all Orders :17.0
+16:02:42:080 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/25/2022 Sum of all Orders :16.0
+16:02:42:080 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/4/2021 Sum of all Orders :28.0
+16:02:42:080 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/13/2023 Sum of all Orders :166.0
+16:02:42:081 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :1/9/2022 Sum of all Orders :37.0
+16:02:42:082 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :7/30/2022 Sum of all Orders :209.0
+16:02:42:082 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :10/1/2021 Sum of all Orders :367.0
+16:02:42:082 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :9/18/2021 Sum of all Orders :454.0
+16:02:42:083 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/8/2023 Sum of all Orders :1780.0
+16:02:42:084 [main] INFO  pages.DemoWebShop_OrdersPage - Order Date is :8/10/2023 Sum of all Orders :172.0
+
