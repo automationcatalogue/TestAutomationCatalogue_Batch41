@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        tags = "@DemoWebshop",
+        tags = " @OrangeHRM",
         features = "src/test/resources/",
         glue = "stepdefinitions",
         dryRun = false

@@ -54,7 +54,7 @@ public class TC03_OrangeHRM_AddUser {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         String userName = RandomGenerator.getRandomData("userName");
         log.info("Randomly generated username is :" + userName);
-        driver.get("https://automationo-trials710.orangehrmlive.com");
+        driver.get("https://automatetest-trials710.orangehrmlive.com/");
 
         //Enter the UserName as "Admin"
         OrangeHRM_LoginPage.login(userName_1, password);

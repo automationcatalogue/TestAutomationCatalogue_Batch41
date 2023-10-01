@@ -22,6 +22,36 @@
     <test name="test4">
         <parameter name="testID" value="TC12-04"/>
         <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test5">
+        <parameter name="testID" value="TC03-05"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test6">
+        <parameter name="testID" value="TC03-06"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test7">
+        <parameter name="testID" value="TC03-07"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test8">
+        <parameter name="testID" value="TC03-08"/>
+        <classes>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
+        </classes>
+    </test>
+    <test name="test9">
+        <parameter name="testID" value="TC03-09"/>
+        <classes>
             <class name="testcases.demoWebshop.TC12_DemoWebshop_TotalOrders"/>
         </classes>
     </test>
@@ -52,14 +82,13 @@
     <test name="test9">
         <parameter name="testID" value="TC12-09"/>
         <classes>
-            <class name="testcases.demoWebshop.TC12_DemoWebshop_TotalOrders"/>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
         </classes>
     </test>
     <test name="test10">
-        <parameter name="testID" value="TC12-10"/>
+        <parameter name="testID" value="TC03-10"/>
         <classes>
-            <class name="testcases.demoWebshop.TC12_DemoWebshop_TotalOrders"/>
+            <class name="testcases.orangeHRM.TC03_OrangeHRM_AddUser"/>
         </classes>
     </test>
-
 </suite>
