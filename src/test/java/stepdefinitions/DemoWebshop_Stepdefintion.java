@@ -1,28 +1,30 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
+import pages.*;
+import seleniumPrograms.sagarTeachings.DemoWebshop_ReOrder;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import pages.DemoWebShop_OrdersPage;
 import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
 import testcases.demoWebshop.TC12_DemoWebshop_TotalOrders;
-import testcases.orangeHRM.TC01_OrangeHRM_LoginTest;
 import utilities.*;
+
 
 public class DemoWebshop_Stepdefintion {
     public static WebDriver driver;
-    static Logger log = LogManager.getLogger(TC12_DemoWebshop_TotalOrders.class);
+    static Logger log = LogManager.getLogger(DemoWebshop_Stepdefintion.class);
     static XSSFWorkbook wbk;
     static String userName,password,sheetName;
     static int TotalNumberOfOrders;
     static float SumOfAllOrders;
     static int rowNum_testCase,rowNum_Index;
-
     @Given("User loads DemoWebshop Application")
     public void user_loads_demo_webshop_application() {
         driver = CommonUtils.browserLaunch(Config.browserName);
@@ -30,7 +32,69 @@ public class DemoWebshop_Stepdefintion {
         driver.get(Config.url_DemoWebshop);
         log.info("DemoWebShop Website is launched");
     }
-
+    @Given("User loads DemoWebshop Application in {string} browser")
+    public void loadDemoWebshopApplication(String browserName) {
+        driver = CommonUtils.browserLaunch(browserName);
+        BaseClass baseClass = new BaseClass(driver);
+        driver.get("https://demowebshop.tricentis.com/");
+        log.info("Demo website is loaded");
+    }
+    @When("User Login into DemoWebshop Application with UserName as {string} and Password as {string}")
+    public void loginDemoWebshop(String userName, String password) {
+        DemoWebshop_LoginPage.login(userName, password);
+    }
+    @Then("User clicks Email link")
+    public void user_clicks_email_link(){
+        DemoWebshop_HomePage.clickEmailLink();
+    }
+    @And("User Clicks on Orders link")
+    public void user_clicks_on_orders_link(){
+        DemoWebShop_OrdersPage.clickLinkOrders();
+    }
+    @And("User Clicks on OrderDetails button")
+    public void user_clicks_on_OrderDetails_button(){
+        DemoWebShop_OrdersPage.clickOrderDetailsBtn();
+    }
+    @Then("User Clicks on ReOrder button")
+    public void user_clicks_on_orderdetails_button(){
+        DemoWebshop_OrderInformationPage.clickReorderBtn();
+    }
+    @And("User Clicks on Iagree button")
+    public void user_clicks_on_iagree_button(){
+        DemoWebshop_CartPage.clickCheckboxIagree();
+    }
+    @And("User Clicks on Checkout button")
+    public void clickscheckoutbutton(){
+        DemoWebshop_CartPage.clickCheckoutBtn();
+    }
+    @When("User Clicks on BillingContinue button")
+    public void clicksbillingcontinuebutton(){
+        DemoWebshop_CheckoutPage.clickBillingContinue();
+    }
+    @Then("User Clicks on ShippingAddress button")
+    public void clickshippingaddressbutton(){
+        DemoWebshop_CheckoutPage.clickShippingAddressBtn();
+    }
+    @And("User Clicks on ShippingMethod button")
+    public void clickshippingmethodbutton(){
+        DemoWebshop_CheckoutPage.clickShippingMethodBtn();
+    }
+    @And("User Clicks on PaymentMethod button")
+    public void click_paymentmethod_button(){
+        DemoWebshop_CheckoutPage.clickPaymentMethodBtn();
+    }
+    @And("User Clicks on PaymentInformation button")
+    public void click_paymentinformation_button(){
+        DemoWebshop_CheckoutPage.clickPaymentInformationBtn();
+    }
+    @When("User Clicks on ConfirmOrder button")
+    public void click_confirmorder_button(){
+        DemoWebshop_CheckoutPage.clickConfirmOrderBtn();
+    }
+    @Then("User Get OrderNumber")
+    public void getordernumber(){
+        DemoWebshop_CheckoutPage.getOrderNumber();
+    }
     @When("User login into DemoWebshop Application with UserName {string} and Password {string}")
     public void user_login_into_demo_webshop_application_with_user_name_and_password(String userName, String password) {
         DemoWebshop_LoginPage.login(userName, password);
