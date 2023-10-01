@@ -52,7 +52,6 @@ public class TC12_DemoWebshop_TotalOrders extends TestRunner {
         driver.findElement(DemoWebshop_HomePage.link_Login).click();
         DemoWebshop_LoginPage.login(userName, password);
         CommonUtils.takeScreenshot(screenshotsPath, "LoginPage");
-
         driver.findElement(DemoWebshop_HomePage.link_Email).click();
         CommonUtils.takeScreenshot(screenshotsPath, "MyAccountPage");
         driver.findElement(DemoWebShop_OrdersPage.link_Orders).click();
