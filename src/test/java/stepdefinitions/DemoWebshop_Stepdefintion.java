@@ -10,6 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import pages.*;
 import utilities.*;
+;
 
 public class DemoWebshop_Stepdefintion {
     public static WebDriver driver;
@@ -17,6 +18,7 @@ public class DemoWebshop_Stepdefintion {
     static int rowNum, row_index;
     static String UserName;
     static String Password;
+    static String ApplyCoupon;
     static String FirstName, LastName, Email, Company;
     static String City, Address1, Address2;
     static String ZipPostalCode, PhoneNumber, FaxNumber;
@@ -62,6 +64,10 @@ public class DemoWebshop_Stepdefintion {
         log.info("Demo website is loaded");
     }
 
+    @Then("User clicks on Login link")
+    public void user_clicks_on_Login_link(){
+        DemoWebshop_HomePage.clickLoginLink();
+    }
     @When("User Login into DemoWebshop Application with UserName as {string} and Password as {string}")
     public void loginDemoWebshop(String userName, String password) {
         DemoWebshop_LoginPage.login(userName, password);
@@ -85,6 +91,47 @@ public class DemoWebshop_Stepdefintion {
     @Then("User Clicks on ReOrder button")
     public void user_clicks_on_orderdetails_button() {
         DemoWebshop_OrderInformationPage.clickReorderBtn();
+    }
+
+    @Then("User clicks on Books link")
+    public void user_clicks_on_books_link(){
+        DemoWebshop_BooksPage.clickBooksLink();
+    }
+    @And("User clicks on Addtocart button")
+    public void user_clicks_on_Addtocart_button(){
+        DemoWebshop_BooksPage.clickAddToCartBtn();
+    }
+    @And("User clicks on Shopping cart link")
+    public void user_clicks_on_Shopping_cart_link(){
+        DemoWebshop_HomePage.clickShoppingCartLink();
+    }
+    @And("User get Cartprice Beforediscount")
+    public void user_get_Cartprice_Beforediscount(){
+        double totalValue_BeforeDiscount = DemoWebshop_CartPage.getCartPriceBeforeDiscount();
+    }
+    @When("User clicks on Txtbox coupon")
+    public void user_clicks_on_Txtbox_coupon(){
+        DemoWebshop_CartPage.clickTxtbxCoupon();
+    }
+    @Then("User enter Txtbox coupon as {string}")
+    public void user_enter_Txtbox_coupon(){
+        DemoWebshop_CartPage.enterTxtbxCoupon(ApplyCoupon);
+    }
+    @And("User clicks on Applydiscount button")
+    public void user_clicks_on_Applydiscount_button(){
+        DemoWebshop_CartPage.clickApplyCouponBtn();
+    }
+    @When("User get txtmessage printed")
+    public void user_get_txtmessage_printed(){
+        DemoWebshop_CartPage.getTxtMessagePrinted();
+    }
+    @Then("User get Discount amount")
+    public void user_get_Discount_amount(){
+        double discountValue = DemoWebshop_CartPage.getDiscountAmount();
+    }
+    @And("User get Cartprice Afterdiscount")
+    public void user_get_Cartprice_Afterdiscount(){
+        double totalValue_AfterDiscount = DemoWebshop_CartPage.getCartPriceAfterDiscount();
     }
 
     @And("User Clicks on Iagree button")
@@ -130,6 +177,11 @@ public class DemoWebshop_Stepdefintion {
     @Then("User Get OrderNumber")
     public void getordernumber() {
         DemoWebshop_CheckoutPage.getOrderNumber();
+    }
+
+    @And("User logout after verification")
+    public void logut_after_verification(){
+        DemoWebshop_HomePage.logout();
     }
 
     @When("User login into DemoWebshop Application with UserName {string} and Password {string}")
