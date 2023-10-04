@@ -10,7 +10,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import pages.*;
+import testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart;
 import utilities.*;
+;
 
 public class DemoWebshop_Stepdefintion {
     public static WebDriver driver;
@@ -18,15 +20,18 @@ public class DemoWebshop_Stepdefintion {
     static int rowNum, row_index;
     static String UserName;
     static String Password;
+    static String ApplyCoupon;
     static String FirstName, LastName, Email, Company;
     static String City, Address1, Address2;
     static String ZipPostalCode, PhoneNumber, FaxNumber;
     static String testID;
     static Logger log = LogManager.getLogger(DemoWebshop_Stepdefintion.class);
     static String userName, password, sheetName;
+    static String jewel_Length, update_Qty;
     static int TotalNumberOfOrders;
     static float SumOfAllOrders;
     static int rowNum_testCase, rowNum_Index;
+    static String text_BookPrice, text_updatedQuty, text_JewelPrice, total_1, total_2, orderNumber;
 
     @Given("User reads CreateAddress Data from {string} using TestID {string}")
     public void readExcelData_CreateAddress(String sheetName, String testID) throws Exception {
@@ -63,6 +68,10 @@ public class DemoWebshop_Stepdefintion {
         log.info("Demo website is loaded");
     }
 
+    @Then("User clicks on Login link")
+    public void user_clicks_on_Login_link(){
+        DemoWebshop_HomePage.clickLoginLink();
+    }
     @When("User Login into DemoWebshop Application with UserName as {string} and Password as {string}")
     public void loginDemoWebshop(String userName, String password) {
         DemoWebshop_LoginPage.login(userName, password);
@@ -86,6 +95,47 @@ public class DemoWebshop_Stepdefintion {
     @Then("User Clicks on ReOrder button")
     public void user_clicks_on_orderdetails_button() {
         DemoWebshop_OrderInformationPage.clickReorderBtn();
+    }
+
+    @Then("User clicks on Books link")
+    public void user_clicks_on_books_link(){
+        DemoWebshop_BooksPage.clickBooksLink();
+    }
+    @And("User clicks on Addtocart button")
+    public void user_clicks_on_Addtocart_button(){
+        DemoWebshop_BooksPage.clickAddToCartBtn();
+    }
+    @And("User clicks on Shopping cart link")
+    public void user_clicks_on_Shopping_cart_link(){
+        DemoWebshop_HomePage.clickShoppingCartLink();
+    }
+    @And("User get Cartprice Beforediscount")
+    public void user_get_Cartprice_Beforediscount(){
+        double totalValue_BeforeDiscount = DemoWebshop_CartPage.getCartPriceBeforeDiscount();
+    }
+    @When("User clicks on Txtbox coupon")
+    public void user_clicks_on_Txtbox_coupon(){
+        DemoWebshop_CartPage.clickTxtbxCoupon();
+    }
+    @Then("User enter Txtbox coupon as {string}")
+    public void user_enter_Txtbox_coupon(){
+        DemoWebshop_CartPage.enterTxtbxCoupon(ApplyCoupon);
+    }
+    @And("User clicks on Applydiscount button")
+    public void user_clicks_on_Applydiscount_button(){
+        DemoWebshop_CartPage.clickApplyCouponBtn();
+    }
+    @When("User get txtmessage printed")
+    public void user_get_txtmessage_printed(){
+        DemoWebshop_CartPage.getTxtMessagePrinted();
+    }
+    @Then("User get Discount amount")
+    public void user_get_Discount_amount(){
+        double discountValue = DemoWebshop_CartPage.getDiscountAmount();
+    }
+    @And("User get Cartprice Afterdiscount")
+    public void user_get_Cartprice_Afterdiscount(){
+        double totalValue_AfterDiscount = DemoWebshop_CartPage.getCartPriceAfterDiscount();
     }
 
     @And("User Clicks on Iagree button")
@@ -133,6 +183,11 @@ public class DemoWebshop_Stepdefintion {
         DemoWebshop_CheckoutPage.getOrderNumber();
     }
 
+    @And("User logout after verification")
+    public void logut_after_verification(){
+        DemoWebshop_HomePage.logout();
+    }
+
     @When("User login into DemoWebshop Application with UserName {string} and Password {string}")
     public void user_login_into_demo_webshop_application_with_user_name_and_password(String UserName, String Password) {
         DemoWebshop_LoginPage.login(UserName, Password);
@@ -147,13 +202,6 @@ public class DemoWebshop_Stepdefintion {
     public void user_opens_address_page() {
         DemoWebshop_HomePage.click_mailId();
         DemoWebshop_HomePage.select_AddressLink();
-    }
-
-    @When("User Enters address fields data for FirstName, LastName, Email and Company")
-    public void user_enters_address_fields_data_for_first_name_last_name_email_and_company() {
-        DemoWebshop_HomePage.createName(FirstName, LastName);
-
-        DemoWebshop_HomePage.createEmailAndCompany(Email, Company);
     }
 
     @When("User Enters PhoneNumber as {string} and FaxNumber as {string}")
@@ -171,8 +219,8 @@ public class DemoWebshop_Stepdefintion {
         DemoWebshop_HomePage.verify_Address(FirstName, LastName);
     }
 
-    @And("User logout after verification")
-    public void User_logout_after_verification() {
+    @And("User logout from the application")
+    public void User_logout_from_the_application() {
         DemoWebshop_HomePage.logOut();
     }
 
@@ -242,6 +290,60 @@ public class DemoWebshop_Stepdefintion {
             }
         }
 
+    @When("User Enters address fields data for FirstName, LastName, Email and Company")
+    public void user_enters_address_fields_data_for_first_name_last_name_email_and_company() {
+        DemoWebshop_HomePage.createName(FirstName, LastName);
+
+        DemoWebshop_HomePage.createEmailAndCompany(Email, Company);
+    }
+
+    @Given("User Reads Update Shopping Cart Data from {string} using TestID {string}")
+    public void readExcelData_Update_Shopping_Cart(String sheetName, String testID) throws Exception {
+        wbk = ExcelUtils.setExcelFilePath();
+        rowNum = ExcelUtils.getRowNumber(testID, sheetName);
+        row_index = ExcelUtils.getRowNumber(testID, "Index");
+        userName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
+        Password = ExcelUtils.getCellData(sheetName, rowNum, Config.col_Password);
+        jewel_Length = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UpdateCart_Length);
+        update_Qty = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UpdateCart_Quantity);
+    }
+
+    @Then("User added the Products to Cart")
+    public void userAddedTheProductsToCart() throws Exception {
+        DemoWebshop_HomePage.select_BooksLink();
+        DemoWebshop_BooksPage.adding_FirstBookToCart();
+        DemoWebshop_HomePage.select_JewelsLink();
+        DemoWebshop_JewelsPage.adding_firstJewelToCart(jewel_Length);
+
+    }
+
+    @And("User update the shopping cart")
+    public void userUpdateTheShoppingCart() {
+        DemoWebshop_HomePage.select_ShoppingCart();
+        total_1 = DemoWebshop_CartPage.price_FirstItemBeforeIncreasingQty();
+        DemoWebshop_CartPage.price_FirstItemAfterIncreasingQty(update_Qty);
+        total_2 = DemoWebshop_CartPage.price_SecondItemBeforeIncreasingQty();
+        DemoWebshop_CartPage.price_SecondItemAfterIncreasingQty(update_Qty);
+        DemoWebshop_CartPage.select_updateCartButton();
+    }
+
+    @Then("User verifies the updated price and total")
+    public void userVerifiesTheUpdatedPriceAndTotal() {
+        text_BookPrice = DemoWebshop_CartPage.price_textBook();
+        text_updatedQuty = DemoWebshop_CartPage.updatedQty_Text();
+        DemoWebshop_CartPage.verify_BookTotalPriceChange(update_Qty, text_BookPrice, text_updatedQuty);
+        text_JewelPrice = DemoWebshop_CartPage.price_Jewel();
+        DemoWebshop_CartPage.verify_JewelTotalPriceChange(update_Qty, text_JewelPrice, text_updatedQuty);
+        DemoWebshop_CartPage.verify_grandTotal();
+
+    }
+
+
+    @And("User checkout and Process the payment gateway")
+    public void userCheckoutAndProcessThePaymentGateway() {
+        DemoWebshop_CartPage.select_checkOut();
+        orderNumber = DemoWebshop_CheckoutPage.checking_paymentGateway();
+    }
 }
 
 

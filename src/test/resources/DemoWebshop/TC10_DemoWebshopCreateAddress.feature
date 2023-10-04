@@ -12,7 +12,7 @@ Feature: DemoWebshop Create Address Feature
     When User Enters address fields data for FirstName, LastName, Email and Company
     And User Provides City, Address1, Address2, ZipPostalCode, PhoneNumber and FaxNumber
     Then User Verifies Address is added
-    And User logout after verification
+    Then User logout from the application
 
 
 
