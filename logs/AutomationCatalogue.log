@@ -2415,3 +2415,178 @@
 08:01:08:732 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
 08:01:08:732 [main] INFO  utilities.Log - X
 08:01:08:733 [main] INFO  utilities.Log - X
+06:43:00:466 [main] INFO  utilities.Log - *****************************************************************
+06:43:00:474 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:43:00:474 [main] INFO  utilities.Log - ******************************************************************
+06:44:18:155 [main] INFO  utilities.Log - *****************************************************************
+06:44:18:162 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:44:18:162 [main] INFO  utilities.Log - ******************************************************************
+06:52:23:128 [main] INFO  utilities.Log - *****************************************************************
+06:52:23:144 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:52:23:145 [main] INFO  utilities.Log - ******************************************************************
+06:52:46:806 [main] INFO  utilities.Log - *****************************************************************
+06:52:46:807 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:52:46:807 [main] INFO  utilities.Log - ******************************************************************
+06:53:05:663 [main] INFO  utilities.Log - *****************************************************************
+06:53:05:663 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:53:05:664 [main] INFO  utilities.Log - ******************************************************************
+06:53:25:677 [main] INFO  utilities.Log - *****************************************************************
+06:53:25:677 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:53:25:678 [main] INFO  utilities.Log - ******************************************************************
+06:53:48:165 [main] INFO  utilities.Log - *****************************************************************
+06:53:48:167 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:53:48:167 [main] INFO  utilities.Log - ******************************************************************
+06:54:12:420 [main] INFO  utilities.Log - *****************************************************************
+06:54:12:424 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:54:12:425 [main] INFO  utilities.Log - ******************************************************************
+06:57:01:333 [main] INFO  utilities.Log - *****************************************************************
+06:57:01:339 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:57:01:340 [main] INFO  utilities.Log - ******************************************************************
+06:57:16:000 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+06:57:16:324 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+06:57:16:489 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+06:57:24:652 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:57:24:677 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+06:57:30:325 [main] INFO  utilities.Log - *****************************************************************
+06:57:30:326 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:57:30:326 [main] INFO  utilities.Log - ******************************************************************
+06:57:40:385 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+06:57:41:000 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+06:57:41:617 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Test@123
+06:57:51:542 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:57:51:567 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+06:58:32:834 [main] INFO  utilities.Log - *****************************************************************
+06:58:32:843 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:58:32:843 [main] INFO  utilities.Log - ******************************************************************
+06:58:48:609 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+06:58:48:957 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+06:58:49:207 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+06:58:58:013 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:58:58:057 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+06:59:05:180 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:59:05:181 [main] INFO  utilities.Log - X
+06:59:05:181 [main] INFO  utilities.Log - X
+06:59:05:204 [main] INFO  utilities.Log - *****************************************************************
+06:59:05:204 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:59:05:205 [main] INFO  utilities.Log - ******************************************************************
+06:59:15:501 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+06:59:15:969 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+06:59:16:266 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Test@123
+06:59:23:775 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:59:23:795 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+06:59:31:207 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:59:31:207 [main] INFO  utilities.Log - X
+06:59:31:207 [main] INFO  utilities.Log - X
+06:59:31:219 [main] INFO  utilities.Log - *****************************************************************
+06:59:31:219 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:59:31:219 [main] INFO  utilities.Log - ******************************************************************
+06:59:41:116 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+06:59:41:484 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :christine.lasalle
+06:59:41:727 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Password@1234
+06:59:48:185 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+06:59:48:197 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+06:59:55:533 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+06:59:55:533 [main] INFO  utilities.Log - X
+06:59:55:533 [main] INFO  utilities.Log - X
+06:59:55:556 [main] INFO  utilities.Log - *****************************************************************
+06:59:55:557 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+06:59:55:557 [main] INFO  utilities.Log - ******************************************************************
+07:00:08:196 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+07:00:08:491 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :helen
+07:00:08:757 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :helen@123
+07:00:14:804 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:00:14:826 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:00:22:047 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:00:22:047 [main] INFO  utilities.Log - X
+07:00:22:048 [main] INFO  utilities.Log - X
+07:00:22:064 [main] INFO  utilities.Log - *****************************************************************
+07:00:22:064 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+07:00:22:064 [main] INFO  utilities.Log - ******************************************************************
+07:00:32:445 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+07:00:32:714 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :kevin
+07:00:33:006 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:00:39:750 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:00:39:774 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:00:49:239 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:00:49:239 [main] INFO  utilities.Log - X
+07:00:49:239 [main] INFO  utilities.Log - X
+07:00:49:250 [main] INFO  utilities.Log - *****************************************************************
+07:00:49:250 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+07:00:49:251 [main] INFO  utilities.Log - ******************************************************************
+07:00:59:036 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+07:00:59:310 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Sarika
+07:00:59:563 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:01:04:446 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:01:05:874 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:01:05:874 [main] INFO  utilities.Log - X
+07:01:05:875 [main] INFO  utilities.Log - X
+07:11:44:262 [main] INFO  utilities.Log - *****************************************************************
+07:11:44:274 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+07:11:44:275 [main] INFO  utilities.Log - ******************************************************************
+07:19:00:768 [main] INFO  utilities.Log - *****************************************************************
+07:19:00:781 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+07:19:00:782 [main] INFO  utilities.Log - ******************************************************************
+07:19:55:439 [main] INFO  utilities.Log - *****************************************************************
+07:19:55:447 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+07:19:55:447 [main] INFO  utilities.Log - ******************************************************************
+07:20:33:092 [main] INFO  utilities.Log - *****************************************************************
+07:20:33:101 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+07:20:33:102 [main] INFO  utilities.Log - ******************************************************************
+07:23:39:948 [main] INFO  utilities.Log - *****************************************************************
+07:23:39:962 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+07:23:39:962 [main] INFO  utilities.Log - ******************************************************************
+07:57:56:487 [main] INFO  utilities.Log - *****************************************************************
+07:57:56:504 [main] INFO  utilities.Log - **********runner.CucumberHooks************
+07:57:56:505 [main] INFO  utilities.Log - ******************************************************************
+07:58:27:497 [main] INFO  stepdefinitions.OrangeHRM_StepDefinition - OrangeHRM website is launched
+07:58:28:903 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:58:29:713 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:58:41:214 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:58:41:516 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:58:42:252 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+07:58:46:715 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Clicked on Add button 
+07:58:51:583 [main] INFO  pages.OrangeHRM_AddEmployeePage - First Name is entered
+07:58:52:488 [main] INFO  pages.OrangeHRM_AddEmployeePage - Last Name is entered
+07:58:52:830 [main] INFO  pages.OrangeHRM_AddEmployeePage - Location drop-down is clicked 
+07:58:53:403 [main] INFO  pages.OrangeHRM_AddEmployeePage - India Office value is selected from a drop-down
+07:58:53:805 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+07:58:54:013 [main] INFO  pages.OrangeHRM_AddEmployeePage - Next button is clicked
+07:59:01:801 [main] INFO  pages.OrangeHRM_AddEmployeePage - Marital Status drop-down is clicked
+07:59:02:325 [main] INFO  pages.OrangeHRM_AddEmployeePage - Single is selected
+07:59:02:728 [main] INFO  pages.OrangeHRM_AddEmployeePage - Gender drop-down is clicked
+07:59:03:111 [main] INFO  pages.OrangeHRM_AddEmployeePage - Male is selected
+07:59:03:431 [main] INFO  pages.OrangeHRM_AddEmployeePage - Clicked on Next
+07:59:12:901 [main] INFO  pages.OrangeHRM_AddEmployeePage - FTE drop-down is clicked
+07:59:12:903 [main] INFO  pages.OrangeHRM_AddEmployeePage - FTE is not found
+07:59:13:284 [main] INFO  pages.OrangeHRM_AddEmployeePage - Region drop-down is clicked
+07:59:13:285 [main] INFO  pages.OrangeHRM_AddEmployeePage - region is not found
+07:59:13:984 [main] INFO  pages.OrangeHRM_AddEmployeePage - Temp Department drop-down is clicked
+07:59:13:985 [main] INFO  pages.OrangeHRM_AddEmployeePage - TempDepartment is not found
+07:59:14:530 [main] INFO  pages.OrangeHRM_AddEmployeePage - clicked on Save
+07:59:15:526 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+07:59:18:489 [main] INFO  pages.OrangeHRM_AddEmployeePage - Searched with Employee first and last name
+07:59:25:335 [main] INFO  pages.OrangeHRM_AddEmployeePage - Element Text is: John Mikel
+07:59:25:339 [main] INFO  pages.OrangeHRM_AddEmployeePage - Search result is correct
+07:59:25:896 [main] INFO  pages.OrangeHRM_AddEmployeePage - Employee id is :0142
+07:59:41:092 [main] INFO  runner.CucumberHooks - TestCase is Failed and status is updated in Excel sheet
+07:59:42:839 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:59:42:840 [main] INFO  utilities.Log - X
+07:59:42:842 [main] INFO  utilities.Log - X
+08:04:09:120 [main] INFO  utilities.Log - *****************************************************************
+08:04:09:142 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC06_OrangeHRM_Goals************
+08:04:09:144 [main] INFO  utilities.Log - ******************************************************************
+08:04:37:223 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+08:04:37:667 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+08:05:07:464 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+08:05:20:980 [main] INFO  pages.OrangeHRM_HRAdministrationPage - Username of the Employee is :aaliyah.haq
+08:05:22:233 [main] INFO  pages.OrangeHRM_HomePage - Employee Management is selected
+08:05:30:008 [main] INFO  pages.OrangeHRM_EmployeeManagementPage - Supervisor name of the given employee is :Brody Alan
+08:05:38:412 [main] INFO  pages.OrangeHRM_HRAdministrationPage - username of the Supervisor is :brody
+08:05:45:098 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :aaliyah.haq
+08:05:45:701 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+08:05:50:236 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+08:05:50:238 [main] INFO  testcases.orangeHRM.TC06_OrangeHRM_Goals - Logged in with the Employee credentials
+08:06:10:353 [main] INFO  pages.OrangeHRM_HomePage - More button is not visible
+08:06:33:320 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+08:06:33:320 [main] INFO  utilities.Log - X
+08:06:33:321 [main] INFO  utilities.Log - X

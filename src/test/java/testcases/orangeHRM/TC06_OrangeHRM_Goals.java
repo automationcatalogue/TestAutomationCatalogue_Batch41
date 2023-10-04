@@ -51,7 +51,7 @@ public class TC06_OrangeHRM_Goals {
     public void OrangeHRM_Goals(@Optional("chrome") String browserName) throws Exception {
         driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
-        driver.get("https://automationo-trials710.orangehrmlive.com");
+        driver.get("https://automatetest-trials710.orangehrmlive.com");
         OrangeHRM_LoginPage.login(userName,passWord);
         //Finding Username of Employee
         OrangeHRM_HomePage.clickHrAdministrationLink();

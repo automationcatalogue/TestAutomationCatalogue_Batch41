@@ -219,11 +219,6 @@ public class DemoWebshop_Stepdefintion {
         DemoWebshop_HomePage.verify_Address(FirstName, LastName);
     }
 
-    @And("User logout from the application")
-    public void User_logout_from_the_application() {
-        DemoWebshop_HomePage.logOut();
-    }
-
     @When("User clicks on Email Address and click on orders link")
     public void user_clicks_on_email_address_and_click_on_orders_link() {
         driver.findElement(DemoWebshop_HomePage.link_Email).click();
