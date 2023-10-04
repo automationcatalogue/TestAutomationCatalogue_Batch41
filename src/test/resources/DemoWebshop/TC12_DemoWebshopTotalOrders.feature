@@ -13,3 +13,4 @@ Feature: DemoWebshop Application Calculating Total Orders
     Then User performs Total Orders count
     And User Performs Sum of All Orders Placed
     And User displays Sum of orders DateWise
+    Then User Updates the Status in ExcelSheet for Total Orders

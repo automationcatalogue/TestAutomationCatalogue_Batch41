@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 import pages.*;
 import utilities.*;
 
@@ -212,6 +213,34 @@ public class DemoWebshop_Stepdefintion {
         log.info("Password from excel sheet is:" + password);
 
     }
+    @Then("User logout from the application")
+    public void logout(){
+        OrangeHRM_LogoutPage.logout();
+    }
+    @Then("User Updates the Status in ExcelSheet for Total Orders")
+    public void updateExcelSheetStatus(ITestResult result) throws Exception{
+            if (result.getStatus() == ITestResult.SUCCESS) {
+                ExcelUtils.setCellData(String.valueOf(TotalNumberOfOrders), "DemoWebShop_TotalOrders", rowNum_testCase, Config.col_TotalOrders_NumberOfOrders);
+                log.info(TotalNumberOfOrders + " is updated as Total Number of Orders");
+
+                ExcelUtils.setCellData(String.valueOf(SumOfAllOrders), "DemoWebShop_TotalOrders", rowNum_testCase, Config.col_TotalOrders_SumOfAllOrders);
+                log.info(TotalNumberOfOrders + " is updated as Sum Of All Orders");
+
+                ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
+                log.info("TestCase is Passed and status is updated in Excel sheet");
+            } else if (result.getStatus() == ITestResult.FAILURE) {
+                if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
+                    ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
+                    log.info("TestCase is Failed and status is updated in Excel sheet");
+
+                    ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
+                    log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
+                }
+            } else if (result.getStatus() == ITestResult.SKIP) {
+                ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
+                log.info("TestCase is SKIPPED and status is updated in Excel sheet");
+            }
+        }
 
 }
 
