@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import pages.*;
+import runner.CucumberHooks;
 import testcases.orangeHRM.TC03_OrangeHRM_AddUser;
 import utilities.*;
 
@@ -36,7 +37,7 @@ public class OrangeHRM_StepDefinition {
         System.out.println("Chrome Browser is launched");
         driver.manage().window().maximize();
         System.out.println("Browser window is maximized");
-        driver.get("https://automationo-trials710.orangehrmlive.com/");
+        driver.get("https://automatetest-trials710.orangehrmlive.com");
         System.out.println("OrangeHRM website is loaded");
     }
 
@@ -203,25 +204,11 @@ public class OrangeHRM_StepDefinition {
 
 
     @Then("User Updates the Status in ExcelSheet for Add Employee")
-    public void updateExcelSheetStatus(ITestResult result) throws Exception{
-        if (result.getStatus() == ITestResult.SUCCESS) {
-            ExcelUtils.setCellData(empid, sheetName, rowNum, Config.col_AddEmployee_EmployeeId);
-            log.info(empid + " is written back to the Excel file");
+    public void updateExcelSheetStatus() throws Exception{
+        CucumberHooks.rowNum_Index = rowNum_Index;
+        ExcelUtils.setCellData(empid, sheetName, rowNum, Config.col_AddEmployee_EmployeeId);
+        log.info(empid + " is written back to the Excel file");
 
-            ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
-            log.info("TestCase is Passed and status is updated in Excel sheet");
-        } else if (result.getStatus() == ITestResult.FAILURE) {
-            if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
-                ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
-                log.info("TestCase is Failed and status is updated in Excel sheet");
-
-                ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
-                log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
-            }
-        } else if (result.getStatus() == ITestResult.SKIP) {
-            ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
-            log.info("TestCase is SKIPPED and status is updated in Excel sheet");
-        }
     }
 
 
