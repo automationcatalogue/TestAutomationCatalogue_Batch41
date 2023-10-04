@@ -10,6 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import pages.*;
+import testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart;
 import utilities.*;
 ;
 
@@ -26,9 +27,11 @@ public class DemoWebshop_Stepdefintion {
     static String testID;
     static Logger log = LogManager.getLogger(DemoWebshop_Stepdefintion.class);
     static String userName, password, sheetName;
+    static String jewel_Length, update_Qty;
     static int TotalNumberOfOrders;
     static float SumOfAllOrders;
     static int rowNum_testCase, rowNum_Index;
+    static String text_BookPrice, text_updatedQuty, text_JewelPrice, total_1, total_2, orderNumber;
 
     @Given("User reads CreateAddress Data from {string} using TestID {string}")
     public void readExcelData_CreateAddress(String sheetName, String testID) throws Exception {
@@ -201,13 +204,6 @@ public class DemoWebshop_Stepdefintion {
         DemoWebshop_HomePage.select_AddressLink();
     }
 
-    @When("User Enters address fields data for FirstName, LastName, Email and Company")
-    public void user_enters_address_fields_data_for_first_name_last_name_email_and_company() {
-        DemoWebshop_HomePage.createName(FirstName, LastName);
-
-        DemoWebshop_HomePage.createEmailAndCompany(Email, Company);
-    }
-
     @When("User Enters PhoneNumber as {string} and FaxNumber as {string}")
     public void user_enters_phone_number_as_and_fax_number_as(String string, String string2) {
         DemoWebshop_HomePage.createContactNumbers(ZipPostalCode, PhoneNumber, FaxNumber);
@@ -223,8 +219,8 @@ public class DemoWebshop_Stepdefintion {
         DemoWebshop_HomePage.verify_Address(FirstName, LastName);
     }
 
-    @And("User logout after verification")
-    public void User_logout_after_verification() {
+    @And("User logout from the application")
+    public void User_logout_from_the_application() {
         DemoWebshop_HomePage.logOut();
     }
 
@@ -294,6 +290,60 @@ public class DemoWebshop_Stepdefintion {
             }
         }
 
+    @When("User Enters address fields data for FirstName, LastName, Email and Company")
+    public void user_enters_address_fields_data_for_first_name_last_name_email_and_company() {
+        DemoWebshop_HomePage.createName(FirstName, LastName);
+
+        DemoWebshop_HomePage.createEmailAndCompany(Email, Company);
+    }
+
+    @Given("User Reads Update Shopping Cart Data from {string} using TestID {string}")
+    public void readExcelData_Update_Shopping_Cart(String sheetName, String testID) throws Exception {
+        wbk = ExcelUtils.setExcelFilePath();
+        rowNum = ExcelUtils.getRowNumber(testID, sheetName);
+        row_index = ExcelUtils.getRowNumber(testID, "Index");
+        userName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
+        Password = ExcelUtils.getCellData(sheetName, rowNum, Config.col_Password);
+        jewel_Length = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UpdateCart_Length);
+        update_Qty = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UpdateCart_Quantity);
+    }
+
+    @Then("User added the Products to Cart")
+    public void userAddedTheProductsToCart() throws Exception {
+        DemoWebshop_HomePage.select_BooksLink();
+        DemoWebshop_BooksPage.adding_FirstBookToCart();
+        DemoWebshop_HomePage.select_JewelsLink();
+        DemoWebshop_JewelsPage.adding_firstJewelToCart(jewel_Length);
+
+    }
+
+    @And("User update the shopping cart")
+    public void userUpdateTheShoppingCart() {
+        DemoWebshop_HomePage.select_ShoppingCart();
+        total_1 = DemoWebshop_CartPage.price_FirstItemBeforeIncreasingQty();
+        DemoWebshop_CartPage.price_FirstItemAfterIncreasingQty(update_Qty);
+        total_2 = DemoWebshop_CartPage.price_SecondItemBeforeIncreasingQty();
+        DemoWebshop_CartPage.price_SecondItemAfterIncreasingQty(update_Qty);
+        DemoWebshop_CartPage.select_updateCartButton();
+    }
+
+    @Then("User verifies the updated price and total")
+    public void userVerifiesTheUpdatedPriceAndTotal() {
+        text_BookPrice = DemoWebshop_CartPage.price_textBook();
+        text_updatedQuty = DemoWebshop_CartPage.updatedQty_Text();
+        DemoWebshop_CartPage.verify_BookTotalPriceChange(update_Qty, text_BookPrice, text_updatedQuty);
+        text_JewelPrice = DemoWebshop_CartPage.price_Jewel();
+        DemoWebshop_CartPage.verify_JewelTotalPriceChange(update_Qty, text_JewelPrice, text_updatedQuty);
+        DemoWebshop_CartPage.verify_grandTotal();
+
+    }
+
+
+    @And("User checkout and Process the payment gateway")
+    public void userCheckoutAndProcessThePaymentGateway() {
+        DemoWebshop_CartPage.select_checkOut();
+        orderNumber = DemoWebshop_CheckoutPage.checking_paymentGateway();
+    }
 }
 
 
