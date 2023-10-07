@@ -2590,3 +2590,118 @@
 08:06:33:320 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
 08:06:33:320 [main] INFO  utilities.Log - X
 08:06:33:321 [main] INFO  utilities.Log - X
+07:00:19:108 [main] INFO  utilities.Log - *****************************************************************
+07:00:19:123 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:00:19:126 [main] INFO  utilities.Log - ******************************************************************
+07:00:20:183 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:00:20:213 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:00:42:642 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://automatetest-trials710.orangehrmlive.com/
+07:00:43:284 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:00:43:648 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:00:54:043 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:01:01:711 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:01:10:393 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:01:12:194 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - TestCase is Passed and status is updated in Excel sheet
+07:01:14:181 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:01:14:183 [main] INFO  utilities.Log - X
+07:01:14:184 [main] INFO  utilities.Log - X
+07:08:30:534 [main] INFO  utilities.Log - *****************************************************************
+07:08:30:558 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:08:30:560 [main] INFO  utilities.Log - ******************************************************************
+07:08:32:139 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:08:32:142 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:08:52:199 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://automatetest-trials710.orangehrmlive.com/
+07:08:53:080 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:08:53:484 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:09:04:828 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:09:18:044 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:09:26:504 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:09:28:550 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - TestCase is Passed and status is updated in Excel sheet
+07:09:30:462 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:09:30:465 [main] INFO  utilities.Log - X
+07:09:30:465 [main] INFO  utilities.Log - X
+07:11:53:700 [main] INFO  utilities.Log - *****************************************************************
+07:11:53:714 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:11:53:715 [main] INFO  utilities.Log - ******************************************************************
+07:11:54:822 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:11:54:824 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:12:17:550 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://automatetest-trials710.orangehrmlive.com/
+07:14:37:405 [main] INFO  utilities.Log - *****************************************************************
+07:14:37:422 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:14:37:423 [main] INFO  utilities.Log - ******************************************************************
+07:14:38:642 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:14:38:646 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:14:56:855 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://automatetest-trials710.orangehrmlive.com/
+07:14:57:840 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:14:58:238 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:15:08:728 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:15:17:897 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:15:26:271 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:15:28:126 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - TestCase is Passed and status is updated in Excel sheet
+07:15:31:596 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:15:31:597 [main] INFO  utilities.Log - X
+07:15:31:597 [main] INFO  utilities.Log - X
+07:17:13:954 [main] INFO  utilities.Log - *****************************************************************
+07:17:13:979 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:17:13:980 [main] INFO  utilities.Log - ******************************************************************
+07:17:15:244 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:17:15:246 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:17:35:582 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://automatetest-trials710.orangehrmlive.com/
+07:17:36:096 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - C:\AutomationCatalogue\Projects\TestAutomationCatalogue_Batch41\screenshots\07Oct2023_071712\OrangeHRM_LoginPage.jpg
+07:20:06:060 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:20:06:580 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:20:06:936 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:21:10:067 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:21:19:418 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:22:23:477 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - TestCase is Passed and status is updated in Excel sheet
+07:22:25:622 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:22:25:627 [main] INFO  utilities.Log - X
+07:22:25:630 [main] INFO  utilities.Log - X
+07:32:40:585 [main] INFO  utilities.Log - *****************************************************************
+07:32:40:600 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:32:40:602 [main] INFO  utilities.Log - ******************************************************************
+07:32:41:648 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:32:41:659 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:33:18:253 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://automatetest-trials710.orangehrmlive.com/
+07:33:18:591 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - C:\AutomationCatalogue\Projects\TestAutomationCatalogue_Batch41\screenshots\07Oct2023_073238\OrangeHRM_LoginPage.jpg
+07:33:19:091 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:33:19:484 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:33:30:471 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:33:37:763 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:33:44:540 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:33:46:172 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - TestCase is Passed and status is updated in Excel sheet
+07:33:48:623 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:33:48:624 [main] INFO  utilities.Log - X
+07:33:48:625 [main] INFO  utilities.Log - X
+07:40:35:753 [main] INFO  utilities.Log - *****************************************************************
+07:40:35:770 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:40:35:770 [main] INFO  utilities.Log - ******************************************************************
+07:40:36:982 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:40:36:986 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:40:55:810 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://automatetest-trials710.orangehrmlive.com/
+07:40:58:391 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - C:\AutomationCatalogue\Projects\TestAutomationCatalogue_Batch41\screenshots\07Oct2023_074034\OrangeHRM_LoginPage.jpg
+07:40:58:963 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:40:59:358 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:41:29:589 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:41:37:263 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:41:46:745 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:41:50:108 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - TestCase is Passed and status is updated in Excel sheet
+07:41:54:477 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:41:54:479 [main] INFO  utilities.Log - X
+07:41:54:479 [main] INFO  utilities.Log - X
+07:44:41:221 [main] INFO  utilities.Log - *****************************************************************
+07:44:41:239 [main] INFO  utilities.Log - **********testcases.orangeHRM.TC01_OrangeHRM_LoginTest************
+07:44:41:240 [main] INFO  utilities.Log - ******************************************************************
+07:44:42:371 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - UserName from excel sheet is :Admin
+07:44:42:378 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - Password from excel sheet is:Admin@123
+07:45:00:711 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - OrangeHRM URL is loaded :https://automatetest-trials710.orangehrmlive.com/
+07:45:01:495 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - C:\AutomationCatalogue\Projects\TestAutomationCatalogue_Batch41\screenshots\07Oct2023_074439\OrangeHRM_LoginPage.jpg
+07:45:01:929 [main] INFO  pages.OrangeHRM_LoginPage - UserName is Entered :Admin
+07:45:02:726 [main] INFO  pages.OrangeHRM_LoginPage - Password is Entered :Admin@123
+07:45:13:203 [main] INFO  pages.OrangeHRM_LoginPage - Login button is clicked
+07:45:22:407 [main] INFO  pages.OrangeHRM_HomePage - Title is verified, Login is Successful
+07:45:30:375 [main] INFO  pages.OrangeHRM_LogoutPage - log out is clicked
+07:45:32:539 [main] INFO  testcases.orangeHRM.TC01_OrangeHRM_LoginTest - TestCase is Passed and status is updated in Excel sheet
+07:45:34:348 [main] INFO  utilities.Log - XXX---------E-N-D--------------XXX
+07:45:34:349 [main] INFO  utilities.Log - X
+07:45:34:349 [main] INFO  utilities.Log - X
