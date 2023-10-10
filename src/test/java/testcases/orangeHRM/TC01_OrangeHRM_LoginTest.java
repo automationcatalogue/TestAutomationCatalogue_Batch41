@@ -1,5 +1,7 @@
 package testcases.orangeHRM;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -23,7 +25,7 @@ public class TC01_OrangeHRM_LoginTest  extends TestRunner {
     @BeforeMethod
     @Parameters("{testID}")
     public void prerequisite_setup(@Optional(Config.LoginTestCase_ID) String testID) throws Exception{
-
+        logger = extent.createTest("OrangeHRMLogin_"+testID);
         Log.startTestCase(TC01_OrangeHRM_LoginTest.class.getName());
 
         wbk= ExcelUtils.setExcelFilePath();
@@ -41,18 +43,30 @@ public class TC01_OrangeHRM_LoginTest  extends TestRunner {
     @Test
     @Parameters({"browserName"})
     public static void login(@Optional("chrome") String browserName) throws Exception{
-
         driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
+        String url ="https://automatetest-trials710.orangehrmlive.com/";
+        driver.get(url);
 
-        driver.get("https://automationo-trials710.orangehrmlive.com");
-        log.info("OrangeHRM URL is loaded :https://seleniumautom-trials710.orangehrmlive.com");
+        log.info("OrangeHRM URL is loaded :"+url);
+        logger.log(Status.INFO,"OrangeHRM Application is loaded"+url);
+        CommonUtils.takeScreenshot(screenshotsPath,"OrangeHRM_LoginPage");
+        log.info(screenshotsPath+"\\OrangeHRM_LoginPage.jpg");
+        logger.info(MediaEntityBuilder.createScreenCaptureFromPath(screenshotsPath+"\\OrangeHRM_LoginPage.jpg").build());
+        //logger.addScreenCaptureFromPath(screenshotsPath+"\\OrangeHRM_LoginPage.jpg");
 
         OrangeHRM_LoginPage.login(userName, password);
+        logger.log(Status.INFO,"OrangeHRM Login is Successful");
         Thread.sleep(6000);
-        OrangeHRM_HomePage.verifyTitle();
         CommonUtils.takeScreenshot(screenshotsPath,"OrangeHRM_HomePage");
+        //logger.addScreenCaptureFromPath(screenshotsPath+"\\OrangeHRM_HomePage.jpg");
+        logger.info(MediaEntityBuilder.createScreenCaptureFromPath(screenshotsPath+"\\OrangeHRM_HomePage.jpg").build());
+
+        OrangeHRM_HomePage.verifyTitle();
+        logger.log(Status.INFO,"OrangeHRM Title is Verified");
+
         OrangeHRM_LogoutPage.logout();
+        logger.log(Status.INFO,"Logged out from OrangeHRM application");
     }
 
     @AfterMethod
@@ -60,6 +74,9 @@ public class TC01_OrangeHRM_LoginTest  extends TestRunner {
         if(result.getStatus() == ITestResult.SUCCESS){
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
+
+            logger.pass("OrangeHRM Login testcase is passed");
+
         }else if(result.getStatus()==ITestResult.FAILURE){
             if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
                 ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
@@ -67,10 +84,14 @@ public class TC01_OrangeHRM_LoginTest  extends TestRunner {
 
                 ExcelUtils.setCellData(BaseClass.failureReason,"Index",rowNum_Index,Config.col_reason);
                 log.info("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+
+                logger.pass("OrangeHRM Login testcase is failed");
             }
         }else if(result.getStatus()==ITestResult.SKIP){
             ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
+
+            logger.pass("OrangeHRM Login testcase is skipped");
         }
 
         driver.quit();
