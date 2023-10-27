@@ -6,9 +6,10 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
+import testcases.setup.TestRunner;
 import utilities.*;
 
-public class TC10_DemoWebShop_CreateAddress {
+public class TC10_DemoWebShop_CreateAddress extends TestRunner {
     static XSSFWorkbook wbk; static String sheetName;
     static String UserName; static String Password;
     static String FirstName; static String LastName;
@@ -21,7 +22,7 @@ public class TC10_DemoWebShop_CreateAddress {
     @BeforeMethod
     @Parameters("{testID}")
     public void prerequisite_setup(@Optional(Config.CreateAddressRequestTestCase_ID) String testID) throws Exception {
-        wbk = ExcelUtils.setExcelFilePath();
+
         sheetName = "DemoWebshop_CreateAddress";
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         row_index = ExcelUtils.getRowNumber(testID,"Index");

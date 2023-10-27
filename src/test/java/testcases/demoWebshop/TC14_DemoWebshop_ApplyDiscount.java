@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
+import testcases.setup.TestRunner;
 import utilities.*;
 
 import java.io.FileInputStream;
@@ -18,7 +19,7 @@ import java.io.FileOutputStream;
 
 import static testcases.demoWebshop.TC11_DemoWebshop_ReOrder.sheetName;
 
-public class TC14_DemoWebshop_ApplyDiscount {
+public class TC14_DemoWebshop_ApplyDiscount extends TestRunner {
     static XSSFWorkbook wbk;
     static String userName;
     static String password;
@@ -32,7 +33,7 @@ public class TC14_DemoWebshop_ApplyDiscount {
     @Parameters("{testID}")
     public void prerequisite_setup(@Optional(Config.ApplyDiscountRequestTestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC14_DemoWebshop_ApplyDiscount.class.getName());
-        wbk = ExcelUtils.setExcelFilePath();
+
         sheetName = "DemoWebshop_ApplyDiscount";
         rowNum_testCase = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");

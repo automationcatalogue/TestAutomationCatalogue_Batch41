@@ -10,11 +10,12 @@ import pages.OrangeHRM_AddEmployeePage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
 import pages.OrangeHRM_LogoutPage;
+import testcases.setup.TestRunner;
 import utilities.*;
 
 
 
-public class TC02_OrangeHRM_AddEmployee {
+public class TC02_OrangeHRM_AddEmployee extends TestRunner {
 
 
     static XSSFWorkbook wbk;
@@ -30,7 +31,7 @@ public class TC02_OrangeHRM_AddEmployee {
     @BeforeMethod
     public void prerequisite_setup(@Optional(Config.AddEmployeeTestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC02_OrangeHRM_AddEmployee.class.getName());
-        wbk = ExcelUtils.setExcelFilePath();
+
         sheetName = "OrangeHRM_AddEmployee";
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");

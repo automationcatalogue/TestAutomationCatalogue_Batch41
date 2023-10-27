@@ -10,11 +10,12 @@ import org.testng.annotations.*;
 import pages.OrangHRM_AddUserPage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
+import testcases.setup.TestRunner;
 import utilities.*;
 
 import java.time.Duration;
 
-public class TC03_OrangeHRM_AddUser {
+public class TC03_OrangeHRM_AddUser extends TestRunner {
 
     XSSFWorkbook wbk;
     int row;
@@ -34,7 +35,7 @@ public class TC03_OrangeHRM_AddUser {
     public void prerequisites(@Optional(Config.AddUserTestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC03_OrangeHRM_AddUser.class.getName());
         sheetName = "OrangeHRM_AddUser";
-        wbk = ExcelUtils.setExcelFilePath();
+
         row = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
         userName_1 = ExcelUtils.getCellData(sheetName, row, Config.col_UserName);

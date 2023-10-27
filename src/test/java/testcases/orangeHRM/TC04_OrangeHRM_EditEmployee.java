@@ -9,11 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
+import testcases.setup.TestRunner;
 import utilities.*;
 
 import java.time.Duration;
 
-public class TC04_OrangeHRM_EditEmployee {
+public class TC04_OrangeHRM_EditEmployee extends TestRunner {
     XSSFWorkbook wbk;
     String userName;
     String passWord;
@@ -35,7 +36,7 @@ public class TC04_OrangeHRM_EditEmployee {
     public void prerequisite_Setup(@Optional(Config.EditEmployeeTestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC04_OrangeHRM_EditEmployee.class.getName());
         sheetName = "OrangeHRM_EditEmployee";
-        wbk = ExcelUtils.setExcelFilePath();
+
         row = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
         userName = ExcelUtils.getCellData(sheetName, row, Config.col_UserName);
