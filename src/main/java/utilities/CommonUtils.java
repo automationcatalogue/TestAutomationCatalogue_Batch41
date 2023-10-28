@@ -1,6 +1,11 @@
 package utilities;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -16,7 +21,10 @@ import java.util.List;
 public class CommonUtils{
 
     static WebDriver driver;
-
+    public static ExtentSparkReporter sparkReporter;
+    public static ExtentReports extent;
+    private static String dateTime;
+    static Logger log = LogManager.getLogger(CommonUtils.class);
 
     public static WebDriver browserLaunch(String browserName){
         driver=null;
@@ -44,11 +52,14 @@ public class CommonUtils{
         FileUtils.copyFile(src,dest);
     }
 
-    public static void takeScreenshot(String screenshotsPath, String fileName) throws Exception{
+    public static String takeScreenshot(String screenshotsPath, String fileName) throws Exception{
         TakesScreenshot ts = (TakesScreenshot)driver;
+        byte screenshot[] = ts.getScreenshotAs(OutputType.BYTES);
         File src= ts.getScreenshotAs(OutputType.FILE);
         File dest = new File(screenshotsPath+"//"+fileName+".jpg");
+        String completeScreenshotsPath = dest.getAbsolutePath();
         FileUtils.copyFile(src,dest);
+        return completeScreenshotsPath;
     }
 
     public static void selectDropdownValue(By locator, String data) throws Exception{
@@ -77,7 +88,7 @@ public class CommonUtils{
     public static String generateFolderNameWithTmeStamp(){
         LocalDateTime now =LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMMyyyy_HHmmss");
-        String dateTime = now.format(formatter);
+        dateTime = now.format(formatter);
         return dateTime;
     }
 
@@ -92,6 +103,29 @@ public class CommonUtils{
             }
 
         }
+    }
+
+    public static ExtentReports generateExtentReport(String projectPath){
+        sparkReporter = new ExtentSparkReporter(projectPath+"//reports//TestAutomation_"+dateTime+".html");
+        sparkReporter.config().setDocumentTitle("TestAutomationCatalogue_batch41");
+        sparkReporter.config().setTheme(Theme.DARK);
+        sparkReporter.config().setReportName("OrangeHRM TestCases Results");
+
+        extent = new ExtentReports();
+        extent.attachReporter(sparkReporter);
+        extent.setSystemInfo("OS","Windows11");
+        extent.setSystemInfo("Author","Batch41");
+        extent.setSystemInfo("Browser","Chrome");
+        return extent;
+    }
+
+    public static String generateScreenshotsFolder(String projectPath){
+        String dateTime = CommonUtils.generateFolderNameWithTmeStamp();
+        String screenshotsPath = projectPath+"\\screenshots\\"+dateTime;
+        File file = new File(screenshotsPath);
+        file.mkdir();
+        log.info("New Folder for Screenshots is created with timestamp "+dateTime);
+        return screenshotsPath;
     }
 
 

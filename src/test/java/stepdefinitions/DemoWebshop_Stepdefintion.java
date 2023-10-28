@@ -35,7 +35,8 @@ public class DemoWebshop_Stepdefintion {
 
     @Given("User reads CreateAddress Data from {string} using TestID {string}")
     public void readExcelData_CreateAddress(String sheetName, String testID) throws Exception {
-        wbk = ExcelUtils.setExcelFilePath();
+        String projectPath = System.getProperty("user.dir");
+        wbk = ExcelUtils.setExcelFilePath(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         row_index = ExcelUtils.getRowNumber(testID, "Index");
         UserName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
@@ -56,7 +57,7 @@ public class DemoWebshop_Stepdefintion {
     public void user_loads_demo_webshop_application() {
         driver = CommonUtils.browserLaunch(Config.browserName);
         BaseClass ob = new BaseClass(driver);
-        driver.get(Config.url_DemoWebshop);
+        driver.get(Config.demoWebshop_URL);
         log.info("DemoWebShop Website is launched");
     }
 
@@ -245,7 +246,8 @@ public class DemoWebshop_Stepdefintion {
     @Given("User reads TotalOrder Data from {string} using TestID {string}")
     public void readExcelSheetData_TotalOrders(String sheetName, String testID) throws Exception {
         Log.startTestCase(DemoWebshop_Stepdefintion.class.getName());
-        wbk = ExcelUtils.setExcelFilePath();
+        String projectPath = System.getProperty("user.dir");
+        wbk = ExcelUtils.setExcelFilePath(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         rowNum_testCase = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
 
@@ -294,7 +296,8 @@ public class DemoWebshop_Stepdefintion {
 
     @Given("User Reads Update Shopping Cart Data from {string} using TestID {string}")
     public void readExcelData_Update_Shopping_Cart(String sheetName, String testID) throws Exception {
-        wbk = ExcelUtils.setExcelFilePath();
+        String projectPath = System.getProperty("user.dir");
+        wbk = ExcelUtils.setExcelFilePath(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         row_index = ExcelUtils.getRowNumber(testID, "Index");
         userName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);

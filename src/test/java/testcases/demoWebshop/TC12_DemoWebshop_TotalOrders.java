@@ -27,7 +27,7 @@ public class TC12_DemoWebshop_TotalOrders extends TestRunner {
     @BeforeClass
     public void prerequisite_setup(@Optional(Config.TotalOrdersRequestTestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC12_DemoWebshop_TotalOrders.class.getName());
-        wbk = ExcelUtils.setExcelFilePath();
+
         sheetName = "DemoWebShop_TotalOrders";
         rowNum_testCase = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");

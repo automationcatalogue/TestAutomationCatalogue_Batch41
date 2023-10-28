@@ -29,7 +29,7 @@ public class MasterSuiteDriverScript {
         String projectPath=System.getProperty("user.dir");
         System.out.println("Project Path is :"+projectPath);
 
-        ExcelUtils.setExcelFilePath();
+        //ExcelUtils.setExcelFilePath();
         MasterSuiteDriverScript startEngine=new MasterSuiteDriverScript();
         startEngine.execute_TestCase();
     }
