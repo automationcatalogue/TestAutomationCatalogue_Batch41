@@ -140,8 +140,8 @@ public class OrangeHRM_StepDefinition {
 
     @Given("User reads AddEmployee Data from {string} using TestID {string}")
     public void readExcelSheetData_AddEmployee(String sheetName, String testID) throws Exception {
-
-        wbk = ExcelUtils.setExcelFilePath();
+        String projectPath = System.getProperty("user.dir");
+        wbk = ExcelUtils.setExcelFilePath(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
         userName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
@@ -159,7 +159,8 @@ public class OrangeHRM_StepDefinition {
     @Given("User Reads the Data from ExcelSheet {string} using TestID {string}")
     public void readExcelSheetData_AddUser(String sheetName, String testID) throws Exception {
         Log.startTestCase(OrangeHRM_StepDefinition.class.getName());
-        wbk = ExcelUtils.setExcelFilePath();
+        String projectPath = System.getProperty("user.dir");
+        wbk = ExcelUtils.setExcelFilePath(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
         userName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
@@ -170,7 +171,8 @@ public class OrangeHRM_StepDefinition {
     @Given("User adds new user details in AddUser Data from {string} using TestID {string}")
     public void user_adds_new_user_details_in_add_user_data_from_using_test_id(String sheetName, String testID) throws Exception {
         Log.startTestCase(OrangeHRM_StepDefinition.class.getName());
-        wbk = ExcelUtils.setExcelFilePath();
+        String projectPath = System.getProperty("user.dir");
+        wbk = ExcelUtils.setExcelFilePath(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         row = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
         userName_1 = ExcelUtils.getCellData(sheetName, row, Config.col_UserName);

@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
+import testcases.setup.TestRunner;
 import utilities.*;
 
 import java.io.FileInputStream;
@@ -18,7 +19,7 @@ import java.io.FileOutputStream;
 import java.time.Duration;
 
 
-public class TC05_OrangeHRM_TravelRequest {
+public class TC05_OrangeHRM_TravelRequest extends TestRunner {
     static XSSFWorkbook wbk;
     static int rowNum, rowNum_Index;
     static String userName, pswd, newPassword, currency, destination, travelFrom, travelTo, expenseType, currencyPaidIn, paidBy, travelReqId, reqStatus;
@@ -37,7 +38,7 @@ public class TC05_OrangeHRM_TravelRequest {
     @Parameters({"testID"})
     @BeforeMethod
     public void prerequisite_setup(@Optional(Config.TravelRequestTestCase_ID) String testID) throws Exception {
-        wbk = ExcelUtils.setExcelFilePath();
+
         sheetName = "OrangeHRM_TravelExpense";
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");

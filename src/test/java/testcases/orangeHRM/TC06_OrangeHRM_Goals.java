@@ -7,10 +7,11 @@ import org.openqa.selenium.*;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
+import testcases.setup.TestRunner;
 import utilities.*;
 
 
-public class TC06_OrangeHRM_Goals {
+public class TC06_OrangeHRM_Goals extends TestRunner {
     XSSFWorkbook wbk;
     int row; int row_index;
     String userName;
@@ -32,7 +33,7 @@ public class TC06_OrangeHRM_Goals {
     @Parameters("{testID}")
     public void prerequisite_Setup(@Optional(Config.GoalsRequestTestCase_ID) String testID) throws Exception{
         Log.startTestCase(TC06_OrangeHRM_Goals.class.getName());
-        wbk= ExcelUtils.setExcelFilePath();
+
         sheetName = "OrangeHRM_Goals";
         row = ExcelUtils.getRowNumber(testID,sheetName);
         row_index = ExcelUtils.getRowNumber(testID,"Index");

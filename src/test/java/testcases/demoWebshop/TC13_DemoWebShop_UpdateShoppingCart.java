@@ -7,9 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
+import testcases.setup.TestRunner;
 import utilities.*;
 
-public class TC13_DemoWebShop_UpdateShoppingCart {
+public class TC13_DemoWebShop_UpdateShoppingCart extends TestRunner {
     XSSFWorkbook wbk;
     static int row;
     static int row_index;
@@ -31,7 +32,7 @@ public class TC13_DemoWebShop_UpdateShoppingCart {
     @Parameters("{testID}")
     public void prerequisite_Setup(@Optional(Config.UpdateShoppingCartRequestTestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC13_DemoWebShop_UpdateShoppingCart.class.getName());
-        wbk = ExcelUtils.setExcelFilePath();
+
         sheetName = "DemoWebshop_UpdateShoppingCart";
         row = ExcelUtils.getRowNumber(testID, sheetName);
         row_index = ExcelUtils.getRowNumber(testID, "Index");

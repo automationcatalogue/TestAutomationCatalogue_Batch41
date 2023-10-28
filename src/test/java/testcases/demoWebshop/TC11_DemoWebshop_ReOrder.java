@@ -12,9 +12,10 @@ import pages.DemoWebshop_CartPage;
 import pages.DemoWebshop_OrderInformationPage;
 import pages.DemoWebShop_OrdersPage;
 import pages.DemoWebshop_HomePage;
+import testcases.setup.TestRunner;
 import utilities.*;
 
-public class TC11_DemoWebshop_ReOrder {
+public class TC11_DemoWebshop_ReOrder extends TestRunner {
 
     static XSSFWorkbook wbk;
     static String userName;
@@ -30,7 +31,7 @@ public class TC11_DemoWebshop_ReOrder {
     @BeforeClass
     public void prerequisite_setup(@Optional(Config.ReOrderRequestTestCase_ID) String testID) throws Exception {
         Log.startTestCase(TC11_DemoWebshop_ReOrder.class.getName());
-        wbk= ExcelUtils.setExcelFilePath();
+
         sheetName = "DemoWebshop_ReOrder";
         rowNum_testCase = ExcelUtils.getRowNumber(testID,sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID,"Index");

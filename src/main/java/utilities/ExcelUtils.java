@@ -17,9 +17,8 @@ public class ExcelUtils {
     static XSSFCell col;
     static String excelPath;
 
-    public static XSSFWorkbook setExcelFilePath() throws Exception{
-        String projectPath = System.getProperty("user.dir");
-        excelPath = projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx";
+    public static XSSFWorkbook setExcelFilePath(String excelPath) throws Exception{
+        ExcelUtils.excelPath = excelPath;
         fis = new FileInputStream(excelPath);
         wbk = new XSSFWorkbook(fis);
         return wbk;

@@ -3,7 +3,8 @@ package utilities;
 public class Config {
 
     public static final String browserName = "Chrome";
-    public static final String url_DemoWebshop = "https://demowebshop.tricentis.com/";
+    public static final String demoWebshop_URL = "https://demowebshop.tricentis.com/";
+    public static final String orangeHRM_URL = "https://automatetest-trials710.orangehrmlive.com/";
 
     public static final String LoginTestCase_ID = "TC01-01";
     public static final String AddEmployeeTestCase_ID = "TC02-01";
