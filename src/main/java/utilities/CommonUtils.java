@@ -54,17 +54,15 @@ public class CommonUtils{
 
     public static String takeScreenshot(String screenshotsPath, String fileName) throws Exception{
         TakesScreenshot ts = (TakesScreenshot)driver;
-        byte screenshot[] = ts.getScreenshotAs(OutputType.BYTES);
         File src= ts.getScreenshotAs(OutputType.FILE);
         File dest = new File(screenshotsPath+"//"+fileName+".jpg");
-        String completeScreenshotsPath = dest.getAbsolutePath();
         FileUtils.copyFile(src,dest);
-        return completeScreenshotsPath;
+        String base64Image = ts.getScreenshotAs(OutputType.BASE64);
+        return base64Image;
     }
 
     public static void selectDropdownValue(By locator, String data) throws Exception{
         WebDriver driver = BaseClass.getDriver();
-
         List<WebElement> list_Elements = driver.findElements(locator);
         Thread.sleep(2000);
         for (WebElement element:list_Elements)
@@ -101,7 +99,6 @@ public class CommonUtils{
                 System.out.println("Stale Element is occurred and retrying");
                 Thread.sleep(1000);
             }
-
         }
     }
 
