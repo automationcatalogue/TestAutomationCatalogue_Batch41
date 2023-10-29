@@ -21,6 +21,7 @@ public class TC01_OrangeHRM_LoginTest extends TestRunner {
     static Logger log = LogManager.getLogger(TC01_OrangeHRM_LoginTest.class);
     static WebDriver driver;
     static int rowNum_Index;
+    private static String base64;
 
     @BeforeMethod
     @Parameters("{testID}")
@@ -45,27 +46,24 @@ public class TC01_OrangeHRM_LoginTest extends TestRunner {
 
     @Test
     @Parameters({"browserName"})
-    public static void login(@Optional("chrome") String browserName) throws Exception{
+    public static void login(@Optional(Config.browserName) String browserName) throws Exception{
         //Browser Launch
         driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
 
         //Loading OrangeHRM URL
         driver.get(Config.orangeHRM_URL);
+        base64 = CommonUtils.takeScreenshot(screenshotsPath,"OrangeHRM_LoginPage");
         log.info("OrangeHRM URL is loaded :"+Config.orangeHRM_URL);
-        logger.log(Status.INFO,"OrangeHRM Application is loaded"+Config.orangeHRM_URL);
-        String orangeHRMLoginScreenshot = CommonUtils.takeScreenshot(screenshotsPath,"OrangeHRM_LoginPage");
-        logger.log(Status.INFO, MediaEntityBuilder.createScreenCaptureFromPath(orangeHRMLoginScreenshot).build());
+        logger.log(Status.INFO,"OrangeHRM Application is loaded"+Config.orangeHRM_URL, MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"OrangeHRM_LoginPage").build());
 
-        //OrangeHRM Login
         OrangeHRM_LoginPage.login(userName, password);
         log.info("OrangeHRM Login is Successful");
-        logger.log(Status.INFO,"OrangeHRM Login is Successful");
-        CommonUtils.takeScreenshot(screenshotsPath,"OrangeHRM_HomePage");
 
-        //OrangeHRM Title Verification
         OrangeHRM_HomePage.verifyTitle();
         logger.log(Status.INFO,"OrangeHRM Title is Verified");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath,"OrangeHRM_HomePage");
+        logger.log(Status.INFO,"OrangeHRM Login is Successful", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"OrangeHRM_HomePage").build());
 
         //OrangeHRM Logout
         OrangeHRM_LogoutPage.logout();
@@ -88,13 +86,13 @@ public class TC01_OrangeHRM_LoginTest extends TestRunner {
                 ExcelUtils.setCellData(BaseClass.failureReason,"Index",rowNum_Index,Config.col_reason);
                 log.info("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
 
-                logger.pass("OrangeHRM Login testcase is failed");
+                logger.fail("OrangeHRM Login testcase is failed");
             }
         }else if(result.getStatus()==ITestResult.SKIP){
             ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
 
-            logger.pass("OrangeHRM Login testcase is skipped");
+            logger.skip("OrangeHRM Login testcase is skipped");
         }
         driver.quit();
         Log.endTestCase();
