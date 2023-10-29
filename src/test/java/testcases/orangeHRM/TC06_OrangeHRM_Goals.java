@@ -33,7 +33,7 @@ public class TC06_OrangeHRM_Goals {
     public void prerequisite_Setup(@Optional(Config.GoalsRequestTestCase_ID) String testID) throws Exception{
         Log.startTestCase(TC06_OrangeHRM_Goals.class.getName());
         wbk= ExcelUtils.setExcelFilePath();
-        sheetName = "OrangeHRM_Goals";
+        //sheetName = "OrangeHRM_Goals";
         row = ExcelUtils.getRowNumber(testID,sheetName);
         row_index = ExcelUtils.getRowNumber(testID,"Index");
         userName = ExcelUtils.getCellData(sheetName,row,Config.col_UserName);
@@ -51,7 +51,7 @@ public class TC06_OrangeHRM_Goals {
     public void OrangeHRM_Goals(@Optional("chrome") String browserName) throws Exception {
         driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
-        driver.get("https://automationo-trials710.orangehrmlive.com");
+        driver.get("https://automatetest-trials710.orangehrmlive.com/");
         OrangeHRM_LoginPage.login(userName,passWord);
         //Finding Username of Employee
         OrangeHRM_HomePage.clickHrAdministrationLink();

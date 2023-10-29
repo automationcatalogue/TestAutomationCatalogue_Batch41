@@ -138,6 +138,7 @@ public class TC05_OrangeHRM_TravelRequest {
         System.out.println("Status of the request is " + status);
         OrangeHRM_LogoutPage.logout();
     }
+
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
 

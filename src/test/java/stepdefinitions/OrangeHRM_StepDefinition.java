@@ -20,14 +20,17 @@ public class OrangeHRM_StepDefinition {
     static WebDriver driver;
     static Logger log = LogManager.getLogger(OrangeHRM_StepDefinition.class);
     static XSSFWorkbook wbk;
-    static int rowNum, rowNum_Index;
+    static int rowNum, rowNum_Index, row_index, row;
     static String userName, pswd, firstName, lastName, location, marital_Status, gender, region, fte, temp_dept;
     static String empName, addUser, newPassword, confirm_pwd;
     static String sheetName;
     static String testID;
     static String userName_1;
     static String password, empid;
-    static int row;
+
+    static String Actual_UserName, employeeName, passWord, supervisor_name, supervisor_ActualUserName,
+            firstGoalPriority, firstGoalDate, secondGoalPriority, secondGoalDate, thirdGoalPriority, thirdGoalDate,
+            firstGoal_status, secondGoal_status, thirdGoal_status;
 
 
     @Given("OrangeHRM application is loaded")
@@ -36,7 +39,7 @@ public class OrangeHRM_StepDefinition {
         System.out.println("Chrome Browser is launched");
         driver.manage().window().maximize();
         System.out.println("Browser window is maximized");
-        driver.get("https://automationo-trials710.orangehrmlive.com/");
+        driver.get("https://automatetest-trials710.orangehrmlive.com/");
         System.out.println("OrangeHRM website is loaded");
     }
 
@@ -112,7 +115,7 @@ public class OrangeHRM_StepDefinition {
     }
 
     @Then("User Search for New Employee")
-    public void user_search_for_new_employee() throws Exception{
+    public void user_search_for_new_employee() throws Exception {
         OrangeHRM_HomePage.clickEmployeeManagementLink();
         OrangeHRM_AddEmployeePage.searchEmployee(firstName, lastName);
     }
@@ -196,14 +199,15 @@ public class OrangeHRM_StepDefinition {
         //Verify the Employee Name as Charlie Carter
         OrangeHRM_HomePage.verify_empName(empName);
     }
+
     @And("User logout from orangeHRM application")
-    public void logOut_afterNewUser(){
+    public void logOut_afterNewUser() {
         OrangeHRM_HomePage.clickLogout();
     }
 
 
     @Then("User Updates the Status in ExcelSheet for Add Employee")
-    public void updateExcelSheetStatus(ITestResult result) throws Exception{
+    public void updateExcelSheetStatus(ITestResult result) throws Exception {
         if (result.getStatus() == ITestResult.SUCCESS) {
             ExcelUtils.setCellData(empid, sheetName, rowNum, Config.col_AddEmployee_EmployeeId);
             log.info(empid + " is written back to the Excel file");
@@ -224,5 +228,121 @@ public class OrangeHRM_StepDefinition {
         }
     }
 
+    //Orange HRM Goals implementation ====================================================================
+    @When("Finding Username of Employee in HrAdministration")
+    public void findingUsernameOfEmployeeInHrAdministration() throws Exception {
+        OrangeHRM_HomePage.clickHrAdministrationLink();
+        Actual_UserName = OrangeHRM_HRAdministrationPage.username_Employee(employeeName);
+    }
 
+    @And("Finding Supervisor name in EmployeeManagement")
+    public void findingSupervisorNameInEmployeeManagement() throws Exception {
+        OrangeHRM_HomePage.clickEmployeeManagementLink();
+        supervisor_name = OrangeHRM_EmployeeManagementPage.finding_supervisorName(employeeName);
+    }
+
+    @And("Finding Supervisor's username in HrAdministration")
+    public void findingSupervisorSUsernameInHrAdministration() throws Exception {
+        OrangeHRM_HomePage.clickHrAdministrationLink();
+        supervisor_ActualUserName = OrangeHRM_HRAdministrationPage.username_Supervisor(supervisor_name);
+    }
+
+    @When("Log in with the Employee Username")
+    public void logInWithTheEmployeeUsername() throws Exception {
+        OrangeHRM_LoginPage.login(Actual_UserName, passWord);
+        log.info("Logged in with the Employee credentials");
+        OrangeHRM_HomePage.selectPerformance();
+        OrangeHRM_PerformancePage.selectMyGoals();
+    }
+
+
+    @And("Create all goals and logout")
+    public void createAllGoals_and_logout() throws Exception {
+        OrangeHRM_GoalsPage.create_FirstGoal(firstGoalPriority, firstGoalDate);
+        OrangeHRM_GoalsPage.create_SecondGoal(secondGoalPriority, secondGoalDate);
+        OrangeHRM_GoalsPage.create_ThirdGoal(thirdGoalPriority, thirdGoalDate);
+        OrangeHRM_HomePage.clickLogout();
+    }
+
+
+    @When("Logging in with the supervisor username")
+    public void loggingInWithTheSupervisorUsername() {
+        OrangeHRM_LoginPage.login(supervisor_ActualUserName, passWord);
+        log.info("Logged in with the supervisor credentials");
+        OrangeHRM_HomePage.select_MyGoals();
+        OrangeHRM_GoalsPage.supervisor_ApproveGoals();
+        OrangeHRM_HomePage.clickLogout();
+    }
+
+    @And("Logging in with the employee username")
+    public void loggingInWithTheEmployeeUsername() throws Exception {
+        OrangeHRM_LoginPage.login(Actual_UserName, passWord);
+        log.info("Logged in with the employee credentials");
+        OrangeHRM_HomePage.selectPerformance();
+        OrangeHRM_PerformancePage.selectMyGoals();
+
+    }
+
+    @When("All goals progress")
+    public void allGoalsProgress() {
+        //First goal progress
+        OrangeHRM_GoalsPage.progress_firstGoal();
+        //Second goal progress
+        OrangeHRM_GoalsPage.progress_secondGoal();
+        //Third goal progress
+        OrangeHRM_GoalsPage.progress_thirdGoal();
+    }
+
+    @Then("All goals Verification")
+    public void allGoalsVerification() {
+        //First goal Verification
+        firstGoal_status = OrangeHRM_GoalsPage.verify_firstGoal();
+        //Second goal Verification
+        secondGoal_status = OrangeHRM_GoalsPage.verify_secondGoal();
+        //Third goal Verification
+        thirdGoal_status = OrangeHRM_GoalsPage.verify_thirdGoal();
+    }
+
+    @Given("User reads Goals Data from {string} using TestID {string}")
+    public void userReadsGoalsDataFromUsingTestID(String sheetName, String testID) throws Exception {
+        wbk = ExcelUtils.setExcelFilePath();
+        //sheetName = "OrangeHRM_Goals";
+        row = ExcelUtils.getRowNumber(testID, sheetName);
+        row_index = ExcelUtils.getRowNumber(testID, "Index");
+        userName = ExcelUtils.getCellData(sheetName, row, Config.col_UserName);
+        passWord = ExcelUtils.getCellData(sheetName, row, Config.col_Password);
+        employeeName = ExcelUtils.getCellData(sheetName, row, Config.col_OrangeHRMGoals_empName);
+        firstGoalPriority = ExcelUtils.getCellData(sheetName, row, Config.col_OrangeHRMGoals_firstGoalPriority);
+        firstGoalDate = ExcelUtils.getCellData(sheetName, row, Config.col_OrangeHRMGoals_firstGoalDate);
+        secondGoalPriority = ExcelUtils.getCellData(sheetName, row, Config.col_OrangeHRMGoals_secondGoalPriority);
+        secondGoalDate = ExcelUtils.getCellData(sheetName, row, Config.col_OrangeHRMGoals_secondGoalDate);
+        thirdGoalPriority = ExcelUtils.getCellData(sheetName, row, Config.col_OrangeHRMGoals_thirdGoalPriority);
+        thirdGoalDate = ExcelUtils.getCellData(sheetName, row, Config.col_OrangeHRMGoals_thirdGoalDate);
+    }
+
+    @Then("User Updates the Status in ExcelSheet for Goals")
+    public void userUpdatesTheStatusInExcelSheetForGoals(ITestResult result ) throws Exception {
+        if(result.getStatus() == ITestResult.SUCCESS){
+            ExcelUtils.setCellData(firstGoal_status, sheetName,row, Config.col_OrangeHRMGoals_firstGoalStatus);
+            log.info(firstGoal_status+" is written back to the Excel file");
+            ExcelUtils.setCellData(secondGoal_status, sheetName,row, Config.col_OrangeHRMGoals_secondGoalStatus);
+            log.info(secondGoal_status+" is written back to the Excel file");
+            ExcelUtils.setCellData(thirdGoal_status, sheetName,row, Config.col_OrangeHRMGoals_thirdGoalStatus);
+            log.info(thirdGoal_status+" is written back to the Excel file");
+
+            ExcelUtils.setCellData("PASSED", "Index",row_index, Config.col_Status);
+            log.info("TestCase is Passed and status is updated in Excel sheet");
+        }else if(result.getStatus()==ITestResult.FAILURE){
+            if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
+                ExcelUtils.setCellData("FAILED", "Index",row_index, Config.col_Status);
+                log.info("TestCase is Failed and status is updated in Excel sheet");
+
+                ExcelUtils.setCellData(BaseClass.failureReason,"Index",row_index,Config.col_reason);
+                log.info("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+            }
+        }else if(result.getStatus()==ITestResult.SKIP){
+            ExcelUtils.setCellData("SKIPPED", "Index",row_index, Config.col_Status);
+            log.info("TestCase is SKIPPED and status is updated in Excel sheet");
+        }
+    }
 }
