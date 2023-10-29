@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
+import testcases.orangeHRM.TC01_OrangeHRM_LoginTest;
 import testcases.setup.TestRunner;
 import utilities.*;
 
@@ -32,14 +33,25 @@ public class TC14_DemoWebshop_ApplyDiscount extends TestRunner {
     @BeforeMethod
     @Parameters("{testID}")
     public void prerequisite_setup(@Optional(Config.ApplyDiscountRequestTestCase_ID) String testID) throws Exception {
+
+        //To Create the Test in Extent Report
+        logger = extent.createTest("ApplyDiscount_"+testID);
         Log.startTestCase(TC14_DemoWebshop_ApplyDiscount.class.getName());
 
-        sheetName = "DemoWebshop_ApplyDiscount";
-        rowNum_testCase = ExcelUtils.getRowNumber(testID, sheetName);
-        rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
-        userName = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_UserName);
-        password = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_Password);
+        //Getting Row Number from Index Sheet and TestCase Sheet
+        rowNum_Index =ExcelUtils.getRowNumber(testID,"Index");
+        log.info(rowNum_Index + "Row Number is picked from Index Sheet");
+        String sheetName = "DemoWebshop_ApplyDiscount";
+        int rowNum = ExcelUtils.getRowNumber(testID,sheetName);
+        log.info(rowNum + "Row Number is picked from "+sheetName);
+
+        //Reading the TestData from Excel file
+        userName = ExcelUtils.getCellData(sheetName,rowNum, Config.col_UserName);
+        log.info("UserName from excel sheet is :"+userName);
+        password = ExcelUtils.getCellData(sheetName,rowNum,Config.col_Password);
+        log.info("Password from excel sheet is:"+password);
         ApplyCoupon = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_ApplyDiscount_Coupon);
+        log.info("ApplyCoupon from excel sheet is:"+ApplyCoupon);
     }
 
     @Test
