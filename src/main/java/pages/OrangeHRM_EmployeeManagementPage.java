@@ -33,20 +33,19 @@ public class OrangeHRM_EmployeeManagementPage {
         log.info("Clicked on Personal Details tab");
     }
 
-    public static String finding_supervisorName(String employee_name){
-
+    public static String getSupervisorName(String employeeName){
         WebDriver driver = BaseClass.getDriver();
-        String supervisor_name = null;
-        List<WebElement> employee_List = driver.findElements(OrangeHRM_EmployeeManagementPage.list_employee);
-        for (WebElement employee_Ref : employee_List) {
-            String employee = employee_Ref.getText();
-            if (employee.equalsIgnoreCase(employee_name)) {
-                supervisor_name = employee_Ref.findElement(OrangeHRM_EmployeeManagementPage.txt_supervisorName).getText();
-                log.info("Supervisor name of the given employee is :"+supervisor_name);
+        String supervisorName = "";
+        List<WebElement> elements_EmployeeList = driver.findElements(list_employee);
+        for (WebElement element_Employee : elements_EmployeeList) {
+            String actualEmployee = element_Employee.getText();
+            if (actualEmployee.equalsIgnoreCase(employeeName)) {
+                supervisorName = element_Employee.findElement(txt_supervisorName).getText();
+                log.info("Supervisor name for the employee"+employeeName+" is :"+supervisorName);
                 break;
             }
         }
-        return supervisor_name;
+        return supervisorName;
     }
 
     public static void openAddEmployee() throws Exception{
