@@ -1,5 +1,7 @@
 package testcases.demoWebshop;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -21,15 +23,13 @@ import java.io.FileOutputStream;
 import static testcases.demoWebshop.TC11_DemoWebshop_ReOrder.sheetName;
 
 public class TC14_DemoWebshop_ApplyDiscount extends TestRunner {
-    static XSSFWorkbook wbk;
-    static String userName;
-    static String password;
-    static String ApplyCoupon;
-    static String orderNumber;
-    static int rowNum_testCase;
-    static int rowNum_Index;
+
+    static String userName,password,ApplyCoupon,orderNumber;
+    static int rowNum_testCase,rowNum_Index;
     static Logger log = LogManager.getLogger(TC14_DemoWebshop_ApplyDiscount.class);
     static WebDriver driver;
+
+    private static String base64;
     @BeforeMethod
     @Parameters("{testID}")
     public void prerequisite_setup(@Optional(Config.ApplyDiscountRequestTestCase_ID) String testID) throws Exception {
@@ -60,11 +60,17 @@ public class TC14_DemoWebshop_ApplyDiscount extends TestRunner {
         driver = CommonUtils.browserLaunch("chrome");
         BaseClass ob = new BaseClass(driver);
 
-        driver.get("https://demowebshop.tricentis.com/");
-        log.info("Demo website is loaded");
+        //Loading OrangeHRM URL
+        driver.get(Config.demoWebshop_URL);
+        base64 = CommonUtils.takeScreenshot(screenshotsPath,"DemoWebShop_LoginPage");
+        log.info("DemoWebShop URL is loaded :"+Config.demoWebshop_URL);
+        logger.log(Status.INFO,"DemoWebShop Application is loaded"+Config.demoWebshop_URL, MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"DemoWebShop_LoginPage").build());
 
-        String title = driver.getTitle();
-        log.info("Title of the page is:" + title);
+        DemoWebshop_HomePage.clickLoginLink();
+        DemoWebshop_LoginPage.login(userName, password);
+        log.info("DemoWebShop Login is Successful");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath,"DemoWebShop_HomePage");
+        logger.log(Status.INFO,"DemoWebShop Login is Successful", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"DemoWebShop_HomePage").build());
 
         DemoWebshop_HomePage.clickLoginLink();
         DemoWebshop_LoginPage.login(userName, password);
@@ -80,9 +86,12 @@ public class TC14_DemoWebshop_ApplyDiscount extends TestRunner {
         double totalValue_AfterDiscount = DemoWebshop_CartPage.getCartPriceAfterDiscount();
 
         if (totalValue_AfterDiscount == (totalValue_BeforeDiscount - discountValue)) {
-            log.info("Discount value is correctly applied on Cart and verified");
+            base64 = CommonUtils.takeScreenshot(screenshotsPath,"TotalValue_AfterDiscount");
+            logger.log(Status.INFO,"Discount value is correctly applied on Cart and verified", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"TotalValue_AfterDiscount").build());
+
         } else {
-            log.info("Discount value is not correctly applied on Cart");
+            base64 = CommonUtils.takeScreenshot(screenshotsPath,"Discount_Not_Applied");
+            logger.log(Status.INFO,"Discount value is not correctly applied on Cart", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"Discount_Not_Applied").build());
         }
 
         DemoWebshop_CartPage.clickCheckboxIagree();
@@ -97,6 +106,8 @@ public class TC14_DemoWebshop_ApplyDiscount extends TestRunner {
         WebElement element_OrderNumber = driver.findElement(DemoWebshop_CheckoutPage.txt_OrderNumber);
         if (element_OrderNumber.isDisplayed()) {
             orderNumber = element_OrderNumber.getText();
+            base64 = CommonUtils.takeScreenshot(screenshotsPath,"orderNumber");
+            logger.log(Status.INFO,"order number is generated", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"orderNumber").build());
             log.info("order number is generated " + orderNumber);
         } else {
             log.info("OrderNumber is not generated");
