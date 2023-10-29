@@ -40,20 +40,16 @@ public class OrangeHRM_HomePage {
     }
 
     public static void clickHrAdministrationLink() throws Exception {
-
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(link_HRAdministration).click();
+        log.info("HR Administration link is clicked");
     }
 
-    public static void verify_empName(String empName) {
+    public static void verifyNewEmpName(String expectedEmpName) {
         WebDriver driver = BaseClass.getDriver();
-        String Employee_Name = driver.findElement(lbl_ProfileName).getText();
-        String expected_name = empName;
-        if (Employee_Name.equalsIgnoreCase(expected_name)) {
-            log.info("UserName is matched and verified");
-        } else {
-            log.info("UserName is not matched");
-        }
+        String empName = driver.findElement(lbl_ProfileName).getText();
+        Assert.assertEquals(expectedEmpName, empName, "New Employee Name is not matched");
+        log.info("New Employee Name is matched");
     }
 
     public static void selectPerformance() {

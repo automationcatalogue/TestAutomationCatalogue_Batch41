@@ -113,18 +113,18 @@ public class OrangeHRM_StepDefinition {
     }
 
     @When("User Provides FirstName, LastName, Location in Add EmployeePage and Clicks on Next")
-    public void user_provides_first_name_last_name_location_in_add_employee_page_and_clicks_on_next() {
-        OrangeHRM_AddEmployeePage.enterFirstName_LastName_Location(firstName, lastName, location);
+    public void user_provides_first_name_last_name_location_in_add_employee_page_and_clicks_on_next() throws Exception{
+        OrangeHRM_AddEmployeePage.enterAddEmployee_FirstPage(firstName, lastName, location);
     }
 
     @When("User Selects Marital Status and Gender and Clicks on Next")
-    public void user_selects_marital_status_and_gender_and_clicks_on_next() {
-        OrangeHRM_AddEmployeePage.clickMaritalStatus_Gender(marital_Status, gender);
+    public void user_selects_marital_status_and_gender_and_clicks_on_next() throws Exception{
+        OrangeHRM_AddEmployeePage.enterAddEmployee_SecondPage(marital_Status, gender);
     }
 
     @When("User Selects Region, FTE, Temporary Department and Clicks on Save button")
-    public void user_selects_region_fte_temporary_department_and_clicks_on_save_button() {
-        OrangeHRM_AddEmployeePage.selectFTE_Region_TempDepartment(fte, region, temp_dept);
+    public void user_selects_region_fte_temporary_department_and_clicks_on_save_button() throws Exception{
+        OrangeHRM_AddEmployeePage.enterAddEmployee_ThirdPage(fte, region, temp_dept);
     }
 
     @Then("User Search for New Employee")
@@ -212,7 +212,7 @@ public class OrangeHRM_StepDefinition {
     @Then("User verifies new user login")
     public void user_verifies_new_user_login() {
         //Verify the Employee Name as Charlie Carter
-        OrangeHRM_HomePage.verify_empName(empName);
+        OrangeHRM_HomePage.verifyNewEmpName(empName);
     }
     @And("User logout from orangeHRM application")
     public void logOut_afterNewUser(){

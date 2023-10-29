@@ -70,7 +70,7 @@ public class CommonUtils{
             String elementText = element.getText();
             if (elementText.equalsIgnoreCase(data)){
                 element.click();
-                System.out.println("selected "+elementText+" from a list of values");
+                log.info("selected "+elementText+" from a list of values");
                 break;
             }
         }
