@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.BaseClass;
 
 import java.time.Duration;
+import java.util.Base64;
 
 public class OrangHRM_AddUserPage {
     public static By txtbx_EmployeeName = By.xpath("//input[@id='selectedEmployee_value']");
@@ -24,17 +25,18 @@ public class OrangHRM_AddUserPage {
 
     public static void clickAddUser() {
         WebDriver driver = BaseClass.getDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3000));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfElementLocated(empName_Visibility));
         driver.findElement(icon_AddUser).click();
-
+        log.info("Add User button is clicked");
     }
 
-    public static void enterAddUserDetails(String empName, String userName, String password, String confirm_pwd) {
+    public static void enterAddUserDetails(String empName, String userName, String password, String confirm_Password) throws Exception{
         WebDriver driver = BaseClass.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        //Enter Employee Name as Charlie Carter
+        //Enter Employee Name
         driver.findElement(txtbx_EmployeeName).sendKeys(empName);
+        log.info(empName+" is entered as EmployeeName");
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(empName_DropdownVisibility));
             driver.findElement(empName_DropdownVisibility).click();
@@ -42,18 +44,19 @@ public class OrangHRM_AddUserPage {
         } catch (TimeoutException te) {
             log.info("EmployeeName Dropdown element is not visible");
         }
-
         driver.findElement(txtbx_RandomUserName).sendKeys(userName);
         log.info(userName+" is entered as UserName");
-        //Enter the Password as "Admin@123"
-        driver.findElement(txtbx_Pwd).sendKeys(password);
-        //Enter the Confirm Password as "Admin@123"
-        driver.findElement(txtbx_ConfirmPwd).sendKeys(confirm_pwd);
+        String decodedPassword = new String(Base64.getDecoder().decode(password.getBytes()));
+        driver.findElement(txtbx_Pwd).sendKeys(decodedPassword);
+        log.info("Decoded Password is entered in the Password text-box");
+        decodedPassword = new String(Base64.getDecoder().decode(confirm_Password.getBytes()));
+        driver.findElement(txtbx_ConfirmPwd).sendKeys(decodedPassword);
+        log.info("Decoded Password is entered in the Confirm Password text-box");
+        clickSave();
     }
 
     public static void clickSave() throws Exception{
         WebDriver driver = BaseClass.getDriver();
-        Thread.sleep(2000);
         WebElement element_SaveBtn = driver.findElement(btn_Save);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element_SaveBtn);

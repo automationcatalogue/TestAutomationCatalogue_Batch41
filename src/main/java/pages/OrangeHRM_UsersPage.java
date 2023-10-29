@@ -110,4 +110,23 @@ public class OrangeHRM_UsersPage {
         return supervisor_userName;
     }
 
+    public static String getUserName(String employeeName){
+        WebDriver driver = BaseClass.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String actualUserName = "";
+        List<WebElement> elements_UserNamesList = driver.findElements(OrangeHRM_UsersPage.list_users);
+        for (WebElement element_UserName : elements_UserNamesList) {
+            String Name = element_UserName.getText();
+            if (Name.equalsIgnoreCase(employeeName)) {
+                element_UserName.findElement(OrangeHRM_UsersPage.btn_edit).click();
+                WebElement Username_Element = driver.findElement(OrangeHRM_UsersPage.txtbx_userName);
+                actualUserName = (String) js.executeScript("return arguments[0].value", Username_Element);
+                log.info("Username of the Employee is :"+actualUserName);
+                driver.findElement(OrangeHRM_UsersPage.icon_crossExit).click();
+                break;
+            }
+        }
+        return actualUserName;
+    }
+
 }
