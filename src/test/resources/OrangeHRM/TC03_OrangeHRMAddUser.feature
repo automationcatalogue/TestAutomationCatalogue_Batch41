@@ -13,10 +13,11 @@ Feature: OrangeHRM Add User Feature
     And User Verified title of the Homepage
     When User opens HR Administration page
     And  User enters employee,  username, Password, confirm password and clicks on save button
-    And User clicks on logout button
+    And User logout from orangeHRM application
     And User enters username as new username
     Then User verifies new user login
-    And User logouts after verifying new user login
+    And User logout from orangeHRM application
+    Then User Updates the Status in ExcelSheet for Add user
 
 
 
