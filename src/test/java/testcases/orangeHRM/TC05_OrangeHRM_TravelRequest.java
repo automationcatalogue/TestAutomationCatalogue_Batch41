@@ -62,7 +62,7 @@ public class TC05_OrangeHRM_TravelRequest extends TestRunner {
         driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
 
-        driver.get("https://automationo-trials710.orangehrmlive.com");
+        driver.get("https://automatetest-trials710.orangehrmlive.com/");
         System.out.println("OrangeHRM website is launched");
 
         //logged in as admin
@@ -81,6 +81,7 @@ public class TC05_OrangeHRM_TravelRequest extends TestRunner {
 
         //Login to employee's account, create and submit the travel request
         OrangeHRM_LoginPage.login_employee(employee_UserName, newPassword);
+        Thread.sleep(5000);
         OrangeHRM_HomePage.clickTRavelExpLink();
         CommonUtils.switchToiFrame(OrangeHRM_TravelExpensePage.switchto_Iframe);
         OrangeHRM_TravelExpensePage.clickAddTravelExp();
@@ -100,6 +101,8 @@ public class TC05_OrangeHRM_TravelRequest extends TestRunner {
         requestStatus = OrangeHRM_TravelExpensePage.request_Status();
         OrangeHRM_LogoutPage.logout();
         driver.switchTo().defaultContent();
+
+
 
         //login as supervisor
         OrangeHRM_LoginPage.login_supervisor(supervisor_username, newPassword);
@@ -141,6 +144,7 @@ public class TC05_OrangeHRM_TravelRequest extends TestRunner {
     }
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
+
 
         if (result.getStatus() == ITestResult.SUCCESS) {
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
