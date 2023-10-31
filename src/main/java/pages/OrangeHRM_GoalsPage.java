@@ -15,11 +15,14 @@ public class OrangeHRM_GoalsPage {
     public static By txtbx_GoalName = By.cssSelector("#name_value");
     public static By iframe_GoalDescription = By.xpath("//iframe[@allowtransparency='true']");
     public static By txtbx_GoalDescription = By.cssSelector("#tinymce");
-    public static By dropdown_goalPriority = By.cssSelector("#goalPriority");
+    public static By dropdown_goalPriority = By.cssSelector("button[data-id='goalPriority']");
+    public static By list_Priorities = By.cssSelector("button[data-id='goalPriority']+div div ul li a span");
     public static By icon_dueDate = By.xpath("//i[text()='date_range']");
-    public static By month_dropDown = By.xpath("//select[@title='Select a month']");
-    public static By year_dropDown = By.xpath("//select[@title='Select a year']");
-    public static By date_list = By.xpath("//table[@class='picker__table']/tbody/tr/td/div");
+    public static By drpdwn_Month = By.xpath("//select[@title='Select a month']//following-sibling::button");
+    public static By list_Months = By.xpath("//select[@title='Select a month']//following-sibling::div//li//span");
+    public static By drpdwn_Year = By.xpath("//select[@title='Select a year']//following-sibling::button");
+    public static By list_years = By.xpath("///select[@title='Select a year']//following-sibling::div//li//span");
+    public static By list_Dates = By.xpath("//table[@class='picker__table']/tbody/tr/td/div[contains(@class,'infocus')]");
     public static By btn_Submit = By.xpath("//div[@class='form-row form-buttons-row']/div[3]/button");
     public static By icon_backArrow = By.xpath("//a[@data-tooltip='My Goals']");
     //supervisor goals page
@@ -42,139 +45,60 @@ public class OrangeHRM_GoalsPage {
     static Logger log = LogManager.getLogger(OrangeHRM_GoalsPage.class);
 
 
-    public static void create_FirstGoal(String priority,String date)throws Exception{
+    public static void createGoal(String priority,String date, String goalName, String goalDescription)throws Exception{
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_GoalsPage.btn_CreateGoal).click();
-        driver.findElement(OrangeHRM_GoalsPage.txtbx_GoalName).sendKeys("Automation for E-Commerce Website");
+        log.info("Create Goal is Clicked");
 
-        WebElement iframe_goal1 = driver.findElement(OrangeHRM_GoalsPage.iframe_GoalDescription);
+        driver.findElement(OrangeHRM_GoalsPage.txtbx_GoalName).sendKeys(goalName);
+        log.info(goalName + " is entered as GoalName");
+
+        WebElement iframe_goal1 = driver.findElement(iframe_GoalDescription);
         driver.switchTo().frame(iframe_goal1);
-        driver.findElement(OrangeHRM_GoalsPage.txtbx_GoalDescription).sendKeys("Automate the Payment Gateways for all bank debit cards and credit cards after applying promo codes");
+        log.info("Switched into iframe");
+        driver.findElement(OrangeHRM_GoalsPage.txtbx_GoalDescription).sendKeys(goalDescription);
+        log.info(goalDescription + " is entered as Goal Description");
         driver.switchTo().defaultContent();
+        log.info("Exited from the iframe");
 
-        Select select_goal1 = new Select(driver.findElement(OrangeHRM_GoalsPage.dropdown_goalPriority));
-        select_goal1.selectByVisibleText(priority);
+        driver.findElement(dropdown_goalPriority).click();
+        log.info("Goal Priority is clicked");
+        CommonUtils.selectDropdownValue(list_Priorities, priority);
 
         driver.findElement(OrangeHRM_GoalsPage.icon_dueDate).click();
-
-        String date_goal1 = date;
-        String date_ArrayGoal1[] = date_goal1.split("-");
-        String day_goal1 = date_ArrayGoal1[0];
-        String month_goal1 = date_ArrayGoal1[1];
-        String year_goal1 = date_ArrayGoal1[2];
+        String[] date_ArrayGoal = date.split("-");
+        String day_goal = date_ArrayGoal[0];
+        String month_goal = date_ArrayGoal[1];
+        String year_goal = date_ArrayGoal[2];
 
         //month selector
-        Thread.sleep(3000);
-        Select select_MonthGoal1 = new Select(driver.findElement(OrangeHRM_GoalsPage.month_dropDown));
-        select_MonthGoal1.selectByVisibleText(month_goal1);
-        log.info("Month is selected as :"+month_goal1);
+        driver.findElement(drpdwn_Month).click();
+        log.info("Clicked on Month Drop-down in Due Date");
+        CommonUtils.selectDropdownValue(list_Months, month_goal);
 
         //year selector
-        Thread.sleep(3000);
-        Select select_YearGoal1 = new Select(driver.findElement(OrangeHRM_GoalsPage.year_dropDown));
-        select_YearGoal1.selectByVisibleText(year_goal1);
-        log.info("Year is selected as :"+year_goal1);
+        driver.findElement(drpdwn_Year).click();
+        log.info("Clicked on Year Drop-down in Due Date");
+        CommonUtils.selectDropdownValue(list_years, year_goal);
 
         //date selector
-        Thread.sleep(2000);
-        CommonUtils.selectDropdownValue(OrangeHRM_GoalsPage.date_list,day_goal1);
+        CommonUtils.selectDropdownValue(list_Dates,day_goal);
 
         driver.findElement(OrangeHRM_GoalsPage.btn_Submit).click();
-        log.info("First goal is successfully created");
+        log.info("Goal is successfully Submitted");
         driver.findElement(OrangeHRM_GoalsPage.icon_backArrow).click();
     }
 
-    public static void create_SecondGoal(String priority,String date)throws Exception{
-        WebDriver driver = BaseClass.getDriver();
-        driver.findElement(OrangeHRM_GoalsPage.btn_CreateGoal).click();
-        driver.findElement(OrangeHRM_GoalsPage.txtbx_GoalName).sendKeys("Automation for Telecom Website");
-
-        WebElement iframe_goal2 = driver.findElement(OrangeHRM_GoalsPage.iframe_GoalDescription);
-        driver.switchTo().frame(iframe_goal2);
-        driver.findElement(OrangeHRM_GoalsPage.txtbx_GoalDescription).sendKeys("Automate the new customer entries in the server and check the activation of the user");
-        driver.switchTo().defaultContent();
-
-        Select select_goal2 = new Select(driver.findElement(OrangeHRM_GoalsPage.dropdown_goalPriority));
-        select_goal2.selectByVisibleText(priority);
-
-        driver.findElement(OrangeHRM_GoalsPage.icon_dueDate).click();
-
-        String date_goal2 = date;
-        String date_ArrayGoal2[] = date_goal2.split("-");
-        String day_goal2 = date_ArrayGoal2[0];
-        String month_goal2 = date_ArrayGoal2[1];
-        String year_goal2 = date_ArrayGoal2[2];
-
-        //month selector
-        Thread.sleep(3000);
-        Select select_MonthGoal2 = new Select(driver.findElement(OrangeHRM_GoalsPage.month_dropDown));
-        select_MonthGoal2.selectByVisibleText(month_goal2);
-        log.info("Month is selected as :"+month_goal2);
-
-        //year selector
-        Thread.sleep(3000);
-        Select select_YearGoal2 = new Select(driver.findElement(OrangeHRM_GoalsPage.year_dropDown));
-        select_YearGoal2.selectByVisibleText(year_goal2);
-        log.info("Year is selected as :"+year_goal2);
-
-        //date selector
-        CommonUtils.selectDropdownValue(OrangeHRM_GoalsPage.date_list,day_goal2);
-
-        driver.findElement(OrangeHRM_GoalsPage.btn_Submit).click();
-        log.info("Second goal is successfully created");
-        driver.findElement(OrangeHRM_GoalsPage.icon_backArrow).click();
-    }
-
-    public static void create_ThirdGoal(String priority,String date)throws Exception{
-        WebDriver driver = BaseClass.getDriver();
-        driver.findElement(OrangeHRM_GoalsPage.btn_CreateGoal).click();
-        driver.findElement(OrangeHRM_GoalsPage.txtbx_GoalName).sendKeys("Automation for Fiancial Website");
-
-        WebElement iframe_goal3 = driver.findElement(OrangeHRM_GoalsPage.iframe_GoalDescription);
-        driver.switchTo().frame(iframe_goal3);
-        driver.findElement(OrangeHRM_GoalsPage.txtbx_GoalDescription).sendKeys("Automate the new customer entries with the valid account numbers and other account details");
-        driver.switchTo().defaultContent();
-
-        Select select_goal3 = new Select(driver.findElement(OrangeHRM_GoalsPage.dropdown_goalPriority));
-        select_goal3.selectByVisibleText(priority);
-
-        driver.findElement(OrangeHRM_GoalsPage.icon_dueDate).click();
-
-        String date_goal3 = date;
-        String date_ArrayGoal3[] = date_goal3.split("-");
-        String day_goal3 = date_ArrayGoal3[0];
-        String month_goal3 = date_ArrayGoal3[1];
-        String year_goal3 = date_ArrayGoal3[2];
-
-        //month selector
-        Thread.sleep(3000);
-        Select select_MonthGoal3 = new Select(driver.findElement(OrangeHRM_GoalsPage.month_dropDown));
-        select_MonthGoal3.selectByVisibleText(month_goal3);
-        log.info("Month is selected as :"+month_goal3);
-
-        //year selector
-        Thread.sleep(3000);
-        Select select_YearGoal3 = new Select(driver.findElement(OrangeHRM_GoalsPage.year_dropDown));
-        select_YearGoal3.selectByVisibleText(year_goal3);
-        log.info("Year is selected as :"+year_goal3);
-
-        //date selector
-        Thread.sleep(2000);
-        CommonUtils.selectDropdownValue(OrangeHRM_GoalsPage.date_list,day_goal3);
-
-        Thread.sleep(3000);
-        driver.findElement(OrangeHRM_GoalsPage.btn_Submit).click();
-        log.info("Third goal is successfully created");
-        Thread.sleep(3000);
-        driver.findElement(OrangeHRM_GoalsPage.icon_backArrow).click();
-    }
-
-    public static void supervisor_ApproveGoals(){
+    public static void supervisor_ApproveGoals(String approveGoalNote){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_GoalsPage.icon_unApprovedGoals).click();
+        log.info("Clicked on UnApproved Goals");
         driver.findElement(OrangeHRM_GoalsPage.chkbx_approve).click();
+        log.info("Checked on Approve check-box for all Goals");
         driver.findElement(OrangeHRM_GoalsPage.btn_Approve).click();
-        driver.findElement(OrangeHRM_GoalsPage.txtbx_approveDescription).sendKeys("Approved all the goals for aaliyah haq on telecom, financial and E commerce domains");
+        log.info("Clicked on Approve button");
+        driver.findElement(OrangeHRM_GoalsPage.txtbx_approveDescription).sendKeys(approveGoalNote);
+        log.info(approveGoalNote + " is entered as Approve Goal Note");
         driver.findElement(OrangeHRM_GoalsPage.btn_finalApprove).click();
         log.info("Approved all the goals created by the employee");
     }

@@ -10,9 +10,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import pages.*;
+import runner.CucumberHooks;
 import testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart;
 import utilities.*;
-;
+
 
 public class DemoWebshop_Stepdefintion {
     public static WebDriver driver;
@@ -28,7 +29,7 @@ public class DemoWebshop_Stepdefintion {
     static Logger log = LogManager.getLogger(DemoWebshop_Stepdefintion.class);
     static String userName, password, sheetName;
     static String jewel_Length, update_Qty;
-    static int TotalNumberOfOrders;
+    static int TotalNumberOfOrders, row;
     static float SumOfAllOrders;
     static int rowNum_testCase, rowNum_Index;
     static String text_BookPrice, text_updatedQuty, text_JewelPrice, total_1, total_2, orderNumber;
@@ -205,20 +206,27 @@ public class DemoWebshop_Stepdefintion {
         DemoWebshop_HomePage.select_AddressLink();
     }
 
-    @When("User Enters PhoneNumber as {string} and FaxNumber as {string}")
+    /*@When("User Enters PhoneNumber as {string} and FaxNumber as {string}")
     public void user_enters_phone_number_as_and_fax_number_as(String string, String string2) {
         DemoWebshop_HomePage.createContactNumbers(ZipPostalCode, PhoneNumber, FaxNumber);
-    }
+    }*/
 
     @When("User Provides City, Address1, Address2, ZipPostalCode, PhoneNumber and FaxNumber")
     public void user_provides_city_address1_address2_zip_postal_code_phone_number_and_fax_number() {
         DemoWebshop_HomePage.createCityAndAddresses(City, Address1, Address2);
+        DemoWebshop_HomePage.createContactNumbers(ZipPostalCode, PhoneNumber, FaxNumber);
+
     }
 
     @Then("User Verifies Address is added")
     public void user_verifies_address_is_added() {
         DemoWebshop_HomePage.verify_Address(FirstName, LastName);
     }
+
+    /*@And("User logout from the application")
+    public void User_logout_from_the_application() {
+        DemoWebshop_HomePage.logOut();
+    }*/
 
     @When("User clicks on Email Address and click on orders link")
     public void user_clicks_on_email_address_and_click_on_orders_link() {
@@ -227,15 +235,47 @@ public class DemoWebshop_Stepdefintion {
         driver.findElement(DemoWebShop_OrdersPage.link_Orders).click();
         log.info("Clicked on orders link on MyAccount Page");
     }
+    @Then("User Updates the Status in ExcelSheet for CreateAddress")
+    public void User_Updates_the_Status_in_ExcelSheet_for_CreateAddress(ITestResult result) throws Exception
+    {
+        if(result.getStatus() == ITestResult.SUCCESS){
+            ExcelUtils.setCellData(FirstName, sheetName,rowNum, Config.col_createAddress_FirstName);
+            ExcelUtils.setCellData(LastName,sheetName,rowNum, Config.col_createAddress_LastName);
+            ExcelUtils.setCellData(Email, sheetName, rowNum, Config.col_createAddress_Email);
+            ExcelUtils.setCellData(Company, sheetName, rowNum, Config.col_createAddress_Company);
+            ExcelUtils.setCellData(City,sheetName,rowNum, Config.col_createAddress_City);
+            ExcelUtils.setCellData(Address1,sheetName,rowNum, Config.col_createAddress_Address1);
+            ExcelUtils.setCellData(Address2,sheetName,rowNum, Config.col_createAddress_Address2);
+            ExcelUtils.setCellData(ZipPostalCode,sheetName,rowNum, Config.col_createAddress_ZipCode);
+            ExcelUtils.setCellData(PhoneNumber,sheetName,rowNum, Config.col_createAddress_PhoneNumber);
+            ExcelUtils.setCellData(FaxNumber,sheetName,rowNum, Config.col_createAddress_FaxNumber);
+
+            ExcelUtils.setCellData("PASSED", "Index",row_index, Config.col_Status);
+            System.out.println("TestCase is Passed and status is updated in Excel sheet");
+        }else if(result.getStatus()==ITestResult.FAILURE){
+            if(!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")){
+                ExcelUtils.setCellData("FAILED", "Index",row_index, Config.col_Status);
+                System.out.println("TestCase is Failed and status is updated in Excel sheet");
+
+                ExcelUtils.setCellData(BaseClass.failureReason,"Index",row_index,Config.col_reason);
+                System.out.println("Failure Reason is :"+BaseClass.failureReason+" and status is updated in Excel sheet");
+            }
+        }else if(result.getStatus()==ITestResult.SKIP){
+            ExcelUtils.setCellData("SKIPPED", "Index",row_index, Config.col_Status);
+            System.out.println("TestCase is SKIPPED and status is updated in Excel sheet");
+        }
+    }
 
     @When("User performs Total Orders count")
     public void user_performs_total_orders_count() {
-        DemoWebShop_OrdersPage.totalNumberOfOrders();
+
+        TotalNumberOfOrders = DemoWebShop_OrdersPage.totalNumberOfOrders();
     }
 
     @Then("User Performs Sum of All Orders Placed")
     public void user_performs_sum_of_all_orders_Placed() {
-        DemoWebShop_OrdersPage.sumOfAllOrdersPlaced();
+
+        SumOfAllOrders=DemoWebShop_OrdersPage.sumOfAllOrdersPlaced();
     }
 
     @Then("User displays Sum of orders DateWise")
@@ -258,33 +298,23 @@ public class DemoWebshop_Stepdefintion {
         log.info("Password from excel sheet is:" + password);
 
     }
-    @Then("User logout from the application")
+    /*@Then("User logout from the application")
     public void logout(){
         OrangeHRM_LogoutPage.logout();
-    }
+    }*/
     @Then("User Updates the Status in ExcelSheet for Total Orders")
-    public void updateExcelSheetStatus(ITestResult result) throws Exception{
-            if (result.getStatus() == ITestResult.SUCCESS) {
+    public void updateExcelSheetStatus() throws Exception{
+
+                CucumberHooks.rowNum_Index = rowNum_Index;
                 ExcelUtils.setCellData(String.valueOf(TotalNumberOfOrders), "DemoWebShop_TotalOrders", rowNum_testCase, Config.col_TotalOrders_NumberOfOrders);
                 log.info(TotalNumberOfOrders + " is updated as Total Number of Orders");
 
                 ExcelUtils.setCellData(String.valueOf(SumOfAllOrders), "DemoWebShop_TotalOrders", rowNum_testCase, Config.col_TotalOrders_SumOfAllOrders);
-                log.info(TotalNumberOfOrders + " is updated as Sum Of All Orders");
+                log.info(SumOfAllOrders + " is updated as Sum Of All Orders");
 
                 ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
                 log.info("TestCase is Passed and status is updated in Excel sheet");
-            } else if (result.getStatus() == ITestResult.FAILURE) {
-                if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
-                    ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
-                    log.info("TestCase is Failed and status is updated in Excel sheet");
 
-                    ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
-                    log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
-                }
-            } else if (result.getStatus() == ITestResult.SKIP) {
-                ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
-                log.info("TestCase is SKIPPED and status is updated in Excel sheet");
-            }
         }
 
     @When("User Enters address fields data for FirstName, LastName, Email and Company")
@@ -342,7 +372,31 @@ public class DemoWebshop_Stepdefintion {
         DemoWebshop_CartPage.select_checkOut();
         orderNumber = DemoWebshop_CheckoutPage.checking_paymentGateway();
     }
-}
+
+    @Then("User Updates the Status in ExcelSheet for Update Shopping Cart")
+    public void userUpdatesTheStatusInExcelSheetForUpdateShoppingCart(ITestResult result) throws Exception {
+        if (result.getStatus() == ITestResult.SUCCESS) {
+            ExcelUtils.setCellData(orderNumber, sheetName, row, Config.col_UpdateCart_OrderNumber);
+            log.info(orderNumber + " is written back to the Excel file");
+
+            ExcelUtils.setCellData("PASSED", "Index", row_index, Config.col_Status);
+            log.info("TestCase is Passed and status is updated in Excel sheet");
+        } else if (result.getStatus() == ITestResult.FAILURE) {
+            if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
+                ExcelUtils.setCellData("FAILED", "Index", row_index, Config.col_Status);
+                log.info("TestCase is Failed and status is updated in Excel sheet");
+
+                ExcelUtils.setCellData(BaseClass.failureReason, "Index", row_index, Config.col_reason);
+                log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
+            }
+        } else if (result.getStatus() == ITestResult.SKIP) {
+            ExcelUtils.setCellData("SKIPPED", "Index", row_index, Config.col_Status);
+            log.info("TestCase is SKIPPED and status is updated in Excel sheet");
+        }
+
+    }
+    }
+
 
 
 

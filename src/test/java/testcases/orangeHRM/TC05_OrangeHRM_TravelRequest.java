@@ -97,7 +97,6 @@ public class TC05_OrangeHRM_TravelRequest extends TestRunner {
         log.info("OrangeHRM URL is loaded :" + Config.orangeHRM_URL);
         logger.log(com.aventstack.extentreports.Status.INFO, "OrangeHRM Application is loaded" + Config.orangeHRM_URL, MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_LoginPage").build());
 
-
         //logged in as admin
         OrangeHRM_LoginPage.login(userName, passWord);
         log.info("OrangeHRM Login is Successful");
@@ -136,6 +135,8 @@ public class TC05_OrangeHRM_TravelRequest extends TestRunner {
         //Login to employee's account, create and submit the travel request
         OrangeHRM_LoginPage.login_employee(employee_UserName, newPassword);
         log.info("Orange HRM travel Expense page details are entered");
+        Thread.sleep(5000);
+
         OrangeHRM_HomePage.clickTRavelExpLink();
         log.info("Orange HRM travel Expense page details are entered");
         CommonUtils.switchToiFrame(OrangeHRM_TravelExpensePage.switchto_Iframe);
@@ -171,6 +172,8 @@ public class TC05_OrangeHRM_TravelRequest extends TestRunner {
         requestStatus = OrangeHRM_TravelExpensePage.request_Status();
         OrangeHRM_LogoutPage.logout();
         driver.switchTo().defaultContent();
+
+
 
         //login as supervisor
         OrangeHRM_LoginPage.login_supervisor(supervisor_username, newPassword);
@@ -210,8 +213,10 @@ public class TC05_OrangeHRM_TravelRequest extends TestRunner {
         log.info("Status of the request is " + status);
         OrangeHRM_LogoutPage.logout();
     }
+
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
+
 
         if (result.getStatus() == ITestResult.SUCCESS) {
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);

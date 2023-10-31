@@ -18,7 +18,8 @@ public class TC06_OrangeHRM_Goals extends TestRunner {
     static String userName, password, employeeName;
     static String firstGoalPriority, firstGoalDate, secondGoalPriority, secondGoalDate, thirdGoalPriority, thirdGoalDate;
     static String actualUserName, supervisorName, supervisorActualUserName;
-    static String firstGoalStatus, secondGoalStatus, thirdGoalStatus;
+    static String firstGoalStatus, secondGoalStatus, thirdGoalStatus, approveGoalNote;
+    static String firstGoalName, firstGoalDescription, secondGoalName, secondGoalDescription, thirdGoalName, thirdGoalDescription;
     static int rowNum, rowNum_Index;
     static String sheetName;
     static Logger log = LogManager.getLogger(TC06_OrangeHRM_Goals.class);
@@ -46,18 +47,36 @@ public class TC06_OrangeHRM_Goals extends TestRunner {
         log.info("Password from excel sheet is :" + password);
         employeeName = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_empName);
         log.info("EmployeeName from excel sheet is :" + employeeName);
+
         firstGoalPriority = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_firstGoalPriority);
         log.info("First Goal Priority from excel sheet is :" + firstGoalPriority);
         firstGoalDate = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_firstGoalDate);
         log.info("First Goal Date from excel sheet is :" + firstGoalDate);
+        firstGoalName = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_firstGoalName);
+        log.info("First Goal Name from excel sheet is :" + firstGoalName);
+        firstGoalDescription = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_firstGoalDescription);
+        log.info("First Goal Description from excel sheet is :" + firstGoalDescription);
+
         secondGoalPriority = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_secondGoalPriority);
         log.info("Second Goal Priority from excel sheet is :" + secondGoalPriority);
         secondGoalDate = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_secondGoalDate);
         log.info("Second Goal Date from excel sheet is :" + secondGoalDate);
+        secondGoalName = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_secondGoalGoalName);
+        log.info("Second Goal Name from excel sheet is :" + secondGoalName);
+        secondGoalDescription = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_secondGoalGoalDescription);
+        log.info("Second Goal Description from excel sheet is :" + secondGoalDescription);
+
         thirdGoalPriority = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_thirdGoalPriority);
         log.info("Third Goal Priority from excel sheet is :" + thirdGoalPriority);
         thirdGoalDate = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_thirdGoalDate);
         log.info("Third Goal Date from excel sheet is :" + thirdGoalDate);
+        thirdGoalName = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_thirdGoalName);
+        log.info("Third Goal Name from excel sheet is :" + thirdGoalName);
+        thirdGoalDescription = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_thirdGoalDescription);
+        log.info("Third Goal Description from excel sheet is :" + thirdGoalDescription);
+
+        approveGoalNote = ExcelUtils.getCellData(sheetName,row,Config.col_OrangeHRMGoals_approveGoalNote);
+        log.info("Approved Goal Note is :" + approveGoalNote);
     }
     @Test
     @Parameters({"browserName"})
@@ -124,29 +143,65 @@ public class TC06_OrangeHRM_Goals extends TestRunner {
         logger.log(Status.INFO, "MyGoals Link is opened", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_SelectMyGoals").build());
 
         //Create 3 goals
-        OrangeHRM_GoalsPage.create_FirstGoal(firstGoalPriority,firstGoalDate);
-        OrangeHRM_GoalsPage.create_SecondGoal(secondGoalPriority,secondGoalDate);
-        OrangeHRM_GoalsPage.create_ThirdGoal(thirdGoalPriority,thirdGoalDate);
+        OrangeHRM_GoalsPage.createGoal(firstGoalPriority,firstGoalDate, firstGoalName, firstGoalDescription);
+        log.info("First Goal Creation is completed");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_CreateFirstGoal");
+        logger.log(Status.INFO, "First Goal Creation is completed", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_CreateFirstGoal").build());
+
+        OrangeHRM_GoalsPage.createGoal(secondGoalPriority, secondGoalDate, secondGoalName, secondGoalDescription);
+        log.info("Second Goal Creation is completed");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_CreateSecondGoal");
+        logger.log(Status.INFO, "Second Goal Creation is completed", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_CreateSecondGoal").build());
+
+        OrangeHRM_GoalsPage.createGoal(thirdGoalPriority, thirdGoalDate, thirdGoalName, thirdGoalDescription);
+        log.info("Third Goal Creation is completed");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_CreateThirdGoal");
+        logger.log(Status.INFO, "Third Goal Creation is completed", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_CreateThirdGoal").build());
+
         OrangeHRM_HomePage.clickLogout();
+        log.info("Logged out from OrangeHRM Application");
+        logger.log(Status.INFO, "Logged out from OrangeHRM Application");
 
         // Logging in with the supervisor username
         OrangeHRM_LoginPage.login(supervisorActualUserName,password);
         log.info("Logged in with the supervisor credentials");
-        OrangeHRM_HomePage.select_MyGoals();
-        OrangeHRM_GoalsPage.supervisor_ApproveGoals();
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_SupervisorLogin");
+        logger.log(Status.INFO, "Logged in with the supervisor credentials", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_CreateThirdGoal").build());
+
+        OrangeHRM_HomePage.selectPerformance();
+        log.info("OrangeHRM Performance link is clicked");
+
+        OrangeHRM_PerformancePage.selectGoalsList();
+        log.info("GoalList Link is opened");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_GoalList");
+        logger.log(Status.INFO, "GoalList Link is opened", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_GoalList").build());
+
+        OrangeHRM_GoalsPage.supervisor_ApproveGoals(approveGoalNote);
+        log.info("Supervisor Approved All Goals");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_SupervisorGoalsApproval");
+        logger.log(Status.INFO, "Supervisor Approved All Goals", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_SupervisorGoalsApproval").build());
+
         OrangeHRM_HomePage.clickLogout();
+        log.info("Logged out from OrangeHRM Application");
+        logger.log(Status.INFO, "Logged out from OrangeHRM Application");
 
         // Logging in with the employee username
         OrangeHRM_LoginPage.login(actualUserName,password);
-        log.info("Logged in with the employee credentials");
-        OrangeHRM_HomePage.selectPerformance();
-        OrangeHRM_PerformancePage.selectMyGoals();
+        log.info("Logged in with the Employee credentials");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_EmployeeLogin");
+        logger.log(Status.INFO, "Logged in with the Employee credentials", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EmployeeLogin").build());
 
-        //First goal progress
+        OrangeHRM_HomePage.selectPerformance();
+        log.info("OrangeHRM Performance link is clicked");
+
+        OrangeHRM_PerformancePage.selectMyGoals();
+        log.info("MyGoals Link is opened");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_Employee_SelectMyGoals");
+        logger.log(Status.INFO, "MyGoals Link is opened", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_Employee_SelectMyGoals").build());
+
+        //Updating Goals Progress
         OrangeHRM_GoalsPage.progress_firstGoal();
-        //Second goal progress
         OrangeHRM_GoalsPage.progress_secondGoal();
-        //Third goal progress
         OrangeHRM_GoalsPage.progress_thirdGoal();
 
         //First goal Verification

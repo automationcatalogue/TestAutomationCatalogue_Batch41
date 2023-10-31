@@ -14,15 +14,26 @@ import java.time.Duration;
 public class OrangeHRM_PerformancePage {
     public static By link_goals = By.xpath("//a[@data-automation-id='menu_performance_Goals']");
     public static By link_MyGoals = By.xpath("//a[contains(@data-automation-id,'myGoals')]");
+    public static By link_GoalList = By.xpath("//a[contains(@data-automation-id,'menu_performance_viewEmployeeGoalList')]");
     static Logger log = LogManager.getLogger(OrangeHRM_PerformancePage.class);
 
     public static void selectMyGoals() throws Exception{
         WebDriver driver = BaseClass.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        driver.findElement(OrangeHRM_PerformancePage.link_goals).click();
+        driver.findElement(link_goals).click();
         log.info("Clicked on Goals link");
         wait.until(ExpectedConditions.elementToBeClickable(link_MyGoals));
-        driver.findElement(OrangeHRM_PerformancePage.link_MyGoals).click();
+        driver.findElement(link_MyGoals).click();
         log.info("Clicked on My Goals");
+    }
+
+    public static void selectGoalsList() throws Exception{
+        WebDriver driver = BaseClass.getDriver();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        driver.findElement(link_goals).click();
+        log.info("Clicked on Goals link");
+        wait.until(ExpectedConditions.elementToBeClickable(link_GoalList));
+        driver.findElement(link_GoalList).click();
+        log.info("Clicked on Goal List");
     }
 }
