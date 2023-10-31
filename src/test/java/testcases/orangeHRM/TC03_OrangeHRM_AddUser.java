@@ -1,90 +1,118 @@
 package testcases.orangeHRM;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.OrangHRM_AddUserPage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
+import testcases.setup.TestRunner;
 import utilities.*;
 
-import java.time.Duration;
+public class TC03_OrangeHRM_AddUser extends TestRunner {
 
-public class TC03_OrangeHRM_AddUser {
-
-    XSSFWorkbook wbk;
-    int row;
-    String userName_1;
-    String password;
-    String empName;
-    String addUser;
-    String confirm_pwd;
-    String newPassword;
-    static String sheetName;
-    static int rowNum_Index;
+    static int rowNum, rowNum_Index;
+    static String newUserName, userName, password, empName, confirm_Password, newPassword;
     static WebDriver driver;
+    static String sheetName;
+    private String base64;
     static Logger log = LogManager.getLogger(TC03_OrangeHRM_AddUser.class);
 
     @Parameters({"testID"})
     @BeforeMethod
     public void prerequisites(@Optional(Config.AddUserTestCase_ID) String testID) throws Exception {
+        //To Create the Test in Extent Report
+        logger = extent.createTest("OrangeHRMAdduser_" + testID);
         Log.startTestCase(TC03_OrangeHRM_AddUser.class.getName());
-        sheetName = "OrangeHRM_AddUser";
-        wbk = ExcelUtils.setExcelFilePath();
-        row = ExcelUtils.getRowNumber(testID, sheetName);
+
+        //Getting Row Number from Index Sheet and TestCase Sheet
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
-        userName_1 = ExcelUtils.getCellData(sheetName, row, Config.col_UserName);
-        password = ExcelUtils.getCellData(sheetName, row, Config.col_Password);
-        empName = ExcelUtils.getCellData(sheetName, row, Config.col_AddUser_EmployeeName);
-        addUser = RandomGenerator.getRandomData("username");
-        newPassword = ExcelUtils.getCellData(sheetName, row, Config.col_AddUser_ConfirmPassword);
-        confirm_pwd = ExcelUtils.getCellData(sheetName, row, Config.col_AddUser_ConfirmPassword);
+        log.info(rowNum_Index + "Row Number is picked from Index Sheet");
+        sheetName = "OrangeHRM_AddUser";
+        rowNum = ExcelUtils.getRowNumber(testID, sheetName);
+        log.info(rowNum + "Row Number is picked from " + sheetName);
+
+        //Reading the TestData from Excel file
+        userName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
+        log.info("UserName from excel sheet is :" + userName);
+        password = ExcelUtils.getCellData(sheetName, rowNum, Config.col_Password);
+        log.info("Password from excel sheet is :" + password);
+        empName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_AddUser_EmployeeName);
+        log.info("EmpName from excel sheet is :" + empName);
+        newUserName = RandomGenerator.getRandomData("username");
+        log.info("New UserName from excel sheet is :" + newUserName);
+        newPassword = ExcelUtils.getCellData(sheetName, rowNum, Config.col_AddUser_ConfirmPassword);
+        log.info("New Password from excel sheet is :" + newPassword);
+        confirm_Password = ExcelUtils.getCellData(sheetName, rowNum, Config.col_AddUser_ConfirmPassword);
+        log.info("Confirm Password from excel sheet is :" + confirm_Password);
     }
 
     @Test
     @Parameters({"browserName"})
-    public void login(@Optional("chrome") String browserName) throws Exception {
+    public void addUser(@Optional(Config.browserName) String browserName) throws Exception {
+        //Browser Launch
         driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        String userName = RandomGenerator.getRandomData("userName");
-        log.info("Randomly generated username is :" + userName);
-        driver.get("https://automatetest-trials710.orangehrmlive.com/");
+        //Loading OrangeHRM URL
+        driver.get(Config.orangeHRM_URL);
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_LoginPage");
+        log.info("OrangeHRM URL is loaded :" + Config.orangeHRM_URL);
+        logger.log(Status.INFO, "OrangeHRM Application is loaded" + Config.orangeHRM_URL, MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_LoginPage").build());
 
-        //Enter the UserName as "Admin"
-        OrangeHRM_LoginPage.login(userName_1, password);
+        OrangeHRM_LoginPage.login(userName, password);
+        log.info("OrangeHRM Login is Successful");
+
         OrangeHRM_HomePage.verifyTitle();
+        log.info("OrangeHRM Title is Verified");
+        logger.log(Status.INFO, "OrangeHRM Title is Verified");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_HomePage");
+        logger.log(Status.INFO, "OrangeHRM Login is Successful", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_HomePage").build());
 
         //Click on HR Administration link
         OrangeHRM_HomePage.clickHrAdministrationLink();
-        OrangHRM_AddUserPage.clickAddUser();
-        OrangHRM_AddUserPage.enterAddUserDetails(empName, addUser, newPassword, confirm_pwd);
-        OrangHRM_AddUserPage.clickSave();
-        OrangeHRM_HomePage.clickLogout();
-        OrangeHRM_LoginPage.login(addUser, confirm_pwd);
-        //Verify the Employee Name as Charlie Carter
-        OrangeHRM_HomePage.verify_empName(empName);
-        OrangeHRM_HomePage.clickLogout();
+        log.info("HR administration Page is Loaded");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_HRAdministrationPage");
+        logger.log(Status.INFO, "HR Administration Page is Loaded", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_HRAdministrationPage").build());
 
+        OrangHRM_AddUserPage.clickAddUser();
+        log.info("Add User Page is Loaded");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_AddUserPage");
+        logger.log(Status.INFO, "Add User Page is Loaded", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_AddUserPage").build());
+
+        OrangHRM_AddUserPage.enterAddUserDetails(empName, newUserName, newPassword, confirm_Password);
+        log.info("Add User details is entered");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_AddUserDetails");
+        logger.log(Status.INFO, "Add User details Page is entered", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_AddUserDetails").build());
+
+        OrangeHRM_HomePage.clickLogout();
+        logger.log(Status.INFO, "Logged out from OrangeHRM application");
+
+        OrangeHRM_LoginPage.login(newUserName, confirm_Password);
+        log.info("OrangeHRM Login is Successful");
+
+        //New User Verification
+        OrangeHRM_HomePage.verifyNewEmpName(empName);
+        log.info("OrangeHRM empName is Verified");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_NewEmpName");
+        logger.log(Status.INFO, "OrangeHRM EmpName is Verified", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_NewEmpName").build());
+
+        OrangeHRM_HomePage.clickLogout();
+        logger.log(Status.INFO, "Logged out from OrangeHRM application");
     }
 
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
 
         if (result.getStatus() == ITestResult.SUCCESS) {
-
-            ExcelUtils.setCellData(addUser, "OrangeHRM_AddUser", row, Config.col_AddUser_NewUser);
-            log.info(addUser+"is updated in Excel sheet as New UserName");
-
+            ExcelUtils.setCellData(newUserName, "OrangeHRM_AddUser", rowNum, Config.col_AddUser_NewUser);
+            log.info(newUserName + "is updated in Excel sheet as New UserName");
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
-
-
         } else if (result.getStatus() == ITestResult.FAILURE) {
             if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
                 ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
@@ -98,10 +126,7 @@ public class TC03_OrangeHRM_AddUser {
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
         }
         driver.quit();
-        ExcelUtils.closeExcelFile();
-        log.info("ExcelFile reading is closed");
         Log.endTestCase();
-
     }
 }
 

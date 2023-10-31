@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
+import testcases.setup.TestRunner;
 import utilities.*;
 
 import java.io.FileInputStream;
@@ -18,7 +19,7 @@ import java.io.FileOutputStream;
 import java.time.Duration;
 
 
-public class TC05_OrangeHRM_TravelRequest {
+public class TC05_OrangeHRM_TravelRequest extends TestRunner {
     static XSSFWorkbook wbk;
     static int rowNum, rowNum_Index;
     static String userName, pswd, newPassword, currency, destination, travelFrom, travelTo, expenseType, currencyPaidIn, paidBy, travelReqId, reqStatus;
@@ -37,7 +38,7 @@ public class TC05_OrangeHRM_TravelRequest {
     @Parameters({"testID"})
     @BeforeMethod
     public void prerequisite_setup(@Optional(Config.TravelRequestTestCase_ID) String testID) throws Exception {
-        wbk = ExcelUtils.setExcelFilePath();
+
         sheetName = "OrangeHRM_TravelExpense";
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
@@ -61,7 +62,7 @@ public class TC05_OrangeHRM_TravelRequest {
         driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
 
-        driver.get("https://automationo-trials710.orangehrmlive.com");
+        driver.get("https://automatetest-trials710.orangehrmlive.com/");
         System.out.println("OrangeHRM website is launched");
 
         //logged in as admin
@@ -80,6 +81,7 @@ public class TC05_OrangeHRM_TravelRequest {
 
         //Login to employee's account, create and submit the travel request
         OrangeHRM_LoginPage.login_employee(employee_UserName, newPassword);
+        Thread.sleep(5000);
         OrangeHRM_HomePage.clickTRavelExpLink();
         CommonUtils.switchToiFrame(OrangeHRM_TravelExpensePage.switchto_Iframe);
         OrangeHRM_TravelExpensePage.clickAddTravelExp();
@@ -99,6 +101,8 @@ public class TC05_OrangeHRM_TravelRequest {
         requestStatus = OrangeHRM_TravelExpensePage.request_Status();
         OrangeHRM_LogoutPage.logout();
         driver.switchTo().defaultContent();
+
+
 
         //login as supervisor
         OrangeHRM_LoginPage.login_supervisor(supervisor_username, newPassword);
@@ -141,6 +145,7 @@ public class TC05_OrangeHRM_TravelRequest {
 
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
+
 
         if (result.getStatus() == ITestResult.SUCCESS) {
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);

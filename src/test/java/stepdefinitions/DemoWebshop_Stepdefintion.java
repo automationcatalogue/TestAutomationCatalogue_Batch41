@@ -10,9 +10,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import pages.*;
+import runner.CucumberHooks;
 import testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart;
 import utilities.*;
-;
+
 
 public class DemoWebshop_Stepdefintion {
     public static WebDriver driver;
@@ -35,7 +36,8 @@ public class DemoWebshop_Stepdefintion {
 
     @Given("User reads CreateAddress Data from {string} using TestID {string}")
     public void readExcelData_CreateAddress(String sheetName, String testID) throws Exception {
-        wbk = ExcelUtils.setExcelFilePath();
+        String projectPath = System.getProperty("user.dir");
+        wbk = ExcelUtils.setExcelFilePath(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         row_index = ExcelUtils.getRowNumber(testID, "Index");
         UserName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
@@ -56,7 +58,7 @@ public class DemoWebshop_Stepdefintion {
     public void user_loads_demo_webshop_application() {
         driver = CommonUtils.browserLaunch(Config.browserName);
         BaseClass ob = new BaseClass(driver);
-        driver.get(Config.url_DemoWebshop);
+        driver.get(Config.demoWebshop_URL);
         log.info("DemoWebShop Website is launched");
     }
 
@@ -266,12 +268,14 @@ public class DemoWebshop_Stepdefintion {
 
     @When("User performs Total Orders count")
     public void user_performs_total_orders_count() {
-        DemoWebShop_OrdersPage.totalNumberOfOrders();
+
+        TotalNumberOfOrders = DemoWebShop_OrdersPage.totalNumberOfOrders();
     }
 
     @Then("User Performs Sum of All Orders Placed")
     public void user_performs_sum_of_all_orders_Placed() {
-        DemoWebShop_OrdersPage.sumOfAllOrdersPlaced();
+
+        SumOfAllOrders=DemoWebShop_OrdersPage.sumOfAllOrdersPlaced();
     }
 
     @Then("User displays Sum of orders DateWise")
@@ -282,7 +286,8 @@ public class DemoWebshop_Stepdefintion {
     @Given("User reads TotalOrder Data from {string} using TestID {string}")
     public void readExcelSheetData_TotalOrders(String sheetName, String testID) throws Exception {
         Log.startTestCase(DemoWebshop_Stepdefintion.class.getName());
-        wbk = ExcelUtils.setExcelFilePath();
+        String projectPath = System.getProperty("user.dir");
+        wbk = ExcelUtils.setExcelFilePath(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         rowNum_testCase = ExcelUtils.getRowNumber(testID, sheetName);
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
 
@@ -298,28 +303,18 @@ public class DemoWebshop_Stepdefintion {
         OrangeHRM_LogoutPage.logout();
     }*/
     @Then("User Updates the Status in ExcelSheet for Total Orders")
-    public void updateExcelSheetStatus(ITestResult result) throws Exception{
-            if (result.getStatus() == ITestResult.SUCCESS) {
+    public void updateExcelSheetStatus() throws Exception{
+
+                CucumberHooks.rowNum_Index = rowNum_Index;
                 ExcelUtils.setCellData(String.valueOf(TotalNumberOfOrders), "DemoWebShop_TotalOrders", rowNum_testCase, Config.col_TotalOrders_NumberOfOrders);
                 log.info(TotalNumberOfOrders + " is updated as Total Number of Orders");
 
                 ExcelUtils.setCellData(String.valueOf(SumOfAllOrders), "DemoWebShop_TotalOrders", rowNum_testCase, Config.col_TotalOrders_SumOfAllOrders);
-                log.info(TotalNumberOfOrders + " is updated as Sum Of All Orders");
+                log.info(SumOfAllOrders + " is updated as Sum Of All Orders");
 
                 ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
                 log.info("TestCase is Passed and status is updated in Excel sheet");
-            } else if (result.getStatus() == ITestResult.FAILURE) {
-                if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
-                    ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
-                    log.info("TestCase is Failed and status is updated in Excel sheet");
 
-                    ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
-                    log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
-                }
-            } else if (result.getStatus() == ITestResult.SKIP) {
-                ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
-                log.info("TestCase is SKIPPED and status is updated in Excel sheet");
-            }
         }
 
     @When("User Enters address fields data for FirstName, LastName, Email and Company")
@@ -331,7 +326,8 @@ public class DemoWebshop_Stepdefintion {
 
     @Given("User Reads Update Shopping Cart Data from {string} using TestID {string}")
     public void readExcelData_Update_Shopping_Cart(String sheetName, String testID) throws Exception {
-        wbk = ExcelUtils.setExcelFilePath();
+        String projectPath = System.getProperty("user.dir");
+        wbk = ExcelUtils.setExcelFilePath(projectPath+"\\src\\main\\resources\\AutomationCatalogue_Batch41_TestData.xlsx");
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         row_index = ExcelUtils.getRowNumber(testID, "Index");
         userName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);

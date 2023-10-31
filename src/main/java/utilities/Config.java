@@ -3,7 +3,8 @@ package utilities;
 public class Config {
 
     public static final String browserName = "Chrome";
-    public static final String url_DemoWebshop = "https://demowebshop.tricentis.com/";
+    public static final String demoWebshop_URL = "https://demowebshop.tricentis.com/";
+    public static final String orangeHRM_URL = "https://automatetest-trials710.orangehrmlive.com/";
 
     public static final String LoginTestCase_ID = "TC01-01";
     public static final String AddEmployeeTestCase_ID = "TC02-01";
@@ -98,11 +99,18 @@ public class Config {
     public static final int col_OrangeHRMGoals_empName=6;
     public static final int col_OrangeHRMGoals_firstGoalPriority=7;
     public static final int col_OrangeHRMGoals_firstGoalDate=8;
-    public static final int col_OrangeHRMGoals_secondGoalPriority=9;
-    public static final int col_OrangeHRMGoals_secondGoalDate=10;
-    public static final int col_OrangeHRMGoals_thirdGoalPriority=11;
-    public static final int col_OrangeHRMGoals_thirdGoalDate=12;
-    public static final int col_OrangeHRMGoals_firstGoalStatus=13;
-    public static final int col_OrangeHRMGoals_secondGoalStatus=14;
-    public static final int col_OrangeHRMGoals_thirdGoalStatus=15;
+    public static final int col_OrangeHRMGoals_firstGoalName=9;
+    public static final int col_OrangeHRMGoals_firstGoalDescription=10;
+    public static final int col_OrangeHRMGoals_secondGoalPriority=11;
+    public static final int col_OrangeHRMGoals_secondGoalDate=12;
+    public static final int col_OrangeHRMGoals_secondGoalGoalName=13;
+    public static final int col_OrangeHRMGoals_secondGoalGoalDescription=14;
+    public static final int col_OrangeHRMGoals_thirdGoalPriority=15;
+    public static final int col_OrangeHRMGoals_thirdGoalDate=16;
+    public static final int col_OrangeHRMGoals_thirdGoalName=17;
+    public static final int col_OrangeHRMGoals_thirdGoalDescription=18;
+    public static final int col_OrangeHRMGoals_approveGoalNote=19;
+    public static final int col_OrangeHRMGoals_firstGoalStatus=20;
+    public static final int col_OrangeHRMGoals_secondGoalStatus=21;
+    public static final int col_OrangeHRMGoals_thirdGoalStatus=22;
 }

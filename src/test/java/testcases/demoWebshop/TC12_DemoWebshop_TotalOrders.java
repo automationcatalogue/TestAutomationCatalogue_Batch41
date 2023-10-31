@@ -1,5 +1,7 @@
 package testcases.demoWebshop;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -9,36 +11,40 @@ import org.testng.annotations.*;
 import pages.DemoWebShop_OrdersPage;
 import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
+import testcases.orangeHRM.TC01_OrangeHRM_LoginTest;
 import testcases.setup.TestRunner;
 import utilities.*;
 
 public class TC12_DemoWebshop_TotalOrders extends TestRunner {
     static XSSFWorkbook wbk;
-    static String userName;
-    static String password;
-    static int TotalNumberOfOrders;
+    static String userName,password,sheetName;
+    static int TotalNumberOfOrders,rowNum_testCase,rowNum_Index;
     static float SumOfAllOrders;
-    static String sheetName;
-    static int rowNum_testCase;
-    static int rowNum_Index;
     static Logger log = LogManager.getLogger(TC12_DemoWebshop_TotalOrders.class);
     static WebDriver driver;
 
-    @BeforeClass
+    private static String base64;
+
+    @BeforeMethod
+    @Parameters("{testID}")
     public void prerequisite_setup(@Optional(Config.TotalOrdersRequestTestCase_ID) String testID) throws Exception {
+        //To Create the Test in Extent Report
+        logger = extent.createTest("DemoWebShop_TotalOrders"+testID);
         Log.startTestCase(TC12_DemoWebshop_TotalOrders.class.getName());
-        wbk = ExcelUtils.setExcelFilePath();
-        sheetName = "DemoWebShop_TotalOrders";
-        rowNum_testCase = ExcelUtils.getRowNumber(testID, sheetName);
-        rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
 
-        userName = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_UserName);
-        log.info("UserName from excel sheet is :" + userName);
+        //Getting Row Number from Index Sheet and TestCase Sheet
+        rowNum_Index =ExcelUtils.getRowNumber(testID,"Index");
+        log.info(rowNum_Index + "Row Number is picked from Index Sheet");
+        String sheetName = "DemoWebShop_TotalOrders";
+        int rowNum = ExcelUtils.getRowNumber(testID,sheetName);
+        log.info(rowNum + "Row Number is picked from "+sheetName);
 
-        password = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_Password);
-        log.info("Password from excel sheet is:" + password);
+        //Reading the TestData from Excel file
+        userName = ExcelUtils.getCellData(sheetName,rowNum, Config.col_UserName);
+        log.info("UserName from excel sheet is :"+userName);
+        password = ExcelUtils.getCellData(sheetName,rowNum,Config.col_Password);
+        log.info("Password from excel sheet is:"+password);
     }
-
 
     @Test
     @Parameters({"browserName"})
@@ -46,16 +52,27 @@ public class TC12_DemoWebshop_TotalOrders extends TestRunner {
         driver = CommonUtils.browserLaunch("chrome");
         BaseClass ob = new BaseClass(driver);
 
-        driver.get("https://demowebshop.tricentis.com/");
-        String className = this.getClass().getName();
+        //Loading OrangeHRM URL
+        driver.get(Config.demoWebshop_URL);
+        base64 = CommonUtils.takeScreenshot(screenshotsPath,"DemoWebShop_LoginPage");
+        log.info("DemoWebShop URL is loaded :"+Config.demoWebshop_URL);
+        logger.log(Status.INFO,"DemoWebShop Application is loaded"+Config.demoWebshop_URL, MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"DemoWebShop_LoginPage").build());
 
         driver.findElement(DemoWebshop_HomePage.link_Login).click();
         DemoWebshop_LoginPage.login(userName, password);
-        CommonUtils.takeScreenshot(screenshotsPath, "LoginPage");
+        log.info("DemoWebShop Login is Successful");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath,"DemoWebShop_HomePage");
+        logger.log(Status.INFO,"DemoWebShop Login is Successful", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"DemoWebShop_HomePage").build());
+
         driver.findElement(DemoWebshop_HomePage.link_Email).click();
-        CommonUtils.takeScreenshot(screenshotsPath, "MyAccountPage");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath,"DemoWebShop_MyAccountPage");
+        logger.log(Status.INFO,"DemoWebShop MyAccountPage is loaded", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"DemoWebShop_MyAccountPage").build());
+
         driver.findElement(DemoWebShop_OrdersPage.link_Orders).click();
-        CommonUtils.takeScreenshot(screenshotsPath, "OrdersPage");
+
+        base64 = CommonUtils.takeScreenshot(screenshotsPath,"DemoWebShop_OrdersPage");
+        logger.log(Status.INFO,"DemoWebShop OrdersPage is loaded", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"DemoWebShop_OrdersPage").build());
+
         TotalNumberOfOrders = DemoWebShop_OrdersPage.totalNumberOfOrders();
         SumOfAllOrders = DemoWebShop_OrdersPage.sumOfAllOrdersPlaced();
         DemoWebShop_OrdersPage.sumOfOrdersDayWise();
