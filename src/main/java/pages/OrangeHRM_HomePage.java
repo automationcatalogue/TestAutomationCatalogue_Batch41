@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import utilities.BaseClass;
 
@@ -63,21 +64,23 @@ public class OrangeHRM_HomePage {
         log.info("Performance link is clicked");
     }
 
-    public static void select_MyGoals() {
-        WebDriver driver = BaseClass.getDriver();
-        driver.findElement(OrangeHRM_HomePage.txtbx_Search).sendKeys("Goal List");
-        driver.findElement(OrangeHRM_HomePage.link_MyGoals).click();
-
-    }
-
     public static void clickTRavelExpLink() {
 
         WebDriver driver = BaseClass.getDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement travelexp_Element = driver.findElement(By.xpath("(//a[@data-tooltip='Travel and Expense'])[1]"));
+        WebElement travelexp_Element =driver.findElement(By.xpath("//a[@data-automation-id='menu_expense_TravelandExpense']//span[1]"));
+        js.executeScript("arguments[0].scrollIntoView(true);",travelexp_Element);
+        //WebElement element= wait.until(ExpectedConditions.elementToBeClickable(travelexp_Element));
         travelexp_Element.click();
         js.executeScript("arguments[0].click;", travelexp_Element);
         log.info("Travel and Expense is selected");
+
+       /* WebDriver driver = BaseClass.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement travelexp_Element = driver.findElement(By.xpath("(//span[text()='Travel and Expense'])[1]"));
+        travelexp_Element.click();
+        js.executeScript("arguments[0].click;", travelexp_Element);
+        log.info("Travel and Expense is selected"); */
     }
 
     public static void clickLogout() {
