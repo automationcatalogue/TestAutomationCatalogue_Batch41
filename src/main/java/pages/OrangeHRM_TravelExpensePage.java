@@ -1,5 +1,7 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -35,7 +37,7 @@ public class OrangeHRM_TravelExpensePage {
     public static By btn_addTravelInfo = By.xpath("//button[@id='addTravelInformationBtn']");
     public static By txtbx_destination = By.xpath("//input[@aria-required='true']");
 
-    public static By Calender_travelFrom = By.xpath("//input[contains(@name,'[travel_period_from]')]");
+    public static By Calender_travelFrom = By.xpath("//label[@for='TravelInformation_travel_period_from']");
     public static By dropdwn_monthFrom = By.xpath("//div[contains(@class,'picker__select--month')]");
     public static By list_monthsFrom = By.xpath("//div[contains(@class,'picker__select--month')]/ul/li/span");
     public static By dropdwn_yearFrom = By.xpath("//div[contains(@class,'picker__select--year')]");
@@ -83,6 +85,8 @@ public class OrangeHRM_TravelExpensePage {
     static String element;
     static String updatedStatus;
 
+    static Logger log = LogManager.getLogger(OrangeHRM_TravelExpensePage.class);
+
 
     public static void clickAddTravelExp() {
         WebDriver driver = BaseClass.getDriver();
@@ -92,7 +96,7 @@ public class OrangeHRM_TravelExpensePage {
 
         WebElement element_TravelRequestAdd = driver.findElement(btn_travelRequestAdd);
         js.executeScript("arguments[0].click();",element_TravelRequestAdd);
-        System.out.println("Add button is selected to submit travel expense");
+        log.info("Add button is selected to submit travel expense");
     }
 
     public static void selectCurrency(String currency) throws Exception{
@@ -104,43 +108,43 @@ public class OrangeHRM_TravelExpensePage {
 
         WebElement element_Currency = driver.findElement(drpdown_Currency);
         js.executeScript("arguments[0].click();",element_Currency);
-        System.out.println("Currency Dropdown is clicked");
+        log.info("Currency Dropdown is clicked");
 
         Thread.sleep(2000);
         if (currency.equalsIgnoreCase("AED - Utd. Arab Emir. Dirham")) {
 
             driver.findElement(OrangeHRM_TravelExpensePage.currency_AED).click();
-            System.out.println("Arab Emir. Dirham is selected");
+            log.info("Arab Emir. Dirham is selected");
         } else if (currency.equalsIgnoreCase("CAD - Canadian Dollar")) {
             driver.findElement(OrangeHRM_TravelExpensePage.currency_CADOption).click();
-            System.out.println("CAD is selected");
+            log.info("CAD is selected");
 
         } else if (currency.equalsIgnoreCase("AUD - Australian Dollar")) {
             driver.findElement(OrangeHRM_TravelExpensePage.currency_AUD).click();
-            System.out.println("AUD is selected");
+            log.info("AUD is selected");
         } else if (currency.equalsIgnoreCase("EUR - Euro")) {
             driver.findElement(OrangeHRM_TravelExpensePage.currency_EUR).click();
-            System.out.println("EUR is selected");
+            log.info("EUR is selected");
         } else if (currency.equalsIgnoreCase("JPY - Japanese Yen")) {
             driver.findElement(OrangeHRM_TravelExpensePage.currency_JPY).click();
-            System.out.println("JPY - Japanese Yen is selected");
+            log.info("JPY - Japanese Yen is selected");
         } else if (currency.equalsIgnoreCase("LKR - Sri Lanka Rupee")) {
             driver.findElement(OrangeHRM_TravelExpensePage.currency_LKR).click();
-            System.out.println("LKR is selected");
+            log.info("LKR is selected");
         } else if (currency.equalsIgnoreCase("PHP - Philippine Peso")) {
             driver.findElement(OrangeHRM_TravelExpensePage.currency_PHP).click();
-            System.out.println("Philippine peso is selected");
+            log.info("Philippine peso is selected");
         } else if (currency.equalsIgnoreCase("USD - United States Dollar")) {
             driver.findElement(OrangeHRM_TravelExpensePage.currency_USD).click();
-            System.out.println("USD is selected");
+            log.info("USD is selected");
         } else if (currency.equalsIgnoreCase("MXN - Mexican New Peso")) {
             driver.findElement(OrangeHRM_TravelExpensePage.currency_MXN).click();
-            System.out.println("Mexican peso is selected");
+            log.info("Mexican peso is selected");
         } else if (currency.equalsIgnoreCase("ZMK - Zambian Kwacha")) {
             driver.findElement(OrangeHRM_TravelExpensePage.currency_ZMK).click();
-            System.out.println("Zambian currency is selected");
+            log.info("Zambian currency is selected");
         } else {
-            System.out.println("wrong currency selected");
+            log.info("wrong currency selected");
         }
         driver.findElement(OrangeHRM_TravelExpensePage.btn_next).click();
     }
@@ -163,7 +167,10 @@ public class OrangeHRM_TravelExpensePage {
         String from_month = from_calender[1];
         String from_year = from_calender[2];
 
-        driver.findElement(OrangeHRM_TravelExpensePage.Calender_travelFrom).click();
+        WebElement Travel_From = driver.findElement(OrangeHRM_TravelExpensePage.Calender_travelFrom);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click;", Travel_From);
+        Travel_From.click();
         driver.findElement(OrangeHRM_TravelExpensePage.dropdwn_monthFrom).click();
         CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_monthsFrom, from_month);
 
@@ -198,49 +205,49 @@ public class OrangeHRM_TravelExpensePage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebElement save_expreq = driver.findElement(OrangeHRM_TravelExpensePage.btn_saveTravelReq);
         js.executeScript("arguments[0].click();", save_expreq);
-        System.out.println("clicked on travel information save button");
+        log.info("clicked on travel information save button");
     }
 
     public static void travelRequestEstimateAddBtn() {
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_TravelExpensePage.btn_addTravelReqEstimate).click();
-        System.out.println("clicked on Add expense button");
+        log.info("clicked on Add expense button");
     }
 
     public static void selectExpenseType(String expenseType) {
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_TravelExpensePage.dropdown_expenseType).click();
-        System.out.println("Expense Type drop-down is clicked ");
+        log.info("Expense Type drop-down is clicked ");
 
         if (expenseType.equalsIgnoreCase("Airfare")) {
             driver.findElement(OrangeHRM_TravelExpensePage.ExpType_airfare).click();
-            System.out.println("Arifare is selected");
+            log.info("Arifare is selected");
         } else if (expenseType.equalsIgnoreCase("Charitable Donations")) {
             driver.findElement(OrangeHRM_TravelExpensePage.ExpType_CharitableDonation).click();
-            System.out.println("Charitable Donations is selected");
+            log.info("Charitable Donations is selected");
         } else if (expenseType.equalsIgnoreCase("Entertainment")) {
             driver.findElement(OrangeHRM_TravelExpensePage.ExpType_Entertainment).click();
-            System.out.println("Entertainment is selected");
+            log.info("Entertainment is selected");
         } else if (expenseType.equalsIgnoreCase("Food & Beverage")) {
             driver.findElement(OrangeHRM_TravelExpensePage.ExpType_FoodandBeverage).click();
-            System.out.println("Food & Beverage is selected");
+            log.info("Food & Beverage is selected");
         } else if (expenseType.equalsIgnoreCase("Fuel")) {
             driver.findElement(OrangeHRM_TravelExpensePage.ExpType_Fuel).click();
-            System.out.println("Fuel is selected");
+            log.info("Fuel is selected");
         } else if (expenseType.equalsIgnoreCase("Ground Transportation")) {
             driver.findElement(OrangeHRM_TravelExpensePage.ExpType_GroundTransportation).click();
-            System.out.println("Ground Transportation is selected");
+            log.info("Ground Transportation is selected");
         } else if (expenseType.equalsIgnoreCase("Hotel")) {
             driver.findElement(OrangeHRM_TravelExpensePage.ExpType_Hotel).click();
-            System.out.println("Hotel is selected");
+            log.info("Hotel is selected");
         } else if (expenseType.equalsIgnoreCase("Maintenance & Repairs")) {
             driver.findElement(OrangeHRM_TravelExpensePage.ExpType_Maintenance_Repairs).click();
-            System.out.println("Maintenance & Repairs is selected");
+            log.info("Maintenance & Repairs is selected");
         } else if (expenseType.equalsIgnoreCase("Office Supplies")) {
             driver.findElement(OrangeHRM_TravelExpensePage.ExpType_OfficeSupplies).click();
-            System.out.println("Office Supplies is selected");
+            log.info("Office Supplies is selected");
         } else {
-            System.out.println("invalid expense type is selected");
+            log.info("invalid expense type is selected");
         }
 
     }
@@ -253,10 +260,10 @@ public class OrangeHRM_TravelExpensePage {
             try {
                 WebElement element_Currency = driver.findElement(OrangeHRM_TravelExpensePage.dropdown_currencyPaidin);
                 js.executeScript("arguments[0].click();", element_Currency);
-                System.out.println("Currency drop-down is clicked");
+                log.info("Currency drop-down is clicked");
                 wait.until(ExpectedConditions.textToBePresentInElementLocated(OrangeHRM_TravelExpensePage.currencyPaid, Currency));
                 driver.findElement(OrangeHRM_TravelExpensePage.currencyPaid).click();
-                System.out.println("Currency is selected");
+                log.info("Currency is selected");
                 /*  List<WebElement> currencyOptions = driver.findElements(By.xpath("//label[text()='Currency Paid In']/../div/ul/li"));
 
                 // select any available currency option
@@ -268,7 +275,7 @@ public class OrangeHRM_TravelExpensePage {
                 break;
             } catch (Exception e) {
 
-                System.out.println(" Exception is occurred for " + count + " time.");
+                log.info(" Exception is occurred for " + count + " time.");
             }
         }
 
@@ -288,13 +295,13 @@ public class OrangeHRM_TravelExpensePage {
         driver.findElement(OrangeHRM_TravelExpensePage.dropdwn_paidBy).click();
         if (paidBy.equalsIgnoreCase("Staff")) {
             driver.findElement(OrangeHRM_TravelExpensePage.paidby_staff).click();
-            System.out.println("Expense paid by Staff");
+            log.info("Expense paid by Staff");
 
         } else if (paidBy.equalsIgnoreCase("Company")) {
             driver.findElement(OrangeHRM_TravelExpensePage.paidby_company).click();
-            System.out.println("Expense paid by the Company");
+            log.info("Expense paid by the Company");
         } else {
-            System.out.println("invalid expense paid by is selected");
+            log.info("invalid expense paid by is selected");
         }
     }
 
@@ -303,26 +310,26 @@ public class OrangeHRM_TravelExpensePage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebElement save_expense = driver.findElement(OrangeHRM_TravelExpensePage.btn_saveTravelExpEst);
         js.executeScript("arguments[0].click();", save_expense);
-        System.out.println("Clicked on save button");
+        log.info("Clicked on save button");
 
         WebElement submit = driver.findElement(OrangeHRM_TravelExpensePage.btn_submit);
         js.executeScript("arguments[0].click();", submit);
-        System.out.println("Submitted the expense");
+        log.info("Submitted the expense");
 
         WebElement ok = driver.findElement(OrangeHRM_TravelExpensePage.btn_oktoConfirm);
         js.executeScript("arguments[0].click();", ok);
-        System.out.println("Confirmed the submit");
+        log.info("Confirmed the submit");
 
         WebElement arrow_back = driver.findElement(OrangeHRM_TravelExpensePage.navLink_backarrow);
         js.executeScript("arguments[0].click();", arrow_back);
-        System.out.println("Clicked on arrow back");
+        log.info("Clicked on arrow back");
     }
 
     public static String reqestId() {
         WebDriver driver = BaseClass.getDriver();
         WebElement requestElement = driver.findElement(OrangeHRM_TravelExpensePage.list_travelReqId);
         request_id = requestElement.getText();
-        System.out.println("Travel Request ID :" + request_id);
+        log.info("Travel Request ID :" + request_id);
         return request_id;
 
     }
@@ -331,7 +338,7 @@ public class OrangeHRM_TravelExpensePage {
         WebDriver driver = BaseClass.getDriver();
         WebElement statusElement = driver.findElement(OrangeHRM_TravelExpensePage.list_reqStatus);
         status = statusElement.getText();
-        System.out.println("Request status is:"+status);
+        log.info("Request status is:"+status);
         /*if (status.equalsIgnoreCase("Pending Supervisor Approval")) {
             System.out.println("Request status is :" + status);
         } else {
@@ -343,32 +350,32 @@ public class OrangeHRM_TravelExpensePage {
     public static void supervisor_approval() {
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_TravelExpensePage.btn_approve).click();
-        System.out.println("Approved the Expense request");
+        log.info("Approved the Expense request");
         driver.findElement(OrangeHRM_TravelExpensePage.btn_oktoConfirm).click();
     }
 
     public static void verifyRequestIdAndStatus(String requestId, String requestStatus) {
         WebDriver driver = BaseClass.getDriver();
         String travelreqid = driver.findElement(OrangeHRM_TravelExpensePage.list_travelReqId).getText();
-        System.out.println("Travel Request ID :" + travelreqid);
+        log.info("Travel Request ID :" + travelreqid);
         Assert.assertEquals(requestId, travelreqid, "RequestID is not matched");
-        System.out.println("Request ID is matched");
+        log.info("Request ID is matched");
 
 
         WebElement element_reqstatus = driver.findElement(OrangeHRM_TravelExpensePage.list_reqStatus);
         String updated_status = element_reqstatus.getText();
-        System.out.println("Request status is :" + updated_status);
+        log.info("Request status is :" + updated_status);
         Assert.assertEquals(requestId, updated_status, "RequestStatus is not matched");
-        System.out.println("Request Status is matched");
+        log.info("Request Status is matched");
     }
 
     public static void finalApproval() throws Exception{
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_TravelExpensePage.btn_approve).click();
-        System.out.println("Approved the Expense request");
+        log.info("Approved the Expense request");
         Thread.sleep(2000);
         driver.findElement(OrangeHRM_TravelExpensePage.btn_oktoConfirm).click();
-        System.out.println("Clicked on OK");
+        log.info("Clicked on OK");
     }
 
     public static String updatedStatus(By locator, String data) {
@@ -390,7 +397,7 @@ public class OrangeHRM_TravelExpensePage {
             String elementText = element.getText();
             if (elementText.equalsIgnoreCase(data)) {
                 String updatedStatus=element.findElement(list_reqStatus).getText();
-                System.out.println(updatedStatus);
+                log.info(updatedStatus);
                 break;
             }
         }

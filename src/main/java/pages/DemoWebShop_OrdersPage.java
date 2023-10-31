@@ -33,6 +33,8 @@ public class DemoWebShop_OrdersPage {
     public static By orderValues= By.xpath("./../li[3]");
     static Logger log = LogManager.getLogger(DemoWebShop_OrdersPage.class);
 
+    static int TotalNumberOfOrders;
+
     public static void clickLinkOrders(){
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(link_Orders).click();
@@ -47,7 +49,8 @@ public class DemoWebShop_OrdersPage {
     public static int totalNumberOfOrders(){
         WebDriver driver = BaseClass.getDriver();
         List<WebElement> OrderNumbers = driver.findElements(orderNumber);
-        log.info("Total number of orders is :" + OrderNumbers.size());
+        TotalNumberOfOrders = OrderNumbers.size();
+        log.info("Total number of orders is :" + TotalNumberOfOrders);
         return OrderNumbers.size();
     }
 
