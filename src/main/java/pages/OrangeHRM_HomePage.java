@@ -63,13 +63,6 @@ public class OrangeHRM_HomePage {
         log.info("Performance link is clicked");
     }
 
-    public static void select_MyGoals() {
-        WebDriver driver = BaseClass.getDriver();
-        driver.findElement(OrangeHRM_HomePage.txtbx_Search).sendKeys("Goal List");
-        driver.findElement(OrangeHRM_HomePage.link_MyGoals).click();
-
-    }
-
     public static void clickTRavelExpLink() {
 
         WebDriver driver = BaseClass.getDriver();
