@@ -4,7 +4,7 @@ public class Config {
 
     public static final String browserName = "Chrome";
     public static final String demoWebshop_URL = "https://demowebshop.tricentis.com/";
-    public static final String orangeHRM_URL = "https://automatetest-trials710.orangehrmlive.com/";
+    public static final String orangeHRM_URL = " https://automationdata-trials710.orangehrmlive.com";
 
     public static final String LoginTestCase_ID = "TC01-01";
     public static final String AddEmployeeTestCase_ID = "TC02-01";
@@ -110,7 +110,9 @@ public class Config {
     public static final int col_OrangeHRMGoals_thirdGoalName=17;
     public static final int col_OrangeHRMGoals_thirdGoalDescription=18;
     public static final int col_OrangeHRMGoals_approveGoalNote=19;
-    public static final int col_OrangeHRMGoals_firstGoalStatus=20;
-    public static final int col_OrangeHRMGoals_secondGoalStatus=21;
-    public static final int col_OrangeHRMGoals_thirdGoalStatus=22;
+    public static final int col_OrangeHRMGoals_updateFirstGoalPercentage=20;
+    public static final int col_OrangeHRMGoals_updateSecondGoalPercentage=21;
+    public static final int col_OrangeHRMGoals_firstGoalStatus=22;
+    public static final int col_OrangeHRMGoals_secondGoalStatus=23;
+    public static final int col_OrangeHRMGoals_thirdGoalStatus=24;
 }

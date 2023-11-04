@@ -14,8 +14,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class OrangeHRM_EmployeeManagementPage {
-    public static By Link_FirstEmployee = By.xpath("//tr[contains(@ng-repeat,'employee.empNumber')][1]/td[2]");
-    public static By Link_PersonalDetails = By.xpath("//a[contains(@ui-sref,'l_details')]");
+    public static By link_PersonalDetails = By.xpath("//a[contains(@ui-sref,'l_details')]");
     public static By link_EmployeeList =By.xpath("//a[text()='Employee List ']");
     public static By list_employee= By.xpath("//table[@id='employeeListTable']/tbody/tr/td[3]");
     public static By txt_supervisorName=By.xpath(".//following-sibling::td[6]");
@@ -23,13 +22,16 @@ public class OrangeHRM_EmployeeManagementPage {
 
     static Logger log = LogManager.getLogger(OrangeHRM_EmployeeManagementPage.class);
 
-    public static void personalDetails_firstEmployee(){
+    public static By getEmployeeNameLocator(String empName){
+        By link_Employee = By.xpath("//table[@id='employeeListTable']/tbody/tr/td[contains(text(),'"+empName+"')]");
+        return link_Employee;
+    }
+
+    public static void clickEmployeePersonalDetails(String empName){
         WebDriver driver = BaseClass.getDriver();
-
-        driver.findElement(OrangeHRM_EmployeeManagementPage.Link_FirstEmployee).click();
+        driver.findElement(getEmployeeNameLocator(empName)).click();
         log.info("Click on First Employee Data");
-
-        driver.findElement(OrangeHRM_EmployeeManagementPage.Link_PersonalDetails).click();
+        driver.findElement(link_PersonalDetails).click();
         log.info("Clicked on Personal Details tab");
     }
 
