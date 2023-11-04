@@ -4,17 +4,13 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
 import testcases.setup.TestRunner;
 import utilities.*;
 
-import java.time.Duration;
 
 public class TC04_OrangeHRM_EditEmployee extends TestRunner {
 
@@ -24,14 +20,12 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
     static WebDriver driver;
     private String base64;
     static Logger log = LogManager.getLogger(TC04_OrangeHRM_EditEmployee.class);
-    // static TC04_OrangeHRM_EditEmployee ob = new TC04_OrangeHRM_EditEmployee();
-    //static String className = ob.getClass().getName();
 
     @Parameters({"testID"})
     @BeforeMethod
     public void prerequisite_Setup(@Optional(Config.EditEmployeeTestCase_ID) String testID) throws Exception {
         //To Create the Test in Extent Report
-        logger = extent.createTest("OrangeHRMEditEmployee" + testID);
+        logger = extent.createTest("OrangeHRMEditEmployee_" + testID);
         Log.startTestCase(TC04_OrangeHRM_EditEmployee.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
@@ -41,28 +35,23 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
         rowNum = ExcelUtils.getRowNumber(testID, sheetName);
         log.info(rowNum + "Row Number is picked from " + sheetName);
 
-
         //Reading the TestData from Excel file
-        rowNum = ExcelUtils.getRowNumber(testID, sheetName);
-        log.info("Row number is taken ");
-        rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
         userName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
         log.info("UserName from excel sheet is :" + userName);
         passWord = ExcelUtils.getCellData(sheetName, rowNum, Config.col_Password);
         log.info("Password from excel sheet is :" + passWord);
         lastName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_LastName);
-        log.info("lastName from excel sheet is :" + lastName);
+        log.info("LastName from excel sheet is :" + lastName);
         DateOfBirth = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_DOB);
         log.info("DateOfBirth from excel sheet is :" + DateOfBirth);
         nationality = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_Nationality);
-        log.info("nationality from excel sheet is :" + nationality);
+        log.info("Nationality from excel sheet is :" + nationality);
         allergies = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_Allergies);
-        log.info("allergies from excel sheet is :" + allergies);
+        log.info("Allergies from excel sheet is :" + allergies);
         dietaryRequire1 = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_DietaryRequirement_1);
-        log.info("dietaryRequire1 from excel sheet is :" + dietaryRequire1);
+        log.info("DietaryRequire1 from excel sheet is :" + dietaryRequire1);
         dietaryRequire2 = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_DietaryRequirement_2);
-        log.info("dietaryRequire2 from excel sheet is :" + dietaryRequire2);
-
+        log.info("DietaryRequire2 from excel sheet is :" + dietaryRequire2);
     }
 
     @Test
@@ -78,10 +67,8 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
         log.info("OrangeHRM URL is loaded :" + Config.orangeHRM_URL);
         logger.log(Status.INFO, "OrangeHRM Application is loaded" + Config.orangeHRM_URL, MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_LoginPage").build());
 
-
         OrangeHRM_LoginPage.login(userName, passWord);
         log.info("OrangeHRM Login is Successful");
-
 
         OrangeHRM_HomePage.verifyTitle();
         log.info("OrangeHRM Title is Verified");
@@ -89,14 +76,12 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_HomePage");
         logger.log(Status.INFO, "OrangeHRM Login is Successful", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_HomePage").build());
 
-
         OrangeHRM_HomePage.clickEmployeeManagementLink();
         log.info("EmployeeManagement Page is Loaded");
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_EmployeeManagementPage");
         logger.log(Status.INFO, "EmployeeManagement Page is Loaded", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EmployeeManagement Page").build());
 
-
-        OrangeHRM_EmployeeManagementPage.personalDetails_firstEmployee();
+        OrangeHRM_EmployeeManagementPage.clickEmployeePersonalDetails(empN);
         log.info("OrangeHRM_EmployeeManagementPage firstEmployee details are entered");
 
         OrangeHRM_EditEmployeePage.enterLastName(lastName);

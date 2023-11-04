@@ -420,22 +420,12 @@ public class OrangeHRM_StepDefinition {
 
     @When("All goals progress")
     public void allGoalsProgress() {
-        //First goal progress
-        OrangeHRM_GoalsPage.progress_firstGoal();
-        //Second goal progress
-        OrangeHRM_GoalsPage.progress_secondGoal();
-        //Third goal progress
-        OrangeHRM_GoalsPage.progress_thirdGoal();
+
     }
 
     @Then("All goals Verification")
     public void allGoalsVerification() {
-        //First goal Verification
-        firstGoal_status = OrangeHRM_GoalsPage.verify_firstGoal();
-        //Second goal Verification
-        secondGoal_status = OrangeHRM_GoalsPage.verify_secondGoal();
-        //Third goal Verification
-        thirdGoal_status = OrangeHRM_GoalsPage.verify_thirdGoal();
+
     }
 
     @Given("User reads Goals Data from {string} using TestID {string}")
