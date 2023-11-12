@@ -15,7 +15,7 @@ import pages.DemoWebshop_HomePage;
 import testcases.setup.TestRunner;
 import utilities.*;
 
-public class TC11_DemoWebshop_ReOrder extends TestRunner {
+public class TC07_DemoWebshop_ReOrder extends TestRunner {
 
     static XSSFWorkbook wbk;
     static String userName;
@@ -24,13 +24,13 @@ public class TC11_DemoWebshop_ReOrder extends TestRunner {
     static String sheetName;
     static int rowNum_testCase;
     static int rowNum_Index;
-    static Logger log = LogManager.getLogger(TC11_DemoWebshop_ReOrder.class);
+    static Logger log = LogManager.getLogger(TC07_DemoWebshop_ReOrder.class);
     static WebDriver driver;
 
     @Parameters("{testID}")
     @BeforeClass
     public void prerequisite_setup(@Optional(Config.ReOrderRequestTestCase_ID) String testID) throws Exception {
-        Log.startTestCase(TC11_DemoWebshop_ReOrder.class.getName());
+        Log.startTestCase(TC07_DemoWebshop_ReOrder.class.getName());
 
         sheetName = "DemoWebshop_ReOrder";
         rowNum_testCase = ExcelUtils.getRowNumber(testID,sheetName);

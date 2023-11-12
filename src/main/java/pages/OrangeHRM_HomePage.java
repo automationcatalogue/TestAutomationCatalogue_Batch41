@@ -11,6 +11,9 @@ import org.testng.Assert;
 import utilities.BaseClass;
 
 public class OrangeHRM_HomePage {
+
+    static Logger log = LogManager.getLogger(OrangeHRM_HomePage.class);
+
     public static By link_HRAdministration = By.xpath("(//span[text()='HR Administration'])[1]");
     public static By lbl_ProfileName = By.xpath("//div[@id='sidebar-profile-picture']/a");
     public static By link_EmployeeManagement = By.xpath("(//a[@data-tooltip='Employee Management'])[1]");
@@ -19,8 +22,7 @@ public class OrangeHRM_HomePage {
     public static By link_Performance = By.xpath("(//a[@data-tooltip='Performance'])[1]");
     public static By txtbx_Search = By.xpath("//input[@placeholder='Search']");
     public static By link_MyGoals = By.xpath("//div[text()='Goal List']");
-    static Logger log = LogManager.getLogger(OrangeHRM_HomePage.class);
-
+    public static By btn_Logout = By.xpath("//span[text()='Log Out']");
 
     public static void verifyTitle() {
         WebDriver driver = BaseClass.getDriver();
@@ -75,18 +77,12 @@ public class OrangeHRM_HomePage {
         js.executeScript("arguments[0].click;", travelexp_Element);
         log.info("Travel and Expense is selected");
 
-       /* WebDriver driver = BaseClass.getDriver();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement travelexp_Element = driver.findElement(By.xpath("(//span[text()='Travel and Expense'])[1]"));
-        travelexp_Element.click();
-        js.executeScript("arguments[0].click;", travelexp_Element);
-        log.info("Travel and Expense is selected"); */
     }
 
-    public static void clickLogout() {
+    public static void logout() {
         WebDriver driver = BaseClass.getDriver();
-        //Click on Logout button
-        driver.findElement(OrangeHRM_LogoutPage.btn_logout).click();
+        driver.findElement(btn_Logout).click();
+        log.info("Logout button is clicked");
     }
 }
 

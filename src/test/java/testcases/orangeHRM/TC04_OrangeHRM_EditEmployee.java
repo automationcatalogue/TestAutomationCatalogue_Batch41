@@ -14,8 +14,8 @@ import utilities.*;
 
 public class TC04_OrangeHRM_EditEmployee extends TestRunner {
 
-    String userName, passWord, lastName, DateOfBirth, nationality, allergies;
-    String dietaryRequire1, dietaryRequire2, sheetName;
+    static String userName, passWord, empName, mobileNumber, dateOfBirth, nationality, allergies;
+    static String dietaryRequire1, dietaryRequire2, sheetName;
     int rowNum, rowNum_Index;
     static WebDriver driver;
     private String base64;
@@ -40,10 +40,10 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
         log.info("UserName from excel sheet is :" + userName);
         passWord = ExcelUtils.getCellData(sheetName, rowNum, Config.col_Password);
         log.info("Password from excel sheet is :" + passWord);
-        lastName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_LastName);
-        log.info("LastName from excel sheet is :" + lastName);
-        DateOfBirth = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_DOB);
-        log.info("DateOfBirth from excel sheet is :" + DateOfBirth);
+        empName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_EmpName);
+        log.info("EmployeeName from excel sheet is :" + empName);
+        dateOfBirth = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_DOB);
+        log.info("DateOfBirth from excel sheet is :" + dateOfBirth);
         nationality = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_Nationality);
         log.info("Nationality from excel sheet is :" + nationality);
         allergies = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_Allergies);
@@ -52,6 +52,8 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
         log.info("DietaryRequire1 from excel sheet is :" + dietaryRequire1);
         dietaryRequire2 = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_DietaryRequirement_2);
         log.info("DietaryRequire2 from excel sheet is :" + dietaryRequire2);
+        mobileNumber = RandomGenerator.getRandomData("phoneNumber").replace(".","").trim();
+        log.info("Random Generated Mobile Number is :"+mobileNumber);
     }
 
     @Test
@@ -79,45 +81,34 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
         OrangeHRM_HomePage.clickEmployeeManagementLink();
         log.info("EmployeeManagement Page is Loaded");
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_EmployeeManagementPage");
-        logger.log(Status.INFO, "EmployeeManagement Page is Loaded", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EmployeeManagement Page").build());
+        logger.log(Status.INFO, "EmployeeManagement Page is Loaded", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EmployeeManagementPage").build());
 
-        OrangeHRM_EmployeeManagementPage.clickEmployeePersonalDetails(empN);
-        log.info("OrangeHRM_EmployeeManagementPage firstEmployee details are entered");
+        OrangeHRM_EmployeeManagementPage.clickEmployeePersonalDetails(empName);
+        log.info(empName+" Employee Name is Opened for Edit");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_EditEmployeePage");
+        logger.log(Status.INFO, empName+" Employee Name is Opened for Edit", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EditEmployeePage").build());
 
-        OrangeHRM_EditEmployeePage.enterLastName(lastName);
-        log.info("OrangeHRM_EmployeeManagementPage lastName  is entered");
+        OrangeHRM_EditEmployeePage.edit_DOB_Nationality(dateOfBirth, nationality);
+        log.info("OrangeHRM Edit Employee Personal Details are Saved");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_EditEmployeePersonalDetailsSave");
+        logger.log(Status.INFO, "OrangeHRM Edit Employee Personal Details are Saved", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EditEmployeePersonalDetailsSave").build());
 
+        OrangeHRM_EditEmployeePage.editHealth(allergies, dietaryRequire1, dietaryRequire2);
+        log.info("OrangeHRM Edit Health Details are Saved");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_EditEmployeeHealthSave");
+        logger.log(Status.INFO, "OrangeHRM Edit Employee Health are Saved", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EditEmployeeHealthSave").build());
 
-        OrangeHRM_EditEmployeePage.Selection_DateOfBirth(DateOfBirth);
-        log.info("OrangeHRM_EmployeeManagementPage DateOfBirth  is entered");
-        OrangeHRM_EditEmployeePage.select_Nationality(nationality);
-        log.info("OrangeHRM_EmployeeManagementPage nationality is entered");
+        OrangeHRM_EditEmployeePage.editMobileNumber(mobileNumber);
+        log.info("OrangeHRM Edit Contact Details are Saved");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_EditEmployeeContactDetailsSave");
+        logger.log(Status.INFO, "OrangeHRM Edit Employee Contact are Saved", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EditEmployeeContactDetailsSave").build());
 
-        OrangeHRM_EditEmployeePage.firstSave();
-        log.info("OrangeHRM_EmployeeManagementPage  first time  is saved");
-        OrangeHRM_EditEmployeePage.verify_SuccessfullyUpdated("Data");
-        log.info("OrangeHRM_EmployeeManagementPage Data is updated");
+        OrangeHRM_EditEmployeePage.validateEditEmployeeData(mobileNumber);
+        log.info("OrangeHRM Edit Employee is successful");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_EditEmployeeProfile");
+        logger.log(Status.INFO, "OrangeHRM Edit Employee is successful", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EditEmployeeProfile").build());
 
-
-        OrangeHRM_EditEmployeePage.select_Allergies(allergies);
-        log.info("OrangeHRM_EmployeeManagementPage allergies  is entered");
-        OrangeHRM_EditEmployeePage.secondSave();
-        log.info("OrangeHRM_EmployeeManagementPage second time is saved ");
-        OrangeHRM_EditEmployeePage.verify_SuccessfullyUpdated("Hygiene");
-        log.info("OrangeHRM_EmployeeManagementPage Hygiene  is updated");
-
-
-        OrangeHRM_EditEmployeePage.select_diet(dietaryRequire1);
-        log.info("OrangeHRM_EmployeeManagementPage dietaryRequire1 is selected");
-        OrangeHRM_EditEmployeePage.select_diet(dietaryRequire2);
-        log.info("OrangeHRM_EmployeeManagementPage dietaryRequire2 is selected");
-        OrangeHRM_EditEmployeePage.thirdSave();
-        log.info("OrangeHRM_EmployeeManagementPage third time is saved");
-        OrangeHRM_EditEmployeePage.verify_SuccessfullyUpdated("Dietary Requirement");
-        log.info("OrangeHRM_EmployeeManagementPage Dietary Requirement  is updated");
-
-
-        OrangeHRM_LogoutPage.logout();
+        OrangeHRM_HomePage.logout();
         logger.log(Status.INFO, "Logged out from OrangeHRM application");
     }
 
@@ -125,6 +116,8 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
     public void tearDown(ITestResult result) throws Exception {
 
         if (result.getStatus() == ITestResult.SUCCESS) {
+            ExcelUtils.setCellData(mobileNumber, sheetName, rowNum, Config.col_EditEmployee_MobileNumber);
+            log.info(mobileNumber + "is updated in Excel sheet as Mobile Number");
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
         } else if (result.getStatus() == ITestResult.FAILURE) {

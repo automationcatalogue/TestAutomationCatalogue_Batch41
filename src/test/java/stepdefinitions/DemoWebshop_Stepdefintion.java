@@ -11,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import pages.*;
 import runner.CucumberHooks;
-import testcases.demoWebshop.TC13_DemoWebShop_UpdateShoppingCart;
 import utilities.*;
 
 

@@ -68,23 +68,7 @@ public class OrangeHRM_GoalsPage {
         CommonUtils.selectDropdownValue(list_Priorities, priority);
 
         driver.findElement(OrangeHRM_GoalsPage.icon_dueDate).click();
-        String[] date_ArrayGoal = date.split("-");
-        String day_goal = date_ArrayGoal[0];
-        String month_goal = date_ArrayGoal[1];
-        String year_goal = date_ArrayGoal[2];
-
-        //month selector
-        driver.findElement(drpdwn_Month).click();
-        log.info("Clicked on Month Drop-down in Due Date");
-        CommonUtils.selectDropdownValue(list_Months, month_goal);
-
-        //year selector
-        driver.findElement(drpdwn_Year).click();
-        log.info("Clicked on Year Drop-down in Due Date");
-        CommonUtils.selectDropdownValue(list_years, year_goal);
-
-        //date selector
-        CommonUtils.selectDropdownValue(list_Dates,day_goal);
+        CommonUtils.selectCalendarDate(date, drpdwn_Month, list_Months, drpdwn_Year, list_years, list_Dates);
 
         driver.findElement(OrangeHRM_GoalsPage.btn_Submit).click();
         log.info("Goal is successfully Submitted");

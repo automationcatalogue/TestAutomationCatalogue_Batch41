@@ -11,16 +11,15 @@ import org.testng.annotations.*;
 import pages.DemoWebShop_OrdersPage;
 import pages.DemoWebshop_HomePage;
 import pages.DemoWebshop_LoginPage;
-import testcases.orangeHRM.TC01_OrangeHRM_LoginTest;
 import testcases.setup.TestRunner;
 import utilities.*;
 
-public class TC12_DemoWebshop_TotalOrders extends TestRunner {
+public class TC08_DemoWebshop_TotalOrders extends TestRunner {
     static XSSFWorkbook wbk;
     static String userName,password,sheetName;
     static int TotalNumberOfOrders,rowNum_testCase,rowNum_Index;
     static float SumOfAllOrders;
-    static Logger log = LogManager.getLogger(TC12_DemoWebshop_TotalOrders.class);
+    static Logger log = LogManager.getLogger(TC08_DemoWebshop_TotalOrders.class);
     static WebDriver driver;
 
     private static String base64;
@@ -30,7 +29,7 @@ public class TC12_DemoWebshop_TotalOrders extends TestRunner {
     public void prerequisite_setup(@Optional(Config.TotalOrdersRequestTestCase_ID) String testID) throws Exception {
         //To Create the Test in Extent Report
         logger = extent.createTest("DemoWebShop_TotalOrders"+testID);
-        Log.startTestCase(TC12_DemoWebshop_TotalOrders.class.getName());
+        Log.startTestCase(TC08_DemoWebshop_TotalOrders.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
         rowNum_Index =ExcelUtils.getRowNumber(testID,"Index");

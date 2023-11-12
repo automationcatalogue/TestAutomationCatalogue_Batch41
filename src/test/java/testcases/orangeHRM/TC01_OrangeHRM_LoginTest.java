@@ -9,7 +9,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
-import pages.OrangeHRM_LogoutPage;
 import testcases.setup.TestRunner;
 import utilities.*;
 
@@ -66,7 +65,7 @@ public class TC01_OrangeHRM_LoginTest extends TestRunner {
         logger.log(Status.INFO, "OrangeHRM Login is Successful", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_HomePage").build());
 
         //OrangeHRM Logout
-        OrangeHRM_LogoutPage.logout();
+        OrangeHRM_HomePage.logout();
         logger.log(Status.INFO, "Logged out from OrangeHRM application");
     }
 

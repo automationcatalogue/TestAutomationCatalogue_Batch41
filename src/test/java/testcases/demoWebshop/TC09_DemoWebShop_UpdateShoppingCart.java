@@ -9,15 +9,14 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
-import testcases.orangeHRM.TC01_OrangeHRM_LoginTest;
 import testcases.setup.TestRunner;
 import utilities.*;
 
-public class TC13_DemoWebShop_UpdateShoppingCart extends TestRunner {
+public class TC09_DemoWebShop_UpdateShoppingCart extends TestRunner {
     XSSFWorkbook wbk;
     static int row,rowNum_Index,row_index;
     static String userName,passWord,jewel_Length,update_Qty,orderNumber,total_1,total_2,text_BookPrice,text_updatedQuty,text_JewelPrice,sheetName;
-    static Logger log = LogManager.getLogger(TC13_DemoWebShop_UpdateShoppingCart.class);
+    static Logger log = LogManager.getLogger(TC09_DemoWebShop_UpdateShoppingCart.class);
     static WebDriver driver;
 
     private static String base64;
@@ -25,11 +24,11 @@ public class TC13_DemoWebShop_UpdateShoppingCart extends TestRunner {
     @BeforeMethod
     @Parameters("{testID}")
     public void prerequisite_Setup(@Optional(Config.UpdateShoppingCartRequestTestCase_ID) String testID) throws Exception {
-        Log.startTestCase(TC13_DemoWebShop_UpdateShoppingCart.class.getName());
+        Log.startTestCase(TC09_DemoWebShop_UpdateShoppingCart.class.getName());
 
         //To Create the Test in Extent Report
         logger = extent.createTest("UpdateShoppingCart_"+testID);
-        Log.startTestCase(TC13_DemoWebShop_UpdateShoppingCart.class.getName());
+        Log.startTestCase(TC09_DemoWebShop_UpdateShoppingCart.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
         rowNum_Index =ExcelUtils.getRowNumber(testID,"Index");

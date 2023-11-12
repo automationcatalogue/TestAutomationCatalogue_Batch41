@@ -199,7 +199,7 @@ public class OrangeHRM_StepDefinition {
 
     @When("User clicks on logout button")
     public void user_clicks_on_logout_button() {
-        OrangeHRM_HomePage.clickLogout();
+        OrangeHRM_HomePage.logout();
     }
 
     @When("User enters username as new username")
@@ -217,7 +217,7 @@ public class OrangeHRM_StepDefinition {
 
     @And("User logout from orangeHRM application")
     public void logOut_afterNewUser() {
-        OrangeHRM_HomePage.clickLogout();
+        OrangeHRM_HomePage.logout();
     }
 
 
@@ -239,16 +239,6 @@ public class OrangeHRM_StepDefinition {
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
         userName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UserName);
         pswd = ExcelUtils.getCellData(sheetName, rowNum, Config.col_Password);
-        newPassword = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_newPassword);
-        currency = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_currency);
-        destination = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_destination);
-        travelFrom = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_travelFrom);
-        travelTo = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_travelTo);
-        expenseType = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_expenseType);
-        currencyPaidIn = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_currencyPaidIn);
-        amount = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_amount);
-        paidBy = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_paidBy);
-        employeeName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_TravelExpense_employeeName);
 
     }
     @When("User clicks on HR Administration page")
@@ -266,93 +256,7 @@ public class OrangeHRM_StepDefinition {
         OrangeHRM_HomePage.clickHrAdministrationLink();
         supervisor_username = OrangeHRM_UsersPage.username_Supervisor(supervisor_name);
         OrangeHRM_UsersPage.changeSupervisorPassword(supervisor_name, newPassword);
-        OrangeHRM_LogoutPage.logout();
-    }
-    @When("User Login into OrangeHRM Application with Employee credentials as employee_UserName and newPassword and clicks on Travel and Expense Link")
-    public void user_login_into_orange_hrm_application_with_employee_credentials_employee_user_name_as_and_new_password_as() throws Exception{
-        OrangeHRM_LoginPage.login_employee(employee_UserName, newPassword);
-        OrangeHRM_HomePage.clickTRavelExpLink();
-        CommonUtils.switchToiFrame(OrangeHRM_TravelExpensePage.switchto_Iframe);
-
-    }
-    @When("creates a travel request providing currency,destination,travelFrom,travelTo,expenseType,amount,paidBy")
-    public void creates_a_travel_request_providing_currency_destination_travel_from_travel_to_expense_type_amount_paid_by() throws Exception {
-        OrangeHRM_TravelExpensePage.clickAddTravelExp();
-        OrangeHRM_TravelExpensePage.selectCurrency(currency);
-        OrangeHRM_TravelExpensePage.addTravelinfo();
-        OrangeHRM_TravelExpensePage.destination(destination);
-        OrangeHRM_TravelExpensePage.travelFrom(travelFrom);
-        OrangeHRM_TravelExpensePage.travelto(travelTo);
-        OrangeHRM_TravelExpensePage.saveTravelexp();
-        OrangeHRM_TravelExpensePage.travelRequestEstimateAddBtn();
-        OrangeHRM_TravelExpensePage.selectExpenseType(expenseType);
-        OrangeHRM_TravelExpensePage.currency_paidin(currency);// check th travel page and correct code as its only showing corresponding currency
-        OrangeHRM_TravelExpensePage.amount(amount);
-        OrangeHRM_TravelExpensePage.selectPaidby(paidBy);
-        OrangeHRM_TravelExpensePage.submit_travelexp();
-
-    }
-    @Then("User check the status of the TravelRequest and logout from the application")
-    public void user_check_the_status_of_the_travel_request_and_logout_from_the_application() {
-        request_id = OrangeHRM_TravelExpensePage.reqestId();
-        requestStatus = OrangeHRM_TravelExpensePage.request_Status();
-        OrangeHRM_LogoutPage.logout();
-        driver.switchTo().defaultContent();
-    }
-
-    @When("User login as Supervisor and provides the Supervisor approval for the TravelRequest and Logout")
-    public void user_login_as_supervisor_and_provides_the_supervisor_approval_for_the_travel_request_and_logout() throws Exception {
-        //login as supervisor
-        OrangeHRM_LoginPage.login_supervisor(supervisor_username, newPassword);
-        OrangeHRM_HomePage.clickTRavelExpLink();
-        Thread.sleep(5000);
-        CommonUtils.switchToiFrame(OrangeHRM_TravelExpensePage.switchto_Iframe);
-        CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_travelReqId, request_id);
-        OrangeHRM_TravelExpensePage.supervisor_approval();
-        OrangeHRM_LogoutPage.logout();
-        driver.switchTo().defaultContent();
-
-    }
-
-    @Then("User login as Employee and check for TravelRequest Status and Logout")
-    public void user_login_as_employee_and_check_for_travel_request_status_and_logout() {
-
-        OrangeHRM_LoginPage.login(employee_UserName, newPassword);
-        OrangeHRM_HomePage.clickTRavelExpLink();
-        CommonUtils.switchToiFrame(OrangeHRM_TravelExpensePage.switchto_Iframe);
-        Id = OrangeHRM_TravelExpensePage.updatedStatus(OrangeHRM_TravelExpensePage.list_travelReqId, request_id);
-        log.info("Request is id " + Id);
-        Status = OrangeHRM_TravelExpensePage.getStatus(OrangeHRM_TravelExpensePage.list_travelReqId, request_id);
-        log.info("Status of the request is " + status);
-        OrangeHRM_LogoutPage.logout();
-        driver.switchTo().defaultContent();
-    }
-
-    @Then("User Login as Admin and provides admin approval and logout")
-    public void user_login_as_admin_and_provides_admin_approval_and_logout() throws Exception{
-        // Log in as Admin and Approve the request
-        OrangeHRM_LoginPage.login(userName, pswd);
-        OrangeHRM_HomePage.clickTRavelExpLink();
-        CommonUtils.switchToiFrame(OrangeHRM_TravelExpensePage.switchto_Iframe);
-        CommonUtils.selectDropdownValue(OrangeHRM_TravelExpensePage.list_travelReqId, request_id);
-        OrangeHRM_TravelExpensePage.finalApproval();
-        OrangeHRM_LogoutPage.logout();
-        driver.switchTo().defaultContent();
-    }
-
-    @Then("User Login as Employee and checks for final approval Status and logout")
-    public void user_login_as_employee_and_checks_for_final_approval_status_and_logout() {
-
-
-        //login as Employee to check the final status
-        OrangeHRM_LoginPage.login(employee_UserName, newPassword);
-        OrangeHRM_HomePage.clickTRavelExpLink();
-        CommonUtils.switchToiFrame(OrangeHRM_TravelExpensePage.switchto_Iframe);
-        Id = OrangeHRM_TravelExpensePage.updatedStatus(OrangeHRM_TravelExpensePage.list_travelReqId, request_id);
-        log.info("Request is id " + Id);
-        Status = OrangeHRM_TravelExpensePage.getStatus(OrangeHRM_TravelExpensePage.list_travelReqId, request_id);
-        log.info("Status of the request is " + status);
-        OrangeHRM_LogoutPage.logout();
+        OrangeHRM_HomePage.logout();
     }
 
     @Then("User Updates the Status in ExcelSheet for TravelRequest")
@@ -396,7 +300,7 @@ public class OrangeHRM_StepDefinition {
         OrangeHRM_GoalsPage.createGoal(firstGoalPriority, firstGoalDate,"","");
         OrangeHRM_GoalsPage.createGoal(secondGoalPriority, secondGoalDate,"","");
         OrangeHRM_GoalsPage.createGoal(thirdGoalPriority, thirdGoalDate,"","createGoal");
-        OrangeHRM_HomePage.clickLogout();
+        OrangeHRM_HomePage.logout();
     }
 
 
@@ -406,7 +310,7 @@ public class OrangeHRM_StepDefinition {
         log.info("Logged in with the supervisor credentials");
         OrangeHRM_PerformancePage.selectGoalsList();
         OrangeHRM_GoalsPage.supervisor_ApproveGoals("");
-        OrangeHRM_HomePage.clickLogout();
+        OrangeHRM_HomePage.logout();
     }
 
     @And("Logging in with the employee username")

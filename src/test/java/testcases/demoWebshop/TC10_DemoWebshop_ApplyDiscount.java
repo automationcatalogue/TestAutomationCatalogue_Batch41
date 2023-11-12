@@ -4,29 +4,21 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.*;
-import testcases.orangeHRM.TC01_OrangeHRM_LoginTest;
 import testcases.setup.TestRunner;
 import utilities.*;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import static testcases.demoWebshop.TC07_DemoWebshop_ReOrder.sheetName;
 
-import static testcases.demoWebshop.TC11_DemoWebshop_ReOrder.sheetName;
-
-public class TC14_DemoWebshop_ApplyDiscount extends TestRunner {
+public class TC10_DemoWebshop_ApplyDiscount extends TestRunner {
 
     static String userName,password,ApplyCoupon,orderNumber;
     static int rowNum_testCase,rowNum_Index;
-    static Logger log = LogManager.getLogger(TC14_DemoWebshop_ApplyDiscount.class);
+    static Logger log = LogManager.getLogger(TC10_DemoWebshop_ApplyDiscount.class);
     static WebDriver driver;
 
     private static String base64;
@@ -36,7 +28,7 @@ public class TC14_DemoWebshop_ApplyDiscount extends TestRunner {
 
         //To Create the Test in Extent Report
         logger = extent.createTest("ApplyDiscount_"+testID);
-        Log.startTestCase(TC14_DemoWebshop_ApplyDiscount.class.getName());
+        Log.startTestCase(TC10_DemoWebshop_ApplyDiscount.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
         rowNum_Index =ExcelUtils.getRowNumber(testID,"Index");

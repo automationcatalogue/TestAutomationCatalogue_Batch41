@@ -12,7 +12,7 @@ import testcases.setup.TestRunner;
 import utilities.*;
 
 
-public class TC06_OrangeHRM_Goals extends TestRunner {
+public class TC05_OrangeHRM_Goals extends TestRunner {
     static String userName, password, employeeName;
     static String firstGoalPriority, firstGoalDate, secondGoalPriority, secondGoalDate, thirdGoalPriority, thirdGoalDate;
     static String actualUserName, supervisorName, supervisorActualUserName, updateFirstGoalPercentage, updateSecondGoalPercentage;
@@ -20,7 +20,7 @@ public class TC06_OrangeHRM_Goals extends TestRunner {
     static String firstGoalName, firstGoalDescription, secondGoalName, secondGoalDescription, thirdGoalName, thirdGoalDescription;
     static int rowNum, rowNum_Index;
     static String sheetName;
-    static Logger log = LogManager.getLogger(TC06_OrangeHRM_Goals.class);
+    static Logger log = LogManager.getLogger(TC05_OrangeHRM_Goals.class);
     static WebDriver driver;
     private String base64;
 
@@ -29,7 +29,7 @@ public class TC06_OrangeHRM_Goals extends TestRunner {
     public void prerequisite_Setup(@Optional(Config.GoalsRequestTestCase_ID) String testID) throws Exception{
         //To Create the Test in Extent Report
         logger = extent.createTest("OrangeHRMGoals_" + testID);
-        Log.startTestCase(TC06_OrangeHRM_Goals.class.getName());
+        Log.startTestCase(TC05_OrangeHRM_Goals.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
         rowNum_Index = ExcelUtils.getRowNumber(testID, "Index");
@@ -136,7 +136,7 @@ public class TC06_OrangeHRM_Goals extends TestRunner {
         logger.log(Status.INFO, "Supervisor Actual UserName received for the Employee"+employeeName+" is "+supervisorActualUserName, MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_GetSupervisorName").build());
 
         //Logging out from Admin Credentials
-        OrangeHRM_HomePage.clickLogout();
+        OrangeHRM_HomePage.logout();
         logger.log(Status.INFO, "Logged out from OrangeHRM application");
 
         //Logging in with the Employee Username
@@ -167,7 +167,7 @@ public class TC06_OrangeHRM_Goals extends TestRunner {
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_CreateThirdGoal");
         logger.log(Status.INFO, "Third Goal Creation is completed", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_CreateThirdGoal").build());
 
-        OrangeHRM_HomePage.clickLogout();
+        OrangeHRM_HomePage.logout();
         log.info("Logged out from OrangeHRM Application");
         logger.log(Status.INFO, "Logged out from OrangeHRM Application");
 
@@ -190,7 +190,7 @@ public class TC06_OrangeHRM_Goals extends TestRunner {
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_SupervisorGoalsApproval");
         logger.log(Status.INFO, "Supervisor Approved All Goals", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_SupervisorGoalsApproval").build());
 
-        OrangeHRM_HomePage.clickLogout();
+        OrangeHRM_HomePage.logout();
         log.info("Logged out from OrangeHRM Application");
         logger.log(Status.INFO, "Logged out from OrangeHRM Application");
 
@@ -240,7 +240,7 @@ public class TC06_OrangeHRM_Goals extends TestRunner {
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_VerifyThirdGoalStatus");
         logger.log(Status.INFO, "Verified Third Goal Status "+thirdGoalStatus, MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_VerifyThirdGoalStatus").build());
 
-        OrangeHRM_HomePage.clickLogout();
+        OrangeHRM_HomePage.logout();
         log.info("Logged out from OrangeHRM Application");
         logger.log(Status.INFO, "Logged out from OrangeHRM Application");
     }

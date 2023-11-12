@@ -9,7 +9,7 @@ import pages.DemoWebshop_LoginPage;
 import testcases.setup.TestRunner;
 import utilities.*;
 
-public class TC10_DemoWebShop_CreateAddress extends TestRunner {
+public class TC06_DemoWebShop_CreateAddress extends TestRunner {
     static XSSFWorkbook wbk; static String sheetName;
     static String UserName; static String Password;
     static String FirstName; static String LastName;

@@ -10,7 +10,6 @@ import org.testng.annotations.*;
 import pages.OrangeHRM_AddEmployeePage;
 import pages.OrangeHRM_HomePage;
 import pages.OrangeHRM_LoginPage;
-import pages.OrangeHRM_LogoutPage;
 import testcases.setup.TestRunner;
 import utilities.*;
 
@@ -117,7 +116,7 @@ public class TC02_OrangeHRM_AddEmployee extends TestRunner {
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_AddEmployee_VerifyNewEmployee");
         logger.log(Status.INFO, "Verified New Employee Data", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_AddEmployee_VerifyNewEmployee").build());
 
-        OrangeHRM_LogoutPage.logout();
+        OrangeHRM_HomePage.logout();
         logger.log(Status.INFO, "Logged out from OrangeHRM application");
     }
 

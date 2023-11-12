@@ -44,7 +44,7 @@ public class TC03_OrangeHRM_AddUser extends TestRunner {
         empName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_AddUser_EmployeeName);
         log.info("EmpName from excel sheet is :" + empName);
         newUserName = RandomGenerator.getRandomData("username");
-        log.info("New UserName from excel sheet is :" + newUserName);
+        log.info("Random New UserName is :" + newUserName);
         newPassword = ExcelUtils.getCellData(sheetName, rowNum, Config.col_AddUser_ConfirmPassword);
         log.info("New Password from excel sheet is :" + newPassword);
         confirm_Password = ExcelUtils.getCellData(sheetName, rowNum, Config.col_AddUser_ConfirmPassword);
@@ -89,7 +89,7 @@ public class TC03_OrangeHRM_AddUser extends TestRunner {
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_AddUserDetails");
         logger.log(Status.INFO, "Add User details Page is entered", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_AddUserDetails").build());
 
-        OrangeHRM_HomePage.clickLogout();
+        OrangeHRM_HomePage.logout();
         logger.log(Status.INFO, "Logged out from OrangeHRM application");
 
         OrangeHRM_LoginPage.login(newUserName, confirm_Password);
@@ -101,7 +101,7 @@ public class TC03_OrangeHRM_AddUser extends TestRunner {
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_NewEmpName");
         logger.log(Status.INFO, "OrangeHRM EmpName is Verified", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_NewEmpName").build());
 
-        OrangeHRM_HomePage.clickLogout();
+        OrangeHRM_HomePage.logout();
         logger.log(Status.INFO, "Logged out from OrangeHRM application");
     }
 
