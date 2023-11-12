@@ -1,5 +1,7 @@
 package testcases.demoWebshop;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -18,18 +20,16 @@ import utilities.*;
 public class TC11_DemoWebshop_ReOrder extends TestRunner {
 
     static XSSFWorkbook wbk;
-    static String userName;
-    static String password;
-    static String orderNumber;
-    static String sheetName;
-    static int rowNum_testCase;
-    static int rowNum_Index;
+    static String userName, password, orderNumber, sheetName;
+    static int rowNum_testCase, rowNum_Index;
     static Logger log = LogManager.getLogger(TC11_DemoWebshop_ReOrder.class);
     static WebDriver driver;
+    static String base64;
 
     @Parameters("{testID}")
     @BeforeClass
     public void prerequisite_setup(@Optional(Config.ReOrderRequestTestCase_ID) String testID) throws Exception {
+        logger = extent.createTest("DemoWebShop_ReOrder" + testID);
         Log.startTestCase(TC11_DemoWebshop_ReOrder.class.getName());
 
         sheetName = "DemoWebshop_ReOrder";
@@ -41,33 +41,54 @@ public class TC11_DemoWebshop_ReOrder extends TestRunner {
 
     @Test
     @Parameters({"browserName"})
-    public static void ReOrder(@Optional("chrome") String browserName) throws Exception {
+    public static void ReOrder(@Optional(Config.browserName) String browserName) throws Exception {
 
         driver = CommonUtils.browserLaunch(browserName);
         BaseClass ob = new BaseClass(driver);
 
-        driver.get("https://demowebshop.tricentis.com/");
-        log.info("Demo website is loaded");
-
+        //launching WebShop Application
+        driver.get(Config.demoWebshop_URL);
+        log.info("DemoWebShop URL is loaded :" + Config.demoWebshop_URL);
         String title = driver.getTitle();
         log.info("Title of the page is:" + title);
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "DemoWebShop_LoginPage");
+       logger.log(Status.INFO, "DemoWebShop Application is loaded" + Config.demoWebshop_URL, MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "DemoWebShop_LoginPage").build());
+        //DemoWebshop_HomePage.clickLoginLink();
 
-        DemoWebshop_HomePage.clickLoginLink();
         DemoWebshop_LoginPage.login(userName,password);
+        log.info("DemoWebShop Login is Successful");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "DemoWebShop_HomePage");
+        logger.log(Status.INFO, "DemoWebShop Login is Successful", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "DemoWebShop_HomePage").build());
+
+
         DemoWebshop_HomePage.clickEmailLink();
+        log.info("DemoWebShop login mailid clicked");
         DemoWebShop_OrdersPage.clickLinkOrders();
+        log.info("DemoWebShop clicked on Orders");
         DemoWebShop_OrdersPage.clickOrderDetailsBtn();
+        log.info("DemoWebShop clicked on Order details button");
         DemoWebshop_OrderInformationPage.clickReorderBtn();
+        log.info("DemoWebShop clicked on Re-Orders button");
         DemoWebshop_CartPage.clickCheckboxIagree();
+        log.info("DemoWebShop clicked on Agree the terms");
         DemoWebshop_CartPage.clickCheckoutBtn();
+        log.info("DemoWebShop clicked on Check Out button");
         DemoWebshop_CheckoutPage.clickBillingContinue();
+        log.info("DemoWebShop clicked on Billing continue button");
         DemoWebshop_CheckoutPage.clickShippingAddressBtn();
+        log.info("DemoWebShop clicked on Shipping Address continue button");
         DemoWebshop_CheckoutPage.clickShippingMethodBtn();
+        log.info("DemoWebShop clicked on Shipping button continue button");
         DemoWebshop_CheckoutPage.clickPaymentMethodBtn();
+        log.info("DemoWebShop clicked on Payment Method continue button");
         DemoWebshop_CheckoutPage.clickPaymentInformationBtn();
+        log.info("DemoWebShop clicked on Payment Information continue button");
         DemoWebshop_CheckoutPage.clickConfirmOrderBtn();
+        log.info("DemoWebShop clicked on Confirm Order continue button");
         orderNumber=DemoWebshop_CheckoutPage.getOrderNumber();
+        log.info("DemoWebShop clicked on get Order number");
         DemoWebshop_HomePage.logout();
+        log.info("DemoWebShop application logout");
     }
 
     @AfterMethod
@@ -93,7 +114,6 @@ public class TC11_DemoWebshop_ReOrder extends TestRunner {
         }
 
         driver.quit();
-        ExcelUtils.closeExcelFile();
         Log.endTestCase();
     }
 }
