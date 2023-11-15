@@ -59,12 +59,14 @@ public class Config {
     public static final int col_createAddress_LastName=7;
     public static final int col_createAddress_Email=8;
     public static final int col_createAddress_Company=9;
-    public static final int col_createAddress_City=10;
-    public static final int col_createAddress_Address1=11;
-    public static final int col_createAddress_Address2=12;
-    public static final int col_createAddress_ZipCode=13;
-    public static final int col_createAddress_PhoneNumber=14;
-    public static final int col_createAddress_FaxNumber=15;
+    public static final int col_createAddress_Country=10;
+    public static final int col_createAddress_State=11;
+    public static final int col_createAddress_City=12;
+    public static final int col_createAddress_Address1=13;
+    public static final int col_createAddress_Address2=14;
+    public static final int col_createAddress_ZipCode=15;
+    public static final int col_createAddress_PhoneNumber=16;
+    public static final int col_createAddress_FaxNumber=17;
 
     //DemoWebshop Reorder testcases column numbers
     public static final int col_Reorder_OrderNumber=6;

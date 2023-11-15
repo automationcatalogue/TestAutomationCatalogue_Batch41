@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import pages.*;
+import pages.orangeHRM.*;
 import testcases.setup.TestRunner;
 import utilities.*;
 
@@ -28,7 +28,7 @@ public class TC05_OrangeHRM_Goals extends TestRunner {
     @Parameters("{testID}")
     public void prerequisite_Setup(@Optional(Config.GoalsRequestTestCase_ID) String testID) throws Exception{
         //To Create the Test in Extent Report
-        logger = extent.createTest("OrangeHRMGoals_" + testID);
+        logger = extent.createTest(testID+"_OrangeHRMGoals");
         Log.startTestCase(TC05_OrangeHRM_Goals.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet

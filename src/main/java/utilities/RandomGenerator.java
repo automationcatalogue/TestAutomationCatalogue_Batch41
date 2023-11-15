@@ -47,7 +47,7 @@ public class RandomGenerator {
 
     public static int getRandomNumberInRange(int max){
         Random random = new Random();
-        int number = random.nextInt(50);
+        int number = random.nextInt(max);
         return number;
     }
 

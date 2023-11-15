@@ -5,35 +5,34 @@ import com.aventstack.extentreports.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import pages.*;
+import pages.demoWebshop.*;
 import testcases.setup.TestRunner;
 import utilities.*;
 
-import static testcases.demoWebshop.TC07_DemoWebshop_ReOrder.sheetName;
+import static testcases.demoWebshop.TC07_DemoWebShop_ReOrder.sheetName;
 
-public class TC10_DemoWebshop_ApplyDiscount extends TestRunner {
+public class TC10_DemoWebShop_ApplyDiscount extends TestRunner {
 
-    static String userName,password,ApplyCoupon,orderNumber;
+    static String userName,password,applyCoupon,orderNumber;
     static int rowNum_testCase,rowNum_Index;
-    static Logger log = LogManager.getLogger(TC10_DemoWebshop_ApplyDiscount.class);
+    static Logger log = LogManager.getLogger(TC10_DemoWebShop_ApplyDiscount.class);
     static WebDriver driver;
-
     private static String base64;
+
     @BeforeMethod
     @Parameters("{testID}")
     public void prerequisite_setup(@Optional(Config.ApplyDiscountRequestTestCase_ID) String testID) throws Exception {
 
         //To Create the Test in Extent Report
-        logger = extent.createTest("ApplyDiscount_"+testID);
-        Log.startTestCase(TC10_DemoWebshop_ApplyDiscount.class.getName());
+        logger = extent.createTest(testID+"_ApplyDiscount");
+        Log.startTestCase(TC10_DemoWebShop_ApplyDiscount.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
         rowNum_Index =ExcelUtils.getRowNumber(testID,"Index");
         log.info(rowNum_Index + "Row Number is picked from Index Sheet");
-        String sheetName = "DemoWebshop_ApplyDiscount";
+        sheetName = "DemoWebshop_ApplyDiscount";
         int rowNum = ExcelUtils.getRowNumber(testID,sheetName);
         log.info(rowNum + "Row Number is picked from "+sheetName);
 
@@ -42,69 +41,58 @@ public class TC10_DemoWebshop_ApplyDiscount extends TestRunner {
         log.info("UserName from excel sheet is :"+userName);
         password = ExcelUtils.getCellData(sheetName,rowNum,Config.col_Password);
         log.info("Password from excel sheet is:"+password);
-        ApplyCoupon = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_ApplyDiscount_Coupon);
-        log.info("ApplyCoupon from excel sheet is:"+ApplyCoupon);
+        applyCoupon = ExcelUtils.getCellData(sheetName, rowNum_testCase, Config.col_ApplyDiscount_Coupon);
+        log.info("ApplyCoupon from excel sheet is:"+applyCoupon);
     }
 
-    @Test
+    @Test()
     @Parameters({"browserName"})
-    public void TotalOrder(@Optional("chrome") String browserName) throws Exception {
-        driver = CommonUtils.browserLaunch("chrome");
+    public void TotalOrder(@Optional(Config.browserName) String browserName) throws Exception {
+        driver = CommonUtils.browserLaunch("Chrome");
         BaseClass ob = new BaseClass(driver);
 
-        //Loading OrangeHRM URL
         driver.get(Config.demoWebshop_URL);
         base64 = CommonUtils.takeScreenshot(screenshotsPath,"DemoWebShop_LoginPage");
         log.info("DemoWebShop URL is loaded :"+Config.demoWebshop_URL);
         logger.log(Status.INFO,"DemoWebShop Application is loaded"+Config.demoWebshop_URL, MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"DemoWebShop_LoginPage").build());
 
-        DemoWebshop_HomePage.clickLoginLink();
         DemoWebshop_LoginPage.login(userName, password);
         log.info("DemoWebShop Login is Successful");
         base64 = CommonUtils.takeScreenshot(screenshotsPath,"DemoWebShop_HomePage");
         logger.log(Status.INFO,"DemoWebShop Login is Successful", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"DemoWebShop_HomePage").build());
 
-        DemoWebshop_HomePage.clickLoginLink();
-        DemoWebshop_LoginPage.login(userName, password);
-        DemoWebshop_BooksPage.clickBooksLink();
-        DemoWebshop_BooksPage.clickAddToCartBtn();
-        DemoWebshop_HomePage.clickShoppingCartLink();
-        double totalValue_BeforeDiscount = DemoWebshop_CartPage.getCartPriceBeforeDiscount();
-        DemoWebshop_CartPage.clickTxtbxCoupon();
-        DemoWebshop_CartPage.enterTxtbxCoupon(ApplyCoupon);
-        DemoWebshop_CartPage.clickApplyCouponBtn();
-        DemoWebshop_CartPage.getTxtMessagePrinted();
-        double discountValue = DemoWebshop_CartPage.getDiscountAmount();
-        double totalValue_AfterDiscount = DemoWebshop_CartPage.getCartPriceAfterDiscount();
+        DemoWebshop_CataloguePage.book_FirstItem();
+        log.info("DemoWebShop First Book Item is added into Cart");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath,"DemoWebShop_FirstBookItem");
+        logger.log(Status.INFO,"DemoWebShop First Book Item is added into Cart", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"DemoWebShop_FirstBookItem").build());
 
-        if (totalValue_AfterDiscount == (totalValue_BeforeDiscount - discountValue)) {
-            base64 = CommonUtils.takeScreenshot(screenshotsPath,"TotalValue_AfterDiscount");
-            logger.log(Status.INFO,"Discount value is correctly applied on Cart and verified", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"TotalValue_AfterDiscount").build());
+        double priceBeforeApplyDiscount = DemoWebshop_CartPage.applyCoupon(applyCoupon);
+        log.info("Discount Coupon is Applied as :"+applyCoupon);
+        base64 = CommonUtils.takeScreenshot(screenshotsPath,"DemoWebShop_ApplyCoupon");
+        logger.log(Status.INFO,"Discount Coupon is Applied as :"+applyCoupon, MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"DemoWebShop_FirstBookItem").build());
 
-        } else {
-            base64 = CommonUtils.takeScreenshot(screenshotsPath,"Discount_Not_Applied");
-            logger.log(Status.INFO,"Discount value is not correctly applied on Cart", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"Discount_Not_Applied").build());
-        }
+        DemoWebshop_CartPage.verifyPriceAfterDiscount(priceBeforeApplyDiscount);
+        log.info("Verified Cart Price After Discount");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath,"DemoWebShop_VerifyPriceAfterDiscount");
+        logger.log(Status.INFO,"Verified Cart Price After Discount", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"DemoWebShop_VerifyPriceAfterDiscount").build());
 
-        DemoWebshop_CartPage.clickCheckboxIagree();
-        DemoWebshop_CartPage.clickCheckoutBtn();
-        DemoWebshop_CheckoutPage.clickBillingContinue();
-        DemoWebshop_CheckoutPage.clickShippingAddressBtn();
-        DemoWebshop_CheckoutPage.clickShippingMethodBtn();
-        DemoWebshop_CheckoutPage.clickPaymentMethodBtn();
-        DemoWebshop_CheckoutPage.clickPaymentInformationBtn();
-        DemoWebshop_CheckoutPage.clickConfirmOrderBtn();
+        DemoWebshop_CartPage.checkoutSelectedItems();
+        log.info("DemoWebShop Checked out Selected Items");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "DemoWebShop_CheckoutItems");
+        logger.log(Status.INFO, "DemoWebShop Checked out Selected Items", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "DemoWebShop_CheckoutItems").build());
 
-        WebElement element_OrderNumber = driver.findElement(DemoWebshop_CheckoutPage.txt_OrderNumber);
-        if (element_OrderNumber.isDisplayed()) {
-            orderNumber = element_OrderNumber.getText();
-            base64 = CommonUtils.takeScreenshot(screenshotsPath,"orderNumber");
-            logger.log(Status.INFO,"order number is generated", MediaEntityBuilder.createScreenCaptureFromBase64String(base64,"orderNumber").build());
-            log.info("order number is generated " + orderNumber);
-        } else {
-            log.info("OrderNumber is not generated");
-        }
+        DemoWebshop_CheckoutPage.placeOrder();
+        log.info("DemoWebShop Order is Placed");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "DemoWebShop_PlaceOrder");
+        logger.log(Status.INFO, "DemoWebShop Order is Placed", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "DemoWebShop_PlaceOrder").build());
+
+        orderNumber = DemoWebshop_CheckoutPage.getOrderNumber();
+        log.info("DemoWebShop Order Number is generated");
+        base64 = CommonUtils.takeScreenshot(screenshotsPath, "DemoWebShop_ReOrderNumber");
+        logger.log(Status.INFO, "DemoWebShop Order Number is generated", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "DemoWebShop_ReOrderNumber").build());
+
         DemoWebshop_HomePage.logout();
+        log.info("DemoWebShop application logout");
     }
 
     @AfterMethod
@@ -113,7 +101,6 @@ public class TC10_DemoWebshop_ApplyDiscount extends TestRunner {
         if (result.getStatus() == ITestResult.SUCCESS) {
             ExcelUtils.setCellData(orderNumber, sheetName, rowNum_testCase, Config.col_ApplyDiscount_OrderNumber);
             log.info(orderNumber + " is written back to the Excel file");
-
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
         } else if (result.getStatus() == ITestResult.FAILURE) {
@@ -129,7 +116,6 @@ public class TC10_DemoWebshop_ApplyDiscount extends TestRunner {
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
         }
         driver.quit();
-        ExcelUtils.closeExcelFile();
         Log.endTestCase();
     }
 }

@@ -12,9 +12,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
-import pages.*;
+import pages.orangeHRM.*;
 import runner.CucumberHooks;
-import testcases.orangeHRM.TC03_OrangeHRM_AddUser;
 import utilities.*;
 
 public class OrangeHRM_StepDefinition {

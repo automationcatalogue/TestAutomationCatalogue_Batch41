@@ -11,11 +11,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CommonUtils {
@@ -142,5 +144,21 @@ public class CommonUtils {
 
         //date selector
         CommonUtils.selectDropdownValue(list_Dates, day);
+    }
+
+
+    public static String selectRandomDataFromDropdown(By locator_Dropdown){
+        WebDriver driver = BaseClass.getDriver();
+        Select select_Dropdown = new Select(driver.findElement(locator_Dropdown));
+        List<WebElement> elements_Values = select_Dropdown.getOptions();
+        ArrayList<String> list_data = new ArrayList<String>();
+        for(WebElement element_value : elements_Values){
+            String data = element_value.getText();
+            list_data.add(data);
+        }
+        int randomNumber = RandomGenerator.getRandomNumberInRange(list_data.size());
+        String randomData = list_data.get(randomNumber);
+        select_Dropdown.selectByVisibleText(randomData);
+        return randomData;
     }
 }

@@ -7,9 +7,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import pages.OrangeHRM_AddEmployeePage;
-import pages.OrangeHRM_HomePage;
-import pages.OrangeHRM_LoginPage;
+import pages.orangeHRM.OrangeHRM_AddEmployeePage;
+import pages.orangeHRM.OrangeHRM_HomePage;
+import pages.orangeHRM.OrangeHRM_LoginPage;
 import testcases.setup.TestRunner;
 import utilities.*;
 
@@ -27,7 +27,7 @@ public class TC02_OrangeHRM_AddEmployee extends TestRunner {
     @BeforeMethod
     public void prerequisite_setup(@Optional(Config.AddEmployeeTestCase_ID) String testID) throws Exception {
         //To Create the Test in Extent Report
-        logger = extent.createTest("OrangeHRMAddEmployee_" + testID);
+        logger = extent.createTest(testID+"_OrangeHRMAddEmployee");
         Log.startTestCase(TC02_OrangeHRM_AddEmployee.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet

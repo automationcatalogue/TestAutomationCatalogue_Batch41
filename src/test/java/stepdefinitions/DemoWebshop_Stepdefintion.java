@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
-import pages.*;
+import pages.demoWebshop.*;
 import runner.CucumberHooks;
 import utilities.*;
 
@@ -78,19 +78,11 @@ public class DemoWebshop_Stepdefintion {
         DemoWebshop_LoginPage.login(userName, password);
     }
 
-    @Then("User clicks Email link")
-    public void user_clicks_email_link() {
-        DemoWebshop_HomePage.clickEmailLink();
-    }
 
-    @And("User Clicks on Orders link")
-    public void user_clicks_on_orders_link() {
-        DemoWebShop_OrdersPage.clickLinkOrders();
-    }
 
     @And("User Clicks on OrderDetails button")
     public void user_clicks_on_OrderDetails_button() {
-        DemoWebShop_OrdersPage.clickOrderDetailsBtn();
+        DemoWebShop_OrdersPage.clickFirstOrderDetailsBtn();
     }
 
     @Then("User Clicks on ReOrder button")
@@ -98,13 +90,9 @@ public class DemoWebshop_Stepdefintion {
         DemoWebshop_OrderInformationPage.clickReorderBtn();
     }
 
-    @Then("User clicks on Books link")
-    public void user_clicks_on_books_link(){
-        DemoWebshop_BooksPage.clickBooksLink();
-    }
     @And("User clicks on Addtocart button")
     public void user_clicks_on_Addtocart_button(){
-        DemoWebshop_BooksPage.clickAddToCartBtn();
+        DemoWebshop_CataloguePage.clickAddToCartBtn();
     }
     @And("User clicks on Shopping cart link")
     public void user_clicks_on_Shopping_cart_link(){
@@ -122,62 +110,14 @@ public class DemoWebshop_Stepdefintion {
     public void user_enter_Txtbox_coupon(){
         DemoWebshop_CartPage.enterTxtbxCoupon(ApplyCoupon);
     }
-    @And("User clicks on Applydiscount button")
-    public void user_clicks_on_Applydiscount_button(){
-        DemoWebshop_CartPage.clickApplyCouponBtn();
-    }
-    @When("User get txtmessage printed")
-    public void user_get_txtmessage_printed(){
-        DemoWebshop_CartPage.getTxtMessagePrinted();
-    }
-    @Then("User get Discount amount")
-    public void user_get_Discount_amount(){
-        double discountValue = DemoWebshop_CartPage.getDiscountAmount();
-    }
-    @And("User get Cartprice Afterdiscount")
-    public void user_get_Cartprice_Afterdiscount(){
-        double totalValue_AfterDiscount = DemoWebshop_CartPage.getCartPriceAfterDiscount();
-    }
 
-    @And("User Clicks on Iagree button")
-    public void user_clicks_on_iagree_button() {
-        DemoWebshop_CartPage.clickCheckboxIagree();
-    }
 
     @And("User Clicks on Checkout button")
     public void clickscheckoutbutton() {
         DemoWebshop_CartPage.clickCheckoutBtn();
     }
 
-    @When("User Clicks on BillingContinue button")
-    public void clicksbillingcontinuebutton() {
-        DemoWebshop_CheckoutPage.clickBillingContinue();
-    }
 
-    @Then("User Clicks on ShippingAddress button")
-    public void clickshippingaddressbutton() {
-        DemoWebshop_CheckoutPage.clickShippingAddressBtn();
-    }
-
-    @And("User Clicks on ShippingMethod button")
-    public void clickshippingmethodbutton() {
-        DemoWebshop_CheckoutPage.clickShippingMethodBtn();
-    }
-
-    @And("User Clicks on PaymentMethod button")
-    public void click_paymentmethod_button() {
-        DemoWebshop_CheckoutPage.clickPaymentMethodBtn();
-    }
-
-    @And("User Clicks on PaymentInformation button")
-    public void click_paymentinformation_button() {
-        DemoWebshop_CheckoutPage.clickPaymentInformationBtn();
-    }
-
-    @When("User Clicks on ConfirmOrder button")
-    public void click_confirmorder_button() {
-        DemoWebshop_CheckoutPage.clickConfirmOrderBtn();
-    }
 
     @Then("User Get OrderNumber")
     public void getordernumber() {
@@ -199,41 +139,17 @@ public class DemoWebshop_Stepdefintion {
         DemoWebshop_HomePage.verifyTitle();
     }
 
-    @When("User Opens Address page")
-    public void user_opens_address_page() {
-        DemoWebshop_HomePage.click_mailId();
-        DemoWebshop_HomePage.select_AddressLink();
-    }
 
     /*@When("User Enters PhoneNumber as {string} and FaxNumber as {string}")
     public void user_enters_phone_number_as_and_fax_number_as(String string, String string2) {
         DemoWebshop_HomePage.createContactNumbers(ZipPostalCode, PhoneNumber, FaxNumber);
     }*/
 
-    @When("User Provides City, Address1, Address2, ZipPostalCode, PhoneNumber and FaxNumber")
-    public void user_provides_city_address1_address2_zip_postal_code_phone_number_and_fax_number() {
-        DemoWebshop_HomePage.createCityAndAddresses(City, Address1, Address2);
-        DemoWebshop_HomePage.createContactNumbers(ZipPostalCode, PhoneNumber, FaxNumber);
 
-    }
 
-    @Then("User Verifies Address is added")
-    public void user_verifies_address_is_added() {
-        DemoWebshop_HomePage.verify_Address(FirstName, LastName);
-    }
 
-    /*@And("User logout from the application")
-    public void User_logout_from_the_application() {
-        DemoWebshop_HomePage.logOut();
-    }*/
 
-    @When("User clicks on Email Address and click on orders link")
-    public void user_clicks_on_email_address_and_click_on_orders_link() {
-        driver.findElement(DemoWebshop_HomePage.link_Email).click();
-        log.info("Clicked on Email address link");
-        driver.findElement(DemoWebShop_OrdersPage.link_Orders).click();
-        log.info("Clicked on orders link on MyAccount Page");
-    }
+
     @Then("User Updates the Status in ExcelSheet for CreateAddress")
     public void User_Updates_the_Status_in_ExcelSheet_for_CreateAddress(ITestResult result) throws Exception
     {
@@ -316,12 +232,6 @@ public class DemoWebshop_Stepdefintion {
 
         }
 
-    @When("User Enters address fields data for FirstName, LastName, Email and Company")
-    public void user_enters_address_fields_data_for_first_name_last_name_email_and_company() {
-        DemoWebshop_HomePage.createName(FirstName, LastName);
-
-        DemoWebshop_HomePage.createEmailAndCompany(Email, Company);
-    }
 
     @Given("User Reads Update Shopping Cart Data from {string} using TestID {string}")
     public void readExcelData_Update_Shopping_Cart(String sheetName, String testID) throws Exception {
@@ -333,43 +243,6 @@ public class DemoWebshop_Stepdefintion {
         Password = ExcelUtils.getCellData(sheetName, rowNum, Config.col_Password);
         jewel_Length = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UpdateCart_Length);
         update_Qty = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UpdateCart_Quantity);
-    }
-
-    @Then("User added the Products to Cart")
-    public void userAddedTheProductsToCart() throws Exception {
-        DemoWebshop_HomePage.select_BooksLink();
-        DemoWebshop_BooksPage.adding_FirstBookToCart();
-        DemoWebshop_HomePage.select_JewelsLink();
-        DemoWebshop_JewelsPage.adding_firstJewelToCart(jewel_Length);
-
-    }
-
-    @And("User update the shopping cart")
-    public void userUpdateTheShoppingCart() {
-        DemoWebshop_HomePage.select_ShoppingCart();
-        total_1 = DemoWebshop_CartPage.price_FirstItemBeforeIncreasingQty();
-        DemoWebshop_CartPage.price_FirstItemAfterIncreasingQty(update_Qty);
-        total_2 = DemoWebshop_CartPage.price_SecondItemBeforeIncreasingQty();
-        DemoWebshop_CartPage.price_SecondItemAfterIncreasingQty(update_Qty);
-        DemoWebshop_CartPage.select_updateCartButton();
-    }
-
-    @Then("User verifies the updated price and total")
-    public void userVerifiesTheUpdatedPriceAndTotal() {
-        text_BookPrice = DemoWebshop_CartPage.price_textBook();
-        text_updatedQuty = DemoWebshop_CartPage.updatedQty_Text();
-        DemoWebshop_CartPage.verify_BookTotalPriceChange(update_Qty, text_BookPrice, text_updatedQuty);
-        text_JewelPrice = DemoWebshop_CartPage.price_Jewel();
-        DemoWebshop_CartPage.verify_JewelTotalPriceChange(update_Qty, text_JewelPrice, text_updatedQuty);
-        DemoWebshop_CartPage.verify_grandTotal();
-
-    }
-
-
-    @And("User checkout and Process the payment gateway")
-    public void userCheckoutAndProcessThePaymentGateway() {
-        DemoWebshop_CartPage.select_checkOut();
-        orderNumber = DemoWebshop_CheckoutPage.checking_paymentGateway();
     }
 
     @Then("User Updates the Status in ExcelSheet for Update Shopping Cart")
@@ -394,7 +267,7 @@ public class DemoWebshop_Stepdefintion {
         }
 
     }
-    }
+}
 
 
 

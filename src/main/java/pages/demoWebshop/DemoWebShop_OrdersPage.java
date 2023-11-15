@@ -1,4 +1,4 @@
-package pages;
+package pages.demoWebshop;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,9 +14,11 @@ import java.util.Set;
 
 public class DemoWebShop_OrdersPage {
 
+    static Logger log = LogManager.getLogger(DemoWebShop_OrdersPage.class);
+
     public static By link_Email = By.xpath("//div[@class='master-wrapper-content']//a[@class='account']");
-    public static By btn_OrderDetails = By.xpath("//div[@class='order-list']/div[1]//input");
-    public static By link_Orders = By.xpath("//div[@class='block block-account-navigation']//ul//a[text()='Orders']");
+    public static By btn_FirstOrderDetails = By.xpath("//div[@class='order-list']/div[1]//input");
+
     public static By listOfAllOrders = By.xpath("//div[@class='section order-item']/div/strong");
 
     public static By listOfAllOrderTotal = By.xpath("//li[contains(text(),'Order Total')]");
@@ -31,54 +33,44 @@ public class DemoWebShop_OrdersPage {
 
     public static By allOrdersElements = By.xpath("//div[@class='page account-page order-list-page']//ul/li[2]");
     public static By orderValues= By.xpath("./../li[3]");
-    static Logger log = LogManager.getLogger(DemoWebShop_OrdersPage.class);
+
 
     static int TotalNumberOfOrders;
 
-    public static void clickLinkOrders(){
+
+    public static void clickFirstOrderDetailsBtn(){
         WebDriver driver = BaseClass.getDriver();
-        driver.findElement(link_Orders).click();
-        log.info("Order link is clicked");
-    }
-    public static void clickOrderDetailsBtn(){
-        WebDriver driver = BaseClass.getDriver();
-        driver.findElement(btn_OrderDetails).click();
-        log.info("Order details button is clicked");
+        driver.findElement(btn_FirstOrderDetails).click();
+        log.info("First Order details button is clicked");
     }
 
     public static int totalNumberOfOrders(){
         WebDriver driver = BaseClass.getDriver();
         List<WebElement> OrderNumbers = driver.findElements(orderNumber);
         TotalNumberOfOrders = OrderNumbers.size();
-        log.info("Total number of orders is :" + TotalNumberOfOrders);
+        log.info("Total number of orders :" + TotalNumberOfOrders);
         return OrderNumbers.size();
     }
 
     public static float sumOfAllOrdersPlaced(){
         WebDriver driver = BaseClass.getDriver();
-        List<WebElement> OrderTotal = driver.findElements(orderTotals);
-        String temp = "", temp1 = "", temp2 = "";
-        float TotalValue = 0.0f;
-        Float OrderValue = null;
-        Float TotalValue1 = 0.0f;
-        for (WebElement OrderStatement : OrderTotal) {
-            String TotalOrderStatement = OrderStatement.getText();
-
-            String str1[] = TotalOrderStatement.split(":");
-            temp = str1[1];
-            OrderValue = Float.valueOf(temp);
-            TotalValue = TotalValue + OrderValue;
-
+        List<WebElement> list_Orders = driver.findElements(orderTotals);
+        String actualOrderValue;
+        float totalValue = 0.0f;
+        for (WebElement element_Order : list_Orders) {
+            String orderPrice = element_Order.getText();
+            actualOrderValue = orderPrice.split(":")[1];
+            float orderValue = Float.parseFloat(actualOrderValue);
+            totalValue = totalValue + orderValue;
         }
-        log.info("The total value of all orders placed is : " + TotalValue);
-        return TotalValue;
+        log.info("Total value of all orders placed is : " + totalValue);
+        return totalValue;
     }
 
     public static void sumOfOrdersDayWise(){
         WebDriver driver = BaseClass.getDriver();
         HashMap<String, Double> map_DayWiseOrders = new HashMap<String, Double>();
         List<WebElement> elements_allOrders = driver.findElements(allOrdersElements);
-        //List<WebElement> elements_allOrders=listOfOrdersForDayWise;
         for (WebElement element_Order : elements_allOrders) {
             String orderDate = element_Order.getText();
             orderDate = orderDate.split(":")[1].trim();
