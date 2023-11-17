@@ -16,11 +16,8 @@ public class OrangeHRM_HomePage {
     public static By link_HRAdministration = By.xpath("(//span[text()='HR Administration'])[1]");
     public static By lbl_ProfileName = By.xpath("//div[@id='sidebar-profile-picture']/a");
     public static By link_EmployeeManagement = By.xpath("(//a[@data-tooltip='Employee Management'])[1]");
-    public static By link_travelandExpense = By.xpath("(//a[@data-tooltip='Travel and Expense'])[1]");
     public static By btn_More = By.xpath("//span[text()='More']");
     public static By link_Performance = By.xpath("(//a[@data-tooltip='Performance'])[1]");
-    public static By txtbx_Search = By.xpath("//input[@placeholder='Search']");
-    public static By link_MyGoals = By.xpath("//div[text()='Goal List']");
     public static By btn_Logout = By.xpath("//span[text()='Log Out']");
 
     public static void verifyTitle() {
@@ -55,10 +52,10 @@ public class OrangeHRM_HomePage {
 
     public static void selectPerformance() {
         WebDriver driver = BaseClass.getDriver();
-        try{
+        try {
             driver.findElement(OrangeHRM_HomePage.btn_More).click();
             log.info("More button is visible and clicked");
-        }catch (Exception e){
+        } catch (Exception e) {
             log.info("More button is not visible");
         }
         driver.findElement(OrangeHRM_HomePage.link_Performance).click();
@@ -66,16 +63,14 @@ public class OrangeHRM_HomePage {
     }
 
     public static void clickTRavelExpLink() {
-
         WebDriver driver = BaseClass.getDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement travelexp_Element =driver.findElement(By.xpath("//a[@data-automation-id='menu_expense_TravelandExpense']//span[1]"));
-        js.executeScript("arguments[0].scrollIntoView(true);",travelexp_Element);
+        WebElement travelexp_Element = driver.findElement(By.xpath("//a[@data-automation-id='menu_expense_TravelandExpense']//span[1]"));
+        js.executeScript("arguments[0].scrollIntoView(true);", travelexp_Element);
         //WebElement element= wait.until(ExpectedConditions.elementToBeClickable(travelexp_Element));
         travelexp_Element.click();
         js.executeScript("arguments[0].click;", travelexp_Element);
         log.info("Travel and Expense is selected");
-
     }
 
     public static void logout() {

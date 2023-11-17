@@ -147,12 +147,12 @@ public class CommonUtils {
     }
 
 
-    public static String selectRandomDataFromDropdown(By locator_Dropdown){
+    public static String selectRandomDataFromDropdown(By locator_Dropdown) {
         WebDriver driver = BaseClass.getDriver();
         Select select_Dropdown = new Select(driver.findElement(locator_Dropdown));
         List<WebElement> elements_Values = select_Dropdown.getOptions();
         ArrayList<String> list_data = new ArrayList<String>();
-        for(WebElement element_value : elements_Values){
+        for (WebElement element_value : elements_Values) {
             String data = element_value.getText();
             list_data.add(data);
         }

@@ -28,7 +28,7 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
     @BeforeMethod
     public void prerequisite_Setup(@Optional(Config.EditEmployeeTestCase_ID) String testID) throws Exception {
         //To Create the Test in Extent Report
-        logger = extent.createTest(testID+"_OrangeHRMEditEmployee");
+        logger = extent.createTest(testID + "_OrangeHRMEditEmployee");
         Log.startTestCase(TC04_OrangeHRM_EditEmployee.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
@@ -55,8 +55,8 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
         log.info("DietaryRequire1 from excel sheet is :" + dietaryRequire1);
         dietaryRequire2 = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_DietaryRequirement_2);
         log.info("DietaryRequire2 from excel sheet is :" + dietaryRequire2);
-        mobileNumber = RandomGenerator.getRandomData("phoneNumber").replace(".","").trim();
-        log.info("Random Generated Mobile Number is :"+mobileNumber);
+        mobileNumber = RandomGenerator.getRandomData("phoneNumber").replace(".", "").trim();
+        log.info("Random Generated Mobile Number is :" + mobileNumber);
     }
 
     @Test
@@ -87,9 +87,9 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
         logger.log(Status.INFO, "EmployeeManagement Page is Loaded", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EmployeeManagementPage").build());
 
         OrangeHRM_EmployeeManagementPage.clickEmployeePersonalDetails(empName);
-        log.info(empName+" Employee Name is Opened for Edit");
+        log.info(empName + " Employee Name is Opened for Edit");
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_EditEmployeePage");
-        logger.log(Status.INFO, empName+" Employee Name is Opened for Edit", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EditEmployeePage").build());
+        logger.log(Status.INFO, empName + " Employee Name is Opened for Edit", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_EditEmployeePage").build());
 
         OrangeHRM_EditEmployeePage.edit_DOB_Nationality(dateOfBirth, nationality);
         log.info("OrangeHRM Edit Employee Personal Details are Saved");
@@ -123,6 +123,7 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
             log.info(mobileNumber + "is updated in Excel sheet as Mobile Number");
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
+            logger.log(Status.PASS, "OrangeHRM Edit Employee TestCase is Passed and status is updated in Excel sheet");
         } else if (result.getStatus() == ITestResult.FAILURE) {
             if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
                 ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
@@ -130,10 +131,12 @@ public class TC04_OrangeHRM_EditEmployee extends TestRunner {
 
                 ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
                 log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
+                logger.log(Status.FAIL, "OrangeHRM Edit Employee TestCase is Failed and status is updated in Excel sheet");
             }
         } else if (result.getStatus() == ITestResult.SKIP) {
             ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
+            logger.log(Status.SKIP, "OrangeHRM Edit Employee TestCase is Skipped and status is updated in Excel sheet");
         }
         driver.quit();
         Log.endTestCase();

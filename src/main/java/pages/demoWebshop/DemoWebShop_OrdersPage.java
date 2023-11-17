@@ -16,27 +16,17 @@ public class DemoWebShop_OrdersPage {
 
     static Logger log = LogManager.getLogger(DemoWebShop_OrdersPage.class);
 
-    public static By link_Email = By.xpath("//div[@class='master-wrapper-content']//a[@class='account']");
     public static By btn_FirstOrderDetails = By.xpath("//div[@class='order-list']/div[1]//input");
-
     public static By listOfAllOrders = By.xpath("//div[@class='section order-item']/div/strong");
-
     public static By listOfAllOrderTotal = By.xpath("//li[contains(text(),'Order Total')]");
-
     public static By listOfOrdersDayWise = By.xpath("//div[@class='page account-page order-list-page']//ul/li[2]");
-
     public static By orderValue = By.xpath("./../li[3]");
-
     public static By orderNumber = By.xpath("//div[@class='section order-item']/div/strong");
-
     public static By orderTotals = By.xpath("//li[contains(text(),'Order Total')]");
-
     public static By allOrdersElements = By.xpath("//div[@class='page account-page order-list-page']//ul/li[2]");
     public static By orderValues= By.xpath("./../li[3]");
 
-
     static int TotalNumberOfOrders;
-
 
     public static void clickFirstOrderDetailsBtn(){
         WebDriver driver = BaseClass.getDriver();

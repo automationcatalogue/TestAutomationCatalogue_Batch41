@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utilities.BaseClass;
 import utilities.CommonUtils;
-
 import java.time.Duration;
 
 public class OrangeHRM_EditEmployeePage {
@@ -19,7 +18,7 @@ public class OrangeHRM_EditEmployeePage {
     public static By link_DateOfBirthIcon = By.xpath("(//i[contains(@class,'material-icons action')])[1]");
     public static By drpdwn_Month = By.xpath("//div[contains(@class,'--month')]");
     public static By list_Months = By.xpath("//div[contains(@class,'--month')]//li/span");
-    public static By drpdwn_Year =By.xpath("//div[contains(@class,'select--year')]");
+    public static By drpdwn_Year = By.xpath("//div[contains(@class,'select--year')]");
     public static By list_Years = By.xpath("//div[contains(@class,'select--year')]//li/span");
     public static By list_Dates = By.xpath("(//table[@class='picker__table'])[1]//td");
     public static By dropDown_Nationality = By.xpath("//div[@id='nation_code_inputfileddiv']/div/input");
@@ -36,7 +35,7 @@ public class OrangeHRM_EditEmployeePage {
     public static By txtbx_MobileNumber = By.xpath("//input[@id='emp_mobile']");
     public static By btn_ContactDetailsSave = By.xpath("//button[@id='modal-save-button']");
 
-    public static void edit_DOB_Nationality(String dateOfBirth, String nationName) throws Exception{
+    public static void edit_DOB_Nationality(String dateOfBirth, String nationName) throws Exception {
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(OrangeHRM_EditEmployeePage.link_DateOfBirthIcon).click();
         log.info("Date picker icon is clicked");
@@ -45,20 +44,20 @@ public class OrangeHRM_EditEmployeePage {
         wait.until(ExpectedConditions.elementToBeClickable(dropDown_Nationality));
         driver.findElement(dropDown_Nationality).click();
         log.info("Nationality Dropdown is clicked");
-        CommonUtils.selectDropdownValue(element_nations,nationName);
-        log.info("Nationality selected as "+ nationName);
+        CommonUtils.selectDropdownValue(element_nations, nationName);
+        log.info("Nationality selected as " + nationName);
         driver.findElement(btn_PersonalDetailsSave).click();
         log.info("Clicked on Personal Details save button");
     }
 
-    public static void editHealth(String allergy, String dietaryType1, String dietaryType2)throws Exception{
+    public static void editHealth(String allergy, String dietaryType1, String dietaryType2) throws Exception {
         WebDriver driver = BaseClass.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(rbtn_YesAllergies));
-        if(allergy.equalsIgnoreCase("Yes")){
+        if (allergy.equalsIgnoreCase("Yes")) {
             driver.findElement(rbtn_YesAllergies).click();
             log.info("Radio button Allergies Yes is clicked");
-        }else{
+        } else {
             driver.findElement(rbtn_NoAllergies).click();
             log.info("Radio button Allergies No is clicked");
         }
@@ -68,7 +67,7 @@ public class OrangeHRM_EditEmployeePage {
         log.info("Clicked on Health save button");
     }
 
-    public static void editMobileNumber(String mobileNumber)throws Exception{
+    public static void editMobileNumber(String mobileNumber) throws Exception {
         WebDriver driver = BaseClass.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(link_ContactDetails));
@@ -77,27 +76,27 @@ public class OrangeHRM_EditEmployeePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(txtbx_MobileNumber));
         driver.findElement(txtbx_MobileNumber).clear();
         driver.findElement(txtbx_MobileNumber).sendKeys(mobileNumber);
-        log.info(mobileNumber+" is entered as Mobile Number");
+        log.info(mobileNumber + " is entered as Mobile Number");
         driver.findElement(btn_ContactDetailsSave).click();
         log.info("Clicked on Contact Details Save button");
     }
 
-    public static void clickDietaryRequirement(String dietaryType){
+    public static void clickDietaryRequirement(String dietaryType) {
         WebDriver driver = BaseClass.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(checkBox_Kosher));
-        if(dietaryType.equalsIgnoreCase("Kosher")){
+        if (dietaryType.equalsIgnoreCase("Kosher")) {
             driver.findElement(checkBox_Kosher).click();
             log.info("Dietary Requirements check-box Koshler is clicked");
-        }else if(dietaryType.equalsIgnoreCase("Vegetarian")){
+        } else if (dietaryType.equalsIgnoreCase("Vegetarian")) {
             driver.findElement(checkBox_Vegetarian).click();
             log.info("Dietary Requirements check-box Vegetarian is clicked");
-        }else{
-            log.warn("Dietary Requirement "+dietaryType+" is not available ");
+        } else {
+            log.warn("Dietary Requirement " + dietaryType + " is not available ");
         }
     }
 
-    public static void validateEditEmployeeData(String expMobileNumber){
+    public static void validateEditEmployeeData(String expMobileNumber) {
         WebDriver driver = BaseClass.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(link_Profile));

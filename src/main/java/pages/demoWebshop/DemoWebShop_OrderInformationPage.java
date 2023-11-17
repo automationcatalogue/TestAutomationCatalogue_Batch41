@@ -6,15 +6,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utilities.BaseClass;
 
-public class DemoWebshop_OrderInformationPage {
+public class DemoWebShop_OrderInformationPage {
+
+    static Logger log = LogManager.getLogger(DemoWebShop_OrderInformationPage.class);
 
     public static By btn_Reorder = By.xpath("//input[@type='button'][@value='Re-order']");
-    static Logger log = LogManager.getLogger(DemoWebshop_OrderInformationPage.class);
-    public static void clickReorderBtn(){
+
+    public static void clickReorderBtn() {
         WebDriver driver = BaseClass.getDriver();
         driver.findElement(btn_Reorder).click();
         log.info("Re-order button is clicked");
     }
-
-
 }

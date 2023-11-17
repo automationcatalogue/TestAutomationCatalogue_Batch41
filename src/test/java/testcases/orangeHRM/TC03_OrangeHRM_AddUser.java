@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import pages.orangeHRM.OrangHRM_AddUserPage;
+import pages.orangeHRM.OrangeHRM_AddUserPage;
 import pages.orangeHRM.OrangeHRM_HomePage;
 import pages.orangeHRM.OrangeHRM_LoginPage;
 import testcases.setup.TestRunner;
@@ -26,7 +26,7 @@ public class TC03_OrangeHRM_AddUser extends TestRunner {
     @BeforeMethod
     public void prerequisites(@Optional(Config.AddUserTestCase_ID) String testID) throws Exception {
         //To Create the Test in Extent Report
-        logger = extent.createTest(testID+"_OrangeHRMAdduser");
+        logger = extent.createTest(testID + "_OrangeHRMAdduser");
         Log.startTestCase(TC03_OrangeHRM_AddUser.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
@@ -79,12 +79,12 @@ public class TC03_OrangeHRM_AddUser extends TestRunner {
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_HRAdministrationPage");
         logger.log(Status.INFO, "HR Administration Page is Loaded", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_HRAdministrationPage").build());
 
-        OrangHRM_AddUserPage.clickAddUser();
+        OrangeHRM_AddUserPage.clickAddUser();
         log.info("Add User Page is Loaded");
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_AddUserPage");
         logger.log(Status.INFO, "Add User Page is Loaded", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_AddUserPage").build());
 
-        OrangHRM_AddUserPage.enterAddUserDetails(empName, newUserName, newPassword, confirm_Password);
+        OrangeHRM_AddUserPage.enterAddUserDetails(empName, newUserName, newPassword, confirm_Password);
         log.info("Add User details is entered");
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_AddUserDetails");
         logger.log(Status.INFO, "Add User details Page is entered", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_AddUserDetails").build());
@@ -113,6 +113,7 @@ public class TC03_OrangeHRM_AddUser extends TestRunner {
             log.info(newUserName + "is updated in Excel sheet as New UserName");
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
+            logger.log(Status.PASS, "OrangeHRM Add User TestCase is Passed and status is updated in Excel sheet");
         } else if (result.getStatus() == ITestResult.FAILURE) {
             if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
                 ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
@@ -120,10 +121,12 @@ public class TC03_OrangeHRM_AddUser extends TestRunner {
 
                 ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
                 log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
+                logger.log(Status.FAIL, "OrangeHRM Add User TestCase is Failed and status is updated in Excel sheet");
             }
         } else if (result.getStatus() == ITestResult.SKIP) {
             ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
+            logger.log(Status.SKIP, "OrangeHRM Add User TestCase is Skipped and status is updated in Excel sheet");
         }
         driver.quit();
         Log.endTestCase();

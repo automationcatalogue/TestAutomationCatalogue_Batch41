@@ -186,13 +186,13 @@ public class OrangeHRM_StepDefinition {
     @When("User opens HR Administration page")
     public void user_opens_hr_administration_page() throws Exception {
         OrangeHRM_HomePage.clickHrAdministrationLink();
-        OrangHRM_AddUserPage.clickAddUser();
+        OrangeHRM_AddUserPage.clickAddUser();
     }
 
     @When("User enters employee,  username, Password, confirm password and clicks on save button")
     public void user_enters_employee_username_password_confirm_password_and_clicks_on_save_button() throws Exception {
-        OrangHRM_AddUserPage.enterAddUserDetails(empName, addUser, newPassword, confirm_pwd);
-        OrangHRM_AddUserPage.clickSave();
+        OrangeHRM_AddUserPage.enterAddUserDetails(empName, addUser, newPassword, confirm_pwd);
+        OrangeHRM_AddUserPage.clickSave();
 
     }
 

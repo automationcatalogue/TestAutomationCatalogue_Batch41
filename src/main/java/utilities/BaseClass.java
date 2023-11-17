@@ -6,11 +6,11 @@ public class BaseClass {
     private static WebDriver driver;
     public static String failureReason;
 
-    public BaseClass(WebDriver driver){
-        this.driver=driver;
+    public BaseClass(WebDriver driver) {
+        this.driver = driver;
     }
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
         return driver;
     }
 

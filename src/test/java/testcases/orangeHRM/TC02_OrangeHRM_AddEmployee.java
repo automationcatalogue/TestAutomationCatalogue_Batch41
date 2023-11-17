@@ -27,7 +27,7 @@ public class TC02_OrangeHRM_AddEmployee extends TestRunner {
     @BeforeMethod
     public void prerequisite_setup(@Optional(Config.AddEmployeeTestCase_ID) String testID) throws Exception {
         //To Create the Test in Extent Report
-        logger = extent.createTest(testID+"_OrangeHRMAddEmployee");
+        logger = extent.createTest(testID + "_OrangeHRMAddEmployee");
         Log.startTestCase(TC02_OrangeHRM_AddEmployee.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
@@ -128,6 +128,7 @@ public class TC02_OrangeHRM_AddEmployee extends TestRunner {
             log.info(empid + " is written back to the Excel file");
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
+            logger.log(Status.PASS, "OrangeHRM AddEmployee TestCase is Passed and status is updated in Excel sheet");
         } else if (result.getStatus() == ITestResult.FAILURE) {
             if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
                 ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
@@ -136,13 +137,13 @@ public class TC02_OrangeHRM_AddEmployee extends TestRunner {
                 ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
                 log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
 
-                logger.fail("OrangeHRM AddEmployee testcase is failed");
+                logger.log(Status.FAIL, "OrangeHRM AddEmployee TestCase is Failed and status is updated in Excel sheet");
             }
         } else if (result.getStatus() == ITestResult.SKIP) {
             ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
 
-            logger.fail("OrangeHRM AddEmployee testcase is skipped");
+            logger.log(Status.SKIP, "OrangeHRM AddEmployee TestCase is Skipped and status is updated in Excel sheet");
         }
         driver.quit();
         Log.endTestCase();

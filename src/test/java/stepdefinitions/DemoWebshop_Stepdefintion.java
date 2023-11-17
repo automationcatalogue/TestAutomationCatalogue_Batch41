@@ -71,11 +71,11 @@ public class DemoWebshop_Stepdefintion {
 
     @Then("User clicks on Login link")
     public void user_clicks_on_Login_link(){
-        DemoWebshop_HomePage.clickLoginLink();
+        DemoWebShop_HomePage.clickLoginLink();
     }
     @When("User Login into DemoWebshop Application with UserName as {string} and Password as {string}")
     public void loginDemoWebshop(String userName, String password) {
-        DemoWebshop_LoginPage.login(userName, password);
+        DemoWebShop_LoginPage.login(userName, password);
     }
 
 
@@ -87,56 +87,56 @@ public class DemoWebshop_Stepdefintion {
 
     @Then("User Clicks on ReOrder button")
     public void user_clicks_on_orderdetails_button() {
-        DemoWebshop_OrderInformationPage.clickReorderBtn();
+        DemoWebShop_OrderInformationPage.clickReorderBtn();
     }
 
     @And("User clicks on Addtocart button")
     public void user_clicks_on_Addtocart_button(){
-        DemoWebshop_CataloguePage.clickAddToCartBtn();
+        DemoWebShop_CataloguePage.clickAddToCartBtn();
     }
     @And("User clicks on Shopping cart link")
     public void user_clicks_on_Shopping_cart_link(){
-        DemoWebshop_HomePage.clickShoppingCartLink();
+        DemoWebShop_HomePage.clickShoppingCartLink();
     }
     @And("User get Cartprice Beforediscount")
     public void user_get_Cartprice_Beforediscount(){
-        double totalValue_BeforeDiscount = DemoWebshop_CartPage.getCartPriceBeforeDiscount();
+        double totalValue_BeforeDiscount = DemoWebShop_CartPage.getCartPriceBeforeDiscount();
     }
     @When("User clicks on Txtbox coupon")
     public void user_clicks_on_Txtbox_coupon(){
-        DemoWebshop_CartPage.clickTxtbxCoupon();
+        DemoWebShop_CartPage.clickTxtbxCoupon();
     }
     @Then("User enter Txtbox coupon as {string}")
     public void user_enter_Txtbox_coupon(){
-        DemoWebshop_CartPage.enterTxtbxCoupon(ApplyCoupon);
+        DemoWebShop_CartPage.enterTxtbxCoupon(ApplyCoupon);
     }
 
 
     @And("User Clicks on Checkout button")
     public void clickscheckoutbutton() {
-        DemoWebshop_CartPage.clickCheckoutBtn();
+        DemoWebShop_CartPage.clickCheckoutBtn();
     }
 
 
 
     @Then("User Get OrderNumber")
     public void getordernumber() {
-        DemoWebshop_CheckoutPage.getOrderNumber();
+        DemoWebShop_CheckoutPage.getOrderNumber();
     }
 
     @And("User logout after verification")
     public void logut_after_verification(){
-        DemoWebshop_HomePage.logout();
+        DemoWebShop_HomePage.logout();
     }
 
     @When("User login into DemoWebshop Application with UserName {string} and Password {string}")
     public void user_login_into_demo_webshop_application_with_user_name_and_password(String UserName, String Password) {
-        DemoWebshop_LoginPage.login(UserName, Password);
+        DemoWebShop_LoginPage.login(UserName, Password);
     }
 
     @Then("User Verifies Successful login of DemoWebshop application")
     public void user_verifies_successful_login_of_demo_webshop_application() {
-        DemoWebshop_HomePage.verifyTitle();
+        DemoWebShop_HomePage.verifyTitle();
     }
 
 

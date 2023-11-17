@@ -10,18 +10,18 @@ import utilities.BaseClass;
 import java.time.Duration;
 import java.util.Base64;
 
-public class OrangHRM_AddUserPage {
+public class OrangeHRM_AddUserPage {
+
+    static Logger log = LogManager.getLogger(OrangeHRM_AddUserPage.class);
+
     public static By txtbx_EmployeeName = By.xpath("//input[@id='selectedEmployee_value']");
     public static By icon_AddUser = By.xpath("//i[@class='material-icons'][text()='add']");
-
     public static By txtbx_RandomUserName = By.xpath("//input[@id='user_name']");
     public static By txtbx_Pwd = By.xpath("//input[@placeholder='Enter Password']");
     public static By txtbx_ConfirmPwd = By.xpath("//input[@placeholder='Confirm Password']");
     public static By btn_Save = By.xpath("//button[@id='modal-save-button']");
-
     public static By empName_Visibility = By.xpath("//div[@id='systemUserDiv']//table//tbody/tr[1]/td[2]//span[text()]");
     public static By empName_DropdownVisibility = By.xpath("//div[@id='selectedEmployee_dropdown']//div[@class='title-section']");
-    static Logger log = LogManager.getLogger(OrangHRM_AddUserPage.class);
 
     public static void clickAddUser() {
         WebDriver driver = BaseClass.getDriver();
@@ -31,12 +31,12 @@ public class OrangHRM_AddUserPage {
         log.info("Add User button is clicked");
     }
 
-    public static void enterAddUserDetails(String empName, String userName, String password, String confirm_Password) throws Exception{
+    public static void enterAddUserDetails(String empName, String userName, String password, String confirm_Password) throws Exception {
         WebDriver driver = BaseClass.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         //Enter Employee Name
         driver.findElement(txtbx_EmployeeName).sendKeys(empName);
-        log.info(empName+" is entered as EmployeeName");
+        log.info(empName + " is entered as EmployeeName");
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(empName_DropdownVisibility));
             driver.findElement(empName_DropdownVisibility).click();
@@ -45,7 +45,7 @@ public class OrangHRM_AddUserPage {
             log.info("EmployeeName Dropdown element is not visible");
         }
         driver.findElement(txtbx_RandomUserName).sendKeys(userName);
-        log.info(userName+" is entered as UserName");
+        log.info(userName + " is entered as UserName");
         String decodedPassword = new String(Base64.getDecoder().decode(password.getBytes()));
         driver.findElement(txtbx_Pwd).sendKeys(decodedPassword);
         log.info("Decoded Password is entered in the Password text-box");
@@ -55,7 +55,7 @@ public class OrangHRM_AddUserPage {
         clickSave();
     }
 
-    public static void clickSave() throws Exception{
+    public static void clickSave() throws Exception {
         WebDriver driver = BaseClass.getDriver();
         WebElement element_SaveBtn = driver.findElement(btn_Save);
         JavascriptExecutor js = (JavascriptExecutor) driver;

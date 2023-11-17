@@ -7,9 +7,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import pages.demoWebshop.DemoWebshop_AddressesPage;
-import pages.demoWebshop.DemoWebshop_HomePage;
-import pages.demoWebshop.DemoWebshop_LoginPage;
+import pages.demoWebshop.DemoWebShop_AddressesPage;
+import pages.demoWebshop.DemoWebShop_HomePage;
+import pages.demoWebshop.DemoWebShop_LoginPage;
 import testcases.setup.TestRunner;
 import utilities.*;
 
@@ -25,7 +25,7 @@ public class TC06_DemoWebShop_CreateAddress extends TestRunner {
     @BeforeMethod
     @Parameters("{testID}")
     public void prerequisite_setup(@Optional(Config.CreateAddressRequestTestCase_ID) String testID) throws Exception {
-        logger = extent.createTest(testID+"_DemoWebShop_CreateAddress");
+        logger = extent.createTest(testID + "_DemoWebShop_CreateAddress");
         Log.startTestCase(TC06_DemoWebShop_CreateAddress.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
@@ -41,25 +41,25 @@ public class TC06_DemoWebShop_CreateAddress extends TestRunner {
         password = ExcelUtils.getCellData(sheetName, rowNum, Config.col_Password);
         log.info("Password from excel sheet is :" + password);
         firstName = RandomGenerator.getRandomData("firstName");
-        log.info("Random Generated first name is "+firstName);
+        log.info("Random Generated first name is " + firstName);
         lastName = RandomGenerator.getRandomData("lastName");
-        log.info("Random Generated last name is "+lastName);
+        log.info("Random Generated last name is " + lastName);
         email = RandomGenerator.getRandomEmail(8);
-        log.info("Random Generated email is "+email);
+        log.info("Random Generated email is " + email);
         company = RandomGenerator.getRandomData("company");
-        log.info("Random Generated email is "+company);
+        log.info("Random Generated email is " + company);
         city = RandomGenerator.getRandomData("city");
-        log.info("Random Generated city is "+city);
+        log.info("Random Generated city is " + city);
         address1 = RandomGenerator.getRandomData("address1");
-        log.info("Random Generated address1 is "+address1);
+        log.info("Random Generated address1 is " + address1);
         address2 = RandomGenerator.getRandomData("address2");
-        log.info("Random Generated address2 is "+address2);
+        log.info("Random Generated address2 is " + address2);
         zipPostalCode = RandomGenerator.getRandomData("zipcode");
-        log.info("Random Generated Zip PostalCode is "+zipPostalCode);
+        log.info("Random Generated Zip PostalCode is " + zipPostalCode);
         phoneNumber = RandomGenerator.getRandomData("phoneNumber");
-        log.info("Random Generated Phone Number is "+phoneNumber);
+        log.info("Random Generated Phone Number is " + phoneNumber);
         faxNumber = RandomGenerator.getRandomNumeric(8);
-        log.info("Random Generated Fax Number is "+faxNumber);
+        log.info("Random Generated Fax Number is " + faxNumber);
     }
 
     @Test
@@ -75,27 +75,27 @@ public class TC06_DemoWebShop_CreateAddress extends TestRunner {
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "DemoWebShop_LoginPage");
         logger.log(Status.INFO, "DemoWebShop Application is loaded" + Config.demoWebshop_URL, MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "DemoWebShop_LoginPage").build());
 
-        DemoWebshop_LoginPage.login(userName, password);
+        DemoWebShop_LoginPage.login(userName, password);
         log.info("DemoWebShop Login is Successful");
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "DemoWebShop_HomePage");
         logger.log(Status.INFO, "DemoWebShop Login is Successful", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "DemoWebShop_HomePage").build());
 
-        DemoWebshop_HomePage.openMyAccount();
+        DemoWebShop_HomePage.openMyAccount();
         log.info("DemoWebShop My Account Addresses Page is Opened");
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "DemoWebShop_AddressPage");
         logger.log(Status.INFO, "DemoWebShop My Account Addresses Page is Opened", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "DemoWebShop_AddressPage").build());
 
-        DemoWebshop_AddressesPage.createAddress(firstName, lastName, email, company, city, address1, address2, zipPostalCode, phoneNumber, faxNumber);
+        DemoWebShop_AddressesPage.createAddress(firstName, lastName, email, company, city, address1, address2, zipPostalCode, phoneNumber, faxNumber);
         log.info("DemoWebShop New Address is Created");
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "DemoWebShop_NewAddressPage");
         logger.log(Status.INFO, "DemoWebShop New Address is Created", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "DemoWebShop_NewAddressPage").build());
 
-        DemoWebshop_AddressesPage.verifyAddress(firstName, lastName);
+        DemoWebShop_AddressesPage.verifyAddress(firstName, lastName);
         log.info("DemoWebShop New Address is Verified");
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "DemoWebShop_VerifyAddressPage");
         logger.log(Status.INFO, "DemoWebShop New Address is Verified", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "DemoWebShop_NewAddressPage").build());
 
-        DemoWebshop_HomePage.logOut();
+        DemoWebShop_HomePage.logOut();
         log.info("DemoWebShop application logout");
     }
 
@@ -111,10 +111,10 @@ public class TC06_DemoWebShop_CreateAddress extends TestRunner {
             log.info(email + "is updated in Excel sheet as Email");
             ExcelUtils.setCellData(company, sheetName, rowNum, Config.col_createAddress_Company);
             log.info(company + "is updated in Excel sheet as Company");
-            ExcelUtils.setCellData(DemoWebshop_AddressesPage.randomCountryName, sheetName, rowNum, Config.col_createAddress_Country);
-            log.info(DemoWebshop_AddressesPage.randomCountryName + "is updated in Excel sheet as Country");
-            ExcelUtils.setCellData(DemoWebshop_AddressesPage.randomStateName, sheetName, rowNum, Config.col_createAddress_State);
-            log.info(DemoWebshop_AddressesPage.randomStateName + "is updated in Excel sheet as State");
+            ExcelUtils.setCellData(DemoWebShop_AddressesPage.randomCountryName, sheetName, rowNum, Config.col_createAddress_Country);
+            log.info(DemoWebShop_AddressesPage.randomCountryName + "is updated in Excel sheet as Country");
+            ExcelUtils.setCellData(DemoWebShop_AddressesPage.randomStateName, sheetName, rowNum, Config.col_createAddress_State);
+            log.info(DemoWebShop_AddressesPage.randomStateName + "is updated in Excel sheet as State");
             ExcelUtils.setCellData(city, sheetName, rowNum, Config.col_createAddress_City);
             log.info(city + "is updated in Excel sheet as City");
             ExcelUtils.setCellData(address1, sheetName, rowNum, Config.col_createAddress_Address1);
@@ -129,6 +129,7 @@ public class TC06_DemoWebShop_CreateAddress extends TestRunner {
             log.info(faxNumber + "is updated in Excel sheet as FaxNumber");
             ExcelUtils.setCellData("PASSED", "Index", row_index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
+            logger.log(Status.PASS, "DemoWebShop Create Address TestCase is Passed and status is updated in Excel sheet");
         } else if (result.getStatus() == ITestResult.FAILURE) {
             if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
                 ExcelUtils.setCellData("FAILED", "Index", row_index, Config.col_Status);
@@ -136,11 +137,12 @@ public class TC06_DemoWebShop_CreateAddress extends TestRunner {
 
                 ExcelUtils.setCellData(BaseClass.failureReason, "Index", row_index, Config.col_reason);
                 log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
+                logger.log(Status.FAIL, "DemoWebShop Create Address TestCase is Failed and status is updated in Excel sheet");
             }
         } else if (result.getStatus() == ITestResult.SKIP) {
             ExcelUtils.setCellData("SKIPPED", "Index", row_index, Config.col_Status);
-
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
+            logger.log(Status.SKIP, "DemoWebShop Create Address TestCase is Skipped and status is updated in Excel sheet");
         }
         driver.quit();
         Log.endTestCase();

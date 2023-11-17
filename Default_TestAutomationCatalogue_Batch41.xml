@@ -31,6 +31,36 @@
             <class name="testcases.orangeHRM.TC05_OrangeHRM_Goals"/>
         </classes>
     </test>
+    <test name="test6">
+        <parameter name="testID" value="TC06-01"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC06_DemoWebShop_CreateAddress"/>
+        </classes>
+    </test>
+    <test name="test7">
+        <parameter name="testID" value="TC07-01"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC07_DemoWebShop_ReOrder"/>
+        </classes>
+    </test>
+    <test name="test8">
+        <parameter name="testID" value="TC08-01"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC08_DemoWebShop_TotalOrders"/>
+        </classes>
+    </test>
+    <test name="test9">
+        <parameter name="testID" value="TC09-01"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC09_DemoWebShop_UpdateShoppingCart"/>
+        </classes>
+    </test>
+    <test name="test10">
+        <parameter name="testID" value="TC10-01"/>
+        <classes>
+            <class name="testcases.demoWebshop.TC10_DemoWebShop_ApplyDiscount"/>
+        </classes>
+    </test>
 </suite>
 
 
