@@ -11,60 +11,60 @@ import java.io.FileOutputStream;
 
 public class ExcelUtils {
     static FileInputStream fis;
-    static  XSSFWorkbook wbk;
+    static XSSFWorkbook wbk;
     static XSSFSheet sh;
     static XSSFRow row;
     static XSSFCell col;
     static String excelPath;
 
-    public static XSSFWorkbook setExcelFilePath(String excelPath) throws Exception{
+    public static XSSFWorkbook setExcelFilePath(String excelPath) throws Exception {
         ExcelUtils.excelPath = excelPath;
         fis = new FileInputStream(excelPath);
         wbk = new XSSFWorkbook(fis);
         return wbk;
     }
 
-    public static String getCellData(String sheetName, int rowNum, int colNum){
+    public static String getCellData(String sheetName, int rowNum, int colNum) {
         sh = wbk.getSheet(sheetName);
         row = sh.getRow(rowNum);
-        if(row==null){
+        if (row == null) {
             row = sh.createRow(rowNum);
         }
         col = row.getCell(colNum);
-        if(col==null){
+        if (col == null) {
             col = row.createCell(colNum);
         }
         String excelData = col.getStringCellValue();
         return excelData;
     }
 
-    public static int getRowNumber(String testId, String sheetName){
+    public static int getRowNumber(String testId, String sheetName) {
         sh = wbk.getSheet(sheetName);
-        int rowSize= sh.getLastRowNum();
-        int finalRowNumber=0;
-        for(int i=0;i<rowSize;i++){
+        int rowSize = sh.getLastRowNum();
+        int finalRowNumber = 0;
+        for (int i = 0; i <= rowSize; i++) {
             String actualTestId = sh.getRow(i).getCell(Config.col_TestId).getStringCellValue();
-            if(actualTestId.equals(testId)){
-                finalRowNumber=i;
+            if (actualTestId.equals(testId)) {
+                finalRowNumber = i;
                 break;
             }
         }
         BaseClass.failureReason = "TestId is not found";
-        Assert.assertTrue(finalRowNumber!=0,"TestId "+testId+" is not found in the sheetName "+sheetName);
+        Assert.assertTrue(finalRowNumber != 0, "TestId " + testId + " is not found in the sheetName " + sheetName);
 
-        System.out.println("TestId "+testId+" is found in the row number "+finalRowNumber+" for sheetName "+sheetName);
+        System.out.println("TestId " + testId + " is found in the row number " + finalRowNumber + " for sheetName " + sheetName);
 
         return finalRowNumber;
     }
 
-    public static void setCellData(String data, String sheetName, int rowNum, int colNum) throws Exception{
+    public static void setCellData(String data, String sheetName, int rowNum, int colNum) throws Exception {
         sh = wbk.getSheet(sheetName);
         row = sh.getRow(rowNum);
-        if(row==null){
+        if (row == null) {
             row = sh.createRow(rowNum);
         }
         col = row.getCell(colNum);
-        if(col==null){
+        if (col == null) {
             col = row.createCell(colNum);
         }
         col.setCellValue(data);
@@ -84,7 +84,7 @@ public class ExcelUtils {
         }
     }
 
-    public static void closeExcelFile() throws Exception{
+    public static void closeExcelFile() throws Exception {
         fis.close();
     }
 }

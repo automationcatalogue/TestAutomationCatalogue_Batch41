@@ -7,10 +7,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import pages.OrangeHRM_AddEmployeePage;
-import pages.OrangeHRM_HomePage;
-import pages.OrangeHRM_LoginPage;
-import pages.OrangeHRM_LogoutPage;
+import pages.orangeHRM.OrangeHRM_AddEmployeePage;
+import pages.orangeHRM.OrangeHRM_HomePage;
+import pages.orangeHRM.OrangeHRM_LoginPage;
 import testcases.setup.TestRunner;
 import utilities.*;
 
@@ -28,7 +27,7 @@ public class TC02_OrangeHRM_AddEmployee extends TestRunner {
     @BeforeMethod
     public void prerequisite_setup(@Optional(Config.AddEmployeeTestCase_ID) String testID) throws Exception {
         //To Create the Test in Extent Report
-        logger = extent.createTest("OrangeHRMAddEmployee_" + testID);
+        logger = extent.createTest(testID + "_OrangeHRMAddEmployee");
         Log.startTestCase(TC02_OrangeHRM_AddEmployee.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
@@ -117,7 +116,7 @@ public class TC02_OrangeHRM_AddEmployee extends TestRunner {
         base64 = CommonUtils.takeScreenshot(screenshotsPath, "OrangeHRM_AddEmployee_VerifyNewEmployee");
         logger.log(Status.INFO, "Verified New Employee Data", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_AddEmployee_VerifyNewEmployee").build());
 
-        OrangeHRM_LogoutPage.logout();
+        OrangeHRM_HomePage.logout();
         logger.log(Status.INFO, "Logged out from OrangeHRM application");
     }
 
@@ -129,6 +128,7 @@ public class TC02_OrangeHRM_AddEmployee extends TestRunner {
             log.info(empid + " is written back to the Excel file");
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
+            logger.log(Status.PASS, "OrangeHRM AddEmployee TestCase is Passed and status is updated in Excel sheet");
         } else if (result.getStatus() == ITestResult.FAILURE) {
             if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
                 ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
@@ -137,13 +137,13 @@ public class TC02_OrangeHRM_AddEmployee extends TestRunner {
                 ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
                 log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
 
-                logger.fail("OrangeHRM AddEmployee testcase is failed");
+                logger.log(Status.FAIL, "OrangeHRM AddEmployee TestCase is Failed and status is updated in Excel sheet");
             }
         } else if (result.getStatus() == ITestResult.SKIP) {
             ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
 
-            logger.fail("OrangeHRM AddEmployee testcase is skipped");
+            logger.log(Status.SKIP, "OrangeHRM AddEmployee TestCase is Skipped and status is updated in Excel sheet");
         }
         driver.quit();
         Log.endTestCase();
