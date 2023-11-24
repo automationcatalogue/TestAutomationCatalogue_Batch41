@@ -109,7 +109,7 @@ public class TC03_OrangeHRM_AddUser extends TestRunner {
     public void tearDown(ITestResult result) throws Exception {
 
         if (result.getStatus() == ITestResult.SUCCESS) {
-            ExcelUtils.setCellData(newUserName, "OrangeHRM_AddUser", rowNum, Config.col_AddUser_NewUser);
+            ExcelUtils.setCellData(newUserName, sheetName, rowNum, Config.col_AddUser_NewUser);
             log.info(newUserName + "is updated in Excel sheet as New UserName");
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");

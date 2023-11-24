@@ -7,8 +7,8 @@ public class Config {
     public static final String orangeHRM_URL = " https://automationdata-trials710.orangehrmlive.com";
 
     public static final String LoginTestCase_ID = "TC01-01";
-    public static final String AddEmployeeTestCase_ID = "TC02-01";
-    public static final String AddUserTestCase_ID = "TC03-01";
+    public static final String AddEmployeeTestCase_ID = "TC02-03";
+    public static final String AddUserTestCase_ID = "TC03-05";
     public static final String EditEmployeeTestCase_ID = "TC04-01";
     public static final String GoalsRequestTestCase_ID = "TC05-01";
     public static final String CreateAddressRequestTestCase_ID = "TC06-01";
