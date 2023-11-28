@@ -7,9 +7,8 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import pages.OrangeHRM_HomePage;
-import pages.OrangeHRM_LoginPage;
-import pages.OrangeHRM_LogoutPage;
+import pages.orangeHRM.OrangeHRM_HomePage;
+import pages.orangeHRM.OrangeHRM_LoginPage;
 import testcases.setup.TestRunner;
 import utilities.*;
 
@@ -27,7 +26,7 @@ public class TC01_OrangeHRM_LoginTest extends TestRunner {
     @Parameters("{testID}")
     public void prerequisite_setup(@Optional(Config.LoginTestCase_ID) String testID) throws Exception {
         //To Create the Test in Extent Report
-        logger = extent.createTest("OrangeHRMLogin_" + testID);
+        logger = extent.createTest(testID + "_OrangeHRMLogin");
         Log.startTestCase(TC01_OrangeHRM_LoginTest.class.getName());
 
         //Getting Row Number from Index Sheet and TestCase Sheet
@@ -66,18 +65,17 @@ public class TC01_OrangeHRM_LoginTest extends TestRunner {
         logger.log(Status.INFO, "OrangeHRM Login is Successful", MediaEntityBuilder.createScreenCaptureFromBase64String(base64, "OrangeHRM_HomePage").build());
 
         //OrangeHRM Logout
-        OrangeHRM_LogoutPage.logout();
+        OrangeHRM_HomePage.logout();
         logger.log(Status.INFO, "Logged out from OrangeHRM application");
     }
 
     @AfterMethod
     public void tearDown(ITestResult result) throws Exception {
         if (result.getStatus() == ITestResult.SUCCESS) {
-
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
             logger.pass("OrangeHRM Login testcase is passed");
-
+            logger.log(Status.PASS, "OrangeHRM Login TestCase is Passed and status is updated in Excel sheet");
         } else if (result.getStatus() == ITestResult.FAILURE) {
             if (!BaseClass.failureReason.equalsIgnoreCase("TestId is not found")) {
                 ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
@@ -86,13 +84,12 @@ public class TC01_OrangeHRM_LoginTest extends TestRunner {
                 ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
                 log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
 
-                logger.fail("OrangeHRM Login testcase is failed");
+                logger.log(Status.FAIL, "OrangeHRM Login TestCase is Failed and status is updated in Excel sheet");
             }
         } else if (result.getStatus() == ITestResult.SKIP) {
             ExcelUtils.setCellData("SKIPPED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is SKIPPED and status is updated in Excel sheet");
-
-            logger.skip("OrangeHRM Login testcase is skipped");
+            logger.log(Status.SKIP, "OrangeHRM Login TestCase is Skipped and status is updated in Excel sheet");
         }
         driver.quit();
         Log.endTestCase();
