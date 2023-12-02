@@ -11,8 +11,8 @@ Feature: OrangeHRM Application Creating Goals
     When User login into OrangeHRM application with username as "<UserName>" and "<Password>"
     Then User verify title of OrangeHRM home page
     When User clicks on OrangeHRM HR Administration link
-    And User finds usersName on Users Page
-    When User clicks on OrangeHRM Employee Management Page link
+    And User finds username on Users Page
+    When User clicks on OrangeHRM EmployeeManagement link
     And User finds Supervisor name
     When User clicks on OrangeHRM HR Administration link
     And User finds Supervisor userName
@@ -33,7 +33,7 @@ Feature: OrangeHRM Application Creating Goals
     Then User is Updating Goals Progress
     And User does Goals Verification
     Then User logged out from OrangeHRM application
-    And User Update the new username in "OrangeHRM_Goals" add user excel sheet
+    And User Update status in "OrangeHRM_Goals" goals excel sheet
 
     Examples:
       | UserName | Password     |

@@ -1,28 +1,23 @@
 package stepdefinitions;
 
-import com.aventstack.extentreports.Status;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import pages.orangeHRM.OrangeHRM_AddUserPage;
 import pages.orangeHRM.OrangeHRM_HomePage;
 import pages.orangeHRM.OrangeHRM_LoginPage;
-import runner.CucumberHooks;
+import static runner.CucumberHooks.*;
 import utilities.Config;
 import utilities.ExcelUtils;
 import utilities.RandomGenerator;
 
 public class OrangeHRM_AddUser_Steps {
-    static Logger log;
     private static String sheetName;
     static int rowNum, rowNum_Index;
     private String empName, newUserName, newPassword, confirm_Password;
 
     @Given("User loads {string} add user excel data")
     public void user_loads_OrangeHRM_Add_Employee_excel_data(String sheetName){
-        log = LogManager.getLogger(CucumberHooks.scenario.getName());
         OrangeHRM_AddUser_Steps.sheetName = sheetName;
         rowNum_Index = ExcelUtils.getRowNumber(Config.AddUserTestCase_ID, "Index");
         log.info(rowNum_Index + "Row Number is picked from Index Sheet");
@@ -63,12 +58,12 @@ public class OrangeHRM_AddUser_Steps {
 
     @Then("User Update the new username in {string} add user excel sheet")
     public void user_Update_the_EmployeeId_in_Excel_sheet(String sheetName) throws Exception{
-        if (!CucumberHooks.scenario.isFailed()) {
+        if (!scenario.isFailed()) {
             ExcelUtils.setCellData(newUserName, sheetName, rowNum, Config.col_AddUser_NewUser);
             log.info(newUserName + "is updated in Excel sheet as New UserName");
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
-        } else if (CucumberHooks.scenario.isFailed()) {
+        } else if (scenario.isFailed()) {
             ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Failed and status is updated in Excel sheet");
         }

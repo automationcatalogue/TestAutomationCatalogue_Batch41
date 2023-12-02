@@ -1,6 +1,5 @@
 package stepdefinitions;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,17 +7,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pages.demoWebshop.*;
 import runner.CucumberHooks;
+import utilities.BaseClass;
 import utilities.CommonUtils;
 import utilities.Config;
 import utilities.ExcelUtils;
 
 public class DemoWebShop_ReOrder_Steps {
     static Logger log;
-    private static String base64, sheetName, firstName, lastName, orderNumber;
+    private static String base64, sheetName, orderNumber;
     static int rowNum, rowNum_Index;
 
-    @Given("User loads {string} excel data")
-    public void userLoadsExcelData(String arg0) {
+    @Given("User loads {string} reorder excel data")
+    public void userLoadsExcelData(String sheetName) {
         log = LogManager.getLogger(CucumberHooks.scenario.getName());
         DemoWebShop_ReOrder_Steps.sheetName = sheetName;
         rowNum_Index = ExcelUtils.getRowNumber(Config.ReOrderRequestTestCase_ID, "Index");
@@ -53,5 +53,21 @@ public class DemoWebShop_ReOrder_Steps {
     @Then("User get the Order Number")
     public void user_get_the_order_number() {
         orderNumber = DemoWebShop_CheckoutPage.getOrderNumber();
+    }
+
+    @Then("User update order number and status in {string} reorder excel sheet")
+    public void user_Update_OrderNumber_Status_in_Excel_sheet(String sheetName) throws Exception {
+        if (!CucumberHooks.scenario.isFailed()) {
+            ExcelUtils.setCellData(orderNumber, sheetName, rowNum, Config.col_Reorder_OrderNumber);
+            log.info(orderNumber + " is written back to the Excel file");
+            ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
+            log.info("TestCase is Passed and status is updated in Excel sheet");
+        } else if (CucumberHooks.scenario.isFailed()) {
+            ExcelUtils.setCellData("FAILED", "Index", rowNum_Index, Config.col_Status);
+            log.info("TestCase is Failed and status is updated in Excel sheet");
+
+            ExcelUtils.setCellData(BaseClass.failureReason, "Index", rowNum_Index, Config.col_reason);
+            log.info("Failure Reason is :" + BaseClass.failureReason + " and status is updated in Excel sheet");
+        }
     }
 }

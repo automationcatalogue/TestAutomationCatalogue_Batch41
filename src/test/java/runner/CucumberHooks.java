@@ -13,7 +13,7 @@ import utilities.*;
 
 public class CucumberHooks {
     static WebDriver driver;
-    static Logger log = LogManager.getLogger(CucumberHooks.class);
+    public static Logger log;
     public static int rowNum_Index;
     public static XSSFWorkbook wbk;
     public static ExtentReports extent;
@@ -24,6 +24,7 @@ public class CucumberHooks {
 
     @Before
     public void beforeEachScenario(Scenario scenario) throws Exception{
+        log = LogManager.getLogger(scenario.getName());
         CucumberHooks.scenario = scenario;
         System.out.println("Before Suite Execution");
         projectPath = System.getProperty("user.dir");

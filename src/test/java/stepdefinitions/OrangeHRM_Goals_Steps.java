@@ -1,21 +1,14 @@
 package stepdefinitions;
 
-import com.aventstack.extentreports.Status;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.testng.ITestResult;
 import pages.orangeHRM.*;
-import runner.CucumberHooks;
-import utilities.CommonUtils;
 import utilities.Config;
 import utilities.ExcelUtils;
+import static runner.CucumberHooks.*;
 
 public class OrangeHRM_Goals_Steps {
-    static Logger log;
 
     static int rowNum, rowNum_Index;
     static String employeeName, sheetName;
@@ -24,10 +17,8 @@ public class OrangeHRM_Goals_Steps {
     static String firstGoalStatus, secondGoalStatus, thirdGoalStatus, approveGoalNote;
     static String firstGoalName, firstGoalDescription, secondGoalName, secondGoalDescription, thirdGoalName, thirdGoalDescription;
 
-
     @Given("User loads {string} goals excel sheet")
-    public void user_loads_OrangeHRM_Goals_excel_data(String sheetName) throws Exception {
-        log = LogManager.getLogger(CucumberHooks.scenario.getName());
+    public void user_loads_OrangeHRM_Goals_excel_data(String sheetName) {
         OrangeHRM_Goals_Steps.sheetName = sheetName;
         rowNum_Index = ExcelUtils.getRowNumber(Config.GoalsRequestTestCase_ID, "Index");
         log.info(rowNum_Index + "Row Number is picked from Index Sheet");
@@ -35,51 +26,41 @@ public class OrangeHRM_Goals_Steps {
         log.info(rowNum + "Row Number is picked from " + sheetName);
     }
 
-    @When("User finds usersName on Users Page")
-    public void user_finds_users_name_on_users_page() throws Exception {
+    @When("User finds username on Users Page")
+    public void user_finds_users_name_on_users_page() {
+        employeeName = ExcelUtils.getCellData(sheetName, rowNum, Config.col_OrangeHRMGoals_empName);
         actualUserName = OrangeHRM_UsersPage.getUserName(employeeName);
         log.info("Actual UserName received for the Employee" + employeeName + " is " + actualUserName);
     }
 
     @Given("User login into OrangeHRM application with employee username")
-    public void user_login_into_orange_hrm_application_with_employee_username() throws Exception {
+    public void user_login_into_orange_hrm_application_with_employee_username() {
         actualUserName = OrangeHRM_UsersPage.getUserName(employeeName);
         log.info("Actual UserName received for the Employee" + employeeName + " is " + actualUserName);
     }
 
     @Given("User login into OrangeHRM application with  the supervisor username")
-    public void user_login_into_orange_hrm_application_with_the_supervisor_username() throws Exception {
+    public void user_login_into_orange_hrm_application_with_the_supervisor_username() {
         supervisorActualUserName = OrangeHRM_UsersPage.getUserName(supervisorName);
         log.info("Supervisor Actual UserName received for the Employee" + employeeName + " is " + supervisorActualUserName);
     }
 
-    @When("User clicks on OrangeHRM Employee Management Page link")
-    public void user_clicks_on_orange_hrm_employee_management_page_link() throws Exception {
-        OrangeHRM_HomePage.clickEmployeeManagementLink();
-        log.info("OrangeHRM EmployeeManagement is clicked");
-
-
-    }
-
     @When("User finds Supervisor name")
-    public void user_finds_supervisor_name() throws Exception {
+    public void user_finds_supervisor_name() {
         supervisorName = OrangeHRM_EmployeeManagementPage.getSupervisorName(employeeName);
         log.info("SupervisorName received for the Employee" + employeeName + " is " + supervisorName);
     }
 
     @When("User finds Supervisor userName")
-    public void user_finds_supervisor_user_name() throws Exception {
+    public void user_finds_supervisor_user_name() {
         supervisorActualUserName = OrangeHRM_UsersPage.getUserName(supervisorName);
         log.info("Supervisor Actual UserName received for the Employee" + employeeName + " is " + supervisorActualUserName);
     }
-
 
     @Then("User clicks on selectPerformance link")
     public void user_clicks_on_select_performance_link() throws Exception {
         OrangeHRM_HomePage.selectPerformance();
         log.info("OrangeHRM Performance link is clicked");
-
-
     }
 
     @Then("User clicks on selectMyGoals link")
