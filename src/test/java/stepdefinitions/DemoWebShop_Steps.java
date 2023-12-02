@@ -37,8 +37,15 @@ public class DemoWebShop_Steps {
         DemoWebShop_HomePage.verifyTitle();
         base64 = CommonUtils.takeScreenshot(CucumberHooks.screenshotsPath, "DemoWebShop_HomePage");
     }
+
     @Then("User logged out from DemoWebShop application")
-        public void user_logged_out_from_demo_web_shop_application() {
-            DemoWebShop_HomePage.logOut();
-        }
+    public void user_logged_out_from_demo_web_shop_application() {
+        DemoWebShop_HomePage.logOut();
     }
+
+    @Then("User logged out from DemoWebShop application")
+    public void user_logged_out_from_demo_web_shop_application() {
+        DemoWebShop_HomePage.logOut();
+    }
+}
+
