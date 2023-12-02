@@ -2,7 +2,7 @@
 Feature: DemoWebShop Application Applying Discount
 
   Background: Loading DemoWebShop ApplyDiscount ExcelTestData
-    Given User loads "DemoWebShop_ApplyDiscount" excel sheet
+    Given User loads "DemoWebShop_ApplyDiscount" apply discount excel sheet
 
   @TC10 @DemoWebShop_ApplyDiscount
   Scenario Outline: Applying Discount
@@ -20,4 +20,4 @@ Feature: DemoWebShop Application Applying Discount
 
     Examples:
       | UserName    | Password     |
-      | Admin       | QWRtaW5AMTIz |
+      | aarosagarch@gmail.com       | QWRtaW5AMTIz |

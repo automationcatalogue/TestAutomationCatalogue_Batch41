@@ -26,8 +26,8 @@ public class DemoWebShop_ApplyDiscount_Steps {
         static int rowNum, rowNum_Index;
 
         double priceBeforeApplyDiscount;
-        @Given("User loads {string} excel sheet")
-        public void user_loads_excel_sheet(String string) {
+        @Given("User loads {string} apply discount excel sheet")
+        public void user_loads_excel_sheet(String sheetName) {
             log = LogManager.getLogger(CucumberHooks.scenario.getName());
             DemoWebShop_ApplyDiscount_Steps.sheetName = sheetName;
             rowNum_Index = ExcelUtils.getRowNumber(Config.ApplyDiscountRequestTestCase_ID, "Index");
@@ -45,6 +45,7 @@ public class DemoWebShop_ApplyDiscount_Steps {
 
     @Then("User applied discount coupon")
     public void user_applied_discount_coupon() throws Exception {
+        applyCoupon = ExcelUtils.getCellData(sheetName, rowNum, Config.col_ApplyDiscount_Coupon);
         priceBeforeApplyDiscount = DemoWebShop_CartPage.applyCoupon(applyCoupon);
         log.info("Discount Coupon is Applied as :" + applyCoupon);
         base64 = CommonUtils.takeScreenshot(CucumberHooks.screenshotsPath, "DemoWebShop_FirstBookItem");

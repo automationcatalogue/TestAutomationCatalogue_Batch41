@@ -19,8 +19,8 @@ public class DemoWebShop_TotalOrders_Steps {
     private static String base64;
     private static String sheetName;
     static int rowNum, rowNum_Index,totalNumberOfOrders;
-    @Given("User loads {string} excel sheet")
-    public void user_loads_excel_sheet(String string) {
+    @Given("User loads {string} total orders excel sheet")
+    public void user_loads_excel_sheet(String sheetName) {
         log = LogManager.getLogger(CucumberHooks.scenario.getName());
         DemoWebShop_TotalOrders_Steps.sheetName = sheetName;
         rowNum_Index = ExcelUtils.getRowNumber(Config.TotalOrdersRequestTestCase_ID, "Index");

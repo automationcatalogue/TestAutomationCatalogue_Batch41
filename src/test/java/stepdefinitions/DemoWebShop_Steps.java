@@ -3,11 +3,13 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pages.demoWebshop.DemoWebShop_HomePage;
 import pages.demoWebshop.DemoWebShop_LoginPage;
 import runner.CucumberHooks;
+import utilities.BaseClass;
 import utilities.CommonUtils;
 import utilities.Config;
 
@@ -18,6 +20,8 @@ public class DemoWebShop_Steps {
 
     @Given("User opens DemoWebShop application")
     public void user_opens_demo_web_shop_application() throws Exception {
+        log = LogManager.getLogger(CucumberHooks.scenario.getName());
+        driver = BaseClass.getDriver();
         driver.get(Config.demoWebshop_URL);
         base64 = CommonUtils.takeScreenshot(CucumberHooks.screenshotsPath, "DemoWebShop_LoginPage");
         log.info("DemoWebShop URL is loaded :" + Config.demoWebshop_URL);

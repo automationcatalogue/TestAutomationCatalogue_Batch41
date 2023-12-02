@@ -2,7 +2,7 @@
 Feature: DemoWebShop Application Calculating Total Orders
 
   Background: Loading DemoWebShop TotalOrders ExcelTestData
-    Given User loads "DemoWebShop_TotalOrders" excel sheet
+    Given User loads "DemoWebShop_TotalOrders" total orders excel sheet
 
   @TC08 @DemoWebShop_TotalOrders
   Scenario Outline: Total Orders count, DateWise Orders display, Sum of All Orders
@@ -15,9 +15,8 @@ Feature: DemoWebShop Application Calculating Total Orders
     And User Performs Sum of All Orders Placed
     And User displays Sum of orders DateWise
     Then User logged out from DemoWebShop application
-
     And User Updates the Status in "DemoWebShop_TotalOrders" ExcelSheet for Total Orders
 
     Examples:
       | UserName    | Password     |
-      | Admin       | QWRtaW5AMTIz |
+      | aarosagarch@gmail.com       | QWRtaW5AMTIz |
