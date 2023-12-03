@@ -2,9 +2,9 @@
 Feature: DemoWebShop ReOrder Functionality
 
   Background: Loading DemoWebShop ReOrder ExcelTestData
-    Given User loads "OrangeHRM_AddEmployee" add employee excel sheet
+    Given User loads "DemoWebshop_ReOrder" reorder excel sheet
 
-  @TC06 @DemoWebShop_ReOrder
+  @TC07 @DemoWebShop_ReOrder
   Scenario Outline: DemoWebShop ReOrder
     Given User launches browser
     Given User opens DemoWebShop application
@@ -16,7 +16,7 @@ Feature: DemoWebShop ReOrder Functionality
     And User place an Order
     Then User get the Order Number
     And User logged out from DemoWebShop application
-
+    And User update order number and status in "DemoWebshop_ReOrder" reorder excel sheet
     Examples:
       | UserName              | Password     |
       | aarosagarch@gmail.com | QWRtaW5AMTIz |

@@ -6,6 +6,8 @@ import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import pages.demoWebshop.DemoWebShop_CartPage;
+import pages.demoWebshop.DemoWebShop_CheckoutPage;
 import pages.demoWebshop.DemoWebShop_HomePage;
 import pages.demoWebshop.DemoWebShop_LoginPage;
 import runner.CucumberHooks;
@@ -15,7 +17,7 @@ import utilities.Config;
 
 public class DemoWebShop_Steps {
     static WebDriver driver;
-    private static String base64;
+    private static String base64, orderNumber;
     static Logger log;
 
     @Given("User opens DemoWebShop application")
@@ -37,10 +39,19 @@ public class DemoWebShop_Steps {
         DemoWebShop_HomePage.verifyTitle();
         base64 = CommonUtils.takeScreenshot(CucumberHooks.screenshotsPath, "DemoWebShop_HomePage");
     }
-
-    @Then("User logged out from DemoWebShop application")
-    public void user_logged_out_from_demo_web_shop_application() {
-        DemoWebShop_HomePage.logOut();
+    @When("User click on checkout selected items")
+    public void user_click_on_checkout_selected_items() {
+        DemoWebShop_CartPage.checkoutSelectedItems();
+    }
+    @When("User place an Order")
+    public void user_place_an_order() throws Exception {
+        DemoWebShop_CheckoutPage.placeOrder();
+        base64 = CommonUtils.takeScreenshot(CucumberHooks.screenshotsPath, "DemoWebShop_ChekoutPage");
+        log.info("DemoWebShop places the order successfully");
+    }
+    @Then("User get the Order Number")
+    public void user_get_the_order_number() {
+        orderNumber = DemoWebShop_CheckoutPage.getOrderNumber();
     }
 
     @Then("User logged out from DemoWebShop application")
@@ -48,4 +59,5 @@ public class DemoWebShop_Steps {
         DemoWebShop_HomePage.logOut();
     }
 }
+
 

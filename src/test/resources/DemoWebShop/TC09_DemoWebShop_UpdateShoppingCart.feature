@@ -1,10 +1,10 @@
 @All @DemoWebShop
 Feature: DemoWebShop Update Shopping Cart Functionality
 
-  Background: Loading OrangeHRM AddEmployee ExcelTestData
-    Given User loads "OrangeHRM_AddEmployee" add employee excel sheet
+  Background: Loading DemoWebShop UpdateShoppingCart ExcelTestData
+    Given User loads "DemoWebshop_UpdateShoppingCart" update shopping cart excel sheet
 
-  @TC06 @DemoWebShop_UpdateShoppingCart
+  @TC09 @DemoWebShop_UpdateShoppingCart
   Scenario Outline: DemoWebShop Update Shopping Cart
     Given User launches browser
     Given User opens DemoWebShop application
@@ -18,6 +18,7 @@ Feature: DemoWebShop Update Shopping Cart Functionality
     And User place an Order
     Then User get the Order Number
     And User logged out from DemoWebShop application
+    And User update order number and status in "DemoWebshop_UpdateShoppingCart" update shopping cart excel sheet
 
     Examples:
       | UserName              | Password     |

@@ -15,7 +15,7 @@ public class DemoWebShop_CreateAddress_Steps {
     private static String base64, sheetName, firstName, lastName;
     private static String email, company, city, address1, address2, zipPostalCode, phoneNumber, faxNumber;
     static int rowNum, rowNum_Index;
-    @Given("User loads {string} create address excel data")
+    @Given("User loads {string} create address excel sheet")
     public void userLoadsExcelData(String sheetName) {
         log = LogManager.getLogger(CucumberHooks.scenario.getName());
         DemoWebShop_CreateAddress_Steps.sheetName = sheetName;

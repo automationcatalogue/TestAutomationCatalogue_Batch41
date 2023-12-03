@@ -20,7 +20,7 @@ public class DemoWebShop_UpdateShoppingCart_Steps {
     private static String jewelLength, update_Qty;
     static int rowNum, rowNum_Index;
 
-    @Given("User loads {string} update shopping cart excel data")
+    @Given("User loads {string} update shopping cart excel sheet")
     public void userLoadsExcelData(String sheetName) {
         log = LogManager.getLogger(CucumberHooks.scenario.getName());
         DemoWebShop_UpdateShoppingCart_Steps.sheetName = sheetName;
@@ -29,6 +29,7 @@ public class DemoWebShop_UpdateShoppingCart_Steps {
         rowNum = ExcelUtils.getRowNumber(Config.UpdateShoppingCartRequestTestCase_ID, sheetName);
         log.info(rowNum + "Row Number is picked from " + sheetName);
     }
+
     @When("User add the first item to the cart")
     public void user_add_the_first_item_to_the_cart() throws Exception {
         jewelLength = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UpdateCart_Length);
@@ -61,22 +62,13 @@ public class DemoWebShop_UpdateShoppingCart_Steps {
         log.info("DemoWebShop verify the grand total successfully");
     }
 
-    @When("User click on checkout selected items")
-    public void user_click_on_checkout_selected_items() {
-        DemoWebShop_CartPage.checkoutSelectedItems();
-    }
-
-    @When("User place an Order")
-    public void user_place_an_order() {
-        DemoWebShop_CheckoutPage.placeOrder();
-    }
 
     @Then("User get the Order Number")
     public void user_get_the_order_number() {
         orderNumber = DemoWebShop_CheckoutPage.getOrderNumber();
     }
 
-    @Then("User update ordernumber and status in {string} update shopping cart excel sheet")
+    @Then("User update order number and status in {string} update shopping cart excel sheet")
     public void user_Update_OrderNumber_Status_in_Excel_sheet(String sheetName) throws Exception {
         if (!CucumberHooks.scenario.isFailed()) {
             ExcelUtils.setCellData(orderNumber, sheetName, rowNum, Config.col_UpdateCart_OrderNumber);
