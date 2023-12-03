@@ -30,7 +30,7 @@ public class OrangeHRM_EditEmployeePage {
     public static By checkBox_Kosher = By.xpath("//div[@sf-array='form']/div[4]/label");
     public static By checkBox_Vegetarian = By.xpath("//div[@sf-array='form']/div[5]/label");
     public static By link_Profile = By.xpath("//a[@data-automation-id='menu_employee_profile_Profile']");
-    public static By txt_Mobile = By.xpath("//div[contains(text(),'Mobile')]/span");
+    public static By txt_Mobile = By.xpath("//div[contains(text(),'Mobile') or contains(text(),'Telephone')]/span");
     public static By link_ContactDetails = By.xpath("//a[@data-automation-id='menu_employee_profile_ContactDetails']");
     public static By txtbx_MobileNumber = By.xpath("//input[@id='emp_mobile']");
     public static By btn_ContactDetailsSave = By.xpath("//button[@id='modal-save-button']");

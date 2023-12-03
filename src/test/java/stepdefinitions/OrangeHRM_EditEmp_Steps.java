@@ -7,6 +7,8 @@ import pages.orangeHRM.OrangeHRM_EditEmployeePage;
 import pages.orangeHRM.OrangeHRM_EmployeeManagementPage;
 import utilities.Config;
 import utilities.ExcelUtils;
+import utilities.RandomGenerator;
+
 import static runner.CucumberHooks.*;
 
 public class OrangeHRM_EditEmp_Steps {
@@ -50,7 +52,7 @@ public class OrangeHRM_EditEmp_Steps {
 
     @When("User edits employee mobile number")
     public void user_edits_employee_mobile_number() throws Exception{
-        mobileNumber = ExcelUtils.getCellData(sheetName, rowNum, Config.col_EditEmployee_MobileNumber);
+        mobileNumber = RandomGenerator.getRandomData("phoneNumber").replace(".", "").trim();
         OrangeHRM_EditEmployeePage.editMobileNumber(mobileNumber);
         log.info("OrangeHRM Edit Contact Details are Saved");
     }

@@ -7,15 +7,15 @@ public class Config {
     public static final String orangeHRM_URL = " https://automationdata-trials710.orangehrmlive.com";
 
     public static final String LoginTestCase_ID = "TC01-01";
-    public static final String AddEmployeeTestCase_ID = "TC02-03";
-    public static final String AddUserTestCase_ID = "TC03-05";
-    public static final String EditEmployeeTestCase_ID = "TC04-01";
+    public static final String AddEmployeeTestCase_ID = "TC02-04";
+    public static final String AddUserTestCase_ID = "TC03-03";
+    public static final String EditEmployeeTestCase_ID = "TC04-02";
     public static final String GoalsRequestTestCase_ID = "TC05-01";
-    public static final String CreateAddressRequestTestCase_ID = "TC06-01";
+    public static final String CreateAddressRequestTestCase_ID = "TC06-02";
     public static final String ReOrderRequestTestCase_ID = "TC07-01";
     public static final String TotalOrdersRequestTestCase_ID = "TC08-01";
-    public static final String UpdateShoppingCartRequestTestCase_ID = "TC09-01";
-    public static final String ApplyDiscountRequestTestCase_ID = "TC10-01";
+    public static final String UpdateShoppingCartRequestTestCase_ID = "TC09-02";
+    public static final String ApplyDiscountRequestTestCase_ID = "TC10-02";
 
     //Common TestCases Column numbers
     public static final int col_Sno = 0;

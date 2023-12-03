@@ -7,7 +7,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pages.demoWebshop.DemoWebShop_CartPage;
 import pages.demoWebshop.DemoWebShop_CataloguePage;
-import pages.demoWebshop.DemoWebShop_CheckoutPage;
 import runner.CucumberHooks;
 import utilities.BaseClass;
 import utilities.CommonUtils;
@@ -16,7 +15,7 @@ import utilities.ExcelUtils;
 
 public class DemoWebShop_UpdateShoppingCart_Steps {
     static Logger log;
-    private static String base64, sheetName, orderNumber, firstItemPrice, secondItemPrice;
+    private static String base64, sheetName;
     private static String jewelLength, update_Qty;
     static int rowNum, rowNum_Index;
 
@@ -40,9 +39,9 @@ public class DemoWebShop_UpdateShoppingCart_Steps {
     @When("User get the item price before increase the quantity and increase the item quantity")
     public void user_get_the_item_price_before_increase_the_quantity_and_increase_the_item_quantity() throws Exception {
         update_Qty = ExcelUtils.getCellData(sheetName, rowNum, Config.col_UpdateCart_Quantity);
-        firstItemPrice = DemoWebShop_CartPage.itemPrice_BeforeIncreasingQty("first");
+        DemoWebShop_CartPage.itemPrice_BeforeIncreasingQty("first");
         DemoWebShop_CartPage.increaseQuantity("first", update_Qty);
-        secondItemPrice = DemoWebShop_CartPage.itemPrice_BeforeIncreasingQty("second");
+        DemoWebShop_CartPage.itemPrice_BeforeIncreasingQty("second");
         DemoWebShop_CartPage.increaseQuantity("second", update_Qty);
     }
 
@@ -62,17 +61,11 @@ public class DemoWebShop_UpdateShoppingCart_Steps {
         log.info("DemoWebShop verify the grand total successfully");
     }
 
-
-    @Then("User get the Order Number")
-    public void user_get_the_order_number() {
-        orderNumber = DemoWebShop_CheckoutPage.getOrderNumber();
-    }
-
     @Then("User update order number and status in {string} update shopping cart excel sheet")
     public void user_Update_OrderNumber_Status_in_Excel_sheet(String sheetName) throws Exception {
         if (!CucumberHooks.scenario.isFailed()) {
-            ExcelUtils.setCellData(orderNumber, sheetName, rowNum, Config.col_UpdateCart_OrderNumber);
-            log.info(orderNumber + " is written back to the Excel file");
+            ExcelUtils.setCellData(DemoWebShop_Steps.orderNumber, sheetName, rowNum, Config.col_UpdateCart_OrderNumber);
+            log.info(DemoWebShop_Steps.orderNumber + " is written back to the Excel file");
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
         } else if (CucumberHooks.scenario.isFailed()) {

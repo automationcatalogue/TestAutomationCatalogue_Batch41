@@ -5,22 +5,22 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import pages.demoWebshop.*;
+import pages.demoWebshop.DemoWebShop_HomePage;
+import pages.demoWebshop.DemoWebShop_OrderInformationPage;
+import pages.demoWebshop.DemoWebShop_OrdersPage;
 import runner.CucumberHooks;
 import utilities.BaseClass;
-import utilities.CommonUtils;
 import utilities.Config;
 import utilities.ExcelUtils;
 
 public class DemoWebShop_ReOrder_Steps {
     static Logger log;
-    private static String base64, sheetName, orderNumber;
+    private static String base64;
     static int rowNum, rowNum_Index;
 
     @Given("User loads {string} reorder excel sheet")
     public void userLoadsExcelData(String sheetName) {
         log = LogManager.getLogger(CucumberHooks.scenario.getName());
-        DemoWebShop_ReOrder_Steps.sheetName = sheetName;
         rowNum_Index = ExcelUtils.getRowNumber(Config.ReOrderRequestTestCase_ID, "Index");
         log.info(rowNum_Index + "Row Number is picked from Index Sheet");
         rowNum = ExcelUtils.getRowNumber(Config.ReOrderRequestTestCase_ID, sheetName);
@@ -38,17 +38,11 @@ public class DemoWebShop_ReOrder_Steps {
         DemoWebShop_OrderInformationPage.clickReorderBtn();
     }
 
-
-
-
-
-
-
     @Then("User update order number and status in {string} reorder excel sheet")
     public void user_Update_OrderNumber_Status_in_Excel_sheet(String sheetName) throws Exception {
         if (!CucumberHooks.scenario.isFailed()) {
-            ExcelUtils.setCellData(orderNumber, sheetName, rowNum, Config.col_Reorder_OrderNumber);
-            log.info(orderNumber + " is written back to the Excel file");
+            ExcelUtils.setCellData(DemoWebShop_Steps.orderNumber, sheetName, rowNum, Config.col_Reorder_OrderNumber);
+            log.info(DemoWebShop_Steps.orderNumber + " is written back to the Excel file");
             ExcelUtils.setCellData("PASSED", "Index", rowNum_Index, Config.col_Status);
             log.info("TestCase is Passed and status is updated in Excel sheet");
         } else if (CucumberHooks.scenario.isFailed()) {

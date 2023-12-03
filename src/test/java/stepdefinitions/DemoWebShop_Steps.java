@@ -17,7 +17,7 @@ import utilities.Config;
 
 public class DemoWebShop_Steps {
     static WebDriver driver;
-    private static String base64, orderNumber;
+    public static String base64, orderNumber;
     static Logger log;
 
     @Given("User opens DemoWebShop application")
