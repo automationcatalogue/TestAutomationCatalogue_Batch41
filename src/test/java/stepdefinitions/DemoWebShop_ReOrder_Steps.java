@@ -17,7 +17,7 @@ public class DemoWebShop_ReOrder_Steps {
     private static String base64, sheetName, orderNumber;
     static int rowNum, rowNum_Index;
 
-    @Given("User loads {string} reorder excel data")
+    @Given("User loads {string} reorder excel sheet")
     public void userLoadsExcelData(String sheetName) {
         log = LogManager.getLogger(CucumberHooks.scenario.getName());
         DemoWebShop_ReOrder_Steps.sheetName = sheetName;
@@ -38,22 +38,11 @@ public class DemoWebShop_ReOrder_Steps {
         DemoWebShop_OrderInformationPage.clickReorderBtn();
     }
 
-    @When("User click on checkout selected items")
-    public void user_click_on_checkout_selected_items() {
-        DemoWebShop_CartPage.checkoutSelectedItems();
-    }
 
-    @When("User place an Order")
-    public void user_place_an_order() throws Exception {
-        DemoWebShop_CheckoutPage.placeOrder();
-        base64 = CommonUtils.takeScreenshot(CucumberHooks.screenshotsPath, "DemoWebShop_ChekoutPage");
-        log.info("DemoWebShop places the order successfully");
-    }
 
-    @Then("User get the Order Number")
-    public void user_get_the_order_number() {
-        orderNumber = DemoWebShop_CheckoutPage.getOrderNumber();
-    }
+
+
+
 
     @Then("User update order number and status in {string} reorder excel sheet")
     public void user_Update_OrderNumber_Status_in_Excel_sheet(String sheetName) throws Exception {
